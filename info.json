@@ -1,0 +1,51 @@
+{
+    "name": {
+        "id": 1002400000,
+        "internal": "HumanResourceManagement",
+        "external": "OMS Human Resources"
+    },
+    "version": "1.0.0",
+    "requirements": {
+        "phpOMS": "1.0.0",
+        "phpOMS-db": "1.0.0"
+    },
+    "creator": {
+        "name": "Orange Management",
+        "website": "www.spl1nes.com"
+    },
+    "description": "Human Resources module.",
+    "directory": "HumanResourceManagement",
+    "dependencies": {},
+    "providing": {
+        "Navigation": "*"
+    },
+    "load": [
+        {
+            "pid": [
+                "41e01e60d64554c69eef1d1f6a45b0d1609c0345"
+            ],
+            "type": 4,
+            "for": 0,
+            "from": "HumanResourceManagement",
+            "file": "HumanResourceManagement"
+        },
+        {
+            "pid": [
+                "754a08ddf8bcb1cf22f310f09206dd783d42f7dd"
+            ],
+            "type": 5,
+            "from": "HumanResourceManagement",
+            "for": "Navigation",
+            "file": "nav.backend"
+        },
+        {
+            "pid": [
+                "41e01e60d64554c69eef1d1f6a45b0d1609c0345"
+            ],
+            "type": 5,
+            "for": "Content",
+            "file": "backend",
+            "from": "HumanResourceManagement"
+        }
+    ]
+}
