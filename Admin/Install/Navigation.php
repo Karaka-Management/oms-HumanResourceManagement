@@ -28,9 +28,9 @@ namespace Modules\HumanResourceManagement\Admin\Install;
  */
 class Navigation
 {
-    public static function install($dbPool)
+    public static function install(Pool $dbPool)
     {
-        $navData = json_decode(file_get_contents(__DIR__ . '/nav.install.json'), true);
+        $navData = json_decode(file_get_contents(__DIR__ . '/Navigation.install.json'), true);
 
         $class = '\\Modules\\Navigation\\Admin\\Installer';
         $class::installExternal($dbPool, $navData);
