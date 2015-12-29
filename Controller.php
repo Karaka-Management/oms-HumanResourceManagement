@@ -41,6 +41,22 @@ class Controller extends ModuleAbstract implements WebInterface
 {
 
     /**
+     * Module path.
+     *
+     * @var \string
+     * @since 1.0.0
+     */
+    const MODULE_PATH = __DIR__;
+
+    /**
+     * Module version.
+     *
+     * @var \string
+     * @since 1.0.0
+     */
+    const MODULE_VERSION = '1.0.0';
+
+    /**
      * Module name.
      *
      * @var \string
