@@ -14,6 +14,7 @@
  * @link       http://orange-management.com
  */
 namespace Modules\HumanResourceManagement\Admin\Install;
+use phpOMS\DataStorage\Database\Pool;
 
 /**
  * Navigation class.
@@ -33,6 +34,7 @@ class Navigation
         $navData = json_decode(file_get_contents(__DIR__ . '/Navigation.install.json'), true);
 
         $class = '\\Modules\\Navigation\\Admin\\Installer';
+        /** @var $class \Modules\Navigation\Admin\Installer */
         $class::installExternal($dbPool, $navData);
     }
 }
