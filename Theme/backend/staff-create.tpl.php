@@ -13,4 +13,9 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
+/**
+ * @var \phpOMS\Views\View $this
+ */
+
 echo $this->getData('nav')->render(); ?>
+

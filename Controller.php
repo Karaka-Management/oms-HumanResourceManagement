@@ -98,6 +98,7 @@ class Controller extends ModuleAbstract implements WebInterface
      */
     protected static $routes = [
         '^.*/backend/hr/staff/list.*$'      => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrList', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
+        '^.*/backend/hr/staff/create.*$'      => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrCreate', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
         '^.*/backend/hr/department/list.*$' => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrDepartmentList', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
     ];
 
@@ -130,11 +131,30 @@ class Controller extends ModuleAbstract implements WebInterface
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
+    public function viewHrCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app, $request, $response);
+        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
+        $view->addData('nav', $this->createNavigation(1002402001, $request, $response));
+
+        return $view;
+    }
+
+    /**
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since  1.0.0
+     * @author Dennis Eichhorn <d.eichhorn@oms.com>
+     */
     public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
-        $view->addData('nav', $this->createNavigation(1003001001, $request, $response));
+        $view->addData('nav', $this->createNavigation(1002403001, $request, $response));
 
         return $view;
     }

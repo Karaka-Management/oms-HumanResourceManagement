@@ -63,7 +63,7 @@
             },
             {
                 "id": 1002403001,
-                "pid": "29a67db2902a784f66b5e896efd84b0004be2087",
+                "pid": "754a08ddf8bcb1cf22f310f09206dd783d42f7dd",
                 "type": 2,
                 "subtype": 1,
                 "name": "Departments",
@@ -75,6 +75,22 @@
                 "permission": null,
                 "parent": 1002401001,
                 "children": [
+                    {
+                        "id": 1002403101,
+                        "pid": "5696bf086bb04c219b1a2654ad9df177c35be669",
+                        "type": 3,
+                        "subtype": 1,
+                        "name": "List",
+                        "uri": "/{/lang}/backend/hr/department/list",
+                        "target": "self",
+                        "icon": null,
+                        "order": 1,
+                        "from": "HumanResourceManagement",
+                        "permission": null,
+                        "parent": 1002403001,
+                        "children": [
+                        ]
+                    }
                 ]
             }
         ]
