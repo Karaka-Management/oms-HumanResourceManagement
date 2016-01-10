@@ -15,7 +15,9 @@
     },
     "description": "Human Resources module.",
     "directory": "HumanResourceManagement",
-    "dependencies": {},
+    "dependencies": {
+        "Admin" : "1.0.0"
+    },
     "providing": {
         "Navigation": "*"
     },
