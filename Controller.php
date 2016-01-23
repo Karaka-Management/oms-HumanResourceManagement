@@ -176,7 +176,7 @@ class Controller extends ModuleAbstract implements WebInterface
         $navView = new NavigationView($this->app, $request, $response);
         $navView->setTemplate('/Modules/Navigation/Theme/Backend/mid');
         $navView->setNav($nav->getNav());
-        $navView->setLanguage($request->getL11n()->language);
+        $navView->setLanguage($request->getL11n()->getLanguage());
         $navView->setParent($pageId);
 
         return $navView;
