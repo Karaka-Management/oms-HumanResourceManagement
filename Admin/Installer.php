@@ -111,10 +111,11 @@ class Installer extends InstallerAbstract
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
+                /*
                 $dbPool->get('core')->con->prepare(
                     'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_planning_shift`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_planning_shift_ibfk_1` FOREIGN KEY (`department`) REFERENCES `' . $dbPool->get('core')->prefix . 'business_department` (`business_department_id`);'
-                )->execute();
+                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_planning_shift_ibfk_1` FOREIGN KEY (`department`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_department` (`organization_department_id`);'
+                )->execute();*/
 
                 $dbPool->get('core')->con->prepare(
                     'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_planning_staff` (

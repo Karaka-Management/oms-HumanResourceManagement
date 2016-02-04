@@ -15,8 +15,6 @@
  */
 namespace Modules\HumanResourceManagement;
 
-use Modules\Navigation\Models\Navigation;
-use Modules\Navigation\Views\NavigationView;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\RequestDestination;
