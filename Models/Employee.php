@@ -15,8 +15,7 @@
  */
 namespace Modules\HumanResources\Models;
 
-use phpOMS\Models\User\User;
-use phpOMS\Pattern\Multition;
+use Modules\Admin\Models\Account;
 
 /**
  * Employee class.
@@ -29,8 +28,7 @@ use phpOMS\Pattern\Multition;
  * @link       http://orange-management.com
  * @since      1.0.0
  */
-class Employee implements Multition
-{
+class Employee extends Account {
 
     /**
      * Employee ID.
@@ -38,21 +36,7 @@ class Employee implements Multition
      * @var int
      * @since 1.0.0
      */
-    private $id = null;
-
-    /**
-     * User.
-     *
-     * @var User
-     * @since 1.0.0
-     */
-    private $user = null;
-
-    private static $instances = [];
-
-    public function __construct($id)
-    {
-    }
+    private $employeeId = 0;
 
     public function getInstance($id)
     {

@@ -45,7 +45,6 @@ class Installer extends InstallerAbstract
                 $dbPool->get('core')->con->prepare(
                     'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_staff` (
                             `hr_staff_id` int(11) NOT NULL AUTO_INCREMENT,
-                            `hr_staff_status` tinyint(2) DEFAULT NULL,
                             `hr_staff_account` int(11) DEFAULT NULL,
                             PRIMARY KEY (`hr_staff_id`),
                             KEY `hr_staff_account` (`hr_staff_account`)
