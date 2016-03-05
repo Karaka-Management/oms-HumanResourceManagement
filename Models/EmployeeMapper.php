@@ -17,7 +17,7 @@ namespace Modules\Admin\Models;
 
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
-class EmployeeMapper extends AccountMapper
+class EmployeeMapper
 {
 
     /**
@@ -27,8 +27,24 @@ class EmployeeMapper extends AccountMapper
      * @since 1.0.0
      */
     protected static $columns = [
-        'hr_staff_id'         => ['name' => 'account_id', 'type' => 'int', 'internal' => 'id'],
-        'hr_staff'     => ['name' => 'account_status', 'type' => 'int', 'internal' => 'status'],
+        'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
+        'hr_staff'     => ['name' => 'hr_staff', 'type' => 'int', 'internal' => 'account'],
+    ];
+
+    protected static $ownsOne = [
+        'account' => [
+            'mapper'         => '\Modules\Admin\Models\AccountMapper',
+            'src'            => 'hr_staff',
+        ],
+    ];
+
+    protected static $hasMany = [
+        'position' => [
+            'mapper' => '',
+            'table' => '',
+            'src' => '',
+            'dst' => '',
+        ],
     ];
 
     /**
@@ -46,12 +62,4 @@ class EmployeeMapper extends AccountMapper
      * @since 1.0.0
      */
     protected static $primaryField = 'hr_staff_id';
-
-    /**
-     * Overwriting extended
-     *
-     * @var bool
-     * @since 1.0.0
-     */
-    protected static $overwrite = false;
 }

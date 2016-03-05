@@ -28,7 +28,7 @@ use Modules\Admin\Models\Account;
  * @link       http://orange-management.com
  * @since      1.0.0
  */
-class Employee extends Account {
+class Employee {
 
     /**
      * Employee ID.
@@ -36,73 +36,16 @@ class Employee extends Account {
      * @var int
      * @since 1.0.0
      */
-    private $employeeId = 0;
+    private $id = 0;
 
-    public function getInstance($id)
+    private $account = null;
+
+    public function setAccount(Account $account) 
     {
-        if (!isset(self::$instances[$id])) {
-            self::$instances[$id] = new self($id);
-        }
-
-        return self::$instances[$id];
+        $this->account = $account;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function init($id)
-    {
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __clone()
-    {
-    }
-
-    public function setUser($id)
-    {
-        $this->user = new User($id);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function serialize()
-    {
-        // TODO: Implement serialize() method.
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function unserialize($serialized)
-    {
-        // TODO: Implement unserialize() method.
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function delete()
-    {
-        // TODO: Implement delete() method.
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function update()
-    {
-        // TODO: Implement update() method.
+    public function getAccount() : Account {
+        return $this->account;
     }
 }
