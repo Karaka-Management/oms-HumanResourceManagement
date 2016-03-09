@@ -40,6 +40,10 @@ class Employee {
 
     private $account = null;
 
+    private $history = [];
+
+    private $status = [];
+
     public function setAccount(Account $account) 
     {
         $this->account = $account;

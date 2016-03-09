@@ -24,6 +24,8 @@ $footerView->setPages(1 / 25);
 $footerView->setPage(1);
 $footerView->setResults(1);
 
+$employees = $this->getData('employees');
+
 echo $this->getData('nav')->render(); ?>
 
 <section class="box w-100">
@@ -33,22 +35,22 @@ echo $this->getData('nav')->render(); ?>
         <tr>
             <td><?= $this->l11n->lang[0]['ID']; ?>
             <td class="wf-100"><?= $this->l11n->lang['HumanResourceManagement']['Name']; ?>
+            <td><?= $this->l11n->lang['HumanResourceManagement']['Position']; ?>
             <td><?= $this->l11n->lang['HumanResourceManagement']['Department']; ?>
             <td><?= $this->l11n->lang['HumanResourceManagement']['Status']; ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
-        <?php $c = 0; foreach ([] as $key => $value) : $c++;
-        $url = \phpOMS\Uri\UriFactory::build('/{/lang}/backend/admin/group/settings?id=' . $value->getId()); ?>
-        <tr>
-            <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
-            <td><a href="<?= $url; ?>"><?= $value->getName(); ?></a>
-            <td>
-            <td>
-            <td>
-                <?php endforeach; ?>
-                <?php if($c === 0) : ?>
-        <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
-                <?php endif; ?>
+        <?php $c = 0; foreach ($employees as $key => $value) : $c++;
+            $url = \phpOMS\Uri\UriFactory::build('/{/lang}/backend/admin/group/settings?id=' . $value->getId()); ?>
+            <tr>
+                <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
+                <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
+                <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
+                <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
+        <?php endforeach; ?>
+        <?php if($c === 0) : ?>
+            <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
+        <?php endif; ?>
     </table>
 </section>

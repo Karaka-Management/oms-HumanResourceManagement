@@ -33,17 +33,25 @@ class EmployeeMapper
 
     protected static $ownsOne = [
         'account' => [
-            'mapper'         => '\Modules\Admin\Models\AccountMapper',
+            'mapper'         => \Modules\Admin\Models\AccountMapper::class,
             'src'            => 'hr_staff',
         ],
     ];
 
     protected static $hasMany = [
-        'position' => [
-            'mapper' => '',
-            'table' => '',
-            'src' => '',
-            'dst' => '',
+        'history' => [
+            'mapper' => \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper::class,
+            'relationmapper' => \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper::class,
+            'table' => 'hr_history',
+            'src' => 'hr_history_staff',
+            'dst' => null,
+        ],
+        'status' => [
+            'mapper' => \Modules\HumanResourceManagement\Models\EmployeeStatus::class,
+            'relationmapper' => \Modules\HumanResourceManagement\Models\EmployeeStatus::class,
+            'table' => 'hr_status',
+            'src' => 'hr_status_staff',
+            'dst' => null,
         ],
     ];
 
