@@ -75,7 +75,7 @@ class Installer extends InstallerAbstract
                     'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_staff_history`
                             ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_1` FOREIGN KEY (`hr_staff_history_staff`) REFERENCES `' . $dbPool->get('core')->prefix . 'hr_staff` (`hr_staff_id`),
                             ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_2` FOREIGN KEY (`hr_staff_history_department`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_department` (`organization_department_id`),
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_3` FOREIGN KEY (`hr_staff_history_position`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_department` (`organization_position_id`);'
+                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_3` FOREIGN KEY (`hr_staff_history_position`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_position` (`organization_position_id`);'
                 )->execute();
 
                 $dbPool->get('core')->con->prepare(
