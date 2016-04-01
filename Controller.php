@@ -90,18 +90,6 @@ class Controller extends ModuleAbstract implements WebInterface
     ];
 
     /**
-     * Routing elements.
-     *
-     * @var array
-     * @since 1.0.0
-     */
-    protected static $routes = [
-        '^.*/backend/hr/staff/list.*$'      => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrList', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
-        '^.*/backend/hr/staff/create.*$'      => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrCreate', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
-        '^.*/backend/hr/department/list.*$' => [['dest' => '\Modules\HumanResourceManagement\Controller:viewHrDepartmentList', 'method' => 'GET', 'type' => ViewLayout::MAIN],],
-    ];
-
-    /**
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
