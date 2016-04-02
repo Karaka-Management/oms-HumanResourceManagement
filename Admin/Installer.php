@@ -36,7 +36,7 @@ class Installer extends InstallerAbstract
     /**
      * {@inheritdoc}
      */
-    public static function install(Pool $dbPool, array $info)
+    public static function install(Pool $dbPool, InfoManager $info)
     {
         parent::install($dbPool, $info);
 
