@@ -13,7 +13,7 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-$MODLANG['Navigation'] = [
+return ['Navigation' => [
     'Departments'             => 'Departments',
     'Employees'               => 'Employees',
     'HumanResources'          => 'Human Resources',
@@ -24,4 +24,4 @@ $MODLANG['Navigation'] = [
     'Shifts'                  => 'Shifts',
     'Staff'                   => 'Staff',
     'Structure'               => 'Structure',
-];
+]];

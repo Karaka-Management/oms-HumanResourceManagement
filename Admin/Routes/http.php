@@ -1,5 +1,7 @@
 <?php
 
+use phpOMS\Router\RouteVerb;
+
 return [
     '^.*/backend/hr/staff/list.*$' => [
         [

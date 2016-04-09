@@ -88,7 +88,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
-    public function viewHrList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewHrList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
@@ -110,7 +110,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
-    public function viewHrCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewHrCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
@@ -129,7 +129,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
-    public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
