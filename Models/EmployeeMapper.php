@@ -13,11 +13,14 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\Admin\Models;
+namespace Modules\HumanResourceManagement\Models;
 
+use Modules\Admin\Models\AccountMapper;
+use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
+use Modules\HumanResourceManagement\Models\EmployeeStatus;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
-class EmployeeMapper
+class EmployeeMapper extends DataMapperAbstract
 {
 
     /**
@@ -33,22 +36,22 @@ class EmployeeMapper
 
     protected static $ownsOne = [
         'account' => [
-            'mapper'         => \Modules\Admin\Models\AccountMapper::class,
+            'mapper'         => AccountMapper::class,
             'src'            => 'hr_staff',
         ],
     ];
 
     protected static $hasMany = [
         'history' => [
-            'mapper' => \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper::class,
-            'relationmapper' => \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper::class,
+            'mapper' => EmployeeHistoryMapper::class,
+            'relationmapper' => EmployeeHistoryMapper::class,
             'table' => 'hr_history',
             'src' => 'hr_history_staff',
             'dst' => null,
         ],
         'status' => [
-            'mapper' => \Modules\HumanResourceManagement\Models\EmployeeStatus::class,
-            'relationmapper' => \Modules\HumanResourceManagement\Models\EmployeeStatus::class,
+            'mapper' => EmployeeStatus::class,
+            'relationmapper' => EmployeeStatus::class,
             'table' => 'hr_status',
             'src' => 'hr_status_staff',
             'dst' => null,

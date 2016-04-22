@@ -13,7 +13,7 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\HumanResources\Models;
+namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\Account;
 
@@ -51,5 +51,10 @@ class Employee {
 
     public function getAccount() : Account {
         return $this->account;
+    }
+
+    public function getId() : int
+    {
+        return $this->id;
     }
 }

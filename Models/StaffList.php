@@ -13,7 +13,7 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\HumanResources\Models;
+namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\DataStorage\Database\DatabaseType;
 
@@ -34,7 +34,7 @@ class StaffList
     /**
      * Database instance.
      *
-     * @var \phpOMS\DataStorage\Database\Database
+     * @var \phpOMS\DataStorage\Database\Pool
      * @since 1.0.0
      */
     private $dbPool = null;

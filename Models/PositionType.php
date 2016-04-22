@@ -13,7 +13,7 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\HumanResources\Models;
+namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\Datatypes\Enum;
 
