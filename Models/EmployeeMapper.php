@@ -13,7 +13,7 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\Admin\Models;
+namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
@@ -24,7 +24,7 @@ class EmployeeMapper
      * Columns.
      *
      * @var array<string, array>
-     * @since 1.0.0
+     * @since 1.0.k
      */
     protected static $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
