@@ -22,6 +22,7 @@ use phpOMS\Module\ModuleAbstract;
 use phpOMS\Module\WebInterface;
 use phpOMS\Views\View;
 use phpOMS\Views\ViewLayout;
+use Modules\HumanResourceManagement\Models\EmployeeMapper;
 
 /**
  * Human Resources controller class.
