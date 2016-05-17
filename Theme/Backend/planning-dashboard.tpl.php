@@ -1,5 +1,5 @@
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Vacation'] ?></h1>
+    <header><h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Vacation'] ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
@@ -32,7 +32,7 @@
 </div>
 
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Shifts'] ?></h1>
+    <header><h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Shifts'] ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
@@ -65,7 +65,7 @@
 </div>
 
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Personnel'] ?></h1>
+    <header><h1><?= $this->app->accountManager->get($request->getAccount())->getL11n()->lang['HumanResourceManagement']['Personnel'] ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
