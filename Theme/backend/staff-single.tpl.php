@@ -16,7 +16,7 @@
 echo $this->getData('nav')->render(); ?>
 
 <section itemscope itemtype="http://schema.org/Person" class="box w-33">
-    <h1><?= $this->l11n->lang['HumanResourceManagement']['Employee']; ?></h1>
+    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Employee']; ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
@@ -64,8 +64,8 @@ echo $this->getData('nav')->render(); ?>
     </div>
 </section>
 
-<sectionclass="box w-33">
-    <h1><?= $this->l11n->lang['HumanResourceManagement']['Overview']; ?></h1>
+<section class="box w-33">
+    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Overview']; ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
@@ -89,7 +89,7 @@ echo $this->getData('nav')->render(); ?>
     </div>
 </section>
 
-<section class="box w-100">
+<div class="box w-100">
     <table class="table">
         <caption><?= $this->l11n->lang['HumanResourceManagement']['Working']; ?></caption>
         <thead>
@@ -113,9 +113,9 @@ echo $this->getData('nav')->render(); ?>
             <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
         <?php endif; ?>
     </table>
-</section>
+</div>
 
-<section class="box w-100">
+<div class="box w-100">
     <table class="table">
         <caption><?= $this->l11n->lang['HumanResourceManagement']['Timing']; ?></caption>
         <thead>
@@ -137,10 +137,10 @@ echo $this->getData('nav')->render(); ?>
             <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
         <?php endif; ?>
     </table>
-</section>
+</div>
 
 <section class="box w-33">
-    <h1><?= $this->l11n->lang['HumanResourceManagement']['Salary']; ?></h1>
+    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Salary']; ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
