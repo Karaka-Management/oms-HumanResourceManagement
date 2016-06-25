@@ -39,7 +39,7 @@ echo $this->getData('nav')->render(); ?>
             <td><?= $this->l11n->lang['HumanResourceManagement']['Department']; ?>
             <td><?= $this->l11n->lang['HumanResourceManagement']['Status']; ?>
         <tfoot>
-        <tr><td colspan="4"><?= $footerView->render(); ?>
+        <tr><td colspan="5"><?= $footerView->render(); ?>
         <tbody>
         <?php $c = 0; foreach ($employees as $key => $value) : $c++;
             $url = \phpOMS\Uri\UriFactory::build('/{/lang}/backend/admin/group/settings?id=' . $value->getId()); ?>
@@ -50,7 +50,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
+            <tr><td colspan="5" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
         <?php endif; ?>
     </table>
 </div>

@@ -20,6 +20,7 @@ return ['HumanResourceManagement' => [
     'Name'        => 'Name',
     'Parent'      => 'Parent',
     'Personnel'   => 'Personnel',
+    'Position'    => 'Position',
     'Shifts'      => 'Shifts',
     'Staff'       => 'Staff',
     'Status'      => 'Status',

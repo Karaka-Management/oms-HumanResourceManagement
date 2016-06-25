@@ -15,13 +15,11 @@
  */
 namespace Modules\HumanResourceManagement;
 
-use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Module\ModuleAbstract;
 use phpOMS\Module\WebInterface;
 use phpOMS\Views\View;
-use phpOMS\Views\ViewLayout;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 
 /**
@@ -84,7 +82,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return RenderableInterface
+     * @return \Serializable
      *
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
@@ -95,8 +93,7 @@ class Controller extends ModuleAbstract implements WebInterface
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $mapper = new EmployeeMapper($this->app->dbPool()->get());
-        $view->setData('employees', $mapper->getAll());
+        $view->setData('employees', EmployeeMapper::getAll());
 
         return $view;
     }
@@ -106,7 +103,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return RenderableInterface
+     * @return \Serializable
      *
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
@@ -125,7 +122,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return RenderableInterface
+     * @return \Serializable
      *
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
