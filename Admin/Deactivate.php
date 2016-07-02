@@ -18,6 +18,7 @@ namespace Modules\HumanResourceManagement\Admin;
 
 use phpOMS\DataStorage\Database\Pool;
 use phpOMS\Module\DeactivateAbstract;
+use phpOMS\Module\InfoManager;
 
 /**
  * Navigation class.
@@ -36,7 +37,7 @@ class Deactivate extends DeactivateAbstract
     /**
      * {@inheritdoc}
      */
-    public static function deactivate(Pool $dbPool, array $info)
+    public static function deactivate(Pool $dbPool, InfoManager $info)
     {
         parent::deactivate($dbPool, $info);
     }
