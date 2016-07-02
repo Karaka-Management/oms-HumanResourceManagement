@@ -30,14 +30,14 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->lang['HumanResourceManagement']['Staff']; ?></caption>
+        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Staff'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->lang[0]['ID']; ?>
-            <td class="wf-100"><?= $this->l11n->lang['HumanResourceManagement']['Name']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Position']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Department']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Status']; ?>
+            <td><?= $this->l11n->getText(0, 'ID'); ?>
+            <td class="wf-100"><?= $this->l11n->getText('HumanResourceManagement', 'Name'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Position'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Department'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Status'); ?>
         <tfoot>
         <tr><td colspan="5"><?= $footerView->render(); ?>
         <tbody>
@@ -50,7 +50,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="5" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
+            <tr><td colspan="5" class="empty"><?= $this->l11n->getText(0, 'Empty'); ?>
         <?php endif; ?>
     </table>
 </div>

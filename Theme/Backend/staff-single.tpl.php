@@ -16,24 +16,24 @@
 echo $this->getData('nav')->render(); ?>
 
 <section itemscope itemtype="http://schema.org/Person" class="box w-33">
-    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Employee']; ?></h1></header>
+    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Employee'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Name']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Name'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>, <span itemprop="givenName"><?= $account->getName1(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Position']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Position'); ?>
                         <td itemprop="jobTitle">Sailor
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Department']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Department'); ?>
                         <td itemprop="jobTitle">Sailor
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Birthday']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Birthday'); ?>
                         <td itemprop="birthDate">06.09.1934
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Email']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Email'); ?>
                         <td itemprop="email"><a href="mailto:>donald.duck@email.com<"><?= $account->getEmail(); ?></a>
                     <tr>
                         <th>Address
@@ -45,7 +45,7 @@ echo $this->getData('nav')->render(); ?>
                         <th class="vT">Work
                         <td itemprop="address">SMALLSYS INC<br>795 E DRAGRAM<br>TUCSON AZ 85705<br>USA
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Phone']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Phone'); ?>
                         <td>
                     <tr>
                         <th>Private
@@ -57,7 +57,7 @@ echo $this->getData('nav')->render(); ?>
                         <th>Work
                         <td itemprop="telephone">+01 12345-4567
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Status']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Status'); ?>
                         <td><span class="tag green"><?= $account->getStatus(); ?></span>
                 </table>
             <!-- @formatter:on -->
@@ -65,24 +65,24 @@ echo $this->getData('nav')->render(); ?>
 </section>
 
 <section class="box w-33">
-    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Overview']; ?></h1></header>
+    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Overview'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Start']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Start'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['End']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'End'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Hours']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Hours'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Vacation']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Vacation'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Salary']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Salary'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                 </table>
             <!-- @formatter:on -->
@@ -91,14 +91,14 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->lang['HumanResourceManagement']['Working']; ?></caption>
+        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Working'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Start']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['End']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Position']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Department']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Salary']; ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Start'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'End'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Position'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Department'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Salary'); ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
@@ -110,19 +110,19 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
+            <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Empty'); ?>
         <?php endif; ?>
     </table>
 </div>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->lang['HumanResourceManagement']['Timing']; ?></caption>
+        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Timing'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['Start']; ?>
-            <td><?= $this->l11n->lang['HumanResourceManagement']['End']; ?>
-            <td class="wf-100"><?= $this->l11n->lang['HumanResourceManagement']['Type']; ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Start'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'End'); ?>
+            <td class="wf-100"><?= $this->l11n->getText('HumanResourceManagement', 'Type'); ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
@@ -134,24 +134,24 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->l11n->lang[0]['Empty']; ?>
+            <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Empty'); ?>
         <?php endif; ?>
     </table>
 </div>
 
 <section class="box w-33">
-    <header><h1><?= $this->l11n->lang['HumanResourceManagement']['Salary']; ?></h1></header>
+    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Salary'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Date']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Date'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['SalaryType']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'SalaryType'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->lang['HumanResourceManagement']['Amount']; ?>
+                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Amount'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                 </table>
             <!-- @formatter:on -->
