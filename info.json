@@ -40,15 +40,6 @@
             "from": "HumanResourceManagement",
             "for": "Navigation",
             "file": "Navigation"
-        },
-        {
-            "pid": [
-                "41e01e60d64554c69eef1d1f6a45b0d1609c0345"
-            ],
-            "type": 5,
-            "for": "Content",
-            "file": "",
-            "from": "HumanResourceManagement"
         }
     ]
 }
