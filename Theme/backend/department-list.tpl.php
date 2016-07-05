@@ -28,13 +28,13 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Departments'); ?></caption>
+        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Departments'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->getText(0, 'ID'); ?>
-            <td class="wf-100"><?= $this->l11n->getText('HumanResourceManagement', 'Name'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Employees'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Parent'); ?>
+            <td><?= $this->l11n->getText(0, 'Backend', 'ID'); ?>
+            <td class="wf-100"><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Name'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Employees'); ?>
+            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Parent'); ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
@@ -48,7 +48,7 @@ echo $this->getData('nav')->render(); ?>
             <td>
                 <?php endforeach; ?>
                 <?php if($c === 0) : ?>
-        <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Empty'); ?>
+        <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Backend', 'Empty'); ?>
                 <?php endif; ?>
     </table>
 </div>
