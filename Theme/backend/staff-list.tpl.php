@@ -33,7 +33,7 @@ echo $this->getData('nav')->render(); ?>
         <caption><?= $this->getText('Staff'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->getText('ID'); ?>
+            <td><?= $this->getText('ID', 0, 0); ?>
             <td class="wf-100"><?= $this->getText('Name'); ?>
             <td><?= $this->getText('Position'); ?>
             <td><?= $this->getText('Department'); ?>
@@ -50,7 +50,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="5" class="empty"><?= $this->getText('Empty'); ?>
+            <tr><td colspan="5" class="empty"><?= $this->getText('Empty', 0, 0); ?>
         <?php endif; ?>
     </table>
 </div>

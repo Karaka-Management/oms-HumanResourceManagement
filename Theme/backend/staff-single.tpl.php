@@ -110,7 +110,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->getText('Empty'); ?>
+            <tr><td colspan="4" class="empty"><?= $this->getText('Empty', 0, 0); ?>
         <?php endif; ?>
     </table>
 </div>
@@ -134,7 +134,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->getText('Empty'); ?>
+            <tr><td colspan="4" class="empty"><?= $this->getText('Empty', 0, 0); ?>
         <?php endif; ?>
     </table>
 </div>
