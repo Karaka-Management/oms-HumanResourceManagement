@@ -16,24 +16,24 @@
 echo $this->getData('nav')->render(); ?>
 
 <section itemscope itemtype="http://schema.org/Person" class="box w-33">
-    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Employee'); ?></h1></header>
+    <header><h1><?= $this->getText('Employee'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Name'); ?>
+                        <th><?= $this->getText('Name'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>, <span itemprop="givenName"><?= $account->getName1(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Position'); ?>
+                        <th><?= $this->getText('Position'); ?>
                         <td itemprop="jobTitle">Sailor
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Department'); ?>
+                        <th><?= $this->getText('Department'); ?>
                         <td itemprop="jobTitle">Sailor
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Birthday'); ?>
+                        <th><?= $this->getText('Birthday'); ?>
                         <td itemprop="birthDate">06.09.1934
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Email'); ?>
+                        <th><?= $this->getText('Email'); ?>
                         <td itemprop="email"><a href="mailto:>donald.duck@email.com<"><?= $account->getEmail(); ?></a>
                     <tr>
                         <th>Address
@@ -45,7 +45,7 @@ echo $this->getData('nav')->render(); ?>
                         <th class="vT">Work
                         <td itemprop="address">SMALLSYS INC<br>795 E DRAGRAM<br>TUCSON AZ 85705<br>USA
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Phone'); ?>
+                        <th><?= $this->getText('Phone'); ?>
                         <td>
                     <tr>
                         <th>Private
@@ -57,7 +57,7 @@ echo $this->getData('nav')->render(); ?>
                         <th>Work
                         <td itemprop="telephone">+01 12345-4567
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Status'); ?>
+                        <th><?= $this->getText('Status'); ?>
                         <td><span class="tag green"><?= $account->getStatus(); ?></span>
                 </table>
             <!-- @formatter:on -->
@@ -65,24 +65,24 @@ echo $this->getData('nav')->render(); ?>
 </section>
 
 <section class="box w-33">
-    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Overview'); ?></h1></header>
+    <header><h1><?= $this->getText('Overview'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Start'); ?>
+                        <th><?= $this->getText('Start'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'End'); ?>
+                        <th><?= $this->getText('End'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Hours'); ?>
+                        <th><?= $this->getText('Hours'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Vacation'); ?>
+                        <th><?= $this->getText('Vacation'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Salary'); ?>
+                        <th><?= $this->getText('Salary'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                 </table>
             <!-- @formatter:on -->
@@ -91,14 +91,14 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Working'); ?></caption>
+        <caption><?= $this->getText('Working'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Start'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'End'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Position'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Department'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Salary'); ?>
+            <td><?= $this->getText('Start'); ?>
+            <td><?= $this->getText('End'); ?>
+            <td><?= $this->getText('Position'); ?>
+            <td><?= $this->getText('Department'); ?>
+            <td><?= $this->getText('Salary'); ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
@@ -110,19 +110,19 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Backend', 'Empty'); ?>
+            <tr><td colspan="4" class="empty"><?= $this->getText('Empty'); ?>
         <?php endif; ?>
     </table>
 </div>
 
 <div class="box w-100">
     <table class="table">
-        <caption><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Timing'); ?></caption>
+        <caption><?= $this->getText('Timing'); ?></caption>
         <thead>
         <tr>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Start'); ?>
-            <td><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'End'); ?>
-            <td class="wf-100"><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Type'); ?>
+            <td><?= $this->getText('Start'); ?>
+            <td><?= $this->getText('End'); ?>
+            <td class="wf-100"><?= $this->getText('Type'); ?>
         <tfoot>
         <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
@@ -134,24 +134,24 @@ echo $this->getData('nav')->render(); ?>
                 <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
-            <tr><td colspan="4" class="empty"><?= $this->l11n->getText(0, 'Backend', 'Empty'); ?>
+            <tr><td colspan="4" class="empty"><?= $this->getText('Empty'); ?>
         <?php endif; ?>
     </table>
 </div>
 
 <section class="box w-33">
-    <header><h1><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Salary'); ?></h1></header>
+    <header><h1><?= $this->getText('Salary'); ?></h1></header>
     <div class="inner">
         <!-- @formatter:off -->
                 <table class="list">
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Date'); ?>
+                        <th><?= $this->getText('Date'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'SalaryType'); ?>
+                        <th><?= $this->getText('SalaryType'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                     <tr>
-                        <th><?= $this->l11n->getText('HumanResourceManagement', 'Backend', 'Amount'); ?>
+                        <th><?= $this->getText('Amount'); ?>
                         <td><span itemprop="familyName"><?= $account->getName3(); ?></span>
                 </table>
             <!-- @formatter:on -->
