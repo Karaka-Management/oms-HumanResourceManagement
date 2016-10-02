@@ -35,11 +35,8 @@ class EmployeeMapper extends DataMapperAbstract
     protected static $ownsOne = [
         'account' => [
             'mapper'         => AccountMapper::class,
-            'src'            => 'hr_staff',
+            'src'            => 'hr_staff_account',
         ],
-    ];
-
-    protected static $hasMany = [
     ];
 
     /**
