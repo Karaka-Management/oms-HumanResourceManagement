@@ -42,7 +42,7 @@ class StaffList
     /**
      * Constructor.
      *
-     * @param \phpOMS\DataStorage\Database\Pool $dbPool Database pool instance
+     * @param \phpOMS\DataStorage\Database\DatabasePool $dbPool Database pool instance
      *
      * @since  1.0.0
      * @author Dennis Eichhorn <d.eichhorn@oms.com>
