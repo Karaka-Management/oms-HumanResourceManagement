@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -16,7 +16,7 @@
 namespace Modules\HumanResourceManagement\Admin;
 
 
-use phpOMS\DataStorage\Database\Pool;
+use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\Module\ActivateAbstract;
 use phpOMS\Module\InfoManager;
 
@@ -37,7 +37,7 @@ class Activate extends ActivateAbstract
     /**
      * {@inheritdoc}
      */
-    public static function activate(Pool $dbPool, InfoManager $info)
+    public static function activate(DatabasePool $dbPool, InfoManager $info)
     {
         parent::activate($dbPool, $info);
     }

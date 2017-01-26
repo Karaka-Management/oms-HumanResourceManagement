@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -14,7 +14,7 @@
  * @link       http://orange-management.com
  */
 namespace Modules\HumanResourceManagement\Admin\Install;
-use phpOMS\DataStorage\Database\Pool;
+use phpOMS\DataStorage\Database\DatabasePool;
 
 /**
  * Navigation class.
@@ -29,7 +29,7 @@ use phpOMS\DataStorage\Database\Pool;
  */
 class Navigation
 {
-    public static function install(Pool $dbPool)
+    public static function install(string $path, DatabasePool $dbPool)
     {
         $navData = json_decode(file_get_contents(__DIR__ . '/Navigation.install.json'), true);
 

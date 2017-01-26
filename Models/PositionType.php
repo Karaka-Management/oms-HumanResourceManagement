@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -30,19 +30,19 @@ use phpOMS\Datatypes\Enum;
  */
 abstract class PositionType extends Enum
 {
-    const INTERN = 0;
+    /* public */ const INTERN = 0;
 
-    const APPRENTICE = 1;
+    /* public */ const APPRENTICE = 1;
 
-    const JUNIOR = 2;
+    /* public */ const JUNIOR = 2;
 
-    const REGULAR = 3;
+    /* public */ const REGULAR = 3;
 
-    const SENIOR = 4;
+    /* public */ const SENIOR = 4;
 
-    const ASSISTANT = 5;
+    /* public */ const ASSISTANT = 5;
 
-    const TEAMLEADER = 6;
+    /* public */ const TEAMLEADER = 6;
 
-    const HEAD = 7;
+    /* public */ const HEAD = 7;
 }

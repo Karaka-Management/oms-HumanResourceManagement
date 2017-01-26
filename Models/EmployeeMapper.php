@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -24,7 +24,7 @@ class EmployeeMapper extends DataMapperAbstract
     /**
      * Columns.
      *
-     * @var array<string, array>
+     * @var array
      * @since 1.0.0
      */
     protected static $columns = [
@@ -35,11 +35,8 @@ class EmployeeMapper extends DataMapperAbstract
     protected static $ownsOne = [
         'account' => [
             'mapper'         => AccountMapper::class,
-            'src'            => 'hr_staff',
+            'src'            => 'hr_staff_account',
         ],
-    ];
-
-    protected static $hasMany = [
     ];
 
     /**

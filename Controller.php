@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -42,7 +42,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @var string
      * @since 1.0.0
      */
-    const MODULE_PATH = __DIR__;
+    /* public */ const MODULE_PATH = __DIR__;
 
     /**
      * Module version.
@@ -50,7 +50,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @var string
      * @since 1.0.0
      */
-    const MODULE_VERSION = '1.0.0';
+    /* public */ const MODULE_VERSION = '1.0.0';
 
     /**
      * Module name.
@@ -58,7 +58,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @var string
      * @since 1.0.0
      */
-    const MODULE_NAME = 'HumanResourceManagement';
+    /* public */ const MODULE_NAME = 'HumanResourceManagement';
 
     /**
      * Providing.

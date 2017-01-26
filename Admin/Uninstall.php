@@ -2,7 +2,7 @@
 /**
  * Orange Management
  *
- * PHP Version 7.0
+ * PHP Version 7.1
  *
  * @category   TBD
  * @package    TBD
@@ -16,7 +16,7 @@
 namespace Modules\HumanResourceManagement\Admin;
 
 
-use phpOMS\DataStorage\Database\Pool;
+use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\DataStorage\Database\Schema\Builder;
 use phpOMS\Module\UninstallAbstract;
 
@@ -37,7 +37,7 @@ class Uninstall extends UninstallAbstract
     /**
      * {@inheritdoc}
      */
-    public static function uninstall(Pool $dbPool, InfoManager $info)
+    public static function uninstall(DatabasePool $dbPool, InfoManager $info)
     {
         parent::uninstall($dbPool, $info);
 
