@@ -2,8 +2,9 @@
     "name": {
         "id": 1002400000,
         "internal": "HumanResourceManagement",
-        "external": "OMS Human Resources"
+        "external": "Human Resource Management"
     },
+    "category": "HR",
     "version": "1.0.0",
     "requirements": {
         "phpOMS": "1.0.0",
