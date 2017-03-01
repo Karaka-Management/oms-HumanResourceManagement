@@ -13,8 +13,8 @@
  * @version    1.0.0
  * @link       http://orange-management.com
  */
+declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Admin;
-
 
 use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\Module\UpdateAbstract;
