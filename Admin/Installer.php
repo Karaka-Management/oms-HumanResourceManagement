@@ -40,7 +40,7 @@ class Installer extends InstallerAbstract
      */
     public static function install(string $path, DatabasePool $dbPool, InfoManager $info)
     {
-        parent::install($path, $dbPool, $info);
+        parent::install(__DIR__ . '/..', $dbPool, $info);
 
         switch ($dbPool->get('core')->getType()) {
             case DatabaseType::MYSQL:
