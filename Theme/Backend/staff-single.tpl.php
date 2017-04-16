@@ -90,7 +90,7 @@ echo $this->getData('nav')->render(); ?>
 </section>
 
 <div class="box w-100">
-    <table class="table">
+    <table class="table red">
         <caption><?= $this->getText('Working'); ?></caption>
         <thead>
         <tr>
@@ -116,7 +116,7 @@ echo $this->getData('nav')->render(); ?>
 </div>
 
 <div class="box w-100">
-    <table class="table">
+    <table class="table red">
         <caption><?= $this->getText('Timing'); ?></caption>
         <thead>
         <tr>

@@ -29,7 +29,7 @@ $employees = $this->getData('employees');
 echo $this->getData('nav')->render(); ?>
 
 <div class="box w-100">
-    <table class="table">
+    <table class="table red">
         <caption><?= $this->getText('Staff'); ?></caption>
         <thead>
         <tr>
