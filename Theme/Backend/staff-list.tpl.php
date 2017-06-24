@@ -28,29 +28,34 @@ $employees = $this->getData('employees');
 
 echo $this->getData('nav')->render(); ?>
 
-<div class="box w-100">
-    <table class="table red">
-        <caption><?= $this->getText('Staff'); ?></caption>
-        <thead>
-        <tr>
-            <td><?= $this->getText('ID', 0, 0); ?>
-            <td class="wf-100"><?= $this->getText('Name'); ?>
-            <td><?= $this->getText('Position'); ?>
-            <td><?= $this->getText('Department'); ?>
-            <td><?= $this->getText('Status'); ?>
-        <tfoot>
-        <tr><td colspan="5"><?= $footerView->render(); ?>
-        <tbody>
-        <?php $c = 0; foreach ($employees as $key => $value) : $c++;
-            $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
-            <tr>
-                <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
-                <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
-                <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
-                <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
-        <?php endforeach; ?>
-        <?php if($c === 0) : ?>
-            <tr><td colspan="5" class="empty"><?= $this->getText('Empty', 0, 0); ?>
-        <?php endif; ?>
-    </table>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box wf-100">
+            <table class="table red">
+                <caption><?= $this->getText('Staff'); ?></caption>
+                <thead>
+                <tr>
+                    <td><?= $this->getText('ID', 0, 0); ?>
+                    <td class="wf-100"><?= $this->getText('Name'); ?>
+                    <td><?= $this->getText('Position'); ?>
+                    <td><?= $this->getText('Department'); ?>
+                    <td><?= $this->getText('Status'); ?>
+                <tfoot>
+                <tr><td colspan="5"><?= $footerView->render(); ?>
+                <tbody>
+                <?php $c = 0; foreach ($employees as $key => $value) : $c++;
+                    $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
+                    <tr>
+                        <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
+                <?php endforeach; ?>
+                <?php if($c === 0) : ?>
+                    <tr><td colspan="5" class="empty"><?= $this->getText('Empty', 0, 0); ?>
+                <?php endif; ?>
+            </table>
+        </div>
+    </div>
 </div>
+
