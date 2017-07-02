@@ -47,9 +47,10 @@ echo $this->getData('nav')->render(); ?>
                     $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
                     <tr>
                         <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $value->getNewestHistory()->getPosition(); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $value->getNewestStatus()->getStatus(); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $value->getAccount()->getName1(); ?></a>
+                        <td><a href="<?= $url; ?>"><?= '' ?></a>
+                        <td><a href="<?= $url; ?>"><?= '' ?></a>
+                        <td><a href="<?= $url; ?>"><?= '' ?></a>
                 <?php endforeach; ?>
                 <?php if($c === 0) : ?>
                     <tr><td colspan="5" class="empty"><?= $this->getText('Empty', 0, 0); ?>

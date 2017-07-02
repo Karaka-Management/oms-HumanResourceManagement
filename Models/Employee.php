@@ -58,4 +58,14 @@ class Employee {
     {
         return $this->id;
     }
+
+    public function getHistory() : array
+    {
+        return [];
+    }
+
+    public function getNewestHistory() 
+    {
+        
+    }
 }
