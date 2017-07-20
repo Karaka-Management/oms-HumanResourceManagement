@@ -7,7 +7,6 @@
  * @category   TBD
  * @package    TBD
  * @author     OMS Development Team <dev@oms.com>
- * @author     Dennis Eichhorn <d.eichhorn@oms.com>
  * @copyright  Dennis Eichhorn
  * @license    OMS License 1.0
  * @version    1.0.0
@@ -24,7 +23,6 @@ use phpOMS\DataStorage\Database\DatabaseType;
  * @category   Modules
  * @package    HumanResources
  * @author     OMS Development Team <dev@oms.com>
- * @author     Dennis Eichhorn <d.eichhorn@oms.com>
  * @license    OMS License 1.0
  * @link       http://orange-management.com
  * @since      1.0.0
@@ -46,7 +44,6 @@ class StaffList
      * @param \phpOMS\DataStorage\Database\DatabasePool $dbPool Database pool instance
      *
      * @since  1.0.0
-     * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
     public function __construct($dbPool)
     {
@@ -65,7 +62,6 @@ class StaffList
      * @return array
      *
      * @since  1.0.0
-     * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
     public function getList($filter = null, $offset = 0, $limit = 100)
     {
@@ -100,7 +96,6 @@ class StaffList
      * @return array
      *
      * @since  1.0.0
-     * @author Dennis Eichhorn <d.eichhorn@oms.com>
      */
     public function getStats()
     {
