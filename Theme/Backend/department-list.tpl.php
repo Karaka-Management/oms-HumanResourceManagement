@@ -37,7 +37,7 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Employees') ?>
                     <td><?= $this->getHtml('Parent') ?>
                 <tfoot>
-                <tr><td colspan="4"><?= htmlspecialchars($footerView->render(), ENT_COMPAT, 'utf-8'); ?>
+                <tr><td colspan="4"><?= $footerView->render(); ?>
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : $c++;
                 $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>

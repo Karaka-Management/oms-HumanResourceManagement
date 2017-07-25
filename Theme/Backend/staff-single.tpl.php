@@ -99,7 +99,7 @@ echo $this->getData('nav')->render(); ?>
             <td><?= $this->getHtml('Department') ?>
             <td><?= $this->getHtml('Salary') ?>
         <tfoot>
-        <tr><td colspan="4"><?= htmlspecialchars($footerView->render(), ENT_COMPAT, 'utf-8'); ?>
+        <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
         <?php $c = 0; foreach ($employees as $key => $value) : $c++;
             $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
@@ -123,7 +123,7 @@ echo $this->getData('nav')->render(); ?>
             <td><?= $this->getHtml('End') ?>
             <td class="wf-100"><?= $this->getHtml('Type') ?>
         <tfoot>
-        <tr><td colspan="4"><?= htmlspecialchars($footerView->render(), ENT_COMPAT, 'utf-8'); ?>
+        <tr><td colspan="4"><?= $footerView->render(); ?>
         <tbody>
         <?php $c = 0; foreach ($employees as $key => $value) : $c++;
             $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
