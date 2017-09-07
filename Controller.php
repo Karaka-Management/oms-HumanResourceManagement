@@ -19,7 +19,9 @@ use phpOMS\Message\ResponseAbstract;
 use phpOMS\Module\ModuleAbstract;
 use phpOMS\Module\WebInterface;
 use phpOMS\Views\View;
+
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
+use Modules\Organization\Models\DepartmentMapper;
 
 /**
  * Human Resources controller class.
@@ -126,6 +128,8 @@ class Controller extends ModuleAbstract implements WebInterface
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response));
+
+        $view->setData('departments', DepartmentMapper::getAll());
 
         return $view;
     }
