@@ -1,7 +1,7 @@
 [
     {
         "id": 1002401001,
-        "pid": "754a08ddf8bcb1cf22f310f09206dd783d42f7dd",
+        "pid": "/backend",
         "type": 2,
         "subtype": 0,
         "name": "HumanResourceManagement",
@@ -15,7 +15,7 @@
         "children": [
             {
                 "id": 1002402001,
-                "pid": "754a08ddf8bcb1cf22f310f09206dd783d42f7dd",
+                "pid": "/backend",
                 "type": 2,
                 "subtype": 1,
                 "name": "Employees",
@@ -29,7 +29,7 @@
                 "children": [
                     {
                         "id": 1002402101,
-                        "pid": "29a67db2902a784f66b5e896efd84b0004be2087",
+                        "pid": "/backend/hr/staff",
                         "type": 3,
                         "subtype": 1,
                         "name": "List",
@@ -45,7 +45,7 @@
                     },
                     {
                         "id": 1002402201,
-                        "pid": "29a67db2902a784f66b5e896efd84b0004be2087",
+                        "pid": "/backend/hr/staff",
                         "type": 3,
                         "subtype": 1,
                         "name": "Create",
@@ -63,7 +63,7 @@
             },
             {
                 "id": 1002403001,
-                "pid": "754a08ddf8bcb1cf22f310f09206dd783d42f7dd",
+                "pid": "/backend",
                 "type": 2,
                 "subtype": 1,
                 "name": "Departments",
@@ -77,7 +77,7 @@
                 "children": [
                     {
                         "id": 1002403101,
-                        "pid": "5696bf086bb04c219b1a2654ad9df177c35be669",
+                        "pid": "/backend/hr/department",
                         "type": 3,
                         "subtype": 1,
                         "name": "List",
