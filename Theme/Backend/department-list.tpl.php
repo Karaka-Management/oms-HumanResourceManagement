@@ -41,7 +41,7 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="4"><?= $footerView->render(); ?>
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : $c++;
-                $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
+                $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/hr/department/single?{?}&id=' . $value->getId()); ?>
                 <tr>
                     <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getId(), ENT_COMPAT, 'utf-8'); ?></a>
                     <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getName(), ENT_COMPAT, 'utf-8'); ?></a>
