@@ -43,10 +43,10 @@ echo $this->getData('nav')->render(); ?>
                 <?php $c = 0; foreach ($departments as $key => $value) : $c++;
                 $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/hr/department/single?{?}&id=' . $value->getId()); ?>
                 <tr>
-                    <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getId(), ENT_COMPAT, 'utf-8'); ?></a>
-                    <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getName(), ENT_COMPAT, 'utf-8'); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
                     <td>
-                    <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getParent()->getName(), ENT_COMPAT, 'utf-8'); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getParent()->getName()); ?></a>
                         <?php endforeach; ?>
                         <?php if($c === 0) : ?>
                 <tr><td colspan="4" class="empty"><?= $this->getHtml('Empty', 0, 0); ?>

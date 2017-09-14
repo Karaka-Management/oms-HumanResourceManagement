@@ -20,7 +20,7 @@ echo $this->getData('nav')->render(); ?>
                 <table class="list">
                     <tr>
                         <th><?= $this->getHtml('Name') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>, <span itemprop="givenName"><?= htmlspecialchars($account->getName1(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>, <span itemprop="givenName"><?= $this->printHtml($account->getName1()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('Position') ?>
                         <td itemprop="jobTitle">Sailor
@@ -32,7 +32,7 @@ echo $this->getData('nav')->render(); ?>
                         <td itemprop="birthDate">06.09.1934
                     <tr>
                         <th><?= $this->getHtml('Email') ?>
-                        <td itemprop="email"><a href="mailto:>donald.duck@email.com<"><?= htmlspecialchars($account->getEmail(), ENT_COMPAT, 'utf-8'); ?></a>
+                        <td itemprop="email"><a href="mailto:>donald.duck@email.com<"><?= $this->printHtml($account->getEmail()); ?></a>
                     <tr>
                         <th>Address
                         <td>
@@ -56,7 +56,7 @@ echo $this->getData('nav')->render(); ?>
                         <td itemprop="telephone">+01 12345-4567
                     <tr>
                         <th><?= $this->getHtml('Status') ?>
-                        <td><span class="tag green"><?= htmlspecialchars($account->getStatus(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span class="tag green"><?= $this->printHtml($account->getStatus()); ?></span>
                 </table>
             <!-- @formatter:on -->
     </div>
@@ -69,19 +69,19 @@ echo $this->getData('nav')->render(); ?>
                 <table class="list">
                     <tr>
                         <th><?= $this->getHtml('Start') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('End') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('Hours') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('Vacation') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('Salary') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                 </table>
             <!-- @formatter:on -->
     </div>
@@ -103,9 +103,9 @@ echo $this->getData('nav')->render(); ?>
         <?php $c = 0; foreach ($employees as $key => $value) : $c++;
             $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
             <tr>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getId(), ENT_COMPAT, 'utf-8'); ?></a>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getNewestHistory()->getPosition(), ENT_COMPAT, 'utf-8'); ?></a>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getNewestHistory()->getPosition(), ENT_COMPAT, 'utf-8'); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getNewestHistory()->getPosition()); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getNewestHistory()->getPosition()); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
             <tr><td colspan="4" class="empty"><?= $this->getHtml('Empty', 0, 0); ?>
@@ -127,9 +127,9 @@ echo $this->getData('nav')->render(); ?>
         <?php $c = 0; foreach ($employees as $key => $value) : $c++;
             $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/admin/group/settings?{?}&id=' . $value->getId()); ?>
             <tr>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getId(), ENT_COMPAT, 'utf-8'); ?></a>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getNewestHistory()->getPosition(), ENT_COMPAT, 'utf-8'); ?></a>
-                <td><a href="<?= $url; ?>"><?= htmlspecialchars($value->getNewestHistory()->getPosition(), ENT_COMPAT, 'utf-8'); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getNewestHistory()->getPosition()); ?></a>
+                <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getNewestHistory()->getPosition()); ?></a>
         <?php endforeach; ?>
         <?php if($c === 0) : ?>
             <tr><td colspan="4" class="empty"><?= $this->getHtml('Empty', 0, 0); ?>
@@ -144,13 +144,13 @@ echo $this->getData('nav')->render(); ?>
                 <table class="list">
                     <tr>
                         <th><?= $this->getHtml('Date') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('SalaryType') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                     <tr>
                         <th><?= $this->getHtml('Amount') ?>
-                        <td><span itemprop="familyName"><?= htmlspecialchars($account->getName3(), ENT_COMPAT, 'utf-8'); ?></span>
+                        <td><span itemprop="familyName"><?= $this->printHtml($account->getName3()); ?></span>
                 </table>
             <!-- @formatter:on -->
     </div>
