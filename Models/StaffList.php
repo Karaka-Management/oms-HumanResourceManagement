@@ -65,20 +65,20 @@ class StaffList
     {
         $result = null;
 
-        switch ($this->dbPool->get('core')->getType()) {
+        switch ($this->dbPool->get()->getType()) {
             case DatabaseType::MYSQL:
-                $search = $this->dbPool->get('core')->generate_sql_filter($filter, true);
+                $search = $this->dbPool->get()->generate_sql_filter($filter, true);
 
-                $sth = $this->dbPool->get('core')->con->prepare('SELECT
-                            `' . $this->dbPool->get('core')->prefix . 'hr_staff`.*
+                $sth = $this->dbPool->get()->con->prepare('SELECT
+                            `' . $this->dbPool->get()->prefix . 'hr_staff`.*
                         FROM
-                            `' . $this->dbPool->get('core')->prefix . 'hr_staff` '
+                            `' . $this->dbPool->get()->prefix . 'hr_staff` '
                                                                 . $search . 'LIMIT ' . $offset . ',' . $limit);
                 $sth->execute();
 
                 $result['list'] = $sth->fetchAll();
 
-                $sth = $this->dbPool->get('core')->con->prepare('SELECT FOUND_ROWS();');
+                $sth = $this->dbPool->get()->con->prepare('SELECT FOUND_ROWS();');
                 $sth->execute();
 
                 $result['count'] = $sth->fetchAll()[0][0];

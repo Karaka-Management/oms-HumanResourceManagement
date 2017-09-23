@@ -38,10 +38,10 @@ class Installer extends InstallerAbstract
     {
         parent::install(__DIR__ . '/..', $dbPool, $info);
 
-        switch ($dbPool->get('core')->getType()) {
+        switch ($dbPool->get()->getType()) {
             case DatabaseType::MYSQL:
-                $dbPool->get('core')->con->prepare(
-                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_staff` (
+                $dbPool->get()->con->prepare(
+                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_staff` (
                             `hr_staff_id` int(11) NOT NULL AUTO_INCREMENT,
                             `hr_staff_account` int(11) DEFAULT NULL,
                             PRIMARY KEY (`hr_staff_id`),
@@ -49,13 +49,13 @@ class Installer extends InstallerAbstract
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_staff`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_ibfk_1` FOREIGN KEY (`hr_staff_account`) REFERENCES `' . $dbPool->get('core')->prefix . 'account` (`account_id`);'
+                $dbPool->get()->con->prepare(
+                    'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_staff`
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_1` FOREIGN KEY (`hr_staff_account`) REFERENCES `' . $dbPool->get()->prefix . 'account` (`account_id`);'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_staff_history` (
+                $dbPool->get()->con->prepare(
+                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_staff_history` (
                             `hr_staff_history_id` int(11) NOT NULL AUTO_INCREMENT,
                             `hr_staff_history_staff` int(11) DEFAULT NULL,
                             `hr_staff_history_position` int(11) DEFAULT NULL,
@@ -69,15 +69,15 @@ class Installer extends InstallerAbstract
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_staff_history`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_1` FOREIGN KEY (`hr_staff_history_staff`) REFERENCES `' . $dbPool->get('core')->prefix . 'hr_staff` (`hr_staff_id`),
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_2` FOREIGN KEY (`hr_staff_history_department`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_department` (`organization_department_id`),
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_history_ibfk_3` FOREIGN KEY (`hr_staff_history_position`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_position` (`organization_position_id`);'
+                $dbPool->get()->con->prepare(
+                    'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_staff_history`
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_history_ibfk_1` FOREIGN KEY (`hr_staff_history_staff`) REFERENCES `' . $dbPool->get()->prefix . 'hr_staff` (`hr_staff_id`),
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_history_ibfk_2` FOREIGN KEY (`hr_staff_history_department`) REFERENCES `' . $dbPool->get()->prefix . 'organization_department` (`organization_department_id`),
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_history_ibfk_3` FOREIGN KEY (`hr_staff_history_position`) REFERENCES `' . $dbPool->get()->prefix . 'organization_position` (`organization_position_id`);'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_staff_contract` (
+                $dbPool->get()->con->prepare(
+                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_staff_contract` (
                             `hr_staff_contract_id` int(11) NOT NULL AUTO_INCREMENT,
                             `hr_staff_contract_stype` tinyint(1) DEFAULT NULL,
                             `hr_staff_contract_salary` decimal(8,2) DEFAULT NULL,
@@ -94,13 +94,13 @@ class Installer extends InstallerAbstract
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_staff_contract`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_staff_contract_ibfk_1` FOREIGN KEY (`hr_staff_contract_employee`) REFERENCES `' . $dbPool->get('core')->prefix . 'hr_staff` (`hr_staff_id`);'
+                $dbPool->get()->con->prepare(
+                    'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_staff_contract`
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_contract_ibfk_1` FOREIGN KEY (`hr_staff_contract_employee`) REFERENCES `' . $dbPool->get()->prefix . 'hr_staff` (`hr_staff_id`);'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_planning_shift` (
+                $dbPool->get()->con->prepare(
+                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_planning_shift` (
                             `HRPlanningShiftID` int(11) NOT NULL AUTO_INCREMENT,
                             `amount` int(11) DEFAULT NULL,
                             `position` int(11) DEFAULT NULL,
@@ -113,13 +113,13 @@ class Installer extends InstallerAbstract
                 )->execute();
 
                 /*
-                $dbPool->get('core')->con->prepare(
-                    'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_planning_shift`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_planning_shift_ibfk_1` FOREIGN KEY (`department`) REFERENCES `' . $dbPool->get('core')->prefix . 'organization_department` (`organization_department_id`);'
+                $dbPool->get()->con->prepare(
+                    'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_planning_shift`
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_planning_shift_ibfk_1` FOREIGN KEY (`department`) REFERENCES `' . $dbPool->get()->prefix . 'organization_department` (`organization_department_id`);'
                 )->execute();*/
 
-                $dbPool->get('core')->con->prepare(
-                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get('core')->prefix . 'hr_planning_staff` (
+                $dbPool->get()->con->prepare(
+                    'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_planning_staff` (
                             `HRPlanningStaffID` int(11) NOT NULL AUTO_INCREMENT,
                             `person` int(11) DEFAULT NULL,
                             `start` datetime DEFAULT NULL,
@@ -140,9 +140,9 @@ class Installer extends InstallerAbstract
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
-                $dbPool->get('core')->con->prepare(
-                    'ALTER TABLE `' . $dbPool->get('core')->prefix . 'hr_planning_staff`
-                            ADD CONSTRAINT `' . $dbPool->get('core')->prefix . 'hr_planning_staff_ibfk_1` FOREIGN KEY (`person`) REFERENCES `' . $dbPool->get('core')->prefix . 'account` (`account_id`);'
+                $dbPool->get()->con->prepare(
+                    'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_planning_staff`
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_planning_staff_ibfk_1` FOREIGN KEY (`person`) REFERENCES `' . $dbPool->get()->prefix . 'account` (`account_id`);'
                 )->execute();
                 break;
         }

@@ -39,7 +39,7 @@ class Uninstall extends UninstallAbstract
 
         $query = new Builder($dbPool->get());
 
-        $query->prefix($dbPool->get('core')->getPrefix())->drop(
+        $query->prefix($dbPool->get()->getPrefix())->drop(
             'hr_planning_staff',
             'hr_planning_shift',
             'hr_staff_contract',
