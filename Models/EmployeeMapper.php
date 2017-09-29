@@ -15,6 +15,9 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\AccountMapper;
+use Modules\Organization\Models\UnitMapper;
+use Modules\Organization\Models\DepartmentMapper;
+use Modules\Organization\Models\PositionMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
 class EmployeeMapper extends DataMapperAbstract
@@ -29,12 +32,27 @@ class EmployeeMapper extends DataMapperAbstract
     protected static $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
         'hr_staff_account'     => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
+        'hr_staff_unit'     => ['name' => 'hr_staff_unit', 'type' => 'int', 'internal' => 'unit'],
+        'hr_staff_department'     => ['name' => 'hr_staff_department', 'type' => 'int', 'internal' => 'department'],
+        'hr_staff_position'     => ['name' => 'hr_staff_position', 'type' => 'int', 'internal' => 'position'],
     ];
 
-    protected static $ownsOne = [
+    static protected $belongsTo = [
         'account' => [
-            'mapper'         => AccountMapper::class,
-            'src'            => 'hr_staff_account',
+            'mapper' => AccountMapper::class,
+            'src'    => 'hr_staff_account',
+        ],
+        'unit' => [
+            'mapper' => UnitMapper::class,
+            'src'    => 'hr_staff_unit',
+        ],
+        'department' => [
+            'mapper' => DepartmentMapper::class,
+            'src'    => 'hr_staff_department',
+        ],
+        'position' => [
+            'mapper' => PositionMapper::class,
+            'src'    => 'hr_staff_position',
         ],
     ];
 

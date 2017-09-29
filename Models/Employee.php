@@ -37,6 +37,12 @@ class Employee {
 
     private $account = null;
 
+    private $unit = null;
+
+    private $department = null;
+
+    private $position = null;
+
     private $history = [];
 
     private $status = [];
@@ -48,6 +54,36 @@ class Employee {
 
     public function getAccount() : Account {
         return $this->account;
+    }
+
+    public function setUnit($unit) 
+    {
+        $this->unit = $unit;
+    }
+
+    public function getUnit() 
+    {
+        return $this->unit;
+    }
+
+    public function setDepartment($department) 
+    {
+        $this->department = $department;
+    }
+
+    public function getDepartment() 
+    {
+        return $this->department;
+    }
+
+    public function setPosition($position) 
+    {
+        $this->position = $position;
+    }
+
+    public function getPosition() 
+    {
+        return $this->position;
     }
 
     public function getId() : int

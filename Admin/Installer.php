@@ -44,14 +44,23 @@ class Installer extends InstallerAbstract
                     'CREATE TABLE if NOT EXISTS `' . $dbPool->get()->prefix . 'hr_staff` (
                             `hr_staff_id` int(11) NOT NULL AUTO_INCREMENT,
                             `hr_staff_account` int(11) DEFAULT NULL,
+                            `hr_staff_unit` int(11) DEFAULT NULL,
+                            `hr_staff_department` int(11) DEFAULT NULL,
+                            `hr_staff_position` int(11) DEFAULT NULL,
                             PRIMARY KEY (`hr_staff_id`),
-                            KEY `hr_staff_account` (`hr_staff_account`)
+                            KEY `hr_staff_account` (`hr_staff_account`),
+                            KEY `hr_staff_unit` (`hr_staff_unit`),
+                            KEY `hr_staff_department` (`hr_staff_department`),
+                            KEY `hr_staff_position` (`hr_staff_position`)
                         )ENGINE=InnoDB  DEFAULT CHARSET=utf8;'
                 )->execute();
 
                 $dbPool->get()->con->prepare(
                     'ALTER TABLE `' . $dbPool->get()->prefix . 'hr_staff`
-                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_1` FOREIGN KEY (`hr_staff_account`) REFERENCES `' . $dbPool->get()->prefix . 'account` (`account_id`);'
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_1` FOREIGN KEY (`hr_staff_account`) REFERENCES `' . $dbPool->get()->prefix . 'account` (`account_id`),
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_2` FOREIGN KEY (`hr_staff_unit`) REFERENCES `' . $dbPool->get()->prefix . 'organization_unit` (`organization_unit_id`),
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_3` FOREIGN KEY (`hr_staff_department`) REFERENCES `' . $dbPool->get()->prefix . 'organization_department` (`organization_department_id`),
+                            ADD CONSTRAINT `' . $dbPool->get()->prefix . 'hr_staff_ibfk_4` FOREIGN KEY (`hr_staff_position`) REFERENCES `' . $dbPool->get()->prefix . 'organization_position` (`organization_position_id`);'
                 )->execute();
 
                 $dbPool->get()->con->prepare(
