@@ -46,9 +46,9 @@ echo $this->getData('nav')->render(); ?>
                     <tr>
                         <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getAccount()->getName1()); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $this->printHtml('' ); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $this->printHtml('' ); ?></a>
-                        <td><a href="<?= $url; ?>"><?= $this->printHtml('' ); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()->getName()); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getDepartment()->getName()); ?></a>
+                        <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getPosition()->getName()); ?></a>
                 <?php endforeach; ?>
                 <?php if($c === 0) : ?>
                     <tr><td colspan="5" class="empty"><?= $this->getHtml('Empty', 0, 0); ?>
