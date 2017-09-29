@@ -93,7 +93,7 @@ class Controller extends ModuleAbstract implements WebInterface
      *
      * @since  1.0.0
      */
-    public function viewHrList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrStaffList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
@@ -113,10 +113,28 @@ class Controller extends ModuleAbstract implements WebInterface
      *
      * @since  1.0.0
      */
-    public function viewHrCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrStaffCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
+        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
+
+        return $view;
+    }
+
+    /**
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return \Serializable
+     *
+     * @since  1.0.0
+     */
+    public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    {
+        $view = new View($this->app, $request, $response);
+        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
         return $view;
