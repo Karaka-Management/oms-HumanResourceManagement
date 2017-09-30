@@ -47,6 +47,7 @@ class Installer extends InstallerAbstract
                             `hr_staff_unit` int(11) DEFAULT NULL,
                             `hr_staff_department` int(11) DEFAULT NULL,
                             `hr_staff_position` int(11) DEFAULT NULL,
+                            `hr_staff_active` int(1) NOT NULL,
                             PRIMARY KEY (`hr_staff_id`),
                             KEY `hr_staff_account` (`hr_staff_account`),
                             KEY `hr_staff_unit` (`hr_staff_unit`),

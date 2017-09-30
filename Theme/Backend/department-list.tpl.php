@@ -42,7 +42,7 @@ echo $this->getData('nav')->render(); ?>
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : $c++;
                 $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/hr/department/single?{?}&id=' . $value->getId()); ?>
-                <tr>
+                <tr data-href="<?= $url; ?>">
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
                     <td>

@@ -12,9 +12,13 @@
  * @link       http://orange-management.com
  */
 return ['HumanResourceManagement' => [
+    'Birthday'  => 'Birthday',
+    'Clocking'  => 'Clocking',
     'Department'  => 'Department',
     'Departments' => 'Departments',
+    'Email'   => 'Email',
     'Employees'   => 'Employees',
+    'History'        => 'History',
     'Name'        => 'Name',
     'Parent'      => 'Parent',
     'Personnel'   => 'Personnel',
@@ -22,5 +26,6 @@ return ['HumanResourceManagement' => [
     'Shifts'      => 'Shifts',
     'Staff'       => 'Staff',
     'Status'      => 'Status',
+    'Unit'      => 'Unit',
     'Vacation'    => 'Vacation',
 ]];

@@ -43,6 +43,8 @@ class Employee {
 
     private $position = null;
 
+    private $isActive = true;
+
     private $history = [];
 
     private $status = [];
@@ -54,6 +56,16 @@ class Employee {
 
     public function getAccount() : Account {
         return $this->account;
+    }
+
+    public function setActivity(bool $active) 
+    {
+        $this->active = $active;
+    }
+
+    public function isActive() : bool
+    {
+        return $this->isActive;
     }
 
     public function setUnit($unit) 

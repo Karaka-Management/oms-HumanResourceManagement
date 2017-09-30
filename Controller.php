@@ -137,6 +137,10 @@ class Controller extends ModuleAbstract implements WebInterface
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
+        $employee = EmployeeMapper::get((int) $request->getData('id'));
+
+        $view->addData('employee', $employee);
+
         return $view;
     }
 

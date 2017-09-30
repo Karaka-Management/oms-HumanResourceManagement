@@ -35,6 +35,7 @@ class EmployeeMapper extends DataMapperAbstract
         'hr_staff_unit'     => ['name' => 'hr_staff_unit', 'type' => 'int', 'internal' => 'unit'],
         'hr_staff_department'     => ['name' => 'hr_staff_department', 'type' => 'int', 'internal' => 'department'],
         'hr_staff_position'     => ['name' => 'hr_staff_position', 'type' => 'int', 'internal' => 'position'],
+        'hr_staff_active'     => ['name' => 'hr_staff_active', 'type' => 'bool', 'internal' => 'isActive'],
     ];
 
     static protected $belongsTo = [

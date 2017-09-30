@@ -42,7 +42,7 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="5"><?= $footerView->render(); ?>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : $c++;
-                    $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/hr/staff/single?{?}&id=' . $value->getId()); ?>
+                    $url = \phpOMS\Uri\UriFactory::build('{/base}/{/lang}/backend/hr/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr data-href="<?= $url; ?>">
                         <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getAccount()->getName1()); ?></a>
