@@ -60,7 +60,7 @@ class Employee {
 
     public function setActivity(bool $active) 
     {
-        $this->active = $active;
+        $this->isActive = $active;
     }
 
     public function isActive() : bool
