@@ -92,6 +92,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @return \Serializable
      *
      * @since  1.0.0
+     * @codeCoverageIgnore
      */
     public function viewHrStaffList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
@@ -112,6 +113,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @return \Serializable
      *
      * @since  1.0.0
+     * @codeCoverageIgnore
      */
     public function viewHrStaffCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
@@ -130,6 +132,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @return \Serializable
      *
      * @since  1.0.0
+     * @codeCoverageIgnore
      */
     public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
@@ -152,6 +155,7 @@ class Controller extends ModuleAbstract implements WebInterface
      * @return \Serializable
      *
      * @since  1.0.0
+     * @codeCoverageIgnore
      */
     public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
     {
