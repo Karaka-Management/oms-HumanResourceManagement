@@ -17,6 +17,8 @@ namespace Modules\HumanResourceManagement\Admin;
 use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\Module\UpdateAbstract;
 use phpOMS\System\File\Directory;
+use phpOMS\Module\InfoManager;
+
 
 /**
  * Navigation class.
@@ -33,7 +35,7 @@ class Update extends UpdateAbstract
     /**
      * {@inheritdoc}
      */
-    public static function update(DatabasePool $dbPool, array $info)
+    public static function update(DatabasePool $dbPool, InfoManager $info)
     {
         Directory::deletePath(__DIR__ . '/Update');
         mkdir('Update');

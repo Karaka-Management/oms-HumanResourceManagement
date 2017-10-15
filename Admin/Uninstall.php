@@ -17,6 +17,7 @@ namespace Modules\HumanResourceManagement\Admin;
 use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\DataStorage\Database\Schema\Builder;
 use phpOMS\Module\UninstallAbstract;
+use phpOMS\Module\InfoManager;
 
 /**
  * Navigation class.
