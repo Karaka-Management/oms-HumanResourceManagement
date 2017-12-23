@@ -38,7 +38,7 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Employees') ?>
                     <td><?= $this->getHtml('Parent') ?>
                 <tfoot>
-                <tr><td colspan="4"><?= $footerView->render(); ?>
+                <tr><td colspan="4">
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : $c++;
                 $url = \phpOMS\Uri\UriFactory::build('/{/lang}/backend/hr/department/single?{?}&id=' . $value->getId()); ?>
