@@ -19,7 +19,6 @@ use phpOMS\Module\UpdateAbstract;
 use phpOMS\System\File\Directory;
 use phpOMS\Module\InfoManager;
 
-
 /**
  * Navigation class.
  *

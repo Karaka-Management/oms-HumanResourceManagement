@@ -24,7 +24,8 @@ use Modules\Admin\Models\Account;
  * @link       http://website.orange-management.de
  * @since      1.0.0
  */
-class Employee {
+class Employee
+{
 
     /**
      * Employee ID.
@@ -53,7 +54,8 @@ class Employee {
         $this->account = $account;
     }
 
-    public function getAccount() : Account {
+    public function getAccount() : Account 
+    {
         return $this->account;
     }
 
