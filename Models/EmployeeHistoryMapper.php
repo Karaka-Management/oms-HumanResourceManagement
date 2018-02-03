@@ -11,6 +11,7 @@
  * @link       http://website.orange-management.de
  */
 declare(strict_types = 1);
+
 namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\DataStorage\Database\DataMapperAbstract;

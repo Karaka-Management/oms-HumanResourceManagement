@@ -11,7 +11,9 @@
  * @link       http://website.orange-management.de
  */
 declare(strict_types = 1);
+
 namespace Modules\HumanResourceManagement\Admin\Install;
+
 use phpOMS\DataStorage\Database\DatabasePool;
 
 /**
