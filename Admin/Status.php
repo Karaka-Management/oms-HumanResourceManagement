@@ -15,7 +15,7 @@ declare(strict_types = 1);
 namespace Modules\HumanResourceManagement\Admin;
 
 use phpOMS\DataStorage\Database\DatabasePool;
-use phpOMS\Module\ActivateAbstract;
+use phpOMS\Module\StatusAbstract;
 use phpOMS\Module\InfoManager;
 
 /**
@@ -26,14 +26,7 @@ use phpOMS\Module\InfoManager;
  * @link       http://website.orange-management.de
  * @since      1.0.0
  */
-class Activate extends ActivateAbstract
+class Status extends StatusAbstract
 {
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function activate(DatabasePool $dbPool, InfoManager $info)
-    {
-        parent::activate($dbPool, $info);
-    }
 }
