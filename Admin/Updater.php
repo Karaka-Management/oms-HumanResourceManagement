@@ -15,7 +15,7 @@ declare(strict_types = 1);
 namespace Modules\HumanResourceManagement\Admin;
 
 use phpOMS\DataStorage\Database\DatabasePool;
-use phpOMS\Module\UpdateAbstract;
+use phpOMS\Module\UpdaterAbstract;
 use phpOMS\System\File\Directory;
 use phpOMS\Module\InfoManager;
 
@@ -27,7 +27,7 @@ use phpOMS\Module\InfoManager;
  * @link       http://website.orange-management.de
  * @since      1.0.0
  */
-class Update extends UpdateAbstract
+class Updater extends UpdaterAbstract
 {
 
     /**

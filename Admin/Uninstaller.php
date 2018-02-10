@@ -16,7 +16,7 @@ namespace Modules\HumanResourceManagement\Admin;
 
 use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\DataStorage\Database\Schema\Builder;
-use phpOMS\Module\UninstallAbstract;
+use phpOMS\Module\UninstallerAbstract;
 use phpOMS\Module\InfoManager;
 
 /**
@@ -27,7 +27,7 @@ use phpOMS\Module\InfoManager;
  * @link       http://website.orange-management.de
  * @since      1.0.0
  */
-class Uninstall extends UninstallAbstract
+class Uninstaller extends UninstallerAbstract
 {
 
     /**
