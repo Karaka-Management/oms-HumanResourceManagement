@@ -26,7 +26,17 @@ use phpOMS\DataStorage\Database\DatabasePool;
  */
 class Navigation
 {
-    public static function install(string $path, DatabasePool $dbPool)
+    /**
+     * Install navigation providing
+     *
+     * @param string       $path   Path to some file
+     * @param DatabasePool $dbPool Database pool for database interaction
+     *
+     * @return void
+     *
+     * @since  1.0.0
+     */
+    public static function install(string $path = null, DatabasePool $dbPool = null) /* : void */
     {
         $navData = json_decode(file_get_contents(__DIR__ . '/Navigation.install.json'), true);
 
