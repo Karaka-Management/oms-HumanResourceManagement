@@ -10,7 +10,7 @@
         "icon": "fa fa-user",
         "order": 90,
         "from": "HumanResourceManagement",
-        "permission": null,
+        "permission": { "type": null, "element": null },
         "parent": 0,
         "children": [
             {
@@ -24,7 +24,7 @@
                 "icon": null,
                 "order": 1,
                 "from": "HumanResourceManagement",
-                "permission": null,
+                "permission": { "type": null, "element": null },
                 "parent": 1002401001,
                 "children": [
                     {
@@ -38,7 +38,7 @@
                         "icon": null,
                         "order": 1,
                         "from": "HumanResourceManagement",
-                        "permission": null,
+                        "permission": { "type": null, "element": null },
                         "parent": 1002402001,
                         "children": [
                         ]
@@ -54,7 +54,7 @@
                         "icon": null,
                         "order": 5,
                         "from": "HumanResourceManagement",
-                        "permission": null,
+                        "permission": { "type": null, "element": null },
                         "parent": 1002402001,
                         "children": [
                         ]
@@ -72,7 +72,7 @@
                 "icon": null,
                 "order": 1,
                 "from": "HumanResourceManagement",
-                "permission": null,
+                "permission": { "type": null, "element": null },
                 "parent": 1002401001,
                 "children": [
                     {
@@ -86,7 +86,7 @@
                         "icon": null,
                         "order": 1,
                         "from": "HumanResourceManagement",
-                        "permission": null,
+                        "permission": { "type": null, "element": null },
                         "parent": 1002403001,
                         "children": [
                         ]
