@@ -33,7 +33,7 @@ class Installer extends InstallerAbstract
     /**
      * {@inheritdoc}
      */
-    public static function install(string $path, DatabasePool $dbPool, InfoManager $info)
+    public static function install(string $path, DatabasePool $dbPool, InfoManager $info) : void
     {
         parent::install(__DIR__ . '/..', $dbPool, $info);
 
