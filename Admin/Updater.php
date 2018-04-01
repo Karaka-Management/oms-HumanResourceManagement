@@ -20,7 +20,7 @@ use phpOMS\System\File\Directory;
 use phpOMS\Module\InfoManager;
 
 /**
- * Navigation class.
+ * Updater class.
  *
  * @package    Modules
  * @license    OMS License 1.0
@@ -30,13 +30,4 @@ use phpOMS\Module\InfoManager;
 class Updater extends UpdaterAbstract
 {
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function update(DatabasePool $dbPool, InfoManager $info) : void
-    {
-        Directory::deletePath(__DIR__ . '/Update');
-        mkdir('Update');
-        parent::update($dbPool, $info);
-    }
 }
