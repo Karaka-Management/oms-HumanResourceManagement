@@ -33,7 +33,7 @@ class Uninstaller extends UninstallerAbstract
     /**
      * {@inheritdoc}
      */
-    public static function uninstall(DatabasePool $dbPool, InfoManager $info)
+    public static function uninstall(DatabasePool $dbPool, InfoManager $info) : void
     {
         parent::uninstall($dbPool, $info);
 
