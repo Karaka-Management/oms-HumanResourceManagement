@@ -54,7 +54,7 @@ class Employee
         $this->account = $account;
     }
 
-    public function getAccount() : Account 
+    public function getAccount() : Account
     {
         return $this->account;
     }
