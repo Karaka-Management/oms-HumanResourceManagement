@@ -31,19 +31,19 @@ class EmployeeMapper extends DataMapperAbstract
      */
     protected static $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
-        'hr_staff_account'     => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
-        'hr_staff_unit'     => ['name' => 'hr_staff_unit', 'type' => 'int', 'internal' => 'unit'],
-        'hr_staff_department'     => ['name' => 'hr_staff_department', 'type' => 'int', 'internal' => 'department'],
-        'hr_staff_position'     => ['name' => 'hr_staff_position', 'type' => 'int', 'internal' => 'position'],
+        'hr_staff_account'    => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
+        'hr_staff_unit'       => ['name' => 'hr_staff_unit', 'type' => 'int', 'internal' => 'unit'],
+        'hr_staff_department' => ['name' => 'hr_staff_department', 'type' => 'int', 'internal' => 'department'],
+        'hr_staff_position'   => ['name' => 'hr_staff_position', 'type' => 'int', 'internal' => 'position'],
         'hr_staff_active'     => ['name' => 'hr_staff_active', 'type' => 'bool', 'internal' => 'isActive'],
     ];
 
     static protected $belongsTo = [
-        'account' => [
+        'account'    => [
             'mapper' => AccountMapper::class,
             'src'    => 'hr_staff_account',
         ],
-        'unit' => [
+        'unit'       => [
             'mapper' => UnitMapper::class,
             'src'    => 'hr_staff_unit',
         ],
@@ -51,7 +51,7 @@ class EmployeeMapper extends DataMapperAbstract
             'mapper' => DepartmentMapper::class,
             'src'    => 'hr_staff_department',
         ],
-        'position' => [
+        'position'   => [
             'mapper' => PositionMapper::class,
             'src'    => 'hr_staff_position',
         ],
