@@ -3,15 +3,15 @@
 use phpOMS\Router\RouteVerb;
 use phpOMS\Account\PermissionType;
 use Modules\HumanResourceManagement\Models\PermissionState;
-use Modules\HumanResourceManagement\Controller;
+use Modules\HumanResourceManagement\Controller\BackendController;
 
 return [
     '^.*/backend/hr/staff/list.*$' => [
         [
-            'dest' => '\Modules\HumanResourceManagement\Controller:viewHrStaffList',
+            'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffList',
             'verb' => RouteVerb::GET,
             'permission' => [
-                'module' => Controller::MODULE_NAME,
+                'module' => BackendController::MODULE_NAME,
                 'type'  => PermissionType::READ,
                 'state' => PermissionState::HR,
             ],
@@ -19,10 +19,10 @@ return [
     ],
     '^.*/backend/hr/staff/profile.*$' => [
         [
-            'dest' => '\Modules\HumanResourceManagement\Controller:viewHrStaffProfile',
+            'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffProfile',
             'verb' => RouteVerb::GET,
             'permission' => [
-                'module' => Controller::MODULE_NAME,
+                'module' => BackendController::MODULE_NAME,
                 'type'  => PermissionType::READ,
                 'state' => PermissionState::HR,
             ],
@@ -30,10 +30,10 @@ return [
     ],
     '^.*/backend/hr/staff/create.*$' => [
         [
-            'dest' => '\Modules\HumanResourceManagement\Controller:viewHrStaffCreate',
+            'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffCreate',
             'verb' => RouteVerb::GET,
             'permission' => [
-                'module' => Controller::MODULE_NAME,
+                'module' => BackendController::MODULE_NAME,
                 'type'  => PermissionType::CREATE,
                 'state' => PermissionState::HR,
             ],
@@ -41,10 +41,10 @@ return [
     ],
     '^.*/backend/hr/department/list.*$' => [
         [
-            'dest' => '\Modules\HumanResourceManagement\Controller:viewHrDepartmentList',
+            'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrDepartmentList',
             'verb' => RouteVerb::GET,
             'permission' => [
-                'module' => Controller::MODULE_NAME,
+                'module' => BackendController::MODULE_NAME,
                 'type'  => PermissionType::READ,
                 'state' => PermissionState::DEPARTMENT,
             ],
