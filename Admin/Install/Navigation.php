@@ -38,7 +38,17 @@ class Navigation
      */
     public static function install(string $path = null, DatabasePool $dbPool = null) : void
     {
-        $navData = \json_decode(file_get_contents(__DIR__ . '/Navigation.install.json'), true);
+        $navFile = \file_get_contents(__DIR__ . '/Navigation.install.json');
+
+        if ($navFile === false) {
+            throw new \Exception();
+        }
+
+        $navData = \json_decode($navFile, true);
+
+        if ($navData === false) {
+            throw new \Exception();
+        }
 
         $class = '\\Modules\\Navigation\\Admin\\Installer';
         /** @var $class \Modules\Navigation\Admin\Installer */
