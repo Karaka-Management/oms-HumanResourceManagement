@@ -16,7 +16,7 @@ namespace Modules\HumanResourceManagement\Admin;
 
 use phpOMS\DataStorage\Database\DatabasePool;
 use phpOMS\Module\UpdaterAbstract;
-use phpOMS\System\File\Directory;
+use phpOMS\System\File\Local\Directory;
 use phpOMS\Module\InfoManager;
 
 /**
