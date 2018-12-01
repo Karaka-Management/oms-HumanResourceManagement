@@ -16,6 +16,6 @@ namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
-class EmployeeHistoryMapper extends DataMapperAbstract
+final class EmployeeHistoryMapper extends DataMapperAbstract
 {
 }

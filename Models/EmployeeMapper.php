@@ -20,7 +20,7 @@ use Modules\Organization\Models\DepartmentMapper;
 use Modules\Organization\Models\PositionMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
-class EmployeeMapper extends DataMapperAbstract
+final class EmployeeMapper extends DataMapperAbstract
 {
 
     /**
