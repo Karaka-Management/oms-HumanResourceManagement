@@ -15,9 +15,9 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\AccountMapper;
-use Modules\Organization\Models\UnitMapper;
 use Modules\Organization\Models\DepartmentMapper;
 use Modules\Organization\Models\PositionMapper;
+use Modules\Organization\Models\UnitMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
 final class EmployeeMapper extends DataMapperAbstract

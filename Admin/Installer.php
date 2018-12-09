@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Admin;
 
-use phpOMS\DataStorage\Database\DatabaseType;
 use phpOMS\DataStorage\Database\DatabasePool;
+use phpOMS\DataStorage\Database\DatabaseType;
 use phpOMS\Module\InfoManager;
 use phpOMS\Module\InstallerAbstract;
 

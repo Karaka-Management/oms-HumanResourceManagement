@@ -14,14 +14,9 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Controller;
 
-use phpOMS\Message\RequestAbstract;
-use phpOMS\Message\ResponseAbstract;
 use phpOMS\Module\ModuleAbstract;
-use phpOMS\Module\WebInterface;
-use phpOMS\Views\View;
 
-use Modules\HumanResourceManagement\Models\EmployeeMapper;
-use Modules\Organization\Models\DepartmentMapper;
+use phpOMS\Module\WebInterface;
 
 /**
  * Human Resources controller class.

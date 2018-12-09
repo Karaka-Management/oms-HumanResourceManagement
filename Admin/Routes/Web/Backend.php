@@ -1,9 +1,9 @@
 <?php
 
-use phpOMS\Router\RouteVerb;
-use phpOMS\Account\PermissionType;
-use Modules\HumanResourceManagement\Models\PermissionState;
 use Modules\HumanResourceManagement\Controller\BackendController;
+use Modules\HumanResourceManagement\Models\PermissionState;
+use phpOMS\Account\PermissionType;
+use phpOMS\Router\RouteVerb;
 
 return [
     '^.*/backend/hr/staff/list.*$' => [
