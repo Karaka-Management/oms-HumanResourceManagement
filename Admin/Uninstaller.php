@@ -20,7 +20,7 @@ use phpOMS\Module\InfoManager;
 use phpOMS\Module\UninstallerAbstract;
 
 /**
- * Navigation class.
+ * Uninstaller class.
  *
  * @package    Modules\HumanResourceManagement\Admin
  * @license    OMS License 1.0
@@ -29,24 +29,4 @@ use phpOMS\Module\UninstallerAbstract;
  */
 class Uninstaller extends UninstallerAbstract
 {
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function uninstall(DatabasePool $dbPool, InfoManager $info) : void
-    {
-        parent::uninstall($dbPool, $info);
-
-        $query = new Builder($dbPool->get());
-
-        $query->prefix($dbPool->get()->getPrefix())->drop(
-            'hr_planning_staff',
-            'hr_planning_shift',
-            'hr_staff_contract',
-            'hr_staff_history',
-            'hr_staff'
-        );
-
-        $dbPool->get()->con->prepare($query->toSql())->execute();
-    }
 }
