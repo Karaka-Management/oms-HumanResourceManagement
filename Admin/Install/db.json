@@ -1,0 +1,97 @@
+{
+    "hr_staff": {
+        "name": "hr_staff",
+        "fields": {
+            "hr_staff_id": {
+                "name": "hr_staff_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_account": {
+                "name": "hr_staff_account",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            },
+            "hr_staff_unit": {
+                "name": "hr_staff_unit",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "organization_unit",
+                "foreignKey": "organization_unit_id"
+            },
+            "hr_staff_department": {
+                "name": "hr_staff_department",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "organization_department",
+                "foreignKey": "organization_department_id"
+            },
+            "hr_staff_position": {
+                "name": "hr_staff_position",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "organization_position",
+                "foreignKey": "organization_position_id"
+            },
+            "hr_staff_active": {
+                "name": "hr_staff_active",
+                "type": "INT",
+                "null": false
+            }
+        },
+        "hr_staff_history": {
+            "name": "hr_staff_history",
+            "fields": {
+                "hr_staff_history_id": {
+                    "name": "hr_staff_history_id",
+                    "type": "INT",
+                    "null": false,
+                    "primary": true,
+                    "autoincrement": true
+                },
+                "hr_staff_history_staff": {
+                    "name": "hr_staff_history_staff",
+                    "type": "INT",
+                    "null": false,
+                    "foreignTable": "hr_staff",
+                    "foreignKey": "hr_staff_id"
+                },
+                "hr_staff_history_unit": {
+                    "name": "hr_staff_history_unit",
+                    "type": "INT",
+                    "null": false,
+                    "foreignTable": "organization_unit",
+                    "foreignKey": "organization_unit_id"
+                },
+                "hr_staff_history_department": {
+                    "name": "hr_staff_history_department",
+                    "type": "INT",
+                    "null": false,
+                    "foreignTable": "organization_department",
+                    "foreignKey": "organization_department_id"
+                },
+                "hr_staff_history_position": {
+                    "name": "hr_staff_history_position",
+                    "type": "INT",
+                    "null": false,
+                    "foreignTable": "organization_position",
+                    "foreignKey": "organization_position_id"
+                },
+                "hr_staff_history_start": {
+                    "name": "hr_staff_history_start",
+                    "type": "DATETIME",
+                    "null": false
+                },
+                "hr_staff_history_end": {
+                    "name": "hr_staff_history_end",
+                    "type": "DATETIME",
+                    "null": false
+                }
+            }
+        }
+    }
+}
