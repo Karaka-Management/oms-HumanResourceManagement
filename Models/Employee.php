@@ -49,7 +49,7 @@ class Employee
 
     private $status = [];
 
-    public function setAccount(Account $account)
+    public function setAccount(Account $account) : void
     {
         $this->account = $account;
     }
@@ -59,7 +59,7 @@ class Employee
         return $this->account;
     }
 
-    public function setActivity(bool $active)
+    public function setActivity(bool $active) : void
     {
         $this->isActive = $active;
     }
@@ -69,7 +69,7 @@ class Employee
         return $this->isActive;
     }
 
-    public function setUnit($unit)
+    public function setUnit($unit) : void
     {
         $this->unit = $unit;
     }
@@ -79,7 +79,7 @@ class Employee
         return $this->unit;
     }
 
-    public function setDepartment($department)
+    public function setDepartment($department) : void
     {
         $this->department = $department;
     }
@@ -89,7 +89,7 @@ class Employee
         return $this->department;
     }
 
-    public function setPosition($position)
+    public function setPosition($position) : void
     {
         $this->position = $position;
     }
@@ -109,7 +109,7 @@ class Employee
         return [];
     }
 
-    public function getNewestHistory()
+    public function getNewestHistory() : void
     {
 
     }

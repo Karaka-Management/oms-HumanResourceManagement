@@ -38,7 +38,7 @@ final class EmployeeMapper extends DataMapperAbstract
         'hr_staff_active'     => ['name' => 'hr_staff_active', 'type' => 'bool', 'internal' => 'isActive'],
     ];
 
-    static protected $belongsTo = [
+    protected static $belongsTo = [
         'account'    => [
             'mapper' => AccountMapper::class,
             'src'    => 'hr_staff_account',
