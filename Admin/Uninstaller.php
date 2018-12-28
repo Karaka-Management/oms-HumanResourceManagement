@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Admin;
 
-use phpOMS\DataStorage\Database\DatabasePool;
-use phpOMS\DataStorage\Database\Schema\Builder;
-use phpOMS\Module\InfoManager;
 use phpOMS\Module\UninstallerAbstract;
 
 /**
