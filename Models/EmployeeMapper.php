@@ -38,6 +38,12 @@ final class EmployeeMapper extends DataMapperAbstract
         'hr_staff_active'     => ['name' => 'hr_staff_active', 'type' => 'bool', 'internal' => 'isActive'],
     ];
 
+    /**
+     * Belongs to.
+     *
+     * @var array<string, array<string, string>>
+     * @since 1.0.0
+     */
     protected static $belongsTo = [
         'account'    => [
             'mapper' => AccountMapper::class,
