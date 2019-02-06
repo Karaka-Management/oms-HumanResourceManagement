@@ -36,7 +36,7 @@ class Navigation
      *
      * @since  1.0.0
      */
-    public static function install(string $path = null, DatabasePool $dbPool = null) : void
+    public static function install(string $path, DatabasePool $dbPool) : void
     {
         \Modules\Navigation\Admin\Installer::installExternal($dbPool, ['path' => __DIR__ . '/Navigation.install.json']);
     }

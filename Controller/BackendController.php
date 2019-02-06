@@ -16,9 +16,10 @@ namespace Modules\HumanResourceManagement\Controller;
 
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Organization\Models\DepartmentMapper;
+
+use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
-
 use phpOMS\Views\View;
 
 /**
@@ -37,12 +38,12 @@ final class BackendController extends Controller
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return \Serializable
+     * @return RenderableInterface
      *
      * @since  1.0.0
      * @codeCoverageIgnore
      */
-    public function viewHrStaffList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrStaffList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
@@ -58,12 +59,12 @@ final class BackendController extends Controller
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return \Serializable
+     * @return RenderableInterface
      *
      * @since  1.0.0
      * @codeCoverageIgnore
      */
-    public function viewHrStaffCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrStaffCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
@@ -77,12 +78,12 @@ final class BackendController extends Controller
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return \Serializable
+     * @return RenderableInterface
      *
      * @since  1.0.0
      * @codeCoverageIgnore
      */
-    public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
@@ -100,12 +101,12 @@ final class BackendController extends Controller
      * @param ResponseAbstract $response Response
      * @param mixed            $data     Generic data
      *
-     * @return \Serializable
+     * @return RenderableInterface
      *
      * @since  1.0.0
      * @codeCoverageIgnore
      */
-    public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : \Serializable
+    public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
