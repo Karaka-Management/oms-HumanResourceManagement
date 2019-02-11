@@ -42,7 +42,7 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="5">
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : $c++;
-                    $url = \phpOMS\Uri\UriFactory::build('/{/lang}/backend/hr/staff/profile?{?}&id=' . $value->getId()); ?>
+                    $url = \phpOMS\Uri\UriFactory::build('{/lang}/backend/hr/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', 0, 0) ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getAccount()->getName1()); ?></a>
