@@ -18,4 +18,11 @@ use phpOMS\DataStorage\Database\DataMapperAbstract;
 
 final class EmployeeHistoryMapper extends DataMapperAbstract
 {
+    /**
+     * Primary field name.
+     *
+     * @var string
+     * @since 1.0.0
+     */
+    protected static $primaryField = 'hr_staff_history_id';
 }
