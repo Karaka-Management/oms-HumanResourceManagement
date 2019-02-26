@@ -25,4 +25,12 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static $primaryField = 'hr_staff_history_id';
+
+    /**
+     * Primary table.
+     *
+     * @var string
+     * @since 1.0.0
+     */
+    protected static $table = 'hr_staff_history';
 }
