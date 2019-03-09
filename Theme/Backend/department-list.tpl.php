@@ -40,7 +40,7 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="4">
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : $c++;
-                $url = \phpOMS\Uri\UriFactory::build('{/lang}/backend/hr/department/single?{?}&id=' . $value->getId()); ?>
+                $url = \phpOMS\Uri\UriFactory::build('{/prefix}hr/department/single?{?}&id=' . $value->getId()); ?>
                 <tr data-href="<?= $url; ?>">
                     <td data-label="<?= $this->getHtml('ID', 0, 0) ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                     <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>

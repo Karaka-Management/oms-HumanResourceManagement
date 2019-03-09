@@ -1,7 +1,7 @@
 [
     {
         "id": 1002401001,
-        "pid": "/backend",
+        "pid": "/",
         "type": 2,
         "subtype": 0,
         "name": "HumanResourceManagement",
@@ -15,11 +15,11 @@
         "children": [
             {
                 "id": 1002402001,
-                "pid": "/backend",
+                "pid": "/",
                 "type": 2,
                 "subtype": 1,
                 "name": "Employees",
-                "uri": "{/lang}/backend/hr/staff/list?{?}",
+                "uri": "{/prefix}hr/staff/list?{?}",
                 "target": "self",
                 "icon": null,
                 "order": 1,
@@ -29,11 +29,11 @@
                 "children": [
                     {
                         "id": 1002402101,
-                        "pid": "/backend/hr/staff",
+                        "pid": "/hr/staff",
                         "type": 3,
                         "subtype": 1,
                         "name": "List",
-                        "uri": "{/lang}/backend/hr/staff/list?{?}",
+                        "uri": "{/prefix}hr/staff/list?{?}",
                         "target": "self",
                         "icon": null,
                         "order": 1,
@@ -45,11 +45,11 @@
                     },
                     {
                         "id": 1002402201,
-                        "pid": "/backend/hr/staff",
+                        "pid": "/hr/staff",
                         "type": 3,
                         "subtype": 1,
                         "name": "Create",
-                        "uri": "{/lang}/backend/hr/staff/create?{?}",
+                        "uri": "{/prefix}hr/staff/create?{?}",
                         "target": "self",
                         "icon": null,
                         "order": 5,
@@ -63,11 +63,11 @@
             },
             {
                 "id": 1002403001,
-                "pid": "/backend",
+                "pid": "/",
                 "type": 2,
                 "subtype": 1,
                 "name": "Departments",
-                "uri": "{/lang}/backend/hr/department/list?{?}",
+                "uri": "{/prefix}hr/department/list?{?}",
                 "target": "self",
                 "icon": null,
                 "order": 1,
@@ -77,11 +77,11 @@
                 "children": [
                     {
                         "id": 1002403101,
-                        "pid": "/backend/hr/department",
+                        "pid": "/hr/department",
                         "type": 3,
                         "subtype": 1,
                         "name": "List",
-                        "uri": "{/lang}/backend/hr/department/list?{?}",
+                        "uri": "{/prefix}hr/department/list?{?}",
                         "target": "self",
                         "icon": null,
                         "order": 1,
