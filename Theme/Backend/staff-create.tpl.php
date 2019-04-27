@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Orange Management
  *
@@ -15,4 +15,3 @@
  */
 
 echo $this->getData('nav')->render();
-

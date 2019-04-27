@@ -1,5 +1,5 @@
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Vacation'] ); ?></h1></header>
+    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Vacation']); ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
@@ -26,13 +26,13 @@
         <!-- @formatter:on -->
         <div class="cT">
             <a href="<?= \phpOMS\Uri\UriFactory::build('{/prefix}sales/analysis/clients/dashboard'); ?>"
-               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More'] ); ?></a>
+               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
 </div>
 
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Shifts'] ); ?></h1></header>
+    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Shifts']); ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
@@ -59,13 +59,13 @@
         <!-- @formatter:on -->
         <div class="cT">
             <a href=""
-               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More'] ); ?></a>
+               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
 </div>
 
 <div class="b b-1 c24-1 c24" id="i24-1-1">
-    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Personnel'] ); ?></h1></header>
+    <header><h1><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang['HumanResourceManagement']['Personnel']); ?></h1></header>
 
     <div class="bc-1">
         <div class="cT">
@@ -92,7 +92,7 @@
         <!-- @formatter:on -->
         <div class="cT">
             <a href=""
-               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More'] ); ?></a>
+               class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
 </div>
