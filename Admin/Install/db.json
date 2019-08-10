@@ -15,32 +15,6 @@
                 "null": false,
                 "foreignTable": "account",
                 "foreignKey": "account_id"
-            },
-            "hr_staff_unit": {
-                "name": "hr_staff_unit",
-                "type": "INT",
-                "null": false,
-                "foreignTable": "organization_unit",
-                "foreignKey": "organization_unit_id"
-            },
-            "hr_staff_department": {
-                "name": "hr_staff_department",
-                "type": "INT",
-                "null": false,
-                "foreignTable": "organization_department",
-                "foreignKey": "organization_department_id"
-            },
-            "hr_staff_position": {
-                "name": "hr_staff_position",
-                "type": "INT",
-                "null": false,
-                "foreignTable": "organization_position",
-                "foreignKey": "organization_position_id"
-            },
-            "hr_staff_active": {
-                "name": "hr_staff_active",
-                "type": "TINYINT",
-                "null": false
             }
         }
     },
@@ -90,7 +64,8 @@
             "hr_staff_history_end": {
                 "name": "hr_staff_history_end",
                 "type": "DATETIME",
-                "null": false
+                "null": true,
+                "default": null
             }
         }
     }

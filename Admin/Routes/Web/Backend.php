@@ -6,7 +6,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/hr/staff/list.*$' => [
+    '^.*/humanresource/staff/list.*$' => [
         [
             'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffList',
             'verb' => RouteVerb::GET,
@@ -17,7 +17,7 @@ return [
             ],
         ],
     ],
-    '^.*/hr/staff/profile.*$' => [
+    '^.*/humanresource/staff/profile.*$' => [
         [
             'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffProfile',
             'verb' => RouteVerb::GET,
@@ -28,7 +28,7 @@ return [
             ],
         ],
     ],
-    '^.*/hr/staff/create.*$' => [
+    '^.*/humanresource/staff/create.*$' => [
         [
             'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffCreate',
             'verb' => RouteVerb::GET,
@@ -39,7 +39,7 @@ return [
             ],
         ],
     ],
-    '^.*/hr/department/list.*$' => [
+    '^.*/humanresource/department/list.*$' => [
         [
             'dest' => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrDepartmentList',
             'verb' => RouteVerb::GET,

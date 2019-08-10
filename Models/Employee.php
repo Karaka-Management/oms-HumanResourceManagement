@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Admin\Models\Account;
+use phpOMS\Contract\ArrayableInterface;
 
 /**
  * Employee class.
@@ -24,7 +24,7 @@ use Modules\Admin\Models\Account;
  * @link       https://orange-management.org
  * @since      1.0.0
  */
-class Employee
+class Employee implements ArrayableInterface, \JsonSerializable
 {
 
     /**
@@ -37,66 +37,16 @@ class Employee
 
     private $account = null;
 
-    private $unit = null;
-
-    private $department = null;
-
-    private $position = null;
-
-    private $isActive = true;
-
     private $history = [];
 
-    private $status = [];
-
-    public function setAccount(Account $account) : void
+    public function setAccount($account) : void
     {
         $this->account = $account;
     }
 
-    public function getAccount() : Account
+    public function getAccount()
     {
         return $this->account;
-    }
-
-    public function setActivity(bool $active) : void
-    {
-        $this->isActive = $active;
-    }
-
-    public function isActive() : bool
-    {
-        return $this->isActive;
-    }
-
-    public function setUnit($unit) : void
-    {
-        $this->unit = $unit;
-    }
-
-    public function getUnit()
-    {
-        return $this->unit;
-    }
-
-    public function setDepartment($department) : void
-    {
-        $this->department = $department;
-    }
-
-    public function getDepartment()
-    {
-        return $this->department;
-    }
-
-    public function setPosition($position) : void
-    {
-        $this->position = $position;
-    }
-
-    public function getPosition()
-    {
-        return $this->position;
     }
 
     public function getId() : int
@@ -106,11 +56,38 @@ class Employee
 
     public function getHistory() : array
     {
-        return [];
+        return $this->history;
     }
 
-    public function getNewestHistory() : void
+    public function getNewestHistory() : EmployeeHistory
     {
+        return empty($this->history) ? new NullEmployeeHistory : end($this->history);
+    }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function toArray() : array
+    {
+        return [
+            'id' => $this->id,
+            'account' => $this->account,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        return (string) \json_encode($this->toArray());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 }

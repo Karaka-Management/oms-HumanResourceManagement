@@ -12,6 +12,8 @@
  */
 
 $employee = $this->getData('employee');
+$history = $employee->getHistorY();
+$recentHistory = $employee->getNewestHistory();
 
 echo $this->getData('nav')->render(); ?>
 
@@ -24,13 +26,13 @@ echo $this->getData('nav')->render(); ?>
                         <table class="list">
                             <tr>
                                 <th><?= $this->getHtml('Position') ?>
-                                <td itemprop="jobTitle"><?= $this->printHtml($employee->getPosition()->getName()); ?>
+                                <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getPosition()->getName()); ?>
                             <tr>
                                 <th><?= $this->getHtml('Department') ?>
-                                <td itemprop="jobTitle"><?= $this->printHtml($employee->getDepartment()->getName()); ?>
+                                <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getDepartment()->getName()); ?>
                             <tr>
                                 <th><?= $this->getHtml('Unit') ?>
-                                <td itemprop="jobTitle"><?= $this->printHtml($employee->getUnit()->getName()); ?>
+                                <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getUnit()->getName()); ?>
                             <tr>
                                 <th><?= $this->getHtml('Birthday') ?>
                                 <td itemprop="birthDate">06.09.1934
@@ -86,10 +88,25 @@ echo $this->getData('nav')->render(); ?>
     </div>
 
     <div class="col-xs-12 col-md-6">
-        <section class="box wf-100">
-            <header><h1><?= $this->getHtml('History') ?></h1></header>
-            <div class="inner">
-            </div>
-        </section>
+        <div class="box wf-100 x-overflow">
+            <table id="taskList" class="default">
+                <caption><?= $this->getHtml('History') ?><i class="fa fa-download floatRight download btn"></i></caption>
+                <thead>
+                    <td><?= $this->getHtml('Start') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('End') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Unit') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Department') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Position') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                <tfoot>
+                <tbody>
+                <?php foreach ($history as $hist) : ?>
+                    <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
+                        <td><?= $hist->getEnd() === null ? '' : $hist->getEnd()->format('Y-m-d'); ?>
+                        <td><?= $this->printHtml($hist->getUnit()->getName()); ?>
+                        <td><?= $this->printHtml($hist->getDepartment()->getName()); ?>
+                        <td><?= $this->printHtml($hist->getPosition()->getName()); ?>
+                <?php endforeach; ?>
+            </table>
+        </div>
     </div>
 </div>

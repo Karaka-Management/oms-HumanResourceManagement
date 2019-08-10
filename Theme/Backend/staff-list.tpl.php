@@ -14,13 +14,6 @@
  * @var \phpOMS\Views\View $this
  */
 
-$footerView = new \phpOMS\Views\PaginationView($this->app, $this->request, $this->response);
-$footerView->setTemplate('/Web/Templates/Lists/Footer/PaginationBig');
-
-$footerView->setPages(25);
-$footerView->setPage(1);
-$footerView->setResults(1);
-
 $employees = $this->getData('employees');
 
 echo $this->getData('nav')->render(); ?>
@@ -42,14 +35,10 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="5">
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
-                    $url = \phpOMS\Uri\UriFactory::build('{/prefix}hr/staff/profile?{?}&id=' . $value->getId()); ?>
+                    $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', '0', '0') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getAccount()->getName1()); ?></a>
-                        <td data-label="<?= $this->getHtml('Unit') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()->getName()); ?></a>
-                        <td data-label="<?= $this->getHtml('Department') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getDepartment()->getName()); ?></a>
-                        <td data-label="<?= $this->getHtml('Position') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getPosition()->getName()); ?></a>
-                        <td data-label="<?= $this->getHtml('Status') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getPosition()->getName()); ?></a>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
                     <tr><td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
@@ -58,4 +47,3 @@ echo $this->getData('nav')->render(); ?>
         </div>
     </div>
 </div>
-

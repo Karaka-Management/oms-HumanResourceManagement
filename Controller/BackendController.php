@@ -70,6 +70,9 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
+        $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app, $request, $response);
+        $view->addData('accSelector', $accSelector);
+
         return $view;
     }
 

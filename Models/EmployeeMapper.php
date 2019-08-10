@@ -15,9 +15,6 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\AccountMapper;
-use Modules\Organization\Models\DepartmentMapper;
-use Modules\Organization\Models\PositionMapper;
-use Modules\Organization\Models\UnitMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
 final class EmployeeMapper extends DataMapperAbstract
@@ -32,10 +29,6 @@ final class EmployeeMapper extends DataMapperAbstract
     protected static $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
         'hr_staff_account'    => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
-        'hr_staff_unit'       => ['name' => 'hr_staff_unit', 'type' => 'int', 'internal' => 'unit'],
-        'hr_staff_department' => ['name' => 'hr_staff_department', 'type' => 'int', 'internal' => 'department'],
-        'hr_staff_position'   => ['name' => 'hr_staff_position', 'type' => 'int', 'internal' => 'position'],
-        'hr_staff_active'     => ['name' => 'hr_staff_active', 'type' => 'bool', 'internal' => 'isActive'],
     ];
 
     /**
@@ -49,17 +42,20 @@ final class EmployeeMapper extends DataMapperAbstract
             'mapper' => AccountMapper::class,
             'src'    => 'hr_staff_account',
         ],
-        'unit'       => [
-            'mapper' => UnitMapper::class,
-            'src'    => 'hr_staff_unit',
-        ],
-        'department' => [
-            'mapper' => DepartmentMapper::class,
-            'src'    => 'hr_staff_department',
-        ],
-        'position'   => [
-            'mapper' => PositionMapper::class,
-            'src'    => 'hr_staff_position',
+    ];
+
+    /**
+     * Has many relation.
+     *
+     * @var array<string, array<string, null|string>>
+     * @since 1.0.0
+     */
+    protected static $hasMany = [
+        'history' => [
+            'mapper' => EmployeeHistoryMapper::class,
+            'table'  => 'hr_staff_history',
+            'dst'    => 'hr_staff_history_staff',
+            'src'    => null,
         ],
     ];
 
