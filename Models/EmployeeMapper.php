@@ -26,7 +26,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array<string, bool|string>>
      * @since 1.0.0
      */
-    protected static $columns = [
+    protected static array $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
         'hr_staff_account'    => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
     ];
@@ -37,7 +37,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array<string, string>>
      * @since 1.0.0
      */
-    protected static $belongsTo = [
+    protected static array $belongsTo = [
         'account'    => [
             'mapper' => AccountMapper::class,
             'src'    => 'hr_staff_account',
@@ -50,7 +50,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array<string, null|string>>
      * @since 1.0.0
      */
-    protected static $hasMany = [
+    protected static array $hasMany = [
         'history' => [
             'mapper' => EmployeeHistoryMapper::class,
             'table'  => 'hr_staff_history',
@@ -65,7 +65,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static $table = 'hr_staff';
+    protected static string $table = 'hr_staff';
 
     /**
      * Primary field name.
@@ -73,5 +73,5 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static $primaryField = 'hr_staff_id';
+    protected static string $primaryField = 'hr_staff_id';
 }
