@@ -4,11 +4,11 @@
  *
  * PHP Version 7.4
  *
- * @package    Modules\HumanResourceManagement
- * @copyright  Dennis Eichhorn
- * @license    OMS License 1.0
- * @version    1.0.0
- * @link       https://orange-management.org
+ * @package   Modules\HumanResourceManagement
+ * @copyright Dennis Eichhorn
+ * @license   OMS License 1.0
+ * @version   1.0.0
+ * @link      https://orange-management.org
  */
 declare(strict_types=1);
 
@@ -30,10 +30,10 @@ use phpOMS\Utils\Parser\Markdown\Markdown;
 /**
  * HumanResourceManagement controller class.
  *
- * @package    Modules\HumanResourceManagement
- * @license    OMS License 1.0
- * @link       https://orange-management.org
- * @since      1.0.0
+ * @package Modules\HumanResourceManagement
+ * @license OMS License 1.0
+ * @link    https://orange-management.org
+ * @since   1.0.0
  */
 final class ApiController extends Controller
 {
@@ -48,7 +48,7 @@ final class ApiController extends Controller
      *
      * @api
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
     {
@@ -70,7 +70,7 @@ final class ApiController extends Controller
      *
      * @return array<string, bool>
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
@@ -90,7 +90,7 @@ final class ApiController extends Controller
      *
      * @return Employee
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : Employee
     {
@@ -111,7 +111,7 @@ final class ApiController extends Controller
      *
      * @api
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     public function apiEmployeeHistoryCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
     {
@@ -133,7 +133,7 @@ final class ApiController extends Controller
      *
      * @return array<string, bool>
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     private function validateEmployeeHistoryCreate(RequestAbstract $request) : array
     {
@@ -157,7 +157,7 @@ final class ApiController extends Controller
      *
      * @return EmployeeHistory
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {

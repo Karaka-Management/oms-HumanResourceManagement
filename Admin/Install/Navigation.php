@@ -4,11 +4,11 @@
  *
  * PHP Version 7.4
  *
- * @package    Modules\HumanResourceManagement\Admin\Install
- * @copyright  Dennis Eichhorn
- * @license    OMS License 1.0
- * @version    1.0.0
- * @link       https://orange-management.org
+ * @package   Modules\HumanResourceManagement\Admin\Install
+ * @copyright Dennis Eichhorn
+ * @license   OMS License 1.0
+ * @version   1.0.0
+ * @link      https://orange-management.org
  */
 declare(strict_types=1);
 
@@ -19,10 +19,10 @@ use phpOMS\DataStorage\Database\DatabasePool;
 /**
  * Navigation class.
  *
- * @package    Modules\HumanResourceManagement\Admin\Install
- * @license    OMS License 1.0
- * @link       https://orange-management.org
- * @since      1.0.0
+ * @package Modules\HumanResourceManagement\Admin\Install
+ * @license OMS License 1.0
+ * @link    https://orange-management.org
+ * @since   1.0.0
  */
 class Navigation
 {
@@ -34,7 +34,7 @@ class Navigation
      *
      * @return void
      *
-     * @since  1.0.0
+     * @since 1.0.0
      */
     public static function install(string $path, DatabasePool $dbPool) : void
     {
