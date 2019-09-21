@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Orange Management
  *
  * PHP Version 7.4
  *
- * @package   TBD
+ * @package   Modules\HumanResourceManagement
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -17,6 +18,14 @@ namespace Modules\HumanResourceManagement\Models;
 use Modules\Admin\Models\AccountMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 
+/**
+ * Employe mapper class.
+ *
+ * @package Modules\HumanResourceManagement
+ * @license OMS License 1.0
+ * @link    https://orange-management.org
+ * @since   1.0.0
+ */
 final class EmployeeMapper extends DataMapperAbstract
 {
 
