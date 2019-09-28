@@ -19,13 +19,14 @@ use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 
-use phpOMS\Account\Account;
 use phpOMS\Localization\ISO639x1Enum;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Model\Message\FormValidation;
 use phpOMS\Utils\Parser\Markdown\Markdown;
+use Modules\Admin\Models\Account;
+use Modules\Profile\Models\Profile;
 
 /**
  * HumanResourceManagement controller class.
@@ -50,6 +51,28 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
+    public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    {
+        if ($request->getData('accounts') !== null) {
+            $this->apiEmployeeFromAccountCreate($request, $response, $data);
+        }
+
+        $this->apiEmployeeNewCreate($request, $response, $data);
+    }
+
+    /**
+     * Api method to create an employee from an existing account
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
     public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
@@ -58,9 +81,9 @@ final class ApiController extends Controller
             return;
         }
 
-        $employee = $this->createEmployeeFromAccountFromRequest($request);
-        $this->createModel($request->getHeader()->getAccount(), $employee, EmployeeMapper::class, 'employee');
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee successfully created', $employee);
+        $employees = $this->createEmployeeFromAccountFromRequest($request);
+        $this->createModels($request->getHeader()->getAccount(), $employees, EmployeeMapper::class, 'employee');
+        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee(s) successfully created', $employees);
     }
 
     /**
@@ -75,8 +98,7 @@ final class ApiController extends Controller
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['account'] = empty($request->getData('account')))
-        ) {
+        if (($val['account'] = empty($request->getData('account')))) {
             return $val;
         }
 
@@ -88,14 +110,91 @@ final class ApiController extends Controller
      *
      * @param RequestAbstract $request Request
      *
+     * @return Employee[]
+     *
+     * @since 1.0.0
+     */
+    private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : array
+    {
+        $accounts = $request->getData('cc') ?? [];
+        if (!\is_array($accounts)) {
+            $accounts = [$accounts];
+        }
+
+        $employees = [];
+        foreach ($accounts as $account) {
+            $employees[] = new Employee((int) $account);
+        }
+
+        return $employees;
+    }
+
+    /**
+     * Api method to create a new employee
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiEmployeeNewCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    {
+        if (!empty($val = $this->validateEmployeeNewCreate($request))) {
+            $response->set('employee_create', new FormValidation($val));
+
+            return;
+        }
+
+        $employee = $this->createEmployeeNewFromRequest($request);
+        $this->createModel($request->getHeader()->getAccount(), $employee, EmployeeMapper::class, 'employee');
+        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee successfully created', $employee);
+    }
+
+    /**
+     * Validate employee create request
+     *
+     * @param RequestAbstract $request Request
+     *
+     * @return array<string, bool>
+     *
+     * @since 1.0.0
+     */
+    private function validateEmployeeNewCreate(RequestAbstract $request) : array
+    {
+        $val = [];
+        if (($val['name1'] = empty($request->getData('name1')))) {
+            return $val;
+        }
+
+        return [];
+    }
+
+    /**
+     * Method to create a new employee from request.
+     *
+     * @param RequestAbstract $request Request
+     *
      * @return Employee
      *
      * @since 1.0.0
      */
-    private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : Employee
+    private function createEmployeeNewFromRequest(RequestAbstract $request) : Employee
     {
-        $employee = new Employee();
-        $employee->setAccount((int) ($request->getData('account') ?? 0));
+        $account = new Account();
+        $account->setName1((string) ($request->getData('name1') ?? ''));
+        $account->setName2((string) ($request->getData('name2') ?? ''));
+        $account->setName3((string) ($request->getData('name3') ?? ''));
+        $account->setName3((string) ($request->getData('email') ?? ''));
+
+        $profile = new Profile($account);
+        $profile->setBirthday(new \DateTime((string) ($request->getData('birthday') ?? 'now')));
+
+        $employee = new Employee($profile);
 
         return $employee;
     }

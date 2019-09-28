@@ -5,7 +5,7 @@
  *
  * PHP Version 7.4
  *
- * @package   Modules\HumanResourceManagement
+ * @package   Modules\HumanResourceManagement\Models
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -15,13 +15,13 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Admin\Models\AccountMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
+use Modules\Profile\Models\ProfileMapper;
 
 /**
  * Employe mapper class.
  *
- * @package Modules\HumanResourceManagement
+ * @package Modules\HumanResourceManagement\Models
  * @license OMS License 1.0
  * @link    https://orange-management.org
  * @since   1.0.0
@@ -36,8 +36,9 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $columns = [
-        'hr_staff_id'         => ['name' => 'hr_staff_id', 'type' => 'int', 'internal' => 'id'],
-        'hr_staff_account'    => ['name' => 'hr_staff_account', 'type' => 'int', 'internal' => 'account'],
+        'hr_staff_id'         => ['name' => 'hr_staff_id',       'type' => 'int', 'internal' => 'id'],
+        'hr_staff_account'    => ['name' => 'hr_staff_account',  'type' => 'int', 'internal' => 'account'],
+        'hr_staff_smiPHash'   => ['name' => 'hr_staff_smiPHash', 'type' => 'int', 'internal' => 'semiPrivateHash'],
     ];
 
     /**
@@ -48,7 +49,7 @@ final class EmployeeMapper extends DataMapperAbstract
      */
     protected static array $belongsTo = [
         'account'    => [
-            'mapper' => AccountMapper::class,
+            'mapper' => ProfileMapper::class,
             'src'    => 'hr_staff_account',
         ],
     ];
@@ -60,7 +61,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $hasMany = [
-        'history' => [
+        'company' => [
             'mapper' => EmployeeHistoryMapper::class,
             'table'  => 'hr_staff_history',
             'dst'    => 'hr_staff_history_staff',

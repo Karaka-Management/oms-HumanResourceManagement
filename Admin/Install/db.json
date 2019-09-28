@@ -15,6 +15,11 @@
                 "null": false,
                 "foreignTable": "account",
                 "foreignKey": "account_id"
+            },
+            "hr_staff_smiPHash": {
+                "name": "hr_staff_smiPHash",
+                "type": "VARCHAR(256)",
+                "null": false
             }
         }
     },
