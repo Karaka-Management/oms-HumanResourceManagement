@@ -37,13 +37,13 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $columns = [
-        'hr_staff_history_id'         => ['name' => 'hr_staff_history_id', 'type' => 'int', 'internal' => 'id'],
-        'hr_staff_history_staff'    => ['name' => 'hr_staff_history_staff', 'type' => 'int', 'internal' => 'employee'],
-        'hr_staff_history_unit'    => ['name' => 'hr_staff_history_unit', 'type' => 'int', 'internal' => 'unit'],
-        'hr_staff_history_department'    => ['name' => 'hr_staff_history_department', 'type' => 'int', 'internal' => 'department'],
-        'hr_staff_history_position'    => ['name' => 'hr_staff_history_position', 'type' => 'int', 'internal' => 'position'],
-        'hr_staff_history_start'    => ['name' => 'hr_staff_history_start', 'type' => 'DateTime', 'internal' => 'start'],
-        'hr_staff_history_end'    => ['name' => 'hr_staff_history_end', 'type' => 'DateTime', 'internal' => 'end'],
+        'hr_staff_history_id'         => ['name' => 'hr_staff_history_id',         'type' => 'int',      'internal' => 'id'],
+        'hr_staff_history_staff'      => ['name' => 'hr_staff_history_staff',      'type' => 'int',      'internal' => 'employee'],
+        'hr_staff_history_unit'       => ['name' => 'hr_staff_history_unit',       'type' => 'int',      'internal' => 'unit'],
+        'hr_staff_history_department' => ['name' => 'hr_staff_history_department', 'type' => 'int',      'internal' => 'department'],
+        'hr_staff_history_position'   => ['name' => 'hr_staff_history_position',   'type' => 'int',      'internal' => 'position'],
+        'hr_staff_history_start'      => ['name' => 'hr_staff_history_start',      'type' => 'DateTime', 'internal' => 'start'],
+        'hr_staff_history_end'        => ['name' => 'hr_staff_history_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**
