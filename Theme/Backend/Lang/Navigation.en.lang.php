@@ -13,8 +13,8 @@
 return ['Navigation' => [
     'Departments'             => 'Departments',
     'Employees'               => 'Employees',
-    'HumanResources'          => 'Human Resources',
     'HumanResourceManagement' => 'Human Resources',
+    'HumanResources'          => 'Human Resources',
     'List'                    => 'List',
     'Planning'                => 'Planning',
     'Positions'               => 'Positions',
