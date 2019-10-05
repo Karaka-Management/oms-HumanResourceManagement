@@ -22,6 +22,6 @@ namespace Modules\HumanResourceManagement\Models;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-class NullEmployeeHistory extends EmployeeHistory
+final class NullEmployeeHistory extends EmployeeHistory
 {
 }

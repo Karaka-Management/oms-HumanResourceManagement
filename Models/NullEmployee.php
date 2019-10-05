@@ -4,7 +4,7 @@
  *
  * PHP Version 7.4
  *
- * @package   Modules\News\Models
+ * @package   Modules\HumanResourceManagement\Models
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -22,6 +22,6 @@ namespace Modules\HumanResourceManagement\Models;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-class NullEmployee extends Employee
+final class NullEmployee extends Employee
 {
 }
