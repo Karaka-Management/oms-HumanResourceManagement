@@ -37,8 +37,9 @@ final class EmployeeMapper extends DataMapperAbstract
      */
     protected static array $columns = [
         'hr_staff_id'         => ['name' => 'hr_staff_id',       'type' => 'int',    'internal' => 'id'],
-        'hr_staff_account'    => ['name' => 'hr_staff_account',  'type' => 'int',    'internal' => 'account'],
+        'hr_staff_profile'    => ['name' => 'hr_staff_profile',  'type' => 'int',    'internal' => 'profile'],
         'hr_staff_smiPHash'   => ['name' => 'hr_staff_smiPHash', 'type' => 'string', 'internal' => 'semiPrivateHash'],
+        'hr_staff_image'      => ['name' => 'hr_staff_image',    'type' => 'int',    'internal' => 'image', 'annotations' => ['gdpr' => true]],
     ];
 
     /**
@@ -48,9 +49,9 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $belongsTo = [
-        'account'    => [
+        'profile'    => [
             'mapper' => ProfileMapper::class,
-            'src'    => 'hr_staff_account',
+            'src'    => 'hr_staff_profile',
         ],
     ];
 
@@ -61,7 +62,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $hasMany = [
-        'company' => [
+        'companyHistory' => [
             'mapper' => EmployeeHistoryMapper::class,
             'table'  => 'hr_staff_history',
             'dst'    => 'hr_staff_history_staff',

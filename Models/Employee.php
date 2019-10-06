@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
+use Modules\Media\Models\NullMedia;
 use phpOMS\Contract\ArrayableInterface;
 
 /**
@@ -42,6 +43,14 @@ class Employee implements ArrayableInterface, \JsonSerializable
      * @since 1.0.0
      */
     private $profile = null;
+
+    /**
+     * Employee image.
+     *
+     * @var   null|int|Media
+     * @since 1.0.0
+     */
+    private $image = null;
 
     /**
      * Employee department/position history.
@@ -88,7 +97,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Constructor.
      *
-     * @param null|Profile $profile Account profile to initialize this employee with
+     * @param null|int|Profile $profile Account profile to initialize this employee with
      *
      * @since 1.0.0
      */
@@ -99,9 +108,9 @@ class Employee implements ArrayableInterface, \JsonSerializable
     }
 
     /**
-     * Get account id.
+     * Get id.
      *
-     * @return int Account id
+     * @return int Employee id
      *
      * @since 1.0.0
      */
@@ -120,6 +129,32 @@ class Employee implements ArrayableInterface, \JsonSerializable
     public function getProfile()
     {
         return $this->profile;
+    }
+
+    /**
+     * Get image.
+     *
+     * @return int|Media
+     *
+     * @since 1.0.0
+     */
+    public function getImage()
+    {
+        return $this->image ?? new NullMedia();
+    }
+
+    /**
+     * Set image.
+     *
+     * @param null|int|Media $image Employee image
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
+    public function setImage($image) : void
+    {
+        $this->image = $image;
     }
 
     /**

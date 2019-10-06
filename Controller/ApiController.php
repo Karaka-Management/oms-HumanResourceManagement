@@ -19,7 +19,6 @@ use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 
-use phpOMS\Localization\ISO639x1Enum;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
@@ -53,7 +52,7 @@ final class ApiController extends Controller
      */
     public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
     {
-        if ($request->getData('accounts') !== null) {
+        if ($request->getData('profiles') !== null) {
             $this->apiEmployeeFromAccountCreate($request, $response, $data);
         }
 
@@ -87,7 +86,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Validate employee from account create request
+     * Validate employee from profile create request
      *
      * @param RequestAbstract $request Request
      *
@@ -98,7 +97,7 @@ final class ApiController extends Controller
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['account'] = empty($request->getData('account')))) {
+        if (($val['profile'] = empty($request->getData('profiles')))) {
             return $val;
         }
 
@@ -106,7 +105,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Method to create employee from account from request.
+     * Method to create employee from profile from request.
      *
      * @param RequestAbstract $request Request
      *
@@ -116,7 +115,7 @@ final class ApiController extends Controller
      */
     private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : array
     {
-        $accounts = $request->getData('cc') ?? [];
+        $accounts = $request->getData('profiles') ?? [];
         if (!\is_array($accounts)) {
             $accounts = [$accounts];
         }

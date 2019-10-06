@@ -33,20 +33,43 @@ use phpOMS\Contract\ArrayableInterface;
  */
 class EmployeeHistory implements ArrayableInterface, \JsonSerializable
 {
-    private $id = 0;
+    /**
+     * ID.
+     *
+     * @var   int
+     * @since 1.0.0
+     */
+    protected int $id = 0;
 
     private $employee = null;
 
-    private $unit = null;
+    private $unit = 0;
 
-    private $department = null;
+    private $department = 0;
 
-    private $position = null;
+    private $position = 0;
 
     private $start = null;
 
     private $end = null;
 
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
+    public function __construct()
+    {
+        $this->start = new \DateTime('now');
+    }
+
+    /**
+     * Get id.
+     *
+     * @return int Model id
+     *
+     * @since 1.0.0
+     */
     public function getId() : int
     {
         return $this->id;

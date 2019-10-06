@@ -1,4 +1,7 @@
 <?php declare(strict_types=1);
+
+use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
+
 /**
  * Orange Management
  *
@@ -21,27 +24,31 @@ echo $this->getData('nav')->render(); ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="box wf-100">
-            <table class="default">
+            <table id="employeeList" class="default">
                 <caption><?= $this->getHtml('Staff') ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
                 <tr>
-                    <td><?= $this->getHtml('ID', '0', '0'); ?>
-                    <td class="wf-100"><?= $this->getHtml('Name') ?>
-                    <td><?= $this->getHtml('Unit') ?>
-                    <td><?= $this->getHtml('Position') ?>
-                    <td><?= $this->getHtml('Department') ?>
-                    <td><?= $this->getHtml('Status') ?>
+                    <td><?= $this->getHtml('ID', '0', '0'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td class="wf-100"><?= $this->getHtml('Name') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Unit') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Position') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Department') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                    <td><?= $this->getHtml('Status') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                 <tfoot>
-                <tr><td colspan="5">
+                <tr><td colspan="6">
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', '0', '0') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
-                        <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getAccount()->getName1()); ?></a>
+                        <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getProfile()->getAccount()->getName1()); ?></a>
+                        <td><?= $value->getNewestHistory()->getUnit()->getName(); ?>
+                        <td><?= $value->getNewestHistory()->getPosition()->getName(); ?>
+                        <td><?= $value->getNewestHistory()->getDepartment()->getName(); ?>
+                        <td><?= !($value->getNewestHistory() instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
-                    <tr><td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
+                    <tr><td colspan="6" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                 <?php endif; ?>
             </table>
         </div>

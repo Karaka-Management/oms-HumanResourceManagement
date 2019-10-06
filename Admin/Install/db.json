@@ -9,17 +9,28 @@
                 "primary": true,
                 "autoincrement": true
             },
-            "hr_staff_account": {
-                "name": "hr_staff_account",
+            "hr_staff_profile": {
+                "name": "hr_staff_profile",
                 "type": "INT",
                 "null": false,
-                "foreignTable": "account",
-                "foreignKey": "account_id"
+                "foreignTable": "profile_account",
+                "foreignKey": "profile_account_id"
             },
             "hr_staff_smiPHash": {
                 "name": "hr_staff_smiPHash",
-                "type": "VARCHAR(256)",
+                "type": "VARBINARY(255)",
                 "null": false
+            },
+            "hr_staff_image": {
+                "name": "hr_staff_image",
+                "type": "INT",
+                "default": null,
+                "null": true,
+                "foreignTable": "media",
+                "foreignKey": "media_id",
+                "annotations": {
+                    "gdpr": true
+                }
             }
         }
     },
