@@ -42,9 +42,9 @@ echo $this->getData('nav')->render(); ?>
                     <tr data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', '0', '0') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getProfile()->getAccount()->getName1()); ?></a>
-                        <td><?= $value->getNewestHistory()->getUnit()->getName(); ?>
-                        <td><?= $value->getNewestHistory()->getPosition()->getName(); ?>
-                        <td><?= $value->getNewestHistory()->getDepartment()->getName(); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getUnit()->getName()); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getPosition()->getName()); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getDepartment()->getName()); ?>
                         <td><?= !($value->getNewestHistory() instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>

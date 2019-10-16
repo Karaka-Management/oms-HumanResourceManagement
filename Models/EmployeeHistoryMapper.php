@@ -64,6 +64,10 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
             'mapper' => PositionMapper::class,
             'src'    => 'hr_staff_history_position',
         ],
+        'employee'    => [
+            'mapper' => EmployeeMapper::class,
+            'src'    => 'hr_staff_history_staff',
+        ],
     ];
 
     /**

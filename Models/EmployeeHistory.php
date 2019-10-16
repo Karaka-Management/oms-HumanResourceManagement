@@ -41,17 +41,53 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
      */
     protected int $id = 0;
 
-    private $employee = null;
+    /**
+     * Employee
+     *
+     * @var   int|Employee
+     * @since 1.0.0
+     */
+    private $employee = 0;
 
-    private $unit = 0;
+    /**
+     * Unit
+     *
+     * @var   null|int|Unit
+     * @since 1.0.0
+     */
+    private $unit = null;
 
-    private $department = 0;
+    /**
+     * Department
+     *
+     * @var   null|int|Department
+     * @since 1.0.0
+     */
+    private $department = null;
 
-    private $position = 0;
+    /**
+     * Position
+     *
+     * @var   null|int|Position
+     * @since 1.0.0
+     */
+    private $position = null;
 
-    private $start = null;
+    /**
+     * Start date
+     *
+     * @var   \DateTime
+     * @since 1.0.0
+     */
+    private \DateTime $start;
 
-    private $end = null;
+    /**
+     * End date
+     *
+     * @var   null|\DateTime
+     * @since 1.0.0
+     */
+    private ?\DateTime $end = null;
 
     /**
      * Constructor.
@@ -75,61 +111,159 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
         return $this->id;
     }
 
+    /**
+     * Get the employee this history belongs to
+     *
+     * @return int|Employee
+     *
+     * @since 1.0.0
+     */
     public function getEmployee()
     {
-        return $this->employee ?? new NullEmployee();
+        return empty($this->employee) ? new NullEmployee() : $this->employee;
     }
 
+    /**
+     * Set the employee
+     *
+     * @param int|Employee $employee Employee
+     *
+     * @return void
+     *
+     * @todo maybe only do this in the constructor
+     *
+     * @since 1.0.0
+     */
     public function setEmployee($employee) : void
     {
         $this->employee = $employee;
     }
 
-    public function getPosition() : Position
+    /**
+     * Get the position
+     *
+     * @return int|Position
+     *
+     * @since 1.0.0
+     */
+    public function getPosition()
     {
-        return $this->position ?? new NullPosition();
+        return empty($this->position) ? new NullPosition() : $this->position;
     }
 
+    /**
+     * Set the position
+     *
+     * @param int|Position $position Position
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     public function setPosition($position) : void
     {
         $this->position = $position;
     }
 
-    public function getUnit() : Unit
+    /**
+     * Get the unit
+     *
+     * @return int|Unit
+     *
+     * @since 1.0.0
+     */
+    public function getUnit()
     {
-        return $this->unit ?? new NullUnit();
+        return empty($this->unit) ? new NullUnit() : $this->unit;
     }
 
+    /**
+     * Set the unit
+     *
+     * @param int|Unit $unit Unit
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     public function setUnit($unit) : void
     {
         $this->unit = $unit;
     }
 
-    public function getDepartment() : Department
+    /**
+     * Get the department
+     *
+     * @return int|Department
+     *
+     * @since 1.0.0
+     */
+    public function getDepartment()
     {
-        return $this->department ?? new NullDepartment();
+        return empty($this->department) ? new NullDepartment() : $this->department;
     }
 
+    /**
+     * Set the department
+     *
+     * @param int|Department $department Department
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     public function setDepartment($department) : void
     {
         $this->department = $department;
     }
 
-    public function getStart() : ?\DateTime
+    /**
+     * Get start date
+     *
+     * @return \DateTime
+     *
+     * @since 1.0.0
+     */
+    public function getStart() : \DateTime
     {
         return $this->start;
     }
 
+    /**
+     * Set start date
+     *
+     * @param \DateTime $start Start date
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     public function setStart(\DateTime $start) : void
     {
         $this->start = $start;
     }
 
+    /**
+     * Get end date
+     *
+     * @return null|\DateTime
+     *
+     * @since 1.0.0
+     */
     public function getEnd() : ?\DateTime
     {
         return $this->end;
     }
 
+    /**
+     * Set end date
+     *
+     * @param \DateTime $end End date
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     public function setEnd(\DateTime $end) : void
     {
         $this->end = $end;

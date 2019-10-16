@@ -54,21 +54,24 @@
             "hr_staff_history_unit": {
                 "name": "hr_staff_history_unit",
                 "type": "INT",
-                "null": false,
+                "null": true,
+                "default": null,
                 "foreignTable": "organization_unit",
                 "foreignKey": "organization_unit_id"
             },
             "hr_staff_history_department": {
                 "name": "hr_staff_history_department",
                 "type": "INT",
-                "null": false,
+                "null": true,
+                "default": null,
                 "foreignTable": "organization_department",
                 "foreignKey": "organization_department_id"
             },
             "hr_staff_history_position": {
                 "name": "hr_staff_history_position",
                 "type": "INT",
-                "null": false,
+                "null": true,
+                "default": null,
                 "foreignTable": "organization_position",
                 "foreignKey": "organization_position_id"
             },

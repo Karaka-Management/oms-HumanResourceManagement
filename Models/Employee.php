@@ -206,6 +206,20 @@ class Employee implements ArrayableInterface, \JsonSerializable
     }
 
     /**
+     * Add company history to employee
+     *
+     * @param mixed $history Company history
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
+    public function addHistory($history) : void
+    {
+        $this->companyHistory[] = $history;
+    }
+
+    /**
      * Get newest company history.
      *
      * @return EmployeeHistory
