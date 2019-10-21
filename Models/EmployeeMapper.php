@@ -14,8 +14,10 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
+use Modules\Admin\Models\AccountMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 use Modules\Profile\Models\ProfileMapper;
+use phpOMS\DataStorage\Database\Query\Builder;
 
 /**
  * Employe mapper class.
@@ -84,4 +86,31 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static string $primaryField = 'hr_staff_id';
+
+    /**
+     * Get the employee from an account
+     *
+     * @param int $account Account to get the employee for
+     *
+     * @return Employee
+     *
+     * @since 1.0.0
+     */
+    public static function getFromAccount(int $account) : Employee
+    {
+        $query = new Builder(self::$db);
+        $query->prefix(self::$db->getPrefix())
+            ->select(self::$table . '.*')
+            ->from(self::$table)
+            ->innerJoin(ProfileMapper::getTable())
+                ->on(self::$table . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
+            ->innerJoin(AccountMapper::getTable())
+                ->on(ProfileMapper::getTable() . '.profile_account_account', '=', AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField())
+            ->where(AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField(), '=', $account)
+            ->limit(1);
+
+        $employee = self::getAllByQuery($query);
+
+        return empty($employee) ? new NullEmployee() : \end($employee);
+    }
 }
