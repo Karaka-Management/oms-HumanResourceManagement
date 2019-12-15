@@ -29,7 +29,6 @@ use phpOMS\DataStorage\Database\Query\Builder;
  */
 final class EmployeeMapper extends DataMapperAbstract
 {
-
     /**
      * Columns.
      *

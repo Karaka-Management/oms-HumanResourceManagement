@@ -26,5 +26,4 @@ use phpOMS\Module\UpdaterAbstract;
  */
 class Updater extends UpdaterAbstract
 {
-
 }

@@ -26,7 +26,6 @@ use phpOMS\DataStorage\Database\DatabaseType;
  */
 class StaffList
 {
-
     /**
      * Database instance.
      *
