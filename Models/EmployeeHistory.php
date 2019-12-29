@@ -275,13 +275,13 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     public function toArray() : array
     {
         return [
-            'id' => $this->id,
-            'employee' => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
-            'unit' => $this->unit,
+            'id'         => $this->id,
+            'employee'   => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
+            'unit'       => $this->unit,
             'department' => $this->department,
-            'position' => $this->position,
-            'start' => $this->start->format('Y-m-d H:i:s'),
-            'end' => $this->end === null ? null : $this->end->format('Y-m-d H:i:s'),
+            'position'   => $this->position,
+            'start'      => $this->start,
+            'end'        => $this->end,
         ];
     }
 
