@@ -94,9 +94,10 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
      *
      * @since 1.0.0
      */
-    public function __construct()
+    public function __construct($employee = 0)
     {
-        $this->start = new \DateTime('now');
+        $this->employee = $employee;
+        $this->start    = new \DateTime('now');
     }
 
     /**
@@ -121,22 +122,6 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     public function getEmployee()
     {
         return empty($this->employee) ? new NullEmployee() : $this->employee;
-    }
-
-    /**
-     * Set the employee
-     *
-     * @param int|Employee $employee Employee
-     *
-     * @return void
-     *
-     * @todo maybe only do this in the constructor
-     *
-     * @since 1.0.0
-     */
-    public function setEmployee($employee) : void
-    {
-        $this->employee = $employee;
     }
 
     /**

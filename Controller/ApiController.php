@@ -259,8 +259,7 @@ final class ApiController extends Controller
      */
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
-        $history = new EmployeeHistory();
-        $history->setEmployee((int) ($request->getData('employee') ?? 0));
+        $history = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
         $history->setUnit((int) ($request->getData('unit') ?? 0));
         $history->setDepartment((int) ($request->getData('department') ?? 0));
         $history->setPosition((int) ($request->getData('position') ?? 0));
