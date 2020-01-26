@@ -14,12 +14,12 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Organization\Models\Position;
-use Modules\Organization\Models\NullPosition;
-use Modules\Organization\Models\Unit;
-use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Department;
 use Modules\Organization\Models\NullDepartment;
+use Modules\Organization\Models\NullPosition;
+use Modules\Organization\Models\NullUnit;
+use Modules\Organization\Models\Position;
+use Modules\Organization\Models\Unit;
 
 use phpOMS\Contract\ArrayableInterface;
 
@@ -36,7 +36,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * ID.
      *
-     * @var   int
+     * @var int
      * @since 1.0.0
      */
     protected int $id = 0;
@@ -44,7 +44,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Employee
      *
-     * @var   int|Employee
+     * @var int|Employee
      * @since 1.0.0
      */
     private $employee = 0;
@@ -52,7 +52,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Unit
      *
-     * @var   null|int|Unit
+     * @var null|int|Unit
      * @since 1.0.0
      */
     private $unit = null;
@@ -60,7 +60,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Department
      *
-     * @var   null|int|Department
+     * @var null|int|Department
      * @since 1.0.0
      */
     private $department = null;
@@ -68,7 +68,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Position
      *
-     * @var   null|int|Position
+     * @var null|int|Position
      * @since 1.0.0
      */
     private $position = null;
@@ -76,7 +76,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Start date
      *
-     * @var   \DateTime
+     * @var \DateTime
      * @since 1.0.0
      */
     private \DateTime $start;
@@ -84,7 +84,7 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * End date
      *
-     * @var   null|\DateTime
+     * @var null|\DateTime
      * @since 1.0.0
      */
     private ?\DateTime $end = null;

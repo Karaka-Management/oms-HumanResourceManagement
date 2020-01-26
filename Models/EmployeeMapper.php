@@ -15,8 +15,8 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\AccountMapper;
-use phpOMS\DataStorage\Database\DataMapperAbstract;
 use Modules\Profile\Models\ProfileMapper;
+use phpOMS\DataStorage\Database\DataMapperAbstract;
 use phpOMS\DataStorage\Database\Query\Builder;
 
 /**
@@ -32,7 +32,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Columns.
      *
-     * @var   array<string, array<string, bool|string>>
+     * @var array<string, array<string, bool|string>>
      * @since 1.0.0
      */
     protected static array $columns = [
@@ -45,7 +45,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Belongs to.
      *
-     * @var   array<string, array<string, string>>
+     * @var array<string, array<string, string>>
      * @since 1.0.0
      */
     protected static array $belongsTo = [
@@ -58,7 +58,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Has many relation.
      *
-     * @var   array<string, array<string, null|string>>
+     * @var array<string, array<string, null|string>>
      * @since 1.0.0
      */
     protected static array $hasMany = [
@@ -73,7 +73,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Primary table.
      *
-     * @var   string
+     * @var string
      * @since 1.0.0
      */
     protected static string $table = 'hr_staff';
@@ -81,7 +81,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Primary field name.
      *
-     * @var   string
+     * @var string
      * @since 1.0.0
      */
     protected static string $primaryField = 'hr_staff_id';

@@ -14,18 +14,17 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Controller;
 
+use Modules\Admin\Models\Account;
 use Modules\HumanResourceManagement\Models\Employee;
-use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 
+use Modules\HumanResourceManagement\Models\EmployeeMapper;
+use Modules\Profile\Models\Profile;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Model\Message\FormValidation;
-use phpOMS\Utils\Parser\Markdown\Markdown;
-use Modules\Admin\Models\Account;
-use Modules\Profile\Models\Profile;
 
 /**
  * HumanResourceManagement controller class.

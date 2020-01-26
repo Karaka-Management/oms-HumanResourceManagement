@@ -29,7 +29,7 @@ class StaffList
     /**
      * Database instance.
      *
-     * @var   \phpOMS\DataStorage\Database\Pool
+     * @var \phpOMS\DataStorage\Database\Pool
      * @since 1.0.0
      */
     private $dbPool = null;

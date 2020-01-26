@@ -30,7 +30,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Employee ID.
      *
-     * @var   int
+     * @var int
      * @since 1.0.0
      */
     private int $id = 0;
@@ -38,7 +38,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Account profile.
      *
-     * @var   null|int|Profile
+     * @var null|int|Profile
      * @since 1.0.0
      */
     private $profile = null;
@@ -46,7 +46,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Employee image.
      *
-     * @var   null|int|Media
+     * @var null|int|Media
      * @since 1.0.0
      */
     private $image = null;
@@ -54,7 +54,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Employee department/position history.
      *
-     * @var   array
+     * @var array
      * @since 1.0.0
      */
     private array $companyHistory = [];
@@ -65,7 +65,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
      * @todo Orange-Management/Modules#187
      *  Implement the education history for an employee. This can be done similarly to the company history.
      *
-     * @var   array
+     * @var array
      * @since 1.0.0
      */
     private array $educationHistory = [];
@@ -76,7 +76,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
      * @todo Orange-Management/Modules#188
      *  Implement the work history (at other companies) for an employee. This can be done similarly to the company history.
      *
-     * @var   array
+     * @var array
      * @since 1.0.0
      */
     private array $workHistory = [];
@@ -84,7 +84,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Employee hash used for time tracking / employee card
      *
-     * @var   string
+     * @var string
      * @since 1.0.0
      */
     private string $semiPrivateHash = '';
@@ -92,7 +92,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
     /**
      * Employee hash length used for time tracking / employee card
      *
-     * @var   int
+     * @var int
      * @since 1.0.0
      */
     private const SEMI_PRIVATE_HASH_LENGTH = 64;
@@ -231,7 +231,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
      */
     public function getNewestHistory() : EmployeeHistory
     {
-        return empty($this->companyHistory) ? new NullEmployeeHistory : end($this->companyHistory);
+        return empty($this->companyHistory) ? new NullEmployeeHistory() : \end($this->companyHistory);
     }
 
     /**
@@ -255,7 +255,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
      */
     public function getNewestEducationHistory() : EmployeeEducationHistory
     {
-        return empty($this->educationHistory) ? new NullEmployeeEducationHistory : end($this->educationHistory);
+        return empty($this->educationHistory) ? new NullEmployeeEducationHistory() : \end($this->educationHistory);
     }
 
     /**
@@ -279,7 +279,7 @@ class Employee implements ArrayableInterface, \JsonSerializable
      */
     public function getNewestWorkHistory() : EmployeeWorkHistory
     {
-        return empty($this->workHistory) ? new NullEmployeeWorkHistory : end($this->workHistory);
+        return empty($this->workHistory) ? new NullEmployeeWorkHistory() : \end($this->workHistory);
     }
 
     /**
