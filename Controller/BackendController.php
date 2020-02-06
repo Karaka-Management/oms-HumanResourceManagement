@@ -46,7 +46,7 @@ final class BackendController extends Controller
      */
     public function viewHrStaffList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
-        $view = new View($this->app, $request, $response);
+        $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
@@ -69,11 +69,11 @@ final class BackendController extends Controller
      */
     public function viewHrStaffCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
-        $view = new View($this->app, $request, $response);
+        $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app, $request, $response);
+        $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
         $view->addData('accSelector', $accSelector);
 
         return $view;
@@ -93,7 +93,7 @@ final class BackendController extends Controller
      */
     public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
-        $view = new View($this->app, $request, $response);
+        $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
@@ -118,7 +118,7 @@ final class BackendController extends Controller
      */
     public function viewHrDepartmentList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
-        $view = new View($this->app, $request, $response);
+        $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response));
 
