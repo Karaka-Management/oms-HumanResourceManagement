@@ -16,7 +16,7 @@ declare(strict_types=1);
  * @var \phpOMS\Views\View $this
  */
 
-$footerView = new \phpOMS\Views\PaginationView($this->app, $this->request, $this->response);
+$footerView = new \phpOMS\Views\PaginationView($this->l11nManager, $this->request, $this->response);
 $footerView->setTemplate('/Web/Templates/Lists/Footer/PaginationBig');
 
 $footerView->setPages(25);
