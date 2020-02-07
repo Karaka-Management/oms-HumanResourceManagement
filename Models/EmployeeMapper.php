@@ -51,7 +51,7 @@ final class EmployeeMapper extends DataMapperAbstract
     protected static array $belongsTo = [
         'profile'    => [
             'mapper' => ProfileMapper::class,
-            'src'    => 'hr_staff_profile',
+            'self'   => 'hr_staff_profile',
         ],
     ];
 
@@ -65,8 +65,8 @@ final class EmployeeMapper extends DataMapperAbstract
         'companyHistory' => [
             'mapper' => EmployeeHistoryMapper::class,
             'table'  => 'hr_staff_history',
-            'dst'    => 'hr_staff_history_staff',
-            'src'    => null,
+            'external' => 'hr_staff_history_staff',
+            'self'   => null,
         ],
     ];
 
