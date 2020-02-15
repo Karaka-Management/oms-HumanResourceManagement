@@ -16,6 +16,7 @@ namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Media\Models\NullMedia;
 use phpOMS\Contract\ArrayableInterface;
+use Modules\Profile\Models\Profile;
 
 /**
  * Employee class.
