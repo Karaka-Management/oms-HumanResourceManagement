@@ -24,6 +24,6 @@ use phpOMS\Module\UpdaterAbstract;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-class Updater extends UpdaterAbstract
+final class Updater extends UpdaterAbstract
 {
 }
