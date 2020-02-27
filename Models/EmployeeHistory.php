@@ -92,6 +92,8 @@ class EmployeeHistory implements ArrayableInterface, \JsonSerializable
     /**
      * Constructor.
      *
+     * @param int|Employee $employee Employee
+     *
      * @since 1.0.0
      */
     public function __construct($employee = 0)
