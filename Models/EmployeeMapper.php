@@ -64,7 +64,7 @@ final class EmployeeMapper extends DataMapperAbstract
     protected static array $hasMany = [
         'companyHistory' => [
             'mapper' => EmployeeHistoryMapper::class,
-            'table'  => 'hr_staff_history',
+            'table'  => 'hr_staff_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
             'external' => 'hr_staff_history_staff',
             'self'   => null,
         ],
@@ -98,8 +98,7 @@ final class EmployeeMapper extends DataMapperAbstract
     public static function getFromAccount(int $account) : Employee
     {
         $query = new Builder(self::$db);
-        $query->prefix(self::$db->getPrefix())
-            ->select(self::$table . '.*')
+        $query->select(self::$table . '.*')
             ->from(self::$table)
             ->innerJoin(ProfileMapper::getTable())
                 ->on(self::$table . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())

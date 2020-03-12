@@ -68,10 +68,10 @@ class StaffList
                 $search = $this->dbPool->get()->generate_sql_filter($filter, true);
 
                 $sth = $this->dbPool->get()->con->prepare('SELECT
-                            `' . $this->dbPool->get()->prefix . 'hr_staff`.*
+                            `hr_staff`.*
                         FROM
-                            `' . $this->dbPool->get()->prefix . 'hr_staff` '
-                                                                . $search . 'LIMIT ' . $offset . ',' . $limit);
+                            `hr_staff` '
+                        . $search . 'LIMIT ' . $offset . ',' . $limit);
                 $sth->execute();
 
                 $result['list'] = $sth->fetchAll();
