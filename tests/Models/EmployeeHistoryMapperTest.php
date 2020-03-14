@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace Modules\tests\HumanResourceManagement\Models;
+namespace Modules\HumanResourceManagement\tests\Models;
 
 use Modules\HumanResourceManagement\Models\Employee;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
