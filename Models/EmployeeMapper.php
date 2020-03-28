@@ -97,11 +97,11 @@ final class EmployeeMapper extends DataMapperAbstract
      */
     public static function getFromAccount(int $account) : Employee
     {
+        $depth = 3;
         $query = new Builder(self::$db);
-        $query->select(self::$table . '.*')
-            ->from(self::$table)
+        $query = self::getQuery($query)
             ->innerJoin(ProfileMapper::getTable())
-                ->on(self::$table . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
+                ->on(self::$table . '_' . $depth . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
             ->innerJoin(AccountMapper::getTable())
                 ->on(ProfileMapper::getTable() . '.profile_account_account', '=', AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField())
             ->where(AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField(), '=', $account)
