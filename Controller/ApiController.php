@@ -80,7 +80,7 @@ final class ApiController extends Controller
         }
 
         $employees = $this->createEmployeeFromAccountFromRequest($request);
-        $this->createModels($request->getHeader()->getAccount(), $employees, EmployeeMapper::class, 'employee');
+        $this->createModels($request->getHeader()->getAccount(), $employees, EmployeeMapper::class, 'employee', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee(s) successfully created', $employees);
     }
 
@@ -149,7 +149,7 @@ final class ApiController extends Controller
         }
 
         $employee = $this->createEmployeeNewFromRequest($request);
-        $this->createModel($request->getHeader()->getAccount(), $employee, EmployeeMapper::class, 'employee');
+        $this->createModel($request->getHeader()->getAccount(), $employee, EmployeeMapper::class, 'employee', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee successfully created', $employee);
     }
 
@@ -219,7 +219,7 @@ final class ApiController extends Controller
         }
 
         $history = $this->createEmployeeHistoryFromRequest($request);
-        $this->createModel($request->getHeader()->getAccount(), $history, EmployeeHistoryMapper::class, 'history');
+        $this->createModel($request->getHeader()->getAccount(), $history, EmployeeHistoryMapper::class, 'history', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'History', 'History successfully created', $history);
     }
 

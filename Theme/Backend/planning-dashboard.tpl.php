@@ -25,7 +25,7 @@
         </table>
         <!-- @formatter:on -->
         <div class="cT">
-            <a href="<?= \phpOMS\Uri\UriFactory::build('{/prefix}sales/analysis/clients/dashboard'); ?>"
+            <a tabindex="0" href="<?= \phpOMS\Uri\UriFactory::build('{/prefix}sales/analysis/clients/dashboard'); ?>"
                class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
@@ -58,7 +58,7 @@
         </table>
         <!-- @formatter:on -->
         <div class="cT">
-            <a href=""
+            <a tabindex="0" href=""
                class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
@@ -91,7 +91,7 @@
         </table>
         <!-- @formatter:on -->
         <div class="cT">
-            <a href=""
+            <a tabindex="0" href=""
                class="button"><?= $this->printHtml($this->app->accountManager->get($request->getHeader()->getAccount())->getL11n()->lang[0]['More']); ?></a>
         </div>
     </div>
