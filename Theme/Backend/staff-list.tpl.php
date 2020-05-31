@@ -39,7 +39,7 @@ echo $this->getData('nav')->render(); ?>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
-                    <tr data-href="<?= $url; ?>">
+                    <tr tabindex="0" data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', '0', '0') ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td data-label="<?= $this->getHtml('Name') ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->getProfile()->getAccount()->getName1(), $value->getProfile()->getAccount()->getName2(), $value->getProfile()->getAccount()->getName3())
