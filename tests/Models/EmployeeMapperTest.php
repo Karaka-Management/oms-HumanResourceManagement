@@ -25,7 +25,7 @@ use Modules\Profile\Models\ProfileMapper;
  */
 class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
 {
-    public function testCRUD() : void
+    public function testCR() : void
     {
         if (($profile = ProfileMapper::getFor(1, 'account'))->getId() === 0) {
             $profile = new Profile();
@@ -36,7 +36,7 @@ class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
             $id = ProfileMapper::create($profile);
         }
 
-        $employee = new Employee(ProfileMapper::getFor(1, 'account'));
+        $employee = new Employee($profile);
 
         $id = EmployeeMapper::create($employee);
         self::assertGreaterThan(0, $employee->getId());
