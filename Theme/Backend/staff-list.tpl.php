@@ -23,9 +23,9 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="box wf-100">
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Staff') ?><i class="fa fa-download floatRight download btn"></i></div>
             <table id="employeeList" class="default">
-                <caption><?= $this->getHtml('Staff') ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
                 <tr>
                     <td><?= $this->getHtml('ID', '0', '0'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
@@ -34,8 +34,6 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Position') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                     <td><?= $this->getHtml('Department') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                     <td><?= $this->getHtml('Status') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                <tfoot>
-                <tr><td colspan="6">
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>

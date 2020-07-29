@@ -29,17 +29,15 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="box wf-100">
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Departments') ?><i class="fa fa-download floatRight download btn"></i></div>
             <table class="default">
-                <caption><?= $this->getHtml('Departments') ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
                 <tr>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
                     <td class="wf-100"><?= $this->getHtml('Name') ?>
                     <td><?= $this->getHtml('Employees') ?>
                     <td><?= $this->getHtml('Parent') ?>
-                <tfoot>
-                <tr><td colspan="4">
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : ++$c;
                 $url = \phpOMS\Uri\UriFactory::build('{/prefix}hr/department/single?{?}&id=' . $value->getId()); ?>
