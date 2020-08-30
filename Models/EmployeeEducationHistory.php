@@ -24,7 +24,7 @@ use phpOMS\Contract\ArrayableInterface;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-class EmployeeEducationHistory implements ArrayableInterface, \JsonSerializable
+class EmployeeEducationHistory implements \JsonSerializable, ArrayableInterface
 {
     /**
      * ID.

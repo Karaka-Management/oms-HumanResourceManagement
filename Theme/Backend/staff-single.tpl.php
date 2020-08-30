@@ -36,7 +36,7 @@ echo $this->getData('nav')->render(); ?>
         </ul>
     </div>
     <div class="tab-content">
-        <input type="radio" id="c-tab-1" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-1' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-1" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-1' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
@@ -58,19 +58,19 @@ echo $this->getData('nav')->render(); ?>
                                 </span>
                                     <table class="list">
                                         <tr>
-                                            <th><?= $this->getHtml('Position') ?>
+                                            <th><?= $this->getHtml('Position'); ?>
                                             <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getPosition()->getName()); ?>
                                         <tr>
-                                            <th><?= $this->getHtml('Department') ?>
+                                            <th><?= $this->getHtml('Department'); ?>
                                             <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getDepartment()->getName()); ?>
                                         <tr>
-                                            <th><?= $this->getHtml('Unit') ?>
+                                            <th><?= $this->getHtml('Unit'); ?>
                                             <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getUnit()->getName()); ?>
                                         <tr>
-                                            <th><?= $this->getHtml('Birthday') ?>
+                                            <th><?= $this->getHtml('Birthday'); ?>
                                             <td itemprop="birthDate">06.09.1934
                                         <tr>
-                                            <th><?= $this->getHtml('Email') ?>
+                                            <th><?= $this->getHtml('Email'); ?>
                                             <td itemprop="email"><a href="mailto:<?= $this->printHtml($employee->getProfile()->getAccount()->getEmail()); ?>"><?= $this->printHtml($employee->getProfile()->getAccount()->getEmail()); ?></a>
                                         <tr>
                                             <th>Address
@@ -82,7 +82,7 @@ echo $this->getData('nav')->render(); ?>
                                             <th class="vT">Work
                                             <td itemprop="address">SMALLSYS INC<br>795 E DRAGRAM<br>TUCSON AZ 85705<br>USA
                                         <tr>
-                                            <th><?= $this->getHtml('Phone') ?>
+                                            <th><?= $this->getHtml('Phone'); ?>
                                             <td>
                                         <tr>
                                             <th>Private
@@ -94,7 +94,7 @@ echo $this->getData('nav')->render(); ?>
                                             <th>Work
                                             <td itemprop="telephone">+01 12345-4567
                                         <tr>
-                                            <th><?= $this->getHtml('Status') ?>
+                                            <th><?= $this->getHtml('Status'); ?>
                                             <td><span class="tag green"><?= !($recentHistory instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?></span>
                                     </table>
                                 <!-- @formatter:on -->
@@ -107,13 +107,13 @@ echo $this->getData('nav')->render(); ?>
                 <div class="col-xs-12">
                     <div class="box wf-100 x-overflow">
                         <table id="historyList" class="default">
-                            <caption><?= $this->getHtml('History') ?><i class="fa fa-download floatRight download btn"></i></caption>
+                            <caption><?= $this->getHtml('History'); ?><i class="fa fa-download floatRight download btn"></i></caption>
                             <thead>
-                                <td><?= $this->getHtml('Start') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                                <td><?= $this->getHtml('End') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                                <td><?= $this->getHtml('Unit') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                                <td><?= $this->getHtml('Department') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                                <td><?= $this->getHtml('Position') ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                                <td><?= $this->getHtml('Start'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                                <td><?= $this->getHtml('End'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                                <td><?= $this->getHtml('Unit'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                                <td><?= $this->getHtml('Department'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
+                                <td><?= $this->getHtml('Position'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                             <tfoot>
                             <tbody>
                             <?php foreach ($history as $hist) : ?>
@@ -128,84 +128,84 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-2" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-2' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-2" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-2' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-3' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-3' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-4' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-5' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-6" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-6' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-6" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-6' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-7' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-7' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-8' ? ' checked' : '' ?>>
+        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-8' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
                     <section class="box wf-100">
-                    <header><h1><?= $this->getHtml('Clocking') ?></h1></header>
+                    <header><h1><?= $this->getHtml('Clocking'); ?></h1></header>
                         <div class="inner">
                         </div>
                     </section>

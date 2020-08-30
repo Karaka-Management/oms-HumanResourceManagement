@@ -41,13 +41,13 @@ echo $this->getData('nav')->render();
                         <tr><td><input id="iName2" name="name2" type="text" placeholder="&#xf007; Fauntleroy">
                         <tr><td><label for="iName3"><?= $this->getHtml('Name3', 'Admin'); ?></label>
                         <tr><td><input id="iName3" name="name3" type="text" placeholder="&#xf007; Duck">
-                        <tr><td><label for="iAddress"><?= $this->getHtml('Address', 'Profile') ?></label>
+                        <tr><td><label for="iAddress"><?= $this->getHtml('Address', 'Profile'); ?></label>
                         <tr><td><input type="text" id="iAddress" name="address">
-                        <tr><td><label for="iZip"><?= $this->getHtml('Zip', 'Profile') ?></label>
+                        <tr><td><label for="iZip"><?= $this->getHtml('Zip', 'Profile'); ?></label>
                         <tr><td><input type="text" id="iZip" name="zip">
-                        <tr><td><label for="iCity"><?= $this->getHtml('City', 'Profile') ?></label>
+                        <tr><td><label for="iCity"><?= $this->getHtml('City', 'Profile'); ?></label>
                         <tr><td><input type="text" id="iCity" name="city">
-                        <tr><td><label for="iCountry"><?= $this->getHtml('Country', 'Profile') ?></label>
+                        <tr><td><label for="iCountry"><?= $this->getHtml('Country', 'Profile'); ?></label>
                         <tr><td><input type="text" id="iCountry" name="country">
                         <tr><td><label for="iBirthday"><?= $this->getHtml('Birthday', 'Profile'); ?></label>
                         <tr><td><input id="iBirthday" name="pirthday" type="text">
