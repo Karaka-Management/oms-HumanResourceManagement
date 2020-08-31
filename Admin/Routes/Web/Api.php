@@ -8,12 +8,12 @@ use phpOMS\Router\RouteVerb;
 return [
     '^.*/humanresource/staff.*$' => [
         [
-            'dest' => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
-            'verb' => RouteVerb::PUT,
+            'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
+            'verb'       => RouteVerb::PUT,
             'permission' => [
                 'module' => ApiController::MODULE_NAME,
-                'type'  => PermissionType::CREATE,
-                'state' => PermissionState::HR,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::HR,
             ],
         ],
     ],

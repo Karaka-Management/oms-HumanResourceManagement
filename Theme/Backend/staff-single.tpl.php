@@ -16,8 +16,8 @@ declare(strict_types=1);
 use Modules\Media\Models\NullMedia;
 use phpOMS\Uri\UriFactory;
 
-$employee = $this->getData('employee');
-$history = $employee->getHistorY();
+$employee      = $this->getData('employee');
+$history       = $employee->getHistorY();
 $recentHistory = $employee->getNewestHistory();
 
 echo $this->getData('nav')->render(); ?>

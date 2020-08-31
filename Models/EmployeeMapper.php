@@ -63,10 +63,10 @@ final class EmployeeMapper extends DataMapperAbstract
      */
     protected static array $hasMany = [
         'companyHistory' => [
-            'mapper' => EmployeeHistoryMapper::class,
-            'table'  => 'hr_staff_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
+            'mapper'   => EmployeeHistoryMapper::class,
+            'table'    => 'hr_staff_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
             'external' => 'hr_staff_history_staff',
-            'self'   => null,
+            'self'     => null,
         ],
     ];
 
