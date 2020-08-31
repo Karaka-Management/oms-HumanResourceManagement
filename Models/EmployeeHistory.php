@@ -20,7 +20,6 @@ use Modules\Organization\Models\NullPosition;
 use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Position;
 use Modules\Organization\Models\Unit;
-
 use phpOMS\Contract\ArrayableInterface;
 
 /**

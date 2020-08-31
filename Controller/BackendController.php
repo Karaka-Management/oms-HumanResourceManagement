@@ -16,7 +16,6 @@ namespace Modules\HumanResourceManagement\Controller;
 
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Organization\Models\DepartmentMapper;
-
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;

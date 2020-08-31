@@ -18,7 +18,6 @@ use Modules\Admin\Models\Account;
 use Modules\HumanResourceManagement\Models\Employee;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
-
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Profile\Models\Profile;
 use phpOMS\Message\NotificationLevel;
