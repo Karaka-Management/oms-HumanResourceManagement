@@ -26,7 +26,7 @@ use phpOMS\Stdlib\Base\Enum;
  */
 abstract class EmployeeActivityStatus extends Enum
 {
-    public const ACTIVE   = 1;
+    public const ACTIVE = 1;
 
     public const INACTIVE = 2;
 }
