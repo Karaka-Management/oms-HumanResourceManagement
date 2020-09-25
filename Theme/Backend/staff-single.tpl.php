@@ -46,8 +46,8 @@ echo $this->getData('nav')->render(); ?>
                             <span class="rf">
                                     <img class="m-profile rf"
                                         alt="<?= $this->getHtml('ProfileImage'); ?>"
-                                        itemprop="logo"
-                                        data-lazyload="<?=
+                                        itemprop="logo" loading="lazy"
+                                        src="<?=
                                             $employee->getImage() instanceof NullMedia ?
                                                 $employee->getProfile()->getImage() instanceof NullMedia ?
                                                     UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
