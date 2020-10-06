@@ -24,6 +24,7 @@ use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Model\Message\FormValidation;
+use phpOMS\Message\Http\RequestStatusCode;
 
 /**
  * HumanResourceManagement controller class.
@@ -74,6 +75,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
+            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
 
             return;
         }
@@ -143,6 +145,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
+            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
 
             return;
         }
@@ -213,6 +216,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
             $response->set('history_create', new FormValidation($val));
+            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
 
             return;
         }
