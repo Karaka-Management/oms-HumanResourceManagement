@@ -20,11 +20,11 @@ use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Profile\Models\Profile;
+use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Model\Message\FormValidation;
-use phpOMS\Message\Http\RequestStatusCode;
 
 /**
  * HumanResourceManagement controller class.
