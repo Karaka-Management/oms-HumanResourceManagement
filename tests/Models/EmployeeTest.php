@@ -21,6 +21,10 @@ use Modules\HumanResourceManagement\Models\Employee;
  */
 class EmployeeTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @group module
+     */
     public function testDefault() : void
     {
         $employee = new Employee();

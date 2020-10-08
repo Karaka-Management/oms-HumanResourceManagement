@@ -24,6 +24,10 @@ use Modules\Profile\Models\ProfileMapper;
  */
 class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\HumanResourceManagement\Models\EmployeeHistoryMapper
+     * @group module
+     */
     public function testCRUD() : void
     {
         $employee = new Employee(ProfileMapper::get(1));

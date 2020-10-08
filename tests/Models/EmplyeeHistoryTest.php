@@ -21,6 +21,10 @@ use Modules\HumanResourceManagement\Models\EmployeeHistory;
  */
 class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\HumanResourceManagement\Models\EmployeeHistory
+     * @group module
+     */
     public function testDefault() : void
     {
         $history = new EmployeeHistory();

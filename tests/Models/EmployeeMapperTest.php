@@ -25,6 +25,10 @@ use Modules\Profile\Models\ProfileMapper;
  */
 class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\HumanResourceManagement\Models\EmployeeMapper
+     * @group module
+     */
     public function testCR() : void
     {
         if (($profile = ProfileMapper::getFor(1, 'account'))->getId() === 0) {
