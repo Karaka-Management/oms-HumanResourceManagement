@@ -51,7 +51,7 @@ final class EmployeeMapper extends DataMapperAbstract
     protected static array $belongsTo = [
         'profile'    => [
             'mapper' => ProfileMapper::class,
-            'self'   => 'hr_staff_profile',
+            'external'   => 'hr_staff_profile',
         ],
     ];
 
@@ -65,8 +65,8 @@ final class EmployeeMapper extends DataMapperAbstract
         'companyHistory' => [
             'mapper'   => EmployeeHistoryMapper::class,
             'table'    => 'hr_staff_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
-            'external' => 'hr_staff_history_staff',
-            'self'     => null,
+            'self' => 'hr_staff_history_staff',
+            'external'     => null,
         ],
     ];
 

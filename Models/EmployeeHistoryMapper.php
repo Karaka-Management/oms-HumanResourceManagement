@@ -54,19 +54,19 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
     protected static array $belongsTo = [
         'unit'    => [
             'mapper' => UnitMapper::class,
-            'self'   => 'hr_staff_history_unit',
+            'external'   => 'hr_staff_history_unit',
         ],
         'department'    => [
             'mapper' => DepartmentMapper::class,
-            'self'   => 'hr_staff_history_department',
+            'external'   => 'hr_staff_history_department',
         ],
         'position'    => [
             'mapper' => PositionMapper::class,
-            'self'   => 'hr_staff_history_position',
+            'external'   => 'hr_staff_history_position',
         ],
         'employee'    => [
             'mapper' => EmployeeMapper::class,
-            'self'   => 'hr_staff_history_staff',
+            'external'   => 'hr_staff_history_staff',
         ],
     ];
 
