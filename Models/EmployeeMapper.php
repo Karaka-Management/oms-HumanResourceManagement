@@ -45,7 +45,7 @@ final class EmployeeMapper extends DataMapperAbstract
     /**
      * Belongs to.
      *
-     * @var array<string, array{mapper:string, self:string}>
+     * @var array<string, array{mapper:string, external:string}>
      * @since 1.0.0
      */
     protected static array $belongsTo = [
