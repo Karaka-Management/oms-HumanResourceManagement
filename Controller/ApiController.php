@@ -53,6 +53,8 @@ final class ApiController extends Controller
     {
         if ($request->getData('profiles') !== null) {
             $this->apiEmployeeFromAccountCreate($request, $response, $data);
+
+            return;
         }
 
         $this->apiEmployeeNewCreate($request, $response, $data);
@@ -97,7 +99,7 @@ final class ApiController extends Controller
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['profile'] = empty($request->getData('profiles')))) {
+        if (($val['profiles'] = empty($request->getData('profiles')))) {
             return $val;
         }
 
@@ -115,12 +117,9 @@ final class ApiController extends Controller
      */
     private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : array
     {
-        $accounts = $request->getData('profiles') ?? [];
-        if (!\is_array($accounts)) {
-            $accounts = [$accounts];
-        }
-
+        $accounts  = $request->getDataList('profiles') ?? [];
         $employees = [];
+
         foreach ($accounts as $account) {
             $employees[] = new Employee((int) $account);
         }
