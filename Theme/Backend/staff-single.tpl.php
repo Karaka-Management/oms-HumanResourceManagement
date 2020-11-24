@@ -12,9 +12,9 @@
  */
 declare(strict_types=1);
 
+use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 use Modules\Media\Models\NullMedia;
 use phpOMS\Uri\UriFactory;
-use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 
 $employee      = $this->getData('employee');
 $history       = $employee->getHistorY();

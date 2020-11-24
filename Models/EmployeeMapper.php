@@ -15,10 +15,10 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\AccountMapper;
+use Modules\Media\Models\MediaMapper;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 use phpOMS\DataStorage\Database\Query\Builder;
-use Modules\Media\Models\MediaMapper;
 
 /**
  * Employe mapper class.

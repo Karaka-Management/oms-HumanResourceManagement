@@ -184,13 +184,13 @@ final class ApiController extends Controller
      */
     private function createEmployeeNewFromRequest(RequestAbstract $request) : Employee
     {
-        $account = new Account();
+        $account        = new Account();
         $account->name1 = (string) ($request->getData('name1') ?? '');
         $account->name2 = (string) ($request->getData('name2') ?? '');
         $account->name3 = (string) ($request->getData('name3') ?? '');
         $account->name3 = (string) ($request->getData('email') ?? '');
 
-        $profile = new Profile($account);
+        $profile           = new Profile($account);
         $profile->birthday = new \DateTime((string) ($request->getData('birthday') ?? 'now'));
 
         $employee = new Employee($profile);

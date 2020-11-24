@@ -34,7 +34,7 @@ class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
         if (($profile = ProfileMapper::getFor(1, 'account'))->getId() === 0) {
             $profile = new Profile();
 
-            $profile->account = AccountMapper::get(1);
+            $profile->account  = AccountMapper::get(1);
             $profile->birthday = ($date = new \DateTime('now'));
 
             $id = ProfileMapper::create($profile);
