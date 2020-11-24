@@ -32,7 +32,7 @@ class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(0, $employee->getId());
         self::assertGreaterThan(0, \strlen($employee->getSemiPrivateHash()));
         self::assertFalse($employee->compareSemiPrivateHash('123'));
-        self::assertInstanceOf('\Modules\Media\Models\NullMedia', $employee->getImage());
+        self::assertInstanceOf('\Modules\Media\Models\NullMedia', $employee->image);
         self::assertInstanceOf('\Modules\HumanResourceManagement\Models\NullEmployeeHistory', $employee->getNewestHistory());
         self::assertEquals([], $employee->getHistory());
         self::assertEquals([], $employee->getEducationHistory());

@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 use Modules\Media\Models\NullMedia;
 use phpOMS\Uri\UriFactory;
+use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 
 $employee      = $this->getData('employee');
 $history       = $employee->getHistorY();
@@ -35,12 +36,12 @@ echo $this->getData('nav')->render(); ?>
         </ul>
     </div>
     <div class="tab-content">
-        <input type="radio" id="c-tab-1" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-1' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-1" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-1' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <section itemscope itemtype="http://schema.org/Person" class="box wf-100">
-                        <header><h1><span itemprop="familyName"><?= $this->printHtml($employee->getProfile()->getAccount()->getName2()); ?></span>, <span itemprop="givenName"><?= $this->printHtml($employee->getProfile()->getAccount()->getName1()); ?></span></h1></header>
+                        <header><h1><span itemprop="familyName"><?= $this->printHtml($employee->profile->account->name2); ?></span>, <span itemprop="givenName"><?= $this->printHtml($employee->profile->account->name1); ?></span></h1></header>
                         <div class="inner">
                             <!-- @formatter:off -->
                             <span class="rf">
@@ -48,11 +49,11 @@ echo $this->getData('nav')->render(); ?>
                                         alt="<?= $this->getHtml('ProfileImage'); ?>"
                                         itemprop="logo" loading="lazy"
                                         src="<?=
-                                            $employee->getImage() instanceof NullMedia ?
-                                                $employee->getProfile()->getImage() instanceof NullMedia ?
+                                            $employee->image instanceof NullMedia ?
+                                                $employee->profile->image instanceof NullMedia ?
                                                     UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                                    UriFactory::build('{/prefix}' . $employee->getProfile()->getImage()->getPath()) :
-                                                UriFactory::build('{/prefix}' . $employee->getImage()->getPath()); ?>"
+                                                    UriFactory::build('{/prefix}' . $employee->profile->image->getPath()) :
+                                                UriFactory::build('{/prefix}' . $employee->image->getPath()); ?>"
                                     >
                                 </span>
                                     <table class="list">
@@ -70,7 +71,7 @@ echo $this->getData('nav')->render(); ?>
                                             <td itemprop="birthDate">06.09.1934
                                         <tr>
                                             <th><?= $this->getHtml('Email'); ?>
-                                            <td itemprop="email"><a href="mailto:<?= $this->printHtml($employee->getProfile()->getAccount()->getEmail()); ?>"><?= $this->printHtml($employee->getProfile()->getAccount()->getEmail()); ?></a>
+                                            <td itemprop="email"><a href="mailto:<?= $this->printHtml($employee->profile->account->getEmail()); ?>"><?= $this->printHtml($employee->profile->account->getEmail()); ?></a>
                                         <tr>
                                             <th>Address
                                             <td>
@@ -127,7 +128,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-2" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-2' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-2" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-2' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -139,7 +140,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-3' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-3' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -151,7 +152,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-4' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -163,7 +164,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-5' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -175,7 +176,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-6" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-6' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-6" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-6' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -187,7 +188,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-7' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-7' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -199,7 +200,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->getUri()->getFragment() === 'c-tab-8' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-8' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">

@@ -18,6 +18,7 @@ use Modules\Admin\Models\AccountMapper;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 use phpOMS\DataStorage\Database\Query\Builder;
+use Modules\Media\Models\MediaMapper;
 
 /**
  * Employe mapper class.
@@ -52,6 +53,19 @@ final class EmployeeMapper extends DataMapperAbstract
         'profile'    => [
             'mapper'     => ProfileMapper::class,
             'external'   => 'hr_staff_profile',
+        ],
+    ];
+
+    /**
+     * Has one relation.
+     *
+     * @var array<string, array{mapper:string, external:string, by?:string, column?:string, conditional?:bool}>
+     * @since 1.0.0
+     */
+    protected static array $ownsOne = [
+        'image'    => [
+            'mapper'     => MediaMapper::class,
+            'external'   => 'hr_staff_image',
         ],
     ];
 

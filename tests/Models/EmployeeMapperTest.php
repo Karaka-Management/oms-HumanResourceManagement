@@ -34,8 +34,8 @@ class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
         if (($profile = ProfileMapper::getFor(1, 'account'))->getId() === 0) {
             $profile = new Profile();
 
-            $profile->setAccount(AccountMapper::get(1));
-            $profile->setBirthday($date = new \DateTime('now'));
+            $profile->account = AccountMapper::get(1);
+            $profile->birthday = ($date = new \DateTime('now'));
 
             $id = ProfileMapper::create($profile);
         }
@@ -47,6 +47,6 @@ class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($id, $employee->getId());
 
         $employeeR = EmployeeMapper::get($employee->getId());
-        self::assertEquals($employee->getProfile()->getId(), $employeeR->getProfile()->getId());
+        self::assertEquals($employee->profile->getId(), $employeeR->profile->getId());
     }
 }

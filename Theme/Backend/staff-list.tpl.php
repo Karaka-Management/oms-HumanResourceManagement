@@ -40,7 +40,7 @@ echo $this->getData('nav')->render(); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
                         <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
-                                \sprintf('%3$s %2$s %1$s', $value->getProfile()->getAccount()->getName1(), $value->getProfile()->getAccount()->getName2(), $value->getProfile()->getAccount()->getName3())
+                                \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
                             ); ?></a>
                         <td><?= $this->printHtml($value->getNewestHistory()->getUnit()->getName()); ?>
                         <td><?= $this->printHtml($value->getNewestHistory()->getPosition()->getName()); ?>

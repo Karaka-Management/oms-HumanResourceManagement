@@ -43,7 +43,7 @@ class Employee implements \JsonSerializable, ArrayableInterface
      * @var null|int|Profile
      * @since 1.0.0
      */
-    private $profile = null;
+    public $profile = null;
 
     /**
      * Employee image.
@@ -51,7 +51,7 @@ class Employee implements \JsonSerializable, ArrayableInterface
      * @var null|int|Media
      * @since 1.0.0
      */
-    private $image = null;
+    public $image = null;
 
     /**
      * Employee department/position history.
@@ -110,6 +110,7 @@ class Employee implements \JsonSerializable, ArrayableInterface
     {
         $this->profile         = $profile;
         $this->semiPrivateHash = \random_bytes(self::SEMI_PRIVATE_HASH_LENGTH);
+        $this->image           = new NullMedia();
     }
 
     /**
@@ -122,44 +123,6 @@ class Employee implements \JsonSerializable, ArrayableInterface
     public function getId() : int
     {
         return $this->id;
-    }
-
-    /**
-     * Get profile.
-     *
-     * @return null|int|Profile
-     *
-     * @since 1.0.0
-     */
-    public function getProfile()
-    {
-        return $this->profile;
-    }
-
-    /**
-     * Get image.
-     *
-     * @return int|Media
-     *
-     * @since 1.0.0
-     */
-    public function getImage()
-    {
-        return $this->image ?? new NullMedia();
-    }
-
-    /**
-     * Set image.
-     *
-     * @param null|int|Media $image Employee image
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setImage($image) : void
-    {
-        $this->image = $image;
     }
 
     /**

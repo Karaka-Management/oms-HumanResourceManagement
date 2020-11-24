@@ -77,13 +77,13 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
-            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
+            $response->header->status = RequestStatusCode::R_400;
 
             return;
         }
 
         $employees = $this->createEmployeeFromAccountFromRequest($request);
-        $this->createModels($request->getHeader()->getAccount(), $employees, EmployeeMapper::class, 'employee', $request->getOrigin());
+        $this->createModels($request->header->account, $employees, EmployeeMapper::class, 'employee', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee(s) successfully created', $employees);
     }
 
@@ -144,13 +144,13 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
-            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
+            $response->header->status = RequestStatusCode::R_400;
 
             return;
         }
 
         $employee = $this->createEmployeeNewFromRequest($request);
-        $this->createModel($request->getHeader()->getAccount(), $employee, EmployeeMapper::class, 'employee', $request->getOrigin());
+        $this->createModel($request->header->account, $employee, EmployeeMapper::class, 'employee', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee successfully created', $employee);
     }
 
@@ -185,13 +185,13 @@ final class ApiController extends Controller
     private function createEmployeeNewFromRequest(RequestAbstract $request) : Employee
     {
         $account = new Account();
-        $account->setName1((string) ($request->getData('name1') ?? ''));
-        $account->setName2((string) ($request->getData('name2') ?? ''));
-        $account->setName3((string) ($request->getData('name3') ?? ''));
-        $account->setName3((string) ($request->getData('email') ?? ''));
+        $account->name1 = (string) ($request->getData('name1') ?? '');
+        $account->name2 = (string) ($request->getData('name2') ?? '');
+        $account->name3 = (string) ($request->getData('name3') ?? '');
+        $account->name3 = (string) ($request->getData('email') ?? '');
 
         $profile = new Profile($account);
-        $profile->setBirthday(new \DateTime((string) ($request->getData('birthday') ?? 'now')));
+        $profile->birthday = new \DateTime((string) ($request->getData('birthday') ?? 'now'));
 
         $employee = new Employee($profile);
 
@@ -215,13 +215,13 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
             $response->set('history_create', new FormValidation($val));
-            $response->getHeader()->setStatusCode(RequestStatusCode::R_400);
+            $response->header->status = RequestStatusCode::R_400;
 
             return;
         }
 
         $history = $this->createEmployeeHistoryFromRequest($request);
-        $this->createModel($request->getHeader()->getAccount(), $history, EmployeeHistoryMapper::class, 'history', $request->getOrigin());
+        $this->createModel($request->header->account, $history, EmployeeHistoryMapper::class, 'history', $request->getOrigin());
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'History', 'History successfully created', $history);
     }
 
