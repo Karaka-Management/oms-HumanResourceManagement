@@ -64,9 +64,6 @@ class Employee implements \JsonSerializable, ArrayableInterface
     /**
      * Employee education history.
      *
-     * @todo Orange-Management/Modules#187
-     *  Implement the education history for an employee. This can be done similarly to the company history.
-     *
      * @var array
      * @since 1.0.0
      */
@@ -74,9 +71,6 @@ class Employee implements \JsonSerializable, ArrayableInterface
 
     /**
      * Employee external work history.
-     *
-     * @todo Orange-Management/Modules#188
-     *  Implement the work history (at other companies) for an employee. This can be done similarly to the company history.
      *
      * @var array
      * @since 1.0.0
