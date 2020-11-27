@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use phpOMS\DataStorage\Database\DatabaseType;
 use phpOMS\DataStorage\Database\DatabasePool;
 
 /**
