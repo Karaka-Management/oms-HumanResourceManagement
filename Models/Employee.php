@@ -17,6 +17,7 @@ namespace Modules\HumanResourceManagement\Models;
 use Modules\Media\Models\Media;
 use Modules\Media\Models\NullMedia;
 use Modules\Profile\Models\Profile;
+use Modules\Profile\Models\NullProfile;
 use phpOMS\Contract\ArrayableInterface;
 
 /**
@@ -40,10 +41,10 @@ class Employee implements \JsonSerializable, ArrayableInterface
     /**
      * Account profile.
      *
-     * @var null|int|Profile
+     * @var Profile
      * @since 1.0.0
      */
-    public $profile = null;
+    public Profile $profile;
 
     /**
      * Employee image.
@@ -96,13 +97,13 @@ class Employee implements \JsonSerializable, ArrayableInterface
     /**
      * Constructor.
      *
-     * @param null|int|Profile $profile Account profile to initialize this employee with
+     * @param Profile $profile Account profile to initialize this employee with
      *
      * @since 1.0.0
      */
-    public function __construct($profile = null)
+    public function __construct(Profile $profile = null)
     {
-        $this->profile         = $profile;
+        $this->profile         = $profile ?? new NullProfile();
         $this->semiPrivateHash = \random_bytes(self::SEMI_PRIVATE_HASH_LENGTH);
         $this->image           = new NullMedia();
     }

@@ -20,6 +20,7 @@ use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Profile\Models\Profile;
+use Modules\Profile\Models\ProfileMapper;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
@@ -121,7 +122,9 @@ final class ApiController extends Controller
         $employees = [];
 
         foreach ($accounts as $account) {
-            $employees[] = new Employee((int) $account);
+            /** @var Profile $profile Profile */
+            $profile     = ProfileMapper::getFor((int) $account, 'account');
+            $employees[] = new Employee($profile);
         }
 
         return $employees;

@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use phpOMS\DataStorage\Database\DatabaseType;
+use phpOMS\DataStorage\Database\DatabasePool;
 
 /**
  * Staff list class.
@@ -29,19 +30,19 @@ class StaffList
     /**
      * Database instance.
      *
-     * @var \phpOMS\DataStorage\Database\Pool
+     * @var DatabasePool
      * @since 1.0.0
      */
-    private $dbPool = null;
+    private DatabasePool $dbPool;
 
     /**
      * Constructor.
      *
-     * @param \phpOMS\DataStorage\Database\DatabasePool $dbPool Database pool instance
+     * @param DatabasePool $dbPool Database pool instance
      *
      * @since 1.0.0
      */
-    public function __construct($dbPool)
+    public function __construct(DatabasePool $dbPool)
     {
         $this->dbPool = $dbPool;
     }
@@ -59,29 +60,9 @@ class StaffList
      *
      * @since 1.0.0
      */
-    public function getList($filter = null, $offset = 0, $limit = 100)
+    public function getList($filter = null, $offset = 0, $limit = 100) : array
     {
-        $result = null;
-
-        switch ($this->dbPool->get()->getType()) {
-            case DatabaseType::MYSQL:
-                $search = $this->dbPool->get()->generate_sql_filter($filter, true);
-
-                $sth = $this->dbPool->get()->con->prepare('SELECT
-                            `hr_staff`.*
-                        FROM
-                            `hr_staff` '
-                        . $search . 'LIMIT ' . $offset . ',' . $limit);
-                $sth->execute();
-
-                $result['list'] = $sth->fetchAll();
-
-                $sth = $this->dbPool->get()->con->prepare('SELECT FOUND_ROWS();');
-                $sth->execute();
-
-                $result['count'] = $sth->fetchAll()[0][0];
-                break;
-        }
+        $result = [];
 
         return $result;
     }
@@ -93,7 +74,8 @@ class StaffList
      *
      * @since 1.0.0
      */
-    public function getStats()
+    public function getStats() : array
     {
+        return [];
     }
 }
