@@ -5,7 +5,7 @@ use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 /**
  * Orange Management
  *
- * PHP Version 7.4
+ * PHP Version 8.0
  *
  * @package   Modules\HumanResourceManagement
  * @copyright Dennis Eichhorn
