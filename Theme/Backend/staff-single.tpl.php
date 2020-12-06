@@ -59,13 +59,13 @@ echo $this->getData('nav')->render(); ?>
                                     <table class="list">
                                         <tr>
                                             <th><?= $this->getHtml('Position'); ?>
-                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getPosition()->getName()); ?>
+                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getPosition()->name); ?>
                                         <tr>
                                             <th><?= $this->getHtml('Department'); ?>
-                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getDepartment()->getName()); ?>
+                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getDepartment()->name); ?>
                                         <tr>
                                             <th><?= $this->getHtml('Unit'); ?>
-                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getUnit()->getName()); ?>
+                                            <td itemprop="jobTitle"><?= $this->printHtml($recentHistory->getUnit()->name); ?>
                                         <tr>
                                             <th><?= $this->getHtml('Birthday'); ?>
                                             <td itemprop="birthDate">06.09.1934
@@ -119,9 +119,9 @@ echo $this->getData('nav')->render(); ?>
                             <?php foreach ($history as $hist) : ?>
                                 <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
                                     <td><?= $hist->getEnd() === null ? '' : $hist->getEnd()->format('Y-m-d'); ?>
-                                    <td><?= $this->printHtml($hist->getUnit()->getName()); ?>
-                                    <td><?= $this->printHtml($hist->getDepartment()->getName()); ?>
-                                    <td><?= $this->printHtml($hist->getPosition()->getName()); ?>
+                                    <td><?= $this->printHtml($hist->getUnit()->name); ?>
+                                    <td><?= $this->printHtml($hist->getDepartment()->name); ?>
+                                    <td><?= $this->printHtml($hist->getPosition()->name); ?>
                             <?php endforeach; ?>
                         </table>
                     </div>

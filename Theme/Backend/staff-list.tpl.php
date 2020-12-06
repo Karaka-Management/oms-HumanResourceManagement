@@ -38,13 +38,13 @@ echo $this->getData('nav')->render(); ?>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
-                        <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
+                        <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
                             ); ?></a>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getUnit()->getName()); ?>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getPosition()->getName()); ?>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getDepartment()->getName()); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getUnit()->name); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getPosition()->name); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->getDepartment()->name); ?>
                         <td><?= !($value->getNewestHistory() instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
