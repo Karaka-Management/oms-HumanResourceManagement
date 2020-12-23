@@ -1,6 +1,4 @@
-<?php declare(strict_types=1);
-
-use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
+<?php
 
 /**
  * Orange Management
@@ -13,6 +11,11 @@ use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
  * @version   1.0.0
  * @link      https://orange-management.org
  */
+declare(strict_types=1);
+
+use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
+use phpOMS\Uri\UriFactory;
+
 /**
  * @var \phpOMS\Views\View $this
  */
@@ -28,6 +31,7 @@ echo $this->getData('nav')->render(); ?>
             <table id="employeeList" class="default">
                 <thead>
                 <tr>
+                    <td>
                     <td><?= $this->getHtml('ID', '0', '0'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                     <td class="wf-100"><?= $this->getHtml('Name'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                     <td><?= $this->getHtml('Unit'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
@@ -36,8 +40,13 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Status'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
-                    $url = \phpOMS\Uri\UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
+                    $url = UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
+                    <td><a href="<?= $url; ?>"><img width="30" loading="lazy" class="profile-image"
+                            src="<?=
+                                    $value->profile->image instanceof NullMedia ?
+                                        UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
+                                        UriFactory::build('{/prefix}' . $value->profile->image->getPath()); ?>"></a>
                         <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
