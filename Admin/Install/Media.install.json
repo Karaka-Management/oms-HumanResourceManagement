@@ -1,5 +1,6 @@
 [
     {
+    	"type": "collection",
         "name": "HumanResourceManagement",
         "virtualPath": "/HumanResourceManagement",
         "user": 1
