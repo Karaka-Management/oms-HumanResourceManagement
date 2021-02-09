@@ -41,6 +41,34 @@ jobs:
   code-tests:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'NO_CI')"
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: oms
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: root
+          POSTGRES_DB: oms
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+      redis:
+        image: redis
+        ports:
+        - 6379:6379
+        options: --entrypoint redis-server
+      memcached:
+        image: memcached
+        ports:
+          - 11211:11211
     strategy:
       fail-fast: false
       max-parallel: 3
@@ -58,12 +86,34 @@ jobs:
           ref: develop
           repository: Orange-Management/Build
           path: Build
+    - name: Checkout Resource Repository
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Orange-Management/Resources
+          path: Resources
+    - name: Checkout phpOMS Repository
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Orange-Management/phpOMS
+          path: phpOMS
+    - name: Checkout Orange-Management Repository
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Orange-Management/Orange-Management
+          path: Orange-Management
     - name: Setup PHP, with composer and extensions
       uses: shivammathur/setup-php@master
       with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, gd, zip, dom, mysql, pgsql, sqlite, imap, bcmath, redis, memcached
           ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
+          coverage: pcov
     - name: Get Composer Cache Directory
       id: composer-cache
       run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -75,8 +125,12 @@ jobs:
         restore-keys: ${{ runner.os }}-composer-
     - name: Setup Composer
       run: composer install
-    - name: phpcs
-      run: vendor/bin/phpcs ./ --standard="Build/Config/phpcs.xml" -s --report=full
+    - name: phpunit
+      run: vendor/bin/phpunit --coverage-clover tests/coverage.xml --configuration tests/phpunit_default.xml
+    - name: codecov
+      env:
+         CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
+      run: "bash <(curl -s https://codecov.io/bash) -f tests/coverage.xml"
   custom:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'NO_CI')"

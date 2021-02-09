@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="Bootstrap.php" colors="true" stopOnError="true" stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false" beStrictAboutTestsThatDoNotTestAnything="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage includeUncoveredFiles="true" processUncoveredFiles="false">
+    <exclude>
+      <directory>*vendor*</directory>
+      <directory>vendor</directory>
+      <directory>../vendor</directory>
+      <directory>../phpOMS</directory>
+      <directory>../phpOMS*</directory>
+      <directory>../phpOMS/*</directory>
+      <directory>../tests*</directory>
+      <directory>../*/tests*</directory>
+      <directory>../**/tests*</directory>
+      <directory>*/tests*</directory>
+      <directory suffix="tpl.php">../*</directory>
+      <directory suffix="lang.php">../*</directory>
+      <directory suffix="Test.php">../*</directory>
+      <directory suffix="Routes.php">../*</directory>
+      <directory suffix="Hooks.php">../*</directory>
+      <directory>../**/test*</directory>
+      <directory>../**/Theme*</directory>
+      <directory>../**/Admin/Routes*</directory>
+      <directory>../**/Admin/Install*</directory>
+      <directory>../Media/Files*</directory>
+    </exclude>
+    <report>
+      <clover outputFile="coverage.xml"/>
+      <html outputDirectory="../tests" lowUpperBound="75" highLowerBound="95"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="Install">
+      <directory>../Orange-Management/Install/tests*</directory>
+    </testsuite>
+    <testsuite name="Module">
+      <directory>../tests*</directory>
+    </testsuite>
+  </testsuites>
+  <groups>
+    <exclude>
+      <group>volume</group>
+      <group>maybe</group>
+    </exclude>
+  </groups>
+  <logging>
+    <junit outputFile="../tests/junit_php.xml"/>
+    <testdoxHtml outputFile="../tests/index.html"/>
+    <testdoxText outputFile="../tests/testdox.txt"/>
+  </logging>
+  <php>
+    <const name="WEB_SERVER_HOST" value="localhost"/>
+    <const name="WEB_SERVER_PORT" value="1234"/>
+    <const name="WEB_SERVER_DOCROOT" value="./"/>
+    <const name="RESET" value="1"/>
+  </php>
+</phpunit>
