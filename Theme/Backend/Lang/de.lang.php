@@ -33,7 +33,9 @@ return ['HumanResourceManagement' => [
     'Name'              => '',
     'Parent'            => '',
     'Personnel'         => '',
+    'Phone'             => '',
     'Position'          => '',
+    'ProfileImage'      => '',
     'Remarks'           => '',
     'Shifts'            => '',
     'Staff'             => '',
@@ -42,6 +44,4 @@ return ['HumanResourceManagement' => [
     'Unit'              => '',
     'Vacation'          => '',
     'Work'              => '',
-    'ProfileImage'      => '',
-    'Phone'             => '',
 ]];
