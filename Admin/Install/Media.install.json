@@ -1,8 +1,9 @@
 [
     {
     	"type": "collection",
+    	"create_directory": true,
         "name": "HumanResourceManagement",
-        "virtualPath": "/HumanResourceManagement",
+        "virtualPath": "/Modules",
         "user": 1
     }
 ]
