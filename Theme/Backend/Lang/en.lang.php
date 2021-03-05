@@ -4,6 +4,7 @@
  *
  * PHP Version 8.0
  *
+ * @package   Modules\Localization
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -33,9 +34,9 @@ return ['HumanResourceManagement' => [
     'Name'              => 'Name',
     'Parent'            => 'Parent',
     'Personnel'         => 'Personnel',
-    'Phone'             => '',
+    'Phone'             => 'Phone',
     'Position'          => 'Position',
-    'ProfileImage'      => '',
+    'ProfileImage'      => 'Profile image',
     'Remarks'           => 'Remarks',
     'Shifts'            => 'Shifts',
     'Staff'             => 'Staff',
