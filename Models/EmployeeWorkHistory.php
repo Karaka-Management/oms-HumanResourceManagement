@@ -14,9 +14,9 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use phpOMS\Contract\ArrayableInterface;
 use Modules\Admin\Models\Address;
 use Modules\Media\Models\Media;
+use phpOMS\Contract\ArrayableInterface;
 
 /**
  * Employee class.
@@ -83,7 +83,7 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
     {
         $this->employee = $employee;
         $this->start    = new \DateTime('now');
-        $this->address = new Address();
+        $this->address  = new Address();
     }
 
     /**

@@ -16,13 +16,13 @@ namespace Modules\HumanResourceManagement\Controller;
 
 use Modules\Admin\Models\Account;
 use Modules\HumanResourceManagement\Models\Employee;
-use Modules\HumanResourceManagement\Models\EmployeeHistory;
-use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeEducationHistory;
 use Modules\HumanResourceManagement\Models\EmployeeEducationHistoryMapper;
+use Modules\HumanResourceManagement\Models\EmployeeHistory;
+use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
+use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistoryMapper;
-use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Profile\Models\Profile;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\Message\Http\RequestStatusCode;
@@ -344,12 +344,12 @@ final class ApiController extends Controller
     {
         $history = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
         $history->setStart(new \DateTime($request->getData('start') ?? 'now'));
-        $history->jobTitle = $request->getData('title');
-        $history->address->name = $request->getData('name');
+        $history->jobTitle         = $request->getData('title');
+        $history->address->name    = $request->getData('name');
         $history->address->address = $request->getData('address') ?? '';
-        $history->address->postal = $request->getData('postal') ?? '';
-        $history->address->city = $request->getData('city') ?? '';
-        $history->address->state = $request->getData('state') ?? '';
+        $history->address->postal  = $request->getData('postal') ?? '';
+        $history->address->city    = $request->getData('city') ?? '';
+        $history->address->state   = $request->getData('state') ?? '';
         $history->address->setCountry($request->getData('country') ?? '');
         $history->address->setType(AddressType::WORK);
 
@@ -423,14 +423,14 @@ final class ApiController extends Controller
     {
         $history = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
         $history->setStart(new \DateTime($request->getData('start') ?? 'now'));
-        $history->educationTitle = $request->getData('title');
-        $history->score = $request->getData('score') ?? '';
-        $history->passed = (bool) ($request->getData('passed') ?? true);
-        $history->address->name = $request->getData('name');
+        $history->educationTitle   = $request->getData('title');
+        $history->score            = $request->getData('score') ?? '';
+        $history->passed           = (bool) ($request->getData('passed') ?? true);
+        $history->address->name    = $request->getData('name');
         $history->address->address = $request->getData('address') ?? '';
-        $history->address->postal = $request->getData('postal') ?? '';
-        $history->address->city = $request->getData('city') ?? '';
-        $history->address->state = $request->getData('state') ?? '';
+        $history->address->postal  = $request->getData('postal') ?? '';
+        $history->address->city    = $request->getData('city') ?? '';
+        $history->address->state   = $request->getData('state') ?? '';
         $history->address->setCountry($request->getData('country') ?? '');
         $history->address->setType(AddressType::EDUCATION);
 

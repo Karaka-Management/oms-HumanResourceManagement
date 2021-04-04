@@ -14,11 +14,11 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
+use Modules\Media\Models\MediaMapper;
 use Modules\Organization\Models\DepartmentMapper;
 use Modules\Organization\Models\PositionMapper;
 use Modules\Organization\Models\UnitMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
-use Modules\Media\Models\MediaMapper;
 
 /**
  * EmployeHistory mapper class.

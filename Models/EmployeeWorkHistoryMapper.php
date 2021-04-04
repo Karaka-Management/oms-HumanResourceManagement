@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use phpOMS\DataStorage\Database\DataMapperAbstract;
 use Modules\Media\Models\MediaMapper;
+use phpOMS\DataStorage\Database\DataMapperAbstract;
 
 /**
  * EmployeHistory mapper class.
@@ -34,12 +34,12 @@ final class EmployeeWorkHistoryMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $columns = [
-        'hr_staff_work_history_id'         => ['name' => 'hr_staff_work_history_id',         'type' => 'int',      'internal' => 'id'],
-        'hr_staff_work_history_staff'      => ['name' => 'hr_staff_work_history_staff',      'type' => 'int',      'internal' => 'employee'],
+        'hr_staff_work_history_id'           => ['name' => 'hr_staff_work_history_id',         'type' => 'int',      'internal' => 'id'],
+        'hr_staff_work_history_staff'        => ['name' => 'hr_staff_work_history_staff',      'type' => 'int',      'internal' => 'employee'],
         'hr_staff_work_history_address'      => ['name' => 'hr_staff_work_history_address',      'type' => 'Serializable',      'internal' => 'address'],
-        'hr_staff_work_history_title'      => ['name' => 'hr_staff_work_history_title',      'type' => 'string',      'internal' => 'jobTitle'],
-        'hr_staff_work_history_start'      => ['name' => 'hr_staff_work_history_start',      'type' => 'DateTime', 'internal' => 'start'],
-        'hr_staff_work_history_end'        => ['name' => 'hr_staff_work_history_end',        'type' => 'DateTime', 'internal' => 'end'],
+        'hr_staff_work_history_title'        => ['name' => 'hr_staff_work_history_title',      'type' => 'string',      'internal' => 'jobTitle'],
+        'hr_staff_work_history_start'        => ['name' => 'hr_staff_work_history_start',      'type' => 'DateTime', 'internal' => 'start'],
+        'hr_staff_work_history_end'          => ['name' => 'hr_staff_work_history_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**
