@@ -34,6 +34,32 @@
             }
         }
     },
+    "hr_staff_media": {
+        "name": "hr_staff_media",
+        "fields": {
+            "hr_staff_media_id": {
+                "name": "hr_staff_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_media_item": {
+                "name": "hr_staff_media_item",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff",
+                "foreignKey": "hr_staff_id"
+            },
+            "hr_staff_media_media": {
+                "name": "hr_staff_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
     "hr_staff_history": {
         "name": "hr_staff_history",
         "fields": {
@@ -85,6 +111,174 @@
                 "type": "DATETIME",
                 "null": true,
                 "default": null
+            }
+        }
+    },
+    "hr_staff_history_media": {
+        "name": "hr_staff_history_media",
+        "fields": {
+            "hr_staff_history_media_id": {
+                "name": "hr_staff_history_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_history_media_item": {
+                "name": "hr_staff_history_media_item",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff_history",
+                "foreignKey": "hr_staff_history_id"
+            },
+            "hr_staff_history_media_media": {
+                "name": "hr_staff_history_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
+    "hr_staff_education_history": {
+        "name": "hr_staff_education_history",
+        "fields": {
+            "hr_staff_education_history_id": {
+                "name": "hr_staff_education_history_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_education_history_staff": {
+                "name": "hr_staff_education_history_staff",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff",
+                "foreignKey": "hr_staff_id"
+            },
+            "hr_staff_education_history_address": {
+                "name": "hr_staff_education_history_address",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_staff_education_history_title": {
+                "name": "hr_staff_education_history_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "hr_staff_education_history_passed": {
+                "name": "hr_staff_education_history_passed",
+                "type": "TINYINT",
+                "null": false
+            },
+            "hr_staff_education_history_score": {
+                "name": "hr_staff_education_history_score",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "hr_staff_education_history_start": {
+                "name": "hr_staff_education_history_start",
+                "type": "DATETIME",
+                "null": false
+            },
+            "hr_staff_education_history_end": {
+                "name": "hr_staff_education_history_end",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            }
+        }
+    },
+    "hr_staff_education_history_media": {
+        "name": "hr_staff_education_history_media",
+        "fields": {
+            "hr_staff_education_history_media_id": {
+                "name": "hr_staff_education_history_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_education_history_media_item": {
+                "name": "hr_staff_education_history_media_item",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff_education_history",
+                "foreignKey": "hr_staff_education_history_id"
+            },
+            "hr_staff_education_history_media_media": {
+                "name": "hr_staff_education_history_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
+    "hr_staff_work_history": {
+        "name": "hr_staff_work_history",
+        "fields": {
+            "hr_staff_work_history_id": {
+                "name": "hr_staff_work_history_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_work_history_staff": {
+                "name": "hr_staff_work_history_staff",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff",
+                "foreignKey": "hr_staff_id"
+            },
+            "hr_staff_work_history_address": {
+                "name": "hr_staff_work_history_address",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_staff_work_history_title": {
+                "name": "hr_staff_work_history_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "hr_staff_work_history_start": {
+                "name": "hr_staff_work_history_start",
+                "type": "DATETIME",
+                "null": false
+            },
+            "hr_staff_work_history_end": {
+                "name": "hr_staff_education_history_end",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            }
+        }
+    },
+    "hr_staff_work_history_media": {
+        "name": "hr_staff_work_history_media",
+        "fields": {
+            "hr_staff_work_history_media_id": {
+                "name": "hr_staff_work_history_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_work_history_media_item": {
+                "name": "hr_staff_work_history_media_item",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff_work_history",
+                "foreignKey": "hr_staff_work_history_id"
+            },
+            "hr_staff_work_history_media_media": {
+                "name": "hr_staff_work_history_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
             }
         }
     }

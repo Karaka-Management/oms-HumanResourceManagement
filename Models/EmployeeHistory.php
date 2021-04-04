@@ -21,6 +21,7 @@ use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Position;
 use Modules\Organization\Models\Unit;
 use phpOMS\Contract\ArrayableInterface;
+use Modules\Media\Models\Media;
 
 /**
  * Employee class.
@@ -71,6 +72,14 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @since 1.0.0
      */
     private $position = null;
+
+    /**
+     * Files.
+     *
+     * @var Media[]
+     * @since 1.0.0
+     */
+    private array $files = [];
 
     /**
      * Start date

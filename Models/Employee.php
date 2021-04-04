@@ -55,6 +55,14 @@ class Employee implements \JsonSerializable, ArrayableInterface
     public $image = null;
 
     /**
+     * Files.
+     *
+     * @var Media[]
+     * @since 1.0.0
+     */
+    private array $files = [];
+
+    /**
      * Employee department/position history.
      *
      * @var array

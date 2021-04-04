@@ -76,10 +76,28 @@ final class EmployeeMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $hasMany = [
+        'files' => [
+            'mapper'   => MediaMapper::class,            /* mapper of the related object */
+            'table'    => 'hr_staff_media',         /* table of the related object, null if no relation table is used (many->1) */
+            'external' => 'hr_staff_media_media',
+            'self'     => 'hr_staff_media_item',
+        ],
         'companyHistory' => [
             'mapper'       => EmployeeHistoryMapper::class,
             'table'        => 'hr_staff_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
             'self'         => 'hr_staff_history_staff',
+            'external'     => null,
+        ],
+        'workHistory' => [
+            'mapper'       => EmployeeWorkHistoryMapper::class,
+            'table'        => 'hr_staff_work_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
+            'self'         => 'hr_staff_work_history_staff',
+            'external'     => null,
+        ],
+        'educationHistory' => [
+            'mapper'       => EmployeeEducationHistoryMapper::class,
+            'table'        => 'hr_staff_education_history', // @todo: is this requried? This is stored in the mapper already. In other places I'm not using this, either use it everywhere or nowhere. Using the mapper is slower but protects us from table name changes!
+            'self'         => 'hr_staff_education_history_staff',
             'external'     => null,
         ],
     ];

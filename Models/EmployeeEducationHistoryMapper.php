@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Organization\Models\DepartmentMapper;
-use Modules\Organization\Models\PositionMapper;
-use Modules\Organization\Models\UnitMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
 use Modules\Media\Models\MediaMapper;
 
@@ -28,7 +25,7 @@ use Modules\Media\Models\MediaMapper;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-final class EmployeeHistoryMapper extends DataMapperAbstract
+final class EmployeeEducationHistoryMapper extends DataMapperAbstract
 {
     /**
      * Columns.
@@ -37,13 +34,14 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $columns = [
-        'hr_staff_history_id'         => ['name' => 'hr_staff_history_id',         'type' => 'int',      'internal' => 'id'],
-        'hr_staff_history_staff'      => ['name' => 'hr_staff_history_staff',      'type' => 'int',      'internal' => 'employee'],
-        'hr_staff_history_unit'       => ['name' => 'hr_staff_history_unit',       'type' => 'int',      'internal' => 'unit'],
-        'hr_staff_history_department' => ['name' => 'hr_staff_history_department', 'type' => 'int',      'internal' => 'department'],
-        'hr_staff_history_position'   => ['name' => 'hr_staff_history_position',   'type' => 'int',      'internal' => 'position'],
-        'hr_staff_history_start'      => ['name' => 'hr_staff_history_start',      'type' => 'DateTime', 'internal' => 'start'],
-        'hr_staff_history_end'        => ['name' => 'hr_staff_history_end',        'type' => 'DateTime', 'internal' => 'end'],
+        'hr_staff_education_history_id'         => ['name' => 'hr_staff_education_history_id',         'type' => 'int',      'internal' => 'id'],
+        'hr_staff_education_history_staff'      => ['name' => 'hr_staff_education_history_staff',      'type' => 'int',      'internal' => 'employee'],
+        'hr_staff_education_history_address'      => ['name' => 'hr_staff_education_history_address',      'type' => 'Serializable',      'internal' => 'address'],
+        'hr_staff_education_history_title'      => ['name' => 'hr_staff_education_history_title',      'type' => 'string',      'internal' => 'educationTitle'],
+        'hr_staff_education_history_passed'      => ['name' => 'hr_staff_education_history_passed',      'type' => 'bool',      'internal' => 'passed'],
+        'hr_staff_education_history_score'      => ['name' => 'hr_staff_education_history_score',      'type' => 'string',      'internal' => 'score'],
+        'hr_staff_education_history_start'      => ['name' => 'hr_staff_education_history_start',      'type' => 'DateTime', 'internal' => 'start'],
+        'hr_staff_education_history_end'        => ['name' => 'hr_staff_education_history_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**
@@ -53,21 +51,9 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static array $belongsTo = [
-        'unit'    => [
-            'mapper'     => UnitMapper::class,
-            'external'   => 'hr_staff_history_unit',
-        ],
-        'department'    => [
-            'mapper'     => DepartmentMapper::class,
-            'external'   => 'hr_staff_history_department',
-        ],
-        'position'    => [
-            'mapper'     => PositionMapper::class,
-            'external'   => 'hr_staff_history_position',
-        ],
         'employee'    => [
             'mapper'     => EmployeeMapper::class,
-            'external'   => 'hr_staff_history_staff',
+            'external'   => 'hr_staff_education_history_staff',
         ],
     ];
 
@@ -92,7 +78,7 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $primaryField = 'hr_staff_history_id';
+    protected static string $primaryField = 'hr_staff_education_history_id';
 
     /**
      * Primary table.
@@ -100,5 +86,5 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $table = 'hr_staff_history';
+    protected static string $table = 'hr_staff_education_history';
 }

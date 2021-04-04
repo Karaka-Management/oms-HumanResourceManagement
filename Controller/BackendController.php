@@ -49,7 +49,7 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $view->setData('employees', EmployeeMapper::getAll(depth: 6));
+        $view->setData('employees', EmployeeMapper::getAll(depth: 4));
 
         return $view;
     }
