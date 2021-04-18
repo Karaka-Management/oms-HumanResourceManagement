@@ -28,7 +28,7 @@ echo $this->getData('nav')->render(); ?>
     <div class="col-xs-12">
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Staff'); ?><i class="fa fa-download floatRight download btn"></i></div>
-            <table id="employeeList" class="default">
+            <table id="employeeList" class="default sticky">
                 <thead>
                 <tr>
                     <td>
