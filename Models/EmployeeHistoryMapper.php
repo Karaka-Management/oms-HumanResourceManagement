@@ -82,7 +82,7 @@ final class EmployeeHistoryMapper extends DataMapperAbstract
             'mapper'   => MediaMapper::class,            /* mapper of the related object */
             'table'    => 'hr_staff_work_history_media',         /* table of the related object, null if no relation table is used (many->1) */
             'external' => 'hr_staff_work_history_media_media',
-            'self'     => 'hr_staff_work_history_media_item',
+            'self'     => 'hr_staff_work_history_media_history',
         ],
     ];
 

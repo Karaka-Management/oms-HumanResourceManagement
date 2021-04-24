@@ -124,8 +124,8 @@
                 "primary": true,
                 "autoincrement": true
             },
-            "hr_staff_history_media_item": {
-                "name": "hr_staff_history_media_item",
+            "hr_staff_history_media_history": {
+                "name": "hr_staff_history_media_history",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "hr_staff_history",
@@ -200,8 +200,8 @@
                 "primary": true,
                 "autoincrement": true
             },
-            "hr_staff_education_history_media_item": {
-                "name": "hr_staff_education_history_media_item",
+            "hr_staff_education_history_media_history": {
+                "name": "hr_staff_education_history_media_history",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "hr_staff_education_history",
@@ -266,8 +266,8 @@
                 "primary": true,
                 "autoincrement": true
             },
-            "hr_staff_work_history_media_item": {
-                "name": "hr_staff_work_history_media_item",
+            "hr_staff_work_history_media_history": {
+                "name": "hr_staff_work_history_media_history",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "hr_staff_work_history",
@@ -275,6 +275,84 @@
             },
             "hr_staff_work_history_media_media": {
                 "name": "hr_staff_work_history_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
+    "hr_position": {
+        "name": "hr_position",
+        "fields": {
+            "hr_position_id": {
+                "name": "hr_position_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_position_title": {
+                "name": "hr_position_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "hr_position_requirement": {
+                "name": "hr_position_requirement",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_position_requirementraw": {
+                "name": "hr_position_requirementraw",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_position_tasks": {
+                "name": "hr_position_tasks",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_position_tasksraw": {
+                "name": "hr_position_tasksraw",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_position_lang": {
+                "name": "hr_position_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            },
+            "hr_position_position": {
+                "name": "hr_position_position",
+                "type": "INT",
+                "default": null,
+                "null": true,
+                "foreignTable": "organization_position",
+                "foreignKey": "organization_position_id"
+            }
+        }
+    },
+    "hr_position_media": {
+        "name": "hr_position_media",
+        "fields": {
+            "hr_position_media_id": {
+                "name": "hr_position_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_position_media_position": {
+                "name": "hr_position_media_position",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_position",
+                "foreignKey": "hr_position_id"
+            },
+            "hr_position_media_media": {
+                "name": "hr_position_media_media",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "media",

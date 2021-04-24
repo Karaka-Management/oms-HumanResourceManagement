@@ -29,4 +29,6 @@ abstract class PermissionState extends Enum
     public const HR = 1;
 
     public const DEPARTMENT = 2;
+
+    public const POSITION = 3;
 }

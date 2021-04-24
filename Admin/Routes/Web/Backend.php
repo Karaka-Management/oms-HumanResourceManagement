@@ -50,4 +50,26 @@ return [
             ],
         ],
     ],
+    '^.*/humanresource/position/list.*$' => [
+        [
+            'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionList',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::POSITION,
+            ],
+        ],
+    ],
+    '^.*/humanresource/position/create.*$' => [
+        [
+            'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionCreate',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::POSITION,
+            ],
+        ],
+    ],
 ];
