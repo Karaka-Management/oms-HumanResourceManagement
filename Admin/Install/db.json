@@ -249,7 +249,7 @@
                 "null": false
             },
             "hr_staff_work_history_end": {
-                "name": "hr_staff_education_history_end",
+                "name": "hr_staff_work_history_end",
                 "type": "DATETIME",
                 "null": true,
                 "default": null
