@@ -98,7 +98,7 @@
                 "pid": "/",
                 "type": 2,
                 "subtype": 1,
-                "name": "Departments",
+                "name": "Positions",
                 "uri": "{/prefix}humanresource/position/list",
                 "target": "self",
                 "icon": null,
