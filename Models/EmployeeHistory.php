@@ -47,7 +47,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var int|Employee
      * @since 1.0.0
      */
-    private $employee = 0;
+    public $employee = 0;
 
     /**
      * Unit
@@ -55,7 +55,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var null|int|Unit
      * @since 1.0.0
      */
-    private $unit = null;
+    public $unit = null;
 
     /**
      * Department
@@ -63,7 +63,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var null|int|Department
      * @since 1.0.0
      */
-    private $department = null;
+    public $department = null;
 
     /**
      * Position
@@ -71,7 +71,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var null|int|Position
      * @since 1.0.0
      */
-    private $position = null;
+    public $position = null;
 
     /**
      * Files.

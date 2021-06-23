@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 use phpOMS\Uri\UriFactory;
+use Modules\Media\Models\NullMedia;
 
 /**
  * @var \phpOMS\Views\View $this
@@ -42,7 +43,7 @@ echo $this->getData('nav')->render(); ?>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
-                    <td><a href="<?= $url; ?>"><img width="30" loading="lazy" class="profile-image"
+                        <td><a href="<?= $url; ?>"><img width="30" loading="lazy" class="profile-image"
                             src="<?=
                                     $value->profile->image instanceof NullMedia ?
                                         UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
@@ -51,9 +52,9 @@ echo $this->getData('nav')->render(); ?>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
                             ); ?></a>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getUnit()->name); ?>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getPosition()->name); ?>
-                        <td><?= $this->printHtml($value->getNewestHistory()->getDepartment()->name); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->unit->name); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->position->name); ?>
+                        <td><?= $this->printHtml($value->getNewestHistory()->department->name); ?>
                         <td><?= !($value->getNewestHistory() instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
