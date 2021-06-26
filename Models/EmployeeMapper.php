@@ -133,7 +133,7 @@ final class EmployeeMapper extends DataMapperAbstract
         $query = new Builder(self::$db);
         $query = self::getQuery($query)
             ->innerJoin(ProfileMapper::getTable())
-                ->on(self::$table . '_' . $depth . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
+                ->on(self::$table . '_d' . $depth . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
             ->innerJoin(AccountMapper::getTable())
                 ->on(ProfileMapper::getTable() . '.profile_account_account', '=', AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField())
             ->where(AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField(), '=', $account)
