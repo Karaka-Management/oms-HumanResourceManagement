@@ -12,6 +12,8 @@
  */
 declare(strict_types=1);
 
+use phpOMS\Uri\UriFactory;
+
 /**
  * @var \phpOMS\Views\View $this
  */
@@ -40,7 +42,7 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Parent'); ?>
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}hr/department/single?{?}&id=' . $value->getId()); ?>
+                $url     = UriFactory::build('{/prefix}hr/department/single?{?}&id=' . $value->getId()); ?>
                 <tr tabindex="0" data-href="<?= $url; ?>">
                     <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
                     <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
