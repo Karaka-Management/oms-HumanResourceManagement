@@ -116,7 +116,6 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('Unit'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Department'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Position'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                            <tfoot>
                             <tbody>
                             <?php foreach ($history as $hist) : ?>
                                 <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
@@ -202,7 +201,6 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('End'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Title'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Address'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                            <tfoot>
                             <tbody>
                             <?php foreach ($education as $hist) : ?>
                                 <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
@@ -227,7 +225,6 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('End'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Title'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Address'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
-                            <tfoot>
                             <tbody>
                             <?php foreach ($work as $hist) : ?>
                                 <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
