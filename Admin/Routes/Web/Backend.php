@@ -23,7 +23,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffList',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::HR,
             ],
@@ -34,7 +34,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffProfile',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::HR,
             ],
@@ -45,7 +45,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffCreate',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
                 'state'  => PermissionState::HR,
             ],
@@ -56,7 +56,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrDepartmentList',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::DEPARTMENT,
             ],
@@ -67,7 +67,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionList',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::POSITION,
             ],
@@ -78,7 +78,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionCreate',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
                 'state'  => PermissionState::POSITION,
             ],

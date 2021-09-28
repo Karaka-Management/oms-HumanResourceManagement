@@ -23,7 +23,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
             'verb'       => RouteVerb::PUT,
             'permission' => [
-                'module' => ApiController::MODULE_NAME,
+                'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
                 'state'  => PermissionState::HR,
             ],

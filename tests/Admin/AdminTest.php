@@ -19,7 +19,7 @@ namespace Modules\HumanResourceManagement\tests\Admin;
  */
 class AdminTest extends \PHPUnit\Framework\TestCase
 {
-    protected const MODULE_NAME = 'HumanResourceManagement';
+    protected const NAME = 'HumanResourceManagement';
 
     protected const URI_LOAD = '';
 
