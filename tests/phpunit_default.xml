@@ -20,6 +20,7 @@
       <directory>../**/test*</directory>
       <directory>../**/Theme*</directory>
       <directory>../**/Admin/Routes*</directory>
+      <directory>../**/Admin/Hooks*</directory>
       <directory>../**/Admin/Install*</directory>
       <directory>../Media/Files*</directory>
     </exclude>
