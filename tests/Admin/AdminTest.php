@@ -17,7 +17,7 @@ namespace Modules\HumanResourceManagement\tests\Admin;
 /**
  * @internal
  */
-class AdminTest extends \PHPUnit\Framework\TestCase
+final class AdminTest extends \PHPUnit\Framework\TestCase
 {
     protected const NAME = 'HumanResourceManagement';
 

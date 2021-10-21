@@ -19,7 +19,7 @@ use Modules\HumanResourceManagement\Models\Employee;
 /**
  * @internal
  */
-class EmployeeTest extends \PHPUnit\Framework\TestCase
+final class EmployeeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\HumanResourceManagement\Models\Employee

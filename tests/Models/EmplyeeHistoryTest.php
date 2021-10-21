@@ -19,7 +19,7 @@ use Modules\HumanResourceManagement\Models\EmployeeHistory;
 /**
  * @internal
  */
-class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
+final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\HumanResourceManagement\Models\EmployeeHistory

@@ -22,7 +22,7 @@ use Modules\Profile\Models\ProfileMapper;
 /**
  * @internal
  */
-class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
+final class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\HumanResourceManagement\Models\EmployeeHistoryMapper
