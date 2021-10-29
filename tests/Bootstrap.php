@@ -392,4 +392,4 @@ function phpServe() : void
     });
 }
 
-phpServe();
+\phpServe();
