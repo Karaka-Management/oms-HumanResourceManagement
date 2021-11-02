@@ -14,24 +14,24 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\tests\Models;
 
-use Modules\HumanResourceManagement\Models\EmployeeHistory;
+use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 
 /**
  * @internal
  */
-final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
+final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 {
-    private EmployeeHistory $history;
+    private EmployeeWorkHistory $history;
 
     /**
      * {@inheritdoc}
      */
     protected function setUp() : void
     {
-        $this->history = new EmployeeHistory();
+        $this->history = new EmployeeWorkHistory();
     }
     /**
-     * @covers Modules\HumanResourceManagement\Models\EmployeeHistory
+     * @covers Modules\HumanResourceManagement\Models\EmployeeWorkHistory
      * @group module
      */
     public function testDefault() : void
@@ -39,19 +39,19 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(0, $this->history->getId());
         self::assertNull($this->history->end);
         self::assertEquals(0, $this->history->employee);
-        self::assertNull($this->history->position);
-        self::assertNull($this->history->unit);
-        self::assertNull($this->history->department);
+        self::assertEquals('', $this->history->jobTitle);
         self::assertInstanceOf('\DateTime', $this->history->start);
+        self::assertInstanceOf('\Modules\Admin\Models\Address', $this->history->address);
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\EmployeeHistory
+     * @covers Modules\HumanResourceManagement\Models\EmployeeWorkHistory
      * @group module
      */
     public function testSerialize() : void
     {
         $this->history->employee = 2;
+        $this->history->jobTitle = 'title';
 
         $serialized = $this->history->jsonSerialize();
         unset($serialized['start']);
@@ -60,9 +60,7 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
             [
                 'id'         => 0,
                 'employee'   => 2,
-                'unit'       => null,
-                'department' => null,
-                'position'   => null,
+                'jobTitle'   => 'title',
                 'end'        => null,
             ],
             $serialized

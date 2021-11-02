@@ -24,4 +24,16 @@ namespace Modules\HumanResourceManagement\Models;
  */
 final class NullEmployeeWorkHistory extends EmployeeWorkHistory
 {
+	/**
+     * Constructor
+     *
+     * @param int $id Model id
+     *
+     * @since 1.0.0
+     */
+    public function __construct(int $id = 0)
+    {
+        $this->id = $id;
+        parent::__construct();
+    }
 }

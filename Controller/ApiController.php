@@ -269,13 +269,13 @@ final class ApiController extends Controller
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
         $history = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
-        $history->setUnit((int) ($request->getData('unit') ?? 0));
-        $history->setDepartment((int) ($request->getData('department') ?? 0));
-        $history->setPosition((int) ($request->getData('position') ?? 0));
-        $history->setStart(new \DateTime($request->getData('start') ?? 'now'));
+        $history->unit = (int) ($request->getData('unit') ?? 0);
+        $history->department = (int) ($request->getData('department') ?? 0);
+        $history->position = (int) ($request->getData('position') ?? 0);
+        $history->start = new \DateTime($request->getData('start') ?? 'now');
 
         if (!empty($request->getData('end'))) {
-            $history->setEnd(new \DateTime($request->getData('end')));
+            $history->end = new \DateTime($request->getData('end'));
         }
 
         return $history;
@@ -343,7 +343,7 @@ final class ApiController extends Controller
     private function createEmployeeWorkHistoryFromRequest(RequestAbstract $request) : EmployeeWorkHistory
     {
         $history = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
-        $history->setStart(new \DateTime($request->getData('start') ?? 'now'));
+        $history->start = new \DateTime($request->getData('start') ?? 'now');
         $history->jobTitle         = $request->getData('title');
         $history->address->name    = $request->getData('name');
         $history->address->address = $request->getData('address') ?? '';
@@ -354,7 +354,7 @@ final class ApiController extends Controller
         $history->address->setType(AddressType::WORK);
 
         if (!empty($request->getData('end'))) {
-            $history->setEnd(new \DateTime($request->getData('end')));
+            $history->end = new \DateTime($request->getData('end'));
         }
 
         return $history;
@@ -422,7 +422,7 @@ final class ApiController extends Controller
     private function createEmployeeEducationHistoryFromRequest(RequestAbstract $request) : EmployeeEducationHistory
     {
         $history = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
-        $history->setStart(new \DateTime($request->getData('start') ?? 'now'));
+        $history->start = new \DateTime($request->getData('start') ?? 'now');
         $history->educationTitle   = $request->getData('title');
         $history->score            = $request->getData('score') ?? '';
         $history->passed           = (bool) ($request->getData('passed') ?? true);
@@ -435,7 +435,7 @@ final class ApiController extends Controller
         $history->address->setType(AddressType::EDUCATION);
 
         if (!empty($request->getData('end'))) {
-            $history->setEnd(new \DateTime($request->getData('end')));
+            $history->end = new \DateTime($request->getData('end'));
         }
 
         return $history;

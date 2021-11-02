@@ -87,7 +87,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $start;
+    public \DateTime $start;
 
     /**
      * End date
@@ -95,7 +95,7 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      * @var null|\DateTime
      * @since 1.0.0
      */
-    private ?\DateTime $end = null;
+    public ?\DateTime $end = null;
 
     /**
      * Constructor.
@@ -123,148 +123,6 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
     }
 
     /**
-     * Get the employee this history belongs to
-     *
-     * @return int|Employee
-     *
-     * @since 1.0.0
-     */
-    public function getEmployee()
-    {
-        return empty($this->employee) ? new NullEmployee() : $this->employee;
-    }
-
-    /**
-     * Get the position
-     *
-     * @return int|Position
-     *
-     * @since 1.0.0
-     */
-    public function getPosition()
-    {
-        return empty($this->position) ? new NullPosition() : $this->position;
-    }
-
-    /**
-     * Set the position
-     *
-     * @param int|Position $position Position
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setPosition($position) : void
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * Get the unit
-     *
-     * @return int|Unit
-     *
-     * @since 1.0.0
-     */
-    public function getUnit()
-    {
-        return empty($this->unit) ? new NullUnit() : $this->unit;
-    }
-
-    /**
-     * Set the unit
-     *
-     * @param int|Unit $unit Unit
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setUnit($unit) : void
-    {
-        $this->unit = $unit;
-    }
-
-    /**
-     * Get the department
-     *
-     * @return int|Department
-     *
-     * @since 1.0.0
-     */
-    public function getDepartment()
-    {
-        return empty($this->department) ? new NullDepartment() : $this->department;
-    }
-
-    /**
-     * Set the department
-     *
-     * @param int|Department $department Department
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setDepartment($department) : void
-    {
-        $this->department = $department;
-    }
-
-    /**
-     * Get start date
-     *
-     * @return \DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getStart() : \DateTime
-    {
-        return $this->start;
-    }
-
-    /**
-     * Set start date
-     *
-     * @param \DateTime $start Start date
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setStart(\DateTime $start) : void
-    {
-        $this->start = $start;
-    }
-
-    /**
-     * Get end date
-     *
-     * @return null|\DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getEnd() : ?\DateTime
-    {
-        return $this->end;
-    }
-
-    /**
-     * Set end date
-     *
-     * @param \DateTime $end End date
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setEnd(\DateTime $end) : void
-    {
-        $this->end = $end;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function toArray() : array
@@ -278,14 +136,6 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
             'start'      => $this->start,
             'end'        => $this->end,
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return (string) \json_encode($this->toArray());
     }
 
     /**

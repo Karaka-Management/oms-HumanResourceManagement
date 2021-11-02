@@ -203,6 +203,20 @@ class Employee implements \JsonSerializable, ArrayableInterface
     }
 
     /**
+     * Add company history to employee
+     *
+     * @param mixed $history Company history
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
+    public function addEducationHistory($history) : void
+    {
+        $this->educationHistory[] = $history;
+    }
+
+    /**
      * Get employee company education history.
      *
      * @return array Employee education history
@@ -224,6 +238,20 @@ class Employee implements \JsonSerializable, ArrayableInterface
     public function getNewestEducationHistory() : EmployeeEducationHistory
     {
         return empty($this->educationHistory) ? new NullEmployeeEducationHistory() : \end($this->educationHistory);
+    }
+
+    /**
+     * Add company history to employee
+     *
+     * @param mixed $history Company history
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
+    public function addWorkHistory($history) : void
+    {
+        $this->workHistory[] = $history;
     }
 
     /**
@@ -258,15 +286,10 @@ class Employee implements \JsonSerializable, ArrayableInterface
         return [
             'id'      => $this->id,
             'profile' => $this->profile,
+            'history' => $this->companyHistory,
+            'workHistory' => $this->workHistory,
+            'educationHistory' => $this->educationHistory,
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return (string) \json_encode($this->toArray());
     }
 
     /**

@@ -42,7 +42,7 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
      * @var int|Employee
      * @since 1.0.0
      */
-    private $employee = 0;
+    public $employee = 0;
 
     public Address $address;
 
@@ -62,7 +62,7 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $start;
+    public \DateTime $start;
 
     /**
      * End date
@@ -70,7 +70,7 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
      * @var null|\DateTime
      * @since 1.0.0
      */
-    private ?\DateTime $end = null;
+    public ?\DateTime $end = null;
 
     /**
      * Constructor.
@@ -99,70 +99,6 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
     }
 
     /**
-     * Get the employee this history belongs to
-     *
-     * @return int|Employee
-     *
-     * @since 1.0.0
-     */
-    public function getEmployee()
-    {
-        return empty($this->employee) ? new NullEmployee() : $this->employee;
-    }
-
-    /**
-     * Get start date
-     *
-     * @return \DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getStart() : \DateTime
-    {
-        return $this->start;
-    }
-
-    /**
-     * Set start date
-     *
-     * @param \DateTime $start Start date
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setStart(\DateTime $start) : void
-    {
-        $this->start = $start;
-    }
-
-    /**
-     * Get end date
-     *
-     * @return null|\DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getEnd() : ?\DateTime
-    {
-        return $this->end;
-    }
-
-    /**
-     * Set end date
-     *
-     * @param \DateTime $end End date
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setEnd(\DateTime $end) : void
-    {
-        $this->end = $end;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function toArray() : array
@@ -170,17 +106,10 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
         return [
             'id'         => $this->id,
             'employee'   => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
+            'jobTitle'        => $this->jobTitle,
             'start'      => $this->start,
             'end'        => $this->end,
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return (string) \json_encode($this->toArray());
     }
 
     /**

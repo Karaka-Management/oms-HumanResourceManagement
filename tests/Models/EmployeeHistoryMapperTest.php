@@ -39,6 +39,6 @@ final class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($id, $history->getId());
 
         $historyR = EmployeeHistoryMapper::get($history->getId());
-        self::assertEquals($history->getEmployee()->getId(), $historyR->getEmployee()->getId());
+        self::assertEquals($history->employee->getId(), $historyR->employee->getId());
     }
 }
