@@ -30,6 +30,7 @@ final class EmployeeEducationHistoryTest extends \PHPUnit\Framework\TestCase
     {
         $this->history = new EmployeeEducationHistory();
     }
+
     /**
      * @covers Modules\HumanResourceManagement\Models\EmployeeEducationHistory
      * @group module
@@ -52,22 +53,22 @@ final class EmployeeEducationHistoryTest extends \PHPUnit\Framework\TestCase
      */
     public function testSerialize() : void
     {
-        $this->history->employee = 2;
+        $this->history->employee       = 2;
         $this->history->educationTitle = 'title';
-        $this->history->score = '69';
-        $this->history->passed = false;
+        $this->history->score          = '69';
+        $this->history->passed         = false;
 
         $serialized = $this->history->jsonSerialize();
         unset($serialized['start']);
 
         self::assertEquals(
             [
-                'id'         => 0,
-                'employee'   => 2,
+                'id'               => 0,
+                'employee'         => 2,
                 'educationTitle'   => 'title',
-                'passed'   => false,
-                'score'   => '69',
-                'end'        => null,
+                'passed'           => false,
+                'score'            => '69',
+                'end'              => null,
             ],
             $serialized
         );

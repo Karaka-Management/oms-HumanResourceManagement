@@ -284,10 +284,10 @@ class Employee implements \JsonSerializable, ArrayableInterface
     public function toArray() : array
     {
         return [
-            'id'      => $this->id,
-            'profile' => $this->profile,
-            'history' => $this->companyHistory,
-            'workHistory' => $this->workHistory,
+            'id'               => $this->id,
+            'profile'          => $this->profile,
+            'history'          => $this->companyHistory,
+            'workHistory'      => $this->workHistory,
             'educationHistory' => $this->educationHistory,
         ];
     }

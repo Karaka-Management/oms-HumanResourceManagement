@@ -30,6 +30,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
     {
         $this->history = new EmployeeWorkHistory();
     }
+
     /**
      * @covers Modules\HumanResourceManagement\Models\EmployeeWorkHistory
      * @group module

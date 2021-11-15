@@ -24,7 +24,7 @@ namespace Modules\HumanResourceManagement\Models;
  */
 final class NullEmployeeHistory extends EmployeeHistory
 {
-	/**
+    /**
      * Constructor
      *
      * @param int $id Model id

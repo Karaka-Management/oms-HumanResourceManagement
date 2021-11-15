@@ -16,6 +16,11 @@ namespace Modules\HumanResourceManagement\tests\Controller;
 
 use Model\CoreSettings;
 use Modules\Admin\Models\AccountPermission;
+use Modules\Organization\Models\Department;
+use Modules\Organization\Models\DepartmentMapper;
+use Modules\Organization\Models\NullUnit;
+use Modules\Organization\Models\Position;
+use Modules\Organization\Models\PositionMapper;
 use phpOMS\Account\Account;
 use phpOMS\Account\AccountManager;
 use phpOMS\Account\PermissionType;
@@ -23,6 +28,7 @@ use phpOMS\Application\ApplicationAbstract;
 use phpOMS\DataStorage\Session\HttpSession;
 use phpOMS\Dispatcher\Dispatcher;
 use phpOMS\Event\EventManager;
+use phpOMS\Localization\ISO3166TwoEnum;
 use phpOMS\Message\Http\HttpRequest;
 use phpOMS\Message\Http\HttpResponse;
 use phpOMS\Message\Http\RequestStatusCode;
@@ -30,16 +36,8 @@ use phpOMS\Module\ModuleAbstract;
 use phpOMS\Module\ModuleManager;
 use phpOMS\Router\WebRouter;
 use phpOMS\Uri\HttpUri;
-use phpOMS\Utils\TestUtils;
 use phpOMS\Utils\RnG\DateTime;
-use phpOMS\Localization\ISO3166TwoEnum;
-use Modules\Organization\Models\Department;
-use Modules\Organization\Models\DepartmentMapper;
-use Modules\Organization\Models\NullDepartment;
-use Modules\Organization\Models\NullUnit;
-use Modules\Organization\Models\NullPosition;
-use Modules\Organization\Models\Position;
-use Modules\Organization\Models\PositionMapper;
+use phpOMS\Utils\TestUtils;
 
 /**
  * @testdox Modules\HumanResourceManagement\tests\Controller\ApiControllerTest: HumanResourceManagement api controller

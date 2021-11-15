@@ -16,9 +16,6 @@ namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Media\Models\Media;
 use Modules\Organization\Models\Department;
-use Modules\Organization\Models\NullDepartment;
-use Modules\Organization\Models\NullPosition;
-use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Position;
 use Modules\Organization\Models\Unit;
 use phpOMS\Contract\ArrayableInterface;

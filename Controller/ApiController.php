@@ -268,11 +268,11 @@ final class ApiController extends Controller
      */
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
-        $history = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
-        $history->unit = (int) ($request->getData('unit') ?? 0);
+        $history             = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
+        $history->unit       = (int) ($request->getData('unit') ?? 0);
         $history->department = (int) ($request->getData('department') ?? 0);
-        $history->position = (int) ($request->getData('position') ?? 0);
-        $history->start = new \DateTime($request->getData('start') ?? 'now');
+        $history->position   = (int) ($request->getData('position') ?? 0);
+        $history->start      = new \DateTime($request->getData('start') ?? 'now');
 
         if (!empty($request->getData('end'))) {
             $history->end = new \DateTime($request->getData('end'));
@@ -342,8 +342,8 @@ final class ApiController extends Controller
      */
     private function createEmployeeWorkHistoryFromRequest(RequestAbstract $request) : EmployeeWorkHistory
     {
-        $history = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
-        $history->start = new \DateTime($request->getData('start') ?? 'now');
+        $history                   = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
+        $history->start            = new \DateTime($request->getData('start') ?? 'now');
         $history->jobTitle         = $request->getData('title');
         $history->address->name    = $request->getData('name');
         $history->address->address = $request->getData('address') ?? '';
@@ -421,8 +421,8 @@ final class ApiController extends Controller
      */
     private function createEmployeeEducationHistoryFromRequest(RequestAbstract $request) : EmployeeEducationHistory
     {
-        $history = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
-        $history->start = new \DateTime($request->getData('start') ?? 'now');
+        $history                   = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
+        $history->start            = new \DateTime($request->getData('start') ?? 'now');
         $history->educationTitle   = $request->getData('title');
         $history->score            = $request->getData('score') ?? '';
         $history->passed           = (bool) ($request->getData('passed') ?? true);

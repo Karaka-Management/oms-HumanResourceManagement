@@ -14,12 +14,10 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\tests\Models;
 
-use Modules\Profile\Models\Profile;
-use Modules\Profile\Models\NullProfile;
 use Modules\HumanResourceManagement\Models\Employee;
+use Modules\HumanResourceManagement\Models\EmployeeEducationHistory;
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
-use Modules\HumanResourceManagement\Models\EmployeeEducationHistory;
 
 /**
  * @internal
@@ -111,9 +109,9 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'            => 0,
-                'history' => [],
-                'workHistory' => [],
+                'id'               => 0,
+                'history'          => [],
+                'workHistory'      => [],
                 'educationHistory' => [],
             ],
             $serialized

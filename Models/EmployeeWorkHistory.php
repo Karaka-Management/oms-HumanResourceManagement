@@ -104,11 +104,11 @@ class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
     public function toArray() : array
     {
         return [
-            'id'         => $this->id,
-            'employee'   => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
+            'id'              => $this->id,
+            'employee'        => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
             'jobTitle'        => $this->jobTitle,
-            'start'      => $this->start,
-            'end'        => $this->end,
+            'start'           => $this->start,
+            'end'             => $this->end,
         ];
     }
 
