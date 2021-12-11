@@ -14,11 +14,10 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Admin\Models\AccountMapper;
 use Modules\Media\Models\MediaMapper;
 use Modules\Profile\Models\ProfileMapper;
-use phpOMS\DataStorage\Database\DataMapperAbstract;
-use phpOMS\DataStorage\Database\Query\Builder;
+use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
+use phpOMS\DataStorage\Database\Mapper\ReadMapper;
 
 /**
  * Employe mapper class.
@@ -28,7 +27,7 @@ use phpOMS\DataStorage\Database\Query\Builder;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-final class EmployeeMapper extends DataMapperAbstract
+final class EmployeeMapper extends DataMapperFactory
 {
     /**
      * Columns.
@@ -36,7 +35,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array{name:string, type:string, internal:string, autocomplete?:bool, readonly?:bool, writeonly?:bool, annotations?:array}>
      * @since 1.0.0
      */
-    protected static array $columns = [
+    public const COLUMNS = [
         'hr_staff_id'         => ['name' => 'hr_staff_id',       'type' => 'int',    'internal' => 'id'],
         'hr_staff_profile'    => ['name' => 'hr_staff_profile',  'type' => 'int',    'internal' => 'profile'],
         'hr_staff_smiPHash'   => ['name' => 'hr_staff_smiPHash', 'type' => 'string', 'internal' => 'semiPrivateHash'],
@@ -49,7 +48,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array{mapper:string, external:string}>
      * @since 1.0.0
      */
-    protected static array $belongsTo = [
+    public const BELONGS_TO = [
         'profile'    => [
             'mapper'     => ProfileMapper::class,
             'external'   => 'hr_staff_profile',
@@ -62,7 +61,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array{mapper:string, external:string, by?:string, column?:string, conditional?:bool}>
      * @since 1.0.0
      */
-    protected static array $ownsOne = [
+    public const OWNS_ONE = [
         'image'    => [
             'mapper'     => MediaMapper::class,
             'external'   => 'hr_staff_image',
@@ -75,7 +74,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var array<string, array{mapper:string, table:string, self?:?string, external?:?string, column?:string}>
      * @since 1.0.0
      */
-    protected static array $hasMany = [
+    public const HAS_MANY = [
         'files' => [
             'mapper'   => MediaMapper::class,            /* mapper of the related object */
             'table'    => 'hr_staff_media',         /* table of the related object, null if no relation table is used (many->1) */
@@ -108,7 +107,7 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $table = 'hr_staff';
+    public const TABLE = 'hr_staff';
 
     /**
      * Primary field name.
@@ -116,31 +115,22 @@ final class EmployeeMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $primaryField = 'hr_staff_id';
+    public const PRIMARYFIELD ='hr_staff_id';
 
     /**
      * Get the employee from an account
      *
      * @param int $account Account to get the employee for
      *
-     * @return Employee
+     * @return ReadMapper
      *
      * @since 1.0.0
      */
-    public static function getFromAccount(int $account) : Employee
+    public static function getFromAccount(int $account) : ReadMapper
     {
-        $depth = 3;
-        $query = new Builder(self::$db);
-        $query = self::getQuery($query)
-            ->innerJoin(ProfileMapper::getTable())
-                ->on(self::$table . '_d' . $depth . '.hr_staff_profile', '=', ProfileMapper::getTable() . '.' . ProfileMapper::getPrimaryField())
-            ->innerJoin(AccountMapper::getTable())
-                ->on(ProfileMapper::getTable() . '.profile_account_account', '=', AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField())
-            ->where(AccountMapper::getTable() . '.' . AccountMapper::getPrimaryField(), '=', $account)
-            ->limit(1);
-
-        $employee = self::getAllByQuery($query);
-
-        return empty($employee) ? new NullEmployee() : \end($employee);
+        return self::get()
+            ->with('profile')
+            ->with('profile/account')
+            ->where('profile/account', $account);
     }
 }

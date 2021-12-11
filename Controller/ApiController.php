@@ -23,6 +23,9 @@ use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistoryMapper;
+use Modules\Organization\Models\NullDepartment;
+use Modules\Organization\Models\NullPosition;
+use Modules\Organization\Models\NullUnit;
 use Modules\Profile\Models\Profile;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\Message\Http\RequestStatusCode;
@@ -128,7 +131,7 @@ final class ApiController extends Controller
 
         foreach ($accounts as $account) {
             /** @var Profile $profile Profile */
-            $profile     = ProfileMapper::getFor((int) $account, 'account');
+            $profile     = ProfileMapper::get()->where('account', (int) $account)->execute();
             $employees[] = new Employee($profile);
         }
 
@@ -269,9 +272,9 @@ final class ApiController extends Controller
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
         $history             = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
-        $history->unit       = (int) ($request->getData('unit') ?? 0);
-        $history->department = (int) ($request->getData('department') ?? 0);
-        $history->position   = (int) ($request->getData('position') ?? 0);
+        $history->unit       = new NullUnit((int) ($request->getData('unit') ?? 0));
+        $history->department = new NullDepartment((int) ($request->getData('department') ?? 0));
+        $history->position   = new NullPosition((int) ($request->getData('position') ?? 0));
         $history->start      = new \DateTime($request->getData('start') ?? 'now');
 
         if (!empty($request->getData('end'))) {

@@ -50,7 +50,13 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $view->setData('employees', EmployeeMapper::getAll(depth: 4));
+        $view->setData('employees', EmployeeMapper::getAll()
+            ->with('profile')
+            ->with('profile/account')
+            ->with('companyHistory')
+            ->with('companyHistory/unit')
+            ->execute()
+        );
 
         return $view;
     }
@@ -97,7 +103,7 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $employee = EmployeeMapper::get((int) $request->getData('id'));
+        $employee = EmployeeMapper::get()->where('id', (int) $request->getData('id'))->execute();
 
         $view->addData('employee', $employee);
 

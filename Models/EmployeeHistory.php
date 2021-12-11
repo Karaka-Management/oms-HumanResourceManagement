@@ -16,6 +16,9 @@ namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Media\Models\Media;
 use Modules\Organization\Models\Department;
+use Modules\Organization\Models\NullDepartment;
+use Modules\Organization\Models\NullPosition;
+use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Position;
 use Modules\Organization\Models\Unit;
 use phpOMS\Contract\ArrayableInterface;
@@ -49,26 +52,26 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
     /**
      * Unit
      *
-     * @var null|int|Unit
+     * @var Unit
      * @since 1.0.0
      */
-    public $unit = null;
+    public Unit $unit;
 
     /**
      * Department
      *
-     * @var null|int|Department
+     * @var Department
      * @since 1.0.0
      */
-    public $department = null;
+    public Department $department;
 
     /**
      * Position
      *
-     * @var null|int|Position
+     * @var Position
      * @since 1.0.0
      */
-    public $position = null;
+    public Position $position;
 
     /**
      * Files.
@@ -105,6 +108,9 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
     {
         $this->employee = $employee;
         $this->start    = new \DateTime('now');
+        $this->unit = new NullUnit();
+        $this->department = new NullDepartment();
+        $this->position = new NullPosition();
     }
 
     /**

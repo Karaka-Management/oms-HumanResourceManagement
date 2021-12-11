@@ -61,12 +61,12 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         $department->name        = 'HRMgmtDepartmentTest';
         $department->description = 'Description';
         $department->unit        = new NullUnit(1);
-        DepartmentMapper::create($department);
+        DepartmentMapper::create()->execute($department);
 
         $position              = new Position();
         $position->name        = 'HRMgmtPositionTest';
         $position->description = 'Description';
-        PositionMapper::create($position);
+        PositionMapper::create()->execute($position);
     }
 
     /**

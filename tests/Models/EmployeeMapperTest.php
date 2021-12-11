@@ -31,23 +31,23 @@ final class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
      */
     public function testCR() : void
     {
-        if (($profile = ProfileMapper::getFor(1, 'account'))->getId() === 0) {
+        if (($profile = ProfileMapper::get()->where('account', 1)->execute())->getId() === 0) {
             $profile = new Profile();
 
-            $profile->account  = AccountMapper::get(1);
+            $profile->account  = AccountMapper::get()->where('id', 1)->execute();
             $profile->birthday = ($date = new \DateTime('now'));
 
-            $id = ProfileMapper::create($profile);
+            $id = ProfileMapper::create()->execute($profile);
         }
 
         $employee = new Employee($profile);
 
-        $id = EmployeeMapper::create($employee);
+        $id = EmployeeMapper::create()->execute($employee);
         self::assertGreaterThan(0, $employee->getId());
         self::assertEquals($id, $employee->getId());
 
-        $employeeR = EmployeeMapper::get($employee->getId());
+        $employeeR = EmployeeMapper::get()->where('id', $employee->getId())->execute();
         self::assertEquals($employee->profile->getId(), $employeeR->profile->getId());
-        self::assertGreaterThan(0, EmployeeMapper::getFromAccount(1)->getId());
+        self::assertGreaterThan(0, EmployeeMapper::getFromAccount(1)->limit(1)->execute()->getId());
     }
 }
