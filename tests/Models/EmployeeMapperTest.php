@@ -48,6 +48,6 @@ final class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
 
         $employeeR = EmployeeMapper::get()->where('id', $employee->getId())->execute();
         self::assertEquals($employee->profile->getId(), $employeeR->profile->getId());
-        self::assertGreaterThan(0, EmployeeMapper::getFromAccount(1)->limit(1)->execute()->getId());
+        self::assertGreaterThan(0, EmployeeMapper::get()->with('profile')->where('profile/account', 1)->limit(1)->execute()->getId());
     }
 }

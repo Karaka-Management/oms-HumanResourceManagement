@@ -40,9 +40,9 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(0, $this->history->getId());
         self::assertNull($this->history->end);
         self::assertEquals(0, $this->history->employee);
-        self::assertNull($this->history->position);
-        self::assertNull($this->history->unit);
-        self::assertNull($this->history->department);
+        self::assertInstanceOf('\Modules\Organization\Models\NullPosition', $this->history->position);
+        self::assertInstanceOf('\Modules\Organization\Models\NullUnit', $this->history->unit);
+        self::assertInstanceOf('\Modules\Organization\Models\NullDepartment', $this->history->department);
         self::assertInstanceOf('\DateTime', $this->history->start);
     }
 
@@ -56,14 +56,14 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
 
         $serialized = $this->history->jsonSerialize();
         unset($serialized['start']);
+        unset($serialized['unit']);
+        unset($serialized['department']);
+        unset($serialized['position']);
 
         self::assertEquals(
             [
                 'id'         => 0,
                 'employee'   => 2,
-                'unit'       => null,
-                'department' => null,
-                'position'   => null,
                 'end'        => null,
             ],
             $serialized

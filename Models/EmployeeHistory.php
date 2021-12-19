@@ -106,11 +106,11 @@ class EmployeeHistory implements \JsonSerializable, ArrayableInterface
      */
     public function __construct($employee = 0)
     {
-        $this->employee = $employee;
-        $this->start    = new \DateTime('now');
-        $this->unit = new NullUnit();
+        $this->employee   = $employee;
+        $this->start      = new \DateTime('now');
+        $this->unit       = new NullUnit();
         $this->department = new NullDepartment();
-        $this->position = new NullPosition();
+        $this->position   = new NullPosition();
     }
 
     /**
