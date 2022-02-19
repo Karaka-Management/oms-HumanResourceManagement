@@ -31,7 +31,7 @@
   </coverage>
   <testsuites>
     <testsuite name="Install">
-      <directory>../Orange-Management/Install/tests*</directory>
+      <directory>../Karaka/Install/tests*</directory>
     </testsuite>
     <testsuite name="Module">
       <directory>../tests*</directory>
