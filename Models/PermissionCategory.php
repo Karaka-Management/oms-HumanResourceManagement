@@ -24,7 +24,7 @@ use phpOMS\Stdlib\Base\Enum;
  * @link    https://karaka.app
  * @since   1.0.0
  */
-abstract class PermissionState extends Enum
+abstract class PermissionCategory extends Enum
 {
     public const HR = 1;
 

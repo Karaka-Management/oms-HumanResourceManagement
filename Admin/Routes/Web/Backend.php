@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 use Modules\HumanResourceManagement\Controller\BackendController;
-use Modules\HumanResourceManagement\Models\PermissionState;
+use Modules\HumanResourceManagement\Models\PermissionCategory;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
@@ -25,7 +25,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::HR,
+                'state'  => PermissionCategory::HR,
             ],
         ],
     ],
@@ -36,7 +36,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::HR,
+                'state'  => PermissionCategory::HR,
             ],
         ],
     ],
@@ -47,7 +47,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::HR,
+                'state'  => PermissionCategory::HR,
             ],
         ],
     ],
@@ -58,7 +58,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::DEPARTMENT,
+                'state'  => PermissionCategory::DEPARTMENT,
             ],
         ],
     ],
@@ -69,7 +69,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::POSITION,
+                'state'  => PermissionCategory::POSITION,
             ],
         ],
     ],
@@ -80,7 +80,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::POSITION,
+                'state'  => PermissionCategory::POSITION,
             ],
         ],
     ],

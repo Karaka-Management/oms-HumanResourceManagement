@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 use Modules\HumanResourceManagement\Controller\ApiController;
-use Modules\HumanResourceManagement\Models\PermissionState;
+use Modules\HumanResourceManagement\Models\PermissionCategory;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
@@ -25,7 +25,7 @@ return [
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::HR,
+                'state'  => PermissionCategory::HR,
             ],
         ],
     ],
