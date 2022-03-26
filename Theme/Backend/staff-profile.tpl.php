@@ -18,8 +18,8 @@ use phpOMS\Uri\UriFactory;
 
 $employee      = $this->getData('employee');
 $history       = $employee->getHistory();
-$education     = $employee->getEducationHistory();
-$work          = $employee->getWorkHistory();
+$educationHistory = $employee->getEducationHistory();
+$workHistory   = $employee->getWorkHistory();
 $recentHistory = $employee->getNewestHistory();
 
 echo $this->getData('nav')->render(); ?>
@@ -33,8 +33,9 @@ echo $this->getData('nav')->render(); ?>
             <li><label for="c-tab-4"><?= $this->getHtml('Contracts'); ?></label></li>
             <li><label for="c-tab-5"><?= $this->getHtml('Remarks'); ?></label></li>
             <li><label for="c-tab-6"><?= $this->getHtml('Evaluations'); ?></label></li>
-            <li><label for="c-tab-7"><?= $this->getHtml('Education'); ?></label></li>
-            <li><label for="c-tab-8"><?= $this->getHtml('Work'); ?></label></li>
+            <li><label for="c-tab-7"><?= $this->getHtml('Salary'); ?></label></li>
+            <li><label for="c-tab-8"><?= $this->getHtml('Education'); ?></label></li>
+            <li><label for="c-tab-9"><?= $this->getHtml('Work'); ?></label></li>
         </ul>
     </div>
     <div class="tab-content">
@@ -118,8 +119,8 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('Position'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                             <tbody>
                             <?php foreach ($history as $hist) : ?>
-                                <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
-                                    <td><?= $hist->getEnd() === null ? '' : $hist->getEnd()->format('Y-m-d'); ?>
+                                <tr><td><?= $hist->start->format('Y-m-d'); ?>
+                                    <td><?= $hist->end === null ? '' : $hist->end->format('Y-m-d'); ?>
                                     <td><?= $this->printHtml($hist->unit->name); ?>
                                     <td><?= $this->printHtml($hist->department->name); ?>
                                     <td><?= $this->printHtml($hist->position->name); ?>
@@ -192,6 +193,11 @@ echo $this->getData('nav')->render(); ?>
         <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-7' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
+            </div>
+        </div>
+        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-7' ? ' checked' : ''; ?>>
+        <div class="tab">
+            <div class="row">
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
                         <div class="portlet-head"><?= $this->getHtml('Education'); ?><i class="fa fa-download floatRight download btn"></i></div>
@@ -202,9 +208,9 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('Title'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Address'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                             <tbody>
-                            <?php foreach ($education as $hist) : ?>
-                                <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
-                                    <td><?= $hist->getEnd() === null ? '' : $hist->getEnd()->format('Y-m-d'); ?>
+                            <?php foreach ($educationHistory as $hist) : ?>
+                                <tr><td><?= $hist->start->format('Y-m-d'); ?>
+                                    <td><?= $hist->end === null ? '' : $hist->end->format('Y-m-d'); ?>
                                     <td><?= $this->printHtml($hist->educationTitle); ?>
                                     <td><?= $this->printHtml($hist->address->name); ?>
                             <?php endforeach; ?>
@@ -213,7 +219,7 @@ echo $this->getData('nav')->render(); ?>
                 </div>
             </div>
         </div>
-        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-8' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-9" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-8' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
@@ -226,9 +232,9 @@ echo $this->getData('nav')->render(); ?>
                                 <td><?= $this->getHtml('Title'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                                 <td><?= $this->getHtml('Address'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                             <tbody>
-                            <?php foreach ($work as $hist) : ?>
-                                <tr><td><?= $hist->getStart()->format('Y-m-d'); ?>
-                                    <td><?= $hist->getEnd() === null ? '' : $hist->getEnd()->format('Y-m-d'); ?>
+                            <?php foreach ($workHistory as $hist) : ?>
+                                <tr><td><?= $hist->start->format('Y-m-d'); ?>
+                                    <td><?= $hist->end === null ? '' : $hist->end->format('Y-m-d'); ?>
                                     <td><?= $this->printHtml($hist->jobTitle); ?>
                                     <td><?= $this->printHtml($hist->address->name); ?>
                             <?php endforeach; ?>

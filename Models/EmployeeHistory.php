@@ -21,7 +21,6 @@ use Modules\Organization\Models\NullPosition;
 use Modules\Organization\Models\NullUnit;
 use Modules\Organization\Models\Position;
 use Modules\Organization\Models\Unit;
-use phpOMS\Contract\ArrayableInterface;
 
 /**
  * Employee class.
@@ -31,7 +30,7 @@ use phpOMS\Contract\ArrayableInterface;
  * @link    https://karaka.app
  * @since   1.0.0
  */
-class EmployeeHistory implements \JsonSerializable, ArrayableInterface
+class EmployeeHistory implements \JsonSerializable
 {
     /**
      * ID.

@@ -17,6 +17,7 @@ namespace Modules\HumanResourceManagement\Controller;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\Organization\Models\DepartmentMapper;
 use phpOMS\Contract\RenderableInterface;
+use phpOMS\DataStorage\Database\Query\OrderType;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Views\View;
@@ -100,10 +101,29 @@ final class BackendController extends Controller
     public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-single');
+        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-profile');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
 
-        $employee = EmployeeMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $employee = EmployeeMapper::get()
+            ->with('profile')
+            ->with('profile/account')
+            ->with('companyHistory')
+            ->with('companyHistory/unit')
+            ->with('companyHistory/department')
+            ->with('companyHistory/position')
+            ->with('educationHistory')
+            ->with('educationHistory/unit')
+            ->with('educationHistory/department')
+            ->with('educationHistory/position')
+            ->with('workHistory')
+            ->with('workHistory/unit')
+            ->with('workHistory/department')
+            ->with('workHistory/position')
+            ->where('id', (int) $request->getData('id'))
+            ->sort('companyHistory/start', OrderType::DESC)
+            ->sort('educationHistory/start', OrderType::DESC)
+            ->sort('workHistory/start', OrderType::DESC)
+            ->execute();
 
         $view->addData('employee', $employee);
 

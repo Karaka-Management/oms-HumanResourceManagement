@@ -16,7 +16,6 @@ namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\Address;
 use Modules\Media\Models\Media;
-use phpOMS\Contract\ArrayableInterface;
 
 /**
  * Employee class.
@@ -26,7 +25,7 @@ use phpOMS\Contract\ArrayableInterface;
  * @link    https://karaka.app
  * @since   1.0.0
  */
-class EmployeeWorkHistory implements \JsonSerializable, ArrayableInterface
+class EmployeeWorkHistory implements \JsonSerializable
 {
     /**
      * ID.

@@ -18,7 +18,6 @@ use Modules\Media\Models\Media;
 use Modules\Media\Models\NullMedia;
 use Modules\Profile\Models\NullProfile;
 use Modules\Profile\Models\Profile;
-use phpOMS\Contract\ArrayableInterface;
 
 /**
  * Employee class.
@@ -28,7 +27,7 @@ use phpOMS\Contract\ArrayableInterface;
  * @link    https://karaka.app
  * @since   1.0.0
  */
-class Employee implements \JsonSerializable, ArrayableInterface
+class Employee implements \JsonSerializable
 {
     /**
      * Employee ID.
