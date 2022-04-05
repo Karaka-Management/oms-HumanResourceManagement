@@ -126,7 +126,7 @@ final class ApiController extends Controller
      */
     private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : array
     {
-        $accounts  = $request->getDataList('profiles') ?? [];
+        $accounts  = $request->getDataList('profiles');
         $employees = [];
 
         foreach ($accounts as $account) {
