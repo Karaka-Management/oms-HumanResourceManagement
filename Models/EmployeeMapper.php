@@ -17,7 +17,6 @@ namespace Modules\HumanResourceManagement\Models;
 use Modules\Media\Models\MediaMapper;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
-use phpOMS\DataStorage\Database\Mapper\ReadMapper;
 
 /**
  * Employe mapper class.

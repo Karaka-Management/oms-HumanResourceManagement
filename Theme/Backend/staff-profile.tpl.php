@@ -16,11 +16,11 @@ use Modules\HumanResourceManagement\Models\NullEmployeeHistory;
 use Modules\Media\Models\NullMedia;
 use phpOMS\Uri\UriFactory;
 
-$employee      = $this->getData('employee');
-$history       = $employee->getHistory();
+$employee         = $this->getData('employee');
+$history          = $employee->getHistory();
 $educationHistory = $employee->getEducationHistory();
-$workHistory   = $employee->getWorkHistory();
-$recentHistory = $employee->getNewestHistory();
+$workHistory      = $employee->getWorkHistory();
+$recentHistory    = $employee->getNewestHistory();
 
 echo $this->getData('nav')->render(); ?>
 
