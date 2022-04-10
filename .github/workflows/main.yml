@@ -100,6 +100,7 @@ jobs:
           ref: develop
           repository: Karaka/phpOMS
           path: phpOMS
+          token: ${{ secrets.GITHUB }}
     - name: Checkout Karaka Repository
       uses: actions/checkout@master
       with:
@@ -127,10 +128,6 @@ jobs:
       run: composer install
     - name: phpunit
       run: vendor/bin/phpunit --coverage-clover tests/coverage.xml --configuration tests/phpunit_default.xml
-    - name: codecov
-      env:
-         CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
-      run: "bash <(curl -s https://codecov.io/bash) -f tests/coverage.xml"
   static-tests:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'NO_CI')"
