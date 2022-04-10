@@ -100,7 +100,7 @@ jobs:
           ref: develop
           repository: Karaka/phpOMS
           path: phpOMS
-          token: ${{ secrets.GITHUB }}
+          token: ${{ secrets.GH_PAT }}
     - name: Checkout Karaka Repository
       uses: actions/checkout@master
       with:
@@ -142,7 +142,7 @@ jobs:
       with:
         fetch-depth: 1
         submodules: recursive
-        token: ${{ secrets.GITHUB }}
+        token: ${{ secrets.GH_PAT }}
     - name: Checkout Build Repository
       uses: actions/checkout@master
       with:
@@ -183,7 +183,7 @@ jobs:
       with:
         fetch-depth: 1
         submodules: recursive
-        token: ${{ secrets.GITHUB }}
+        token: ${{ secrets.GH_PAT }}
     - name: Checkout Build Repository
       uses: actions/checkout@master
       with:
