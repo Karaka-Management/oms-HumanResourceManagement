@@ -131,6 +131,96 @@ jobs:
       env:
          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
       run: "bash <(curl -s https://codecov.io/bash) -f tests/coverage.xml"
+  static-tests:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'NO_CI')"
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        php-versions: ['8.0']
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+        submodules: recursive
+        token: ${{ secrets.GITHUB }}
+    - name: Checkout Build Repository
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Karaka/Build
+          path: Build
+    - name: Setup PHP, with composer and extensions
+      uses: shivammathur/setup-php@master
+      with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, gd, zip, dom, mysql, pgsql, sqlite, imap, bcmath, redis, memcached
+          ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-composer-
+    - name: Setup Composer
+      run: composer install
+    - name: phpstan
+      run: vendor/bin/phpstan analyse -a phpOMS/Autoloader.php --no-progress -l 9 -c Build/Config/phpstan.neon ./
+  codestyle-tests:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'NO_CI')"
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        php-versions: ['8.0']
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+        submodules: recursive
+        token: ${{ secrets.GITHUB }}
+    - name: Checkout Build Repository
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Karaka/Build
+          path: Build
+    - name: Setup PHP, with composer and extensions
+      uses: shivammathur/setup-php@master
+      with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, gd, zip, dom, mysql, pgsql, sqlite, imap, bcmath, redis, memcached
+          ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-composer-
+    - name: Setup Composer
+      run: composer install
+    - name: phpcs
+      run: vendor/bin/phpcs ./ --standard="Build/Config/phpcs.xml" -s --report=full
+    - name: Install NPM
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+        cache: 'npm'
+    - run: npm install
+    - name: eslint
+      run: npx eslint ./ -c Build/Config/.eslintrc.json
   custom:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'NO_CI')"
@@ -165,6 +255,11 @@ jobs:
       run: |
         if [[ $(find ./ -name "*tpl.php" | xargs grep -E '=\"[\#\$\%\^\&\*\(\)\\/\ ]*\"') -ne "" ]]; then exit 1; fi
         if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(\<img)((?!.*?alt=).)*(>)') -ne "" ]]; then exit 1; fi
+        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(<input)((?!.*?type=).)*(>)') -ne "" ]]; then exit 1; fi
+        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(<input|<select|<textarea)((?!.*?name=).)*(>)') -ne "" ]]; then exit 1; fi
+        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(style=)') -ne "" ]]; then exit 1; fi
+        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(value|title|alt|aria\-label)(=\")((?!\<\?).)*(>)') -ne "" ]]; then exit 1; fi
+        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(\<td\>|\<th\>|\<caption\>|\<label.*?(\"|l)\>)) -ne "" ]]; then exit 1; fi
     - name: Js strict
       run: if [[ $(grep -r -L "\"use strict\";" --include=*.js ./) -ne "" ]]; then exit 1; fi
     - name: Js inspection
