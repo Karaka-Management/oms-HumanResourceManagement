@@ -91,14 +91,14 @@ jobs:
       with:
           fetch-depth: 1
           ref: develop
-          repository: Karaka/Resources
+          repository: Karaka-Management/Resources
           path: Resources
     - name: Checkout phpOMS Repository
       uses: actions/checkout@master
       with:
           fetch-depth: 1
           ref: develop
-          repository: Karaka/phpOMS
+          repository: Karaka-Management/phpOMS
           path: phpOMS
           token: ${{ secrets.GH_PAT }}
     - name: Checkout Karaka Repository
@@ -106,7 +106,7 @@ jobs:
       with:
           fetch-depth: 1
           ref: develop
-          repository: Karaka/Karaka
+          repository: Karaka-Management/Karaka
           path: Karaka
     - name: Setup PHP, with composer and extensions
       uses: shivammathur/setup-php@master
