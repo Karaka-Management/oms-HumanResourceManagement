@@ -58,7 +58,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if ($request->getData('profiles') !== null) {
             $this->apiEmployeeFromAccountCreate($request, $response, $data);
@@ -82,7 +82,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
@@ -151,7 +151,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeNewCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeNewCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
             $response->set('employee_create', new FormValidation($val));
@@ -222,7 +222,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeHistoryCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
             $response->set('history_create', new FormValidation($val));
@@ -297,7 +297,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeWorkHistoryCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeWorkHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeWorkHistoryCreate($request))) {
             $response->set('history_work_create', new FormValidation($val));
@@ -376,7 +376,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmployeeEducationHistoryCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : void
+    public function apiEmployeeEducationHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeEducationHistoryCreate($request))) {
             $response->set('history_education_create', new FormValidation($val));
