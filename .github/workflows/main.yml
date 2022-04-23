@@ -217,7 +217,7 @@ jobs:
     - name: Setup Composer
       run: composer install
     - name: phpcs
-      run: vendor/bin/phpcs ./ --standard="Build/Config/phpcs.xml" -s --report=full
+      run: vendor/bin/phpcs --severity=1 ./ --standard="Build/Config/phpcs.xml" -s --report=full
     - name: Install NPM
       uses: actions/setup-node@v3
       with:
@@ -245,45 +245,3 @@ jobs:
         VALIDATE_ALL_CODEBASE: false
         DEFAULT_BRANCH: develop
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-  custom:
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'NO_CI')"
-    strategy:
-      fail-fast: false
-      max-parallel: 3
-      matrix:
-        php-versions: ['8.0']
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@main
-      with:
-        fetch-depth: 1
-    - name: Checkout Build Repository
-      uses: actions/checkout@main
-      with:
-          fetch-depth: 1
-          ref: develop
-          repository: Karaka-Management/Build
-          path: Build
-    - name: Setup PHP, with composer and extensions
-      uses: shivammathur/setup-php@master
-      with:
-          php-version: ${{ matrix.php-versions }}
-          extensions: mbstring, gd, zip, dom, mysql, pgsql, sqlite, imap, bcmath, redis, memcached
-          ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
-    - name: PHP linting
-      run: find ./ -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l -n | (! grep -v "No syntax errors detected" )
-    - name: Php strict
-      run: if [[ $(grep -r -L "declare(strict_types=1);" --include=*.php --exclude={*.tpl.php,*Hooks.php,*Routes.php,*SearchCommands.php} ./) -ne "" ]]; then exit 1; fi
-    - name: Html inspection
-      run: |
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -E '=\"[\#\$\%\^\&\*\(\)\\/\ ]*\"') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(\<img)((?!.*?alt=).)*(>)') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(<input)((?!.*?type=).)*(>)') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(<input|<select|<textarea)((?!.*?name=).)*(>)') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(style=)') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(value|title|alt|aria\-label)(=\")((?!\<\?).)*(>)') -ne "" ]]; then exit 1; fi
-        if [[ $(find ./ -name "*tpl.php" | xargs grep -P '(\<td\>|\<th\>|\<caption\>|\<label.*?(\"|l)\>)) -ne "" ]]; then exit 1; fi
-    - name: Js inspection
-      run: |
-        if [[ $(grep -rlni "onafterprint=\|onbeforeprint=\|onbeforeunload=\|onerror=\|onhaschange=\|onload=\|onmessage=\|onoffline=\|ononline=\|onpagehide=\|onpageshow=\|onpopstate=\|onredo=\|onresize=\|onstorage=\|onund=o\|onunload=\|onblur=\|onchage=\|oncontextmenu=\|onfocus=\|onformchange=\|onforminput=\|oninput=\|oninvalid=\|onreset=\|onselect=\|onsubmit=\|onkeydown=\|onkeypress=\|onkeyup=\|onclick=\|ondblclic=k\|ondrag=\|ondragend=\|ondragenter=\|ondragleave=\|ondragover=\|ondragstart=\|ondrop=\|onmousedown=\|onmousemove=\|onmouseout=\|onmouseover=\|onmouseup=\|onmousewheel=\|onscroll=\|onabor=t\|oncanplay=\|oncanplaythrough=\|ondurationchange=\|onemptied=\|onended=\|onerror=\|onloadeddata=\|onloadedmetadata=\|onloadstart=\|onpause=\|onplay=\|onplaying=\|onprogress=\|onratechange=\|onreadystatechange=\|onseeked=\|onseeking=\|onstalled=\|onsuspend=\|ontimeupdate=\|onvolumechange=" --include=*.js ./) -ne "" ]]; then exit 1; fi
