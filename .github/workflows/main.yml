@@ -1,6 +1,6 @@
-name: CI/CD
+name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   autoformat:
@@ -226,22 +226,56 @@ jobs:
     - run: npm install
     - name: eslint
       run: npx eslint ./ -c Build/Config/.eslintrc.json
-  linting:
+#  linting:
+#    runs-on: ubuntu-latest
+#    if: "!contains(github.event.head_commit.message, 'NO_CI')"
+#    strategy:
+#      fail-fast: false
+#      max-parallel: 3
+#    steps:
+#    - name: Checkout Repository
+#      uses: actions/checkout@main
+#      with:
+#        fetch-depth: 0
+#        submodules: recursive
+#        token: ${{ secrets.GH_TOKEN }}
+#    - name: Lint Code Base
+#      uses: github/super-linter/slim@v4
+#      env:
+#        VALIDATE_ALL_CODEBASE: false
+#        VALIDATE_PHP: true
+#        VALIDATE_PHP_BUILTIN: true
+#        DEFAULT_BRANCH: develop
+#        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  custom:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'NO_CI')"
     strategy:
       fail-fast: false
       max-parallel: 3
+      matrix:
+        php-versions: ['8.1']
     steps:
     - name: Checkout Repository
       uses: actions/checkout@main
       with:
-        fetch-depth: 0
-        submodules: recursive
-        token: ${{ secrets.GH_PAT }}
-    - name: Lint Code Base
-      uses: github/super-linter/slim@v4
-      env:
-        VALIDATE_ALL_CODEBASE: false
-        DEFAULT_BRANCH: develop
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        fetch-depth: 1
+    - name: Checkout Build Repository
+      uses: actions/checkout@main
+      with:
+          fetch-depth: 1
+          ref: develop
+          repository: Karaka-Management/Build
+          path: Build
+    - name: Setup PHP, with composer and extensions
+      uses: shivammathur/setup-php@master
+      with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, gd, zip, dom, mysql, pgsql, sqlite, bcmath, redis, memcached
+          ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
+    - name: PHP linting
+      run: |
+        find ./ -type f \
+        -name '*.php' -print0 | xargs -0 -n1 -P4 php -l -n | (! grep -v "No syntax errors detected" )
+    - name: Php strict
+      run: if [[ $(grep -r -L "declare(strict_types=1);" --include=*.php --exclude={*.tpl.php,*Hooks.php,*Routes.php,*SearchCommands.php} ./) -ne "" ]]; then exit 1; fi
