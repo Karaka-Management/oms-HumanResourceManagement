@@ -44,7 +44,7 @@ echo $this->getData('nav')->render(); ?>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = UriFactory::build('{/prefix}humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
-                        <td><a href="<?= $url; ?>"><img width="30" loading="lazy" class="profile-image"
+                        <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_staff'); ?>" width="30" loading="lazy" class="profile-image"
                             src="<?=
                                     $value->profile->image instanceof NullMedia ?
                                         UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :

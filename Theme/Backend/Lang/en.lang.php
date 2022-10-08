@@ -47,4 +47,5 @@ return ['HumanResourceManagement' => [
     'Unit'              => 'Unit',
     'Vacation'          => 'Vacation',
     'Work'              => 'Work',
+    'IMG_alt_staff'              => 'Staff image',
 ]];
