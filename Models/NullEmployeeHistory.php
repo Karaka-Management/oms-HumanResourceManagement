@@ -36,4 +36,12 @@ final class NullEmployeeHistory extends EmployeeHistory
         $this->id = $id;
         parent::__construct();
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize() : mixed
+    {
+        return ['id' => $this->id];
+    }
 }
