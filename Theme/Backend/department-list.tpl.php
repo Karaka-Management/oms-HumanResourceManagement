@@ -43,7 +43,7 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Parent'); ?>
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : ++$c;
-                $url     = UriFactory::build('{/prefix}hr/department/single?{?}&id=' . $value->getId()); ?>
+                $url     = UriFactory::build('hr/department/single?{?}&id=' . $value->getId()); ?>
                 <tr tabindex="0" data-href="<?= $url; ?>">
                     <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
                     <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
