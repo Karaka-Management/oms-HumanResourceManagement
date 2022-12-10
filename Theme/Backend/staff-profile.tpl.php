@@ -55,8 +55,8 @@ echo $this->getData('nav')->render(); ?>
                                             $employee->image instanceof NullMedia ?
                                                 ($employee->profile->image instanceof NullMedia ?
                                                     UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                                    UriFactory::build('' . $employee->profile->image->getPath())) :
-                                                UriFactory::build('' . $employee->image->getPath()); ?>"
+                                                    UriFactory::build('{/lang}/{/app}/' . $employee->profile->image->getPath())) :
+                                                UriFactory::build('{/lang}/{/app}/' . $employee->image->getPath()); ?>"
                                     >
                                 </span>
                                     <table class="list">

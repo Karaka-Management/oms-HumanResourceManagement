@@ -42,13 +42,13 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Status'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
-                    $url = UriFactory::build('humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
+                    $url = UriFactory::build('{/lang}/{/app}/humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
                         <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_staff'); ?>" width="30" loading="lazy" class="profile-image"
                             src="<?=
                                     $value->profile->image instanceof NullMedia ?
                                         UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                        UriFactory::build('' . $value->profile->image->getPath()); ?>"></a>
+                                        UriFactory::build('{/lang}/{/app}/' . $value->profile->image->getPath()); ?>"></a>
                         <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
