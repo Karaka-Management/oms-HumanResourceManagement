@@ -16,6 +16,7 @@ namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Admin\Models\Address;
 use Modules\Media\Models\Media;
+use Modules\Media\Models\NullMedia;
 
 /**
  * Employee class.
@@ -99,6 +100,59 @@ class EmployeeEducationHistory implements \JsonSerializable
     public function getId() : int
     {
         return $this->id;
+    }
+
+    /**
+     * Get files
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFiles() : array
+    {
+        return $this->files;
+    }
+
+    /**
+     * Get media file by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media
+     *
+     * @since 1.0.0
+     */
+    public function getFileByType(int $type = null) : Media
+    {
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                return $file;
+            }
+        }
+
+        return new NullMedia();
+    }
+
+    /**
+     * Get all media files by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFilesByType(int $type = null) : array
+    {
+        $files = [];
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                $files[] = $file;
+            }
+        }
+
+        return $files;
     }
 
     /**

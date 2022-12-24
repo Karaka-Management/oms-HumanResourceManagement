@@ -8,7 +8,7 @@
         "uri": null,
         "target": "self",
         "icon": "fa fa-user",
-        "order": 90,
+        "order": 60,
         "from": "HumanResourceManagement",
         "permission": { "permission": 2, "category": null, "element": null },
         "parent": 0,

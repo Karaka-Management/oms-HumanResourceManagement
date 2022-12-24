@@ -164,6 +164,59 @@ class Employee implements \JsonSerializable
     }
 
     /**
+     * Get files
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFiles() : array
+    {
+        return $this->files;
+    }
+
+    /**
+     * Get media file by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media
+     *
+     * @since 1.0.0
+     */
+    public function getFileByType(int $type = null) : Media
+    {
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                return $file;
+            }
+        }
+
+        return new NullMedia();
+    }
+
+    /**
+     * Get all media files by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFilesByType(int $type = null) : array
+    {
+        $files = [];
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                $files[] = $file;
+            }
+        }
+
+        return $files;
+    }
+
+    /**
      * Get employee company history.
      *
      * @return array Employee history

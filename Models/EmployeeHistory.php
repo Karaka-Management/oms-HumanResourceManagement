@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Models;
 
 use Modules\Media\Models\Media;
+use Modules\Media\Models\NullMedia;
 use Modules\Organization\Models\Department;
 use Modules\Organization\Models\NullDepartment;
 use Modules\Organization\Models\NullPosition;
@@ -122,6 +123,59 @@ class EmployeeHistory implements \JsonSerializable
     public function getId() : int
     {
         return $this->id;
+    }
+
+    /**
+     * Get files
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFiles() : array
+    {
+        return $this->files;
+    }
+
+    /**
+     * Get media file by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media
+     *
+     * @since 1.0.0
+     */
+    public function getFileByType(int $type = null) : Media
+    {
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                return $file;
+            }
+        }
+
+        return new NullMedia();
+    }
+
+    /**
+     * Get all media files by type
+     *
+     * @param null|int $type Media type
+     *
+     * @return Media[]
+     *
+     * @since 1.0.0
+     */
+    public function getFilesByType(int $type = null) : array
+    {
+        $files = [];
+        foreach ($this->files as $file) {
+            if ($file->type === $type) {
+                $files[] = $file;
+            }
+        }
+
+        return $files;
     }
 
     /**
