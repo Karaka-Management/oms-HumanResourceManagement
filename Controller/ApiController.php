@@ -347,17 +347,17 @@ final class ApiController extends Controller
     {
         $history                   = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
         $history->start            = new \DateTime($request->getData('start') ?? 'now');
-        $history->jobTitle         = $request->getData('title');
-        $history->address->name    = $request->getData('name');
-        $history->address->address = $request->getData('address') ?? '';
-        $history->address->postal  = $request->getData('postal') ?? '';
-        $history->address->city    = $request->getData('city') ?? '';
-        $history->address->state   = $request->getData('state') ?? '';
-        $history->address->setCountry($request->getData('country') ?? '');
+        $history->jobTitle         = (string) ($request->getData('title') ?? '');
+        $history->address->name    = (string) ($request->getData('name') ?? '');
+        $history->address->address = (string) ($request->getData('address') ?? '');
+        $history->address->postal  = (string) ($request->getData('postal') ?? '');
+        $history->address->city    = (string) ($request->getData('city') ?? '');
+        $history->address->state   = (string) ($request->getData('state') ?? '');
+        $history->address->setCountry((string) ($request->getData('country') ?? ''));
         $history->address->setType(AddressType::WORK);
 
         if (!empty($request->getData('end'))) {
-            $history->end = new \DateTime($request->getData('end'));
+            $history->end = new \DateTime((string) $request->getData('end'));
         }
 
         return $history;
@@ -426,15 +426,15 @@ final class ApiController extends Controller
     {
         $history                   = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
         $history->start            = new \DateTime($request->getData('start') ?? 'now');
-        $history->educationTitle   = $request->getData('title');
-        $history->score            = $request->getData('score') ?? '';
+        $history->educationTitle   = (string) ($request->getData('title') ?? '');
+        $history->score            = (string) ($request->getData('score') ?? '');
         $history->passed           = (bool) ($request->getData('passed') ?? true);
-        $history->address->name    = $request->getData('name');
-        $history->address->address = $request->getData('address') ?? '';
-        $history->address->postal  = $request->getData('postal') ?? '';
-        $history->address->city    = $request->getData('city') ?? '';
-        $history->address->state   = $request->getData('state') ?? '';
-        $history->address->setCountry($request->getData('country') ?? '');
+        $history->address->name    = (string) ($request->getData('name') ?? '');
+        $history->address->address = (string) ($request->getData('address') ?? '');
+        $history->address->postal  = (string) ($request->getData('postal') ?? '');
+        $history->address->city    = (string) ($request->getData('city') ?? '');
+        $history->address->state   = (string) ($request->getData('state') ?? '');
+        $history->address->setCountry((string) ($request->getData('country') ?? ''));
         $history->address->setType(AddressType::EDUCATION);
 
         if (!empty($request->getData('end'))) {
