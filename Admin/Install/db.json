@@ -82,8 +82,8 @@
                 "type": "INT",
                 "null": true,
                 "default": null,
-                "foreignTable": "organization_unit",
-                "foreignKey": "organization_unit_id"
+                "foreignTable": "unit",
+                "foreignKey": "unit_id"
             },
             "hr_staff_history_department": {
                 "name": "hr_staff_history_department",
