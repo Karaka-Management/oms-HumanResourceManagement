@@ -113,16 +113,16 @@ class EmployeeWorkHistory implements \JsonSerializable
     /**
      * Get media file by type
      *
-     * @param null|int $type Media type
+     * @param int $type Media type
      *
      * @return Media
      *
      * @since 1.0.0
      */
-    public function getFileByType(int $type = null) : Media
+    public function getFileByType(int $type) : Media
     {
         foreach ($this->files as $file) {
-            if ($file->type === $type) {
+            if ($file->hasMediaTypeId($type)) {
                 return $file;
             }
         }
@@ -131,24 +131,23 @@ class EmployeeWorkHistory implements \JsonSerializable
     }
 
     /**
-     * Get all media files by type
+     * Get all media files by type name
      *
-     * @param null|int $type Media type
+     * @param string $type Media type
      *
-     * @return Media[]
+     * @return Media
      *
      * @since 1.0.0
      */
-    public function getFilesByType(int $type = null) : array
+    public function getFileByTypeName(string $type) : Media
     {
-        $files = [];
         foreach ($this->files as $file) {
-            if ($file->type === $type) {
-                $files[] = $file;
+            if ($file->hasMediaTypeName($type)) {
+                return $file;
             }
         }
 
-        return $files;
+        return new NullMedia();
     }
 
     /**
