@@ -114,5 +114,5 @@ final class EmployeeMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD ='hr_staff_id';
+    public const PRIMARYFIELD = 'hr_staff_id';
 }

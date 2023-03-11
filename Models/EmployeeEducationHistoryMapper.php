@@ -78,7 +78,7 @@ final class EmployeeEducationHistoryMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD ='hr_staff_education_history_id';
+    public const PRIMARYFIELD = 'hr_staff_education_history_id';
 
     /**
      * Primary table.
