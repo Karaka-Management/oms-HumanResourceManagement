@@ -6,7 +6,7 @@
  *
  * @package   Modules\HumanResourceManagement
  * @copyright Dennis Eichhorn
- * @license   OMS License 1.0
+ * @license   OMS License 2.0
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -55,8 +55,8 @@ echo $this->getData('nav')->render(); ?>
                                             $employee->image instanceof NullMedia ?
                                                 ($employee->profile->image instanceof NullMedia ?
                                                     UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                                    UriFactory::build('{/lang}/{/app}/' . $employee->profile->image->getPath())) :
-                                                UriFactory::build('{/lang}/{/app}/' . $employee->image->getPath()); ?>"
+                                                    UriFactory::build('{/base}/' . $employee->profile->image->getPath())) :
+                                                UriFactory::build('{/base}/' . $employee->image->getPath()); ?>"
                                     >
                                 </span>
                                     <table class="list">

@@ -6,7 +6,7 @@
  *
  * @package   Modules\HumanResourceManagement
  * @copyright Dennis Eichhorn
- * @license   OMS License 1.0
+ * @license   OMS License 2.0
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -39,7 +39,7 @@ use phpOMS\Stdlib\Base\AddressType;
  * HumanResourceManagement controller class.
  *
  * @package Modules\HumanResourceManagement
- * @license OMS License 1.0
+ * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
  */
@@ -60,7 +60,7 @@ final class ApiController extends Controller
      */
     public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
-        if ($request->getData('profiles') !== null) {
+        if ($request->hasData('profiles')) {
             $this->apiEmployeeFromAccountCreate($request, $response, $data);
 
             return;
@@ -196,10 +196,10 @@ final class ApiController extends Controller
     private function createEmployeeNewFromRequest(RequestAbstract $request) : Employee
     {
         $account        = new Account();
-        $account->name1 = (string) ($request->getData('name1') ?? '');
-        $account->name2 = (string) ($request->getData('name2') ?? '');
-        $account->name3 = (string) ($request->getData('name3') ?? '');
-        $account->name3 = (string) ($request->getData('email') ?? '');
+        $account->name1 = $request->getDataString('name1') ?? '';
+        $account->name2 = $request->getDataString('name2') ?? '';
+        $account->name3 = $request->getDataString('name3') ?? '';
+        $account->name3 = $request->getDataString('email') ?? '';
 
         $profile           = new Profile($account);
         $profile->birthday = new \DateTime((string) ($request->getData('birthday') ?? 'now'));
@@ -271,15 +271,12 @@ final class ApiController extends Controller
      */
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
-        $history             = new EmployeeHistory((int) ($request->getData('employee') ?? 0));
-        $history->unit       = new NullUnit((int) ($request->getData('unit') ?? 0));
-        $history->department = new NullDepartment((int) ($request->getData('department') ?? 0));
-        $history->position   = new NullPosition((int) ($request->getData('position') ?? 0));
-        $history->start      = new \DateTime($request->getData('start') ?? 'now');
-
-        if (!empty($request->getData('end'))) {
-            $history->end = new \DateTime($request->getData('end'));
-        }
+        $history             = new EmployeeHistory($request->getDataInt('employee') ?? 0);
+        $history->unit       = new NullUnit($request->getDataInt('unit') ?? 0);
+        $history->department = new NullDepartment($request->getDataInt('department') ?? 0);
+        $history->position   = new NullPosition($request->getDataInt('position') ?? 0);
+        $history->start      = $request->getDataDateTime('start') ?? new \DateTime('now');
+        $history->end        = $request->getDataDateTime('end');
 
         return $history;
     }
@@ -345,20 +342,17 @@ final class ApiController extends Controller
      */
     private function createEmployeeWorkHistoryFromRequest(RequestAbstract $request) : EmployeeWorkHistory
     {
-        $history                   = new EmployeeWorkHistory((int) ($request->getData('employee') ?? 0));
-        $history->start            = new \DateTime($request->getData('start') ?? 'now');
-        $history->jobTitle         = (string) ($request->getData('title') ?? '');
-        $history->address->name    = (string) ($request->getData('name') ?? '');
-        $history->address->address = (string) ($request->getData('address') ?? '');
-        $history->address->postal  = (string) ($request->getData('postal') ?? '');
-        $history->address->city    = (string) ($request->getData('city') ?? '');
-        $history->address->state   = (string) ($request->getData('state') ?? '');
-        $history->address->setCountry((string) ($request->getData('country') ?? ''));
+        $history                   = new EmployeeWorkHistory($request->getDataInt('employee') ?? 0);
+        $history->start            = $request->getDataDateTime('start') ?? new \DateTime('now');
+        $history->end              = $request->getDataDateTime('end');
+        $history->jobTitle         = $request->getDataString('title') ?? '';
+        $history->address->name    = $request->getDataString('name') ?? '';
+        $history->address->address = $request->getDataString('address') ?? '';
+        $history->address->postal  = $request->getDataString('postal') ?? '';
+        $history->address->city    = $request->getDataString('city') ?? '';
+        $history->address->state   = $request->getDataString('state') ?? '';
+        $history->address->setCountry($request->getDataString('country') ?? '');
         $history->address->setType(AddressType::WORK);
-
-        if (!empty($request->getData('end'))) {
-            $history->end = new \DateTime((string) $request->getData('end'));
-        }
 
         return $history;
     }
@@ -424,22 +418,19 @@ final class ApiController extends Controller
      */
     private function createEmployeeEducationHistoryFromRequest(RequestAbstract $request) : EmployeeEducationHistory
     {
-        $history                   = new EmployeeEducationHistory((int) ($request->getData('employee') ?? 0));
-        $history->start            = new \DateTime($request->getData('start') ?? 'now');
-        $history->educationTitle   = (string) ($request->getData('title') ?? '');
-        $history->score            = (string) ($request->getData('score') ?? '');
+        $history                   = new EmployeeEducationHistory($request->getDataInt('employee') ?? 0);
+        $history->start            = $request->getDataDateTime('start') ?? new \DateTime('now');
+        $history->end              = $request->getDataDateTime('end');
+        $history->educationTitle   = $request->getDataString('title') ?? '';
+        $history->score            = $request->getDataString('score') ?? '';
         $history->passed           = (bool) ($request->getData('passed') ?? true);
-        $history->address->name    = (string) ($request->getData('name') ?? '');
-        $history->address->address = (string) ($request->getData('address') ?? '');
-        $history->address->postal  = (string) ($request->getData('postal') ?? '');
-        $history->address->city    = (string) ($request->getData('city') ?? '');
-        $history->address->state   = (string) ($request->getData('state') ?? '');
-        $history->address->setCountry((string) ($request->getData('country') ?? ''));
+        $history->address->name    = $request->getDataString('name') ?? '';
+        $history->address->address = $request->getDataString('address') ?? '';
+        $history->address->postal  = $request->getDataString('postal') ?? '';
+        $history->address->city    = $request->getDataString('city') ?? '';
+        $history->address->state   = $request->getDataString('state') ?? '';
+        $history->address->setCountry($request->getDataString('country') ?? '');
         $history->address->setType(AddressType::EDUCATION);
-
-        if (!empty($request->getData('end'))) {
-            $history->end = new \DateTime($request->getData('end'));
-        }
 
         return $history;
     }
