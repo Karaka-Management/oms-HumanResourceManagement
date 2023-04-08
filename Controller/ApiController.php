@@ -108,7 +108,7 @@ final class ApiController extends Controller
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['profiles'] = empty($request->getData('profiles')))) {
+        if (($val['profiles'] = !$request->hasData('profiles'))) {
             return $val;
         }
 
@@ -177,7 +177,7 @@ final class ApiController extends Controller
     private function validateEmployeeNewCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['name1'] = empty($request->getData('name1')))) {
+        if (($val['name1'] = !$request->hasData('name1'))) {
             return $val;
         }
 
@@ -248,11 +248,11 @@ final class ApiController extends Controller
     private function validateEmployeeHistoryCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['employee'] = empty($request->getData('employee')))
-            || ($val['start'] = empty($request->getData('start')))
-            || ($val['unit'] = empty($request->getData('unit')))
-            || ($val['department'] = empty($request->getData('department')))
-            || ($val['position'] = empty($request->getData('position')))
+        if (($val['employee'] = !$request->hasData('employee'))
+            || ($val['start'] = !$request->hasData('start'))
+            || ($val['unit'] = !$request->hasData('unit'))
+            || ($val['department'] = !$request->hasData('department'))
+            || ($val['position'] = !$request->hasData('position'))
         ) {
             return $val;
         }
@@ -320,10 +320,10 @@ final class ApiController extends Controller
     private function validateEmployeeWorkHistoryCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['employee'] = empty($request->getData('employee')))
-            || ($val['start'] = empty($request->getData('start')))
-            || ($val['title'] = empty($request->getData('title')))
-            || ($val['name'] = empty($request->getData('name')))
+        if (($val['employee'] = !$request->hasData('employee'))
+            || ($val['start'] = !$request->hasData('start'))
+            || ($val['title'] = !$request->hasData('title'))
+            || ($val['name'] = !$request->hasData('name'))
         ) {
             return $val;
         }
@@ -396,10 +396,10 @@ final class ApiController extends Controller
     private function validateEmployeeEducationHistoryCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['employee'] = empty($request->getData('employee')))
-            || ($val['start'] = empty($request->getData('start')))
-            || ($val['title'] = empty($request->getData('title')))
-            || ($val['name'] = empty($request->getData('name')))
+        if (($val['employee'] = !$request->hasData('employee'))
+            || ($val['start'] = !$request->hasData('start'))
+            || ($val['title'] = !$request->hasData('title'))
+            || ($val['name'] = !$request->hasData('name'))
         ) {
             return $val;
         }
