@@ -35,10 +35,10 @@ final class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
         $history = new EmployeeHistory($employee);
 
         $id = EmployeeHistoryMapper::create()->execute($history);
-        self::assertGreaterThan(0, $history->getId());
-        self::assertEquals($id, $history->getId());
+        self::assertGreaterThan(0, $history->id);
+        self::assertEquals($id, $history->id);
 
-        $historyR = EmployeeHistoryMapper::get()->where('id', $history->getId())->execute();
-        self::assertEquals($history->employee->getId(), $historyR->employee->getId());
+        $historyR = EmployeeHistoryMapper::get()->where('id', $history->id)->execute();
+        self::assertEquals($history->employee->id, $historyR->employee->id);
     }
 }

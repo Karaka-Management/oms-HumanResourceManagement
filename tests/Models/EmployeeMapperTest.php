@@ -31,7 +31,7 @@ final class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
      */
     public function testCR() : void
     {
-        if (($profile = ProfileMapper::get()->where('account', 1)->execute())->getId() === 0) {
+        if (($profile = ProfileMapper::get()->where('account', 1)->execute())->id === 0) {
             $profile = new Profile();
 
             $profile->account  = AccountMapper::get()->where('id', 1)->execute();
@@ -43,11 +43,11 @@ final class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
         $employee = new Employee($profile);
 
         $id = EmployeeMapper::create()->execute($employee);
-        self::assertGreaterThan(0, $employee->getId());
-        self::assertEquals($id, $employee->getId());
+        self::assertGreaterThan(0, $employee->id);
+        self::assertEquals($id, $employee->id);
 
-        $employeeR = EmployeeMapper::get()->where('id', $employee->getId())->execute();
-        self::assertEquals($employee->profile->getId(), $employeeR->profile->getId());
-        self::assertGreaterThan(0, EmployeeMapper::get()->with('profile')->where('profile/account', 1)->limit(1)->execute()->getId());
+        $employeeR = EmployeeMapper::get()->where('id', $employee->id)->execute();
+        self::assertEquals($employee->profile->id, $employeeR->profile->id);
+        self::assertGreaterThan(0, EmployeeMapper::get()->with('profile')->where('profile/account', 1)->limit(1)->execute()->id);
     }
 }

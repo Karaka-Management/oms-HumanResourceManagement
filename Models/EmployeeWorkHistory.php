@@ -34,7 +34,7 @@ class EmployeeWorkHistory implements \JsonSerializable
      * @var int
      * @since 1.0.0
      */
-    protected int $id = 0;
+    public int $id = 0;
 
     /**
      * Employee
@@ -157,7 +157,7 @@ class EmployeeWorkHistory implements \JsonSerializable
     {
         return [
             'id'              => $this->id,
-            'employee'        => !\is_int($this->employee) ? $this->employee->getId() : $this->employee,
+            'employee'        => !\is_int($this->employee) ? $this->employee->id : $this->employee,
             'jobTitle'        => $this->jobTitle,
             'start'           => $this->start,
             'end'             => $this->end,

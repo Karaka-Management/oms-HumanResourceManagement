@@ -40,7 +40,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
      */
     public function testDefault() : void
     {
-        self::assertEquals(0, $this->employee->getId());
+        self::assertEquals(0, $this->employee->id);
         self::assertGreaterThan(0, \strlen($this->employee->getSemiPrivateHash()));
         self::assertFalse($this->employee->compareSemiPrivateHash('123'));
         self::assertInstanceOf('\Modules\Media\Models\NullMedia', $this->employee->image);

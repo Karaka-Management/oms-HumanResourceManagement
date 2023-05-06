@@ -37,7 +37,7 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
      */
     public function testDefault() : void
     {
-        self::assertEquals(0, $this->history->getId());
+        self::assertEquals(0, $this->history->id);
         self::assertNull($this->history->end);
         self::assertEquals(0, $this->history->employee);
         self::assertInstanceOf('\Modules\Organization\Models\NullPosition', $this->history->position);

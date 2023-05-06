@@ -42,21 +42,20 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Status'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
-                    $url = UriFactory::build('{/base}/humanresource/staff/profile?{?}&id=' . $value->getId()); ?>
+                    $url = UriFactory::build('{/base}/humanresource/staff/profile?{?}&id=' . $value->id); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
                         <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_staff'); ?>" width="30" loading="lazy" class="profile-image"
-                            src="<?=
-                                    $value->profile->image instanceof NullMedia ?
-                                        UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                        UriFactory::build('{/base}/' . $value->profile->image->getPath()); ?>"></a>
-                        <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
+                            src="<?= $value->profile->image->id === 0 ?
+                                UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
+                                UriFactory::build('{/base}/' . $value->profile->image->getPath()); ?>"></a>
+                        <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)
                             ); ?></a>
                         <td><?= $this->printHtml($value->getNewestHistory()->unit->name); ?>
                         <td><?= $this->printHtml($value->getNewestHistory()->position->name); ?>
                         <td><?= $this->printHtml($value->getNewestHistory()->department->name); ?>
-                        <td><?= !($value->getNewestHistory() instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
+                        <td><?= $value->getNewestHistory()->id > 0 ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
                     <tr><td colspan="6" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>

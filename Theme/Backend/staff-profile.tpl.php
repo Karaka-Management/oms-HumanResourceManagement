@@ -52,8 +52,8 @@ echo $this->getData('nav')->render(); ?>
                                         alt="<?= $this->getHtml('ProfileImage'); ?>"
                                         itemprop="logo" loading="lazy"
                                         src="<?=
-                                            $employee->image instanceof NullMedia ?
-                                                ($employee->profile->image instanceof NullMedia ?
+                                            $employee->image->id === 0 ?
+                                                ($employee->profile->image->id === 0 ?
                                                     UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
                                                     UriFactory::build('{/base}/' . $employee->profile->image->getPath())) :
                                                 UriFactory::build('{/base}/' . $employee->image->getPath()); ?>"
@@ -98,7 +98,7 @@ echo $this->getData('nav')->render(); ?>
                                             <td itemprop="telephone">+01 12345-4567
                                         <tr>
                                             <th><?= $this->getHtml('Status'); ?>
-                                            <td><span class="tag green"><?= !($recentHistory instanceof NullEmployeeHistory) ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?></span>
+                                            <td><span class="tag green"><?= $recentHistory->id > 0 ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?></span>
                                     </table>
                                 <!-- @formatter:on -->
                         </div>

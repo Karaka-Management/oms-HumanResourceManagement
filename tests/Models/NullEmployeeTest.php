@@ -37,6 +37,6 @@ final class NullEmployeeTest extends \PHPUnit\Framework\TestCase
     public function testId() : void
     {
         $null = new NullEmployee(2);
-        self::assertEquals(2, $null->getId());
+        self::assertEquals(2, $null->id);
     }
 }
