@@ -109,7 +109,7 @@ echo $this->getData('nav')->render(); ?>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
-                        <div class="portlet-head"><?= $this->getHtml('History'); ?><i class="fa fa-download floatRight download btn"></i></div>
+                        <div class="portlet-head"><?= $this->getHtml('History'); ?><i class="lni lni-download download btn end-xs"></i></div>
                         <table id="historyList" class="default">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
@@ -200,7 +200,7 @@ echo $this->getData('nav')->render(); ?>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
-                        <div class="portlet-head"><?= $this->getHtml('Education'); ?><i class="fa fa-download floatRight download btn"></i></div>
+                        <div class="portlet-head"><?= $this->getHtml('Education'); ?><i class="lni lni-download download btn end-xs"></i></div>
                         <table id="historyList" class="default">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
@@ -224,7 +224,7 @@ echo $this->getData('nav')->render(); ?>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
-                        <div class="portlet-head"><?= $this->getHtml('Work'); ?><i class="fa fa-download floatRight download btn"></i></div>
+                        <div class="portlet-head"><?= $this->getHtml('Work'); ?><i class="lni lni-download download btn end-xs"></i></div>
                         <table id="historyList" class="default">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc fa fa-chevron-up"></i><i class="sort-desc fa fa-chevron-down"></i>
