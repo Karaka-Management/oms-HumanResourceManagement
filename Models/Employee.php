@@ -214,6 +214,7 @@ class Employee implements \JsonSerializable
 
         return new NullMedia();
     }
+
     /**
      * Get employee company history.
      *
