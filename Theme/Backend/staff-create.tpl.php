@@ -18,7 +18,7 @@ use \Modules\HumanResourceManagement\Models\EmployeeActivityStatus;
  * @var \phpOMS\Views\View $this
  */
 
-echo $this->getData('nav')->render();
+echo $this->data['nav']->render();
 ?>
 
 <div class="row">

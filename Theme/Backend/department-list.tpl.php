@@ -25,9 +25,9 @@ $footerView->setPages(25);
 $footerView->setPage(1);
 $footerView->setResults(1);
 
-$departments = $this->getData('departments');
+$departments = $this->data['departments'];
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">

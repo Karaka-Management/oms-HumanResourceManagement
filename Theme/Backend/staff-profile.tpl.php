@@ -14,13 +14,13 @@ declare(strict_types=1);
 
 use phpOMS\Uri\UriFactory;
 
-$employee         = $this->getData('employee');
+$employee         = $this->data['employee'];
 $history          = $employee->getHistory();
 $educationHistory = $employee->getEducationHistory();
 $workHistory      = $employee->getWorkHistory();
 $recentHistory    = $employee->getNewestHistory();
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="tabview tab-2">
     <div class="box wf-100 col-xs-12">

@@ -19,9 +19,9 @@ use phpOMS\Uri\UriFactory;
  * @var \phpOMS\Views\View $this
  */
 
-$employees = $this->getData('employees');
+$employees = $this->data['employees'];
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
