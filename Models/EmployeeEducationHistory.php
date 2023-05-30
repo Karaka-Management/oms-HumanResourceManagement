@@ -53,14 +53,6 @@ class EmployeeEducationHistory implements \JsonSerializable
     public string $score = '';
 
     /**
-     * Files.
-     *
-     * @var Media[]
-     * @since 1.0.0
-     */
-    private array $files = [];
-
-    /**
      * Start date
      *
      * @var \DateTime
@@ -100,18 +92,6 @@ class EmployeeEducationHistory implements \JsonSerializable
     public function getId() : int
     {
         return $this->id;
-    }
-
-    /**
-     * Get files
-     *
-     * @return Media[]
-     *
-     * @since 1.0.0
-     */
-    public function getFiles() : array
-    {
-        return $this->files;
     }
 
     /**
@@ -177,4 +157,6 @@ class EmployeeEducationHistory implements \JsonSerializable
     {
         return $this->toArray();
     }
+
+    use \Modules\Media\Models\MediaListTrait;
 }

@@ -74,14 +74,6 @@ class EmployeeHistory implements \JsonSerializable
     public Position $position;
 
     /**
-     * Files.
-     *
-     * @var Media[]
-     * @since 1.0.0
-     */
-    private array $files = [];
-
-    /**
      * Start date
      *
      * @var \DateTime
@@ -123,18 +115,6 @@ class EmployeeHistory implements \JsonSerializable
     public function getId() : int
     {
         return $this->id;
-    }
-
-    /**
-     * Get files
-     *
-     * @return Media[]
-     *
-     * @since 1.0.0
-     */
-    public function getFiles() : array
-    {
-        return $this->files;
     }
 
     /**
@@ -200,4 +180,6 @@ class EmployeeHistory implements \JsonSerializable
     {
         return $this->toArray();
     }
+
+    use \Modules\Media\Models\MediaListTrait;
 }

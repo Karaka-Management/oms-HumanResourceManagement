@@ -49,15 +49,14 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
-        $view->setData('employees', EmployeeMapper::getAll()
+        $view->data['employees'] = EmployeeMapper::getAll()
             ->with('profile')
             ->with('profile/account')
             ->with('companyHistory')
             ->with('companyHistory/unit')
-            ->execute()
-        );
+            ->execute();
 
         return $view;
     }
@@ -78,10 +77,10 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
         $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
-        $view->addData('accSelector', $accSelector);
+        $view->data['accSelector'] = $accSelector;
 
         return $view;
     }
@@ -102,7 +101,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-profile');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
         $employee = EmployeeMapper::get()
             ->with('profile')
@@ -125,7 +124,7 @@ final class BackendController extends Controller
             ->sort('workHistory/start', OrderType::DESC)
             ->execute();
 
-        $view->addData('employee', $employee);
+        $view->data['employee'] = $employee;
 
         return $view;
     }
@@ -146,9 +145,9 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/department-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response);
 
-        $view->setData('departments', DepartmentMapper::getAll());
+        $view->data['departments'] = DepartmentMapper::getAll();
 
         return $view;
     }
@@ -169,9 +168,9 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/position-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002403001, $request, $response);
 
-        $view->setData('departments', DepartmentMapper::getAll());
+        $view->data['departments'] = DepartmentMapper::getAll();
 
         return $view;
     }
@@ -192,10 +191,10 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/position-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
         $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
-        $view->addData('accSelector', $accSelector);
+        $view->data['accSelector'] = $accSelector;
 
         return $view;
     }

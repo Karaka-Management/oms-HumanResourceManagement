@@ -85,7 +85,7 @@ final class ApiController extends Controller
     public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
-            $response->set('employee_create', new FormValidation($val));
+            $response->data['employee_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -154,7 +154,7 @@ final class ApiController extends Controller
     public function apiEmployeeNewCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
-            $response->set('employee_create', new FormValidation($val));
+            $response->data['employee_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -225,7 +225,7 @@ final class ApiController extends Controller
     public function apiEmployeeHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
-            $response->set('history_create', new FormValidation($val));
+            $response->data['history_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -297,7 +297,7 @@ final class ApiController extends Controller
     public function apiEmployeeWorkHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeWorkHistoryCreate($request))) {
-            $response->set('history_work_create', new FormValidation($val));
+            $response->data['history_work_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -373,7 +373,7 @@ final class ApiController extends Controller
     public function apiEmployeeEducationHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeEducationHistoryCreate($request))) {
-            $response->set('history_education_create', new FormValidation($val));
+            $response->data['history_education_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;

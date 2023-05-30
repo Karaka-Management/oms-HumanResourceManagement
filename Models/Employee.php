@@ -54,14 +54,6 @@ class Employee implements \JsonSerializable
     public $image = null;
 
     /**
-     * Files.
-     *
-     * @var Media[]
-     * @since 1.0.0
-     */
-    private array $files = [];
-
-    /**
      * Employee department/position history.
      *
      * @var array
@@ -161,18 +153,6 @@ class Employee implements \JsonSerializable
     public function compareSemiPrivateHash(string $hash) : bool
     {
         return \hash_equals($this->semiPrivateHash, $hash);
-    }
-
-    /**
-     * Get files
-     *
-     * @return Media[]
-     *
-     * @since 1.0.0
-     */
-    public function getFiles() : array
-    {
-        return $this->files;
     }
 
     /**
@@ -350,4 +330,6 @@ class Employee implements \JsonSerializable
     {
         return $this->toArray();
     }
+
+    use \Modules\Media\Models\MediaListTrait;
 }
