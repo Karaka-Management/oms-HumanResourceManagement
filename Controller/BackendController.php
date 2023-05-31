@@ -79,7 +79,7 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-create');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
-        $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
+        $accSelector               = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
         $view->data['accSelector'] = $accSelector;
 
         return $view;
@@ -193,7 +193,7 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/position-create');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
-        $accSelector = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
+        $accSelector               = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
         $view->data['accSelector'] = $accSelector;
 
         return $view;

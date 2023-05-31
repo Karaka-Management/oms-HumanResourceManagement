@@ -86,7 +86,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
             $response->data['employee_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status          = RequestStatusCode::R_400;
 
             return;
         }
@@ -155,7 +155,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
             $response->data['employee_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status          = RequestStatusCode::R_400;
 
             return;
         }
@@ -226,7 +226,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
             $response->data['history_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status         = RequestStatusCode::R_400;
 
             return;
         }
@@ -298,7 +298,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeWorkHistoryCreate($request))) {
             $response->data['history_work_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status              = RequestStatusCode::R_400;
 
             return;
         }
@@ -374,7 +374,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmployeeEducationHistoryCreate($request))) {
             $response->data['history_education_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status                   = RequestStatusCode::R_400;
 
             return;
         }
