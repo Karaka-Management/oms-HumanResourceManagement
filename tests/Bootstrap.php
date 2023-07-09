@@ -302,7 +302,7 @@ if (\defined('RESET') && RESET === '1') {
             $db->exec('DROP DATABASE IF EXISTS ' . $CONFIG['db']['core']['masters']['admin']['database']);
             $db->exec('CREATE DATABASE IF NOT EXISTS ' . $CONFIG['db']['core']['masters']['admin']['database']);
             $db = null;
-        } catch (\Throwable $t) {
+        } catch (\Throwable $_) {
             echo "\nCouldn't connect to MYSQL DB\n";
         }
     }
@@ -317,7 +317,7 @@ if (\defined('RESET') && RESET === '1') {
             $db->exec('DROP DATABASE IF EXISTS ' . $CONFIG['db']['core']['postgresql']['admin']['database']);
             $db->exec('CREATE DATABASE ' . $CONFIG['db']['core']['postgresql']['admin']['database']);
             $db = null;
-        } catch (\Throwable $t) {
+        } catch (\Throwable $_) {
             echo "\nCouldn't connect to POSTGRESQL DB\n";
         }
     }
@@ -332,7 +332,7 @@ if (\defined('RESET') && RESET === '1') {
             $db->exec('DROP DATABASE IF EXISTS ' . $CONFIG['db']['core']['mssql']['admin']['database']);
             $db->exec('CREATE DATABASE ' . $CONFIG['db']['core']['mssql']['admin']['database']);
             $db = null;
-        } catch (\Throwable $t) {
+        } catch (\Throwable $_) {
             echo "\nCouldn't connect to MSSQL DB\n";
         }
     }
