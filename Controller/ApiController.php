@@ -29,10 +29,8 @@ use Modules\Organization\Models\NullUnit;
 use Modules\Profile\Models\Profile;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\Message\Http\RequestStatusCode;
-use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
-use phpOMS\Model\Message\FormValidation;
 use phpOMS\Stdlib\Base\AddressType;
 
 /**
@@ -85,15 +83,15 @@ final class ApiController extends Controller
     public function apiEmployeeFromAccountCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeFromAccountCreate($request))) {
-            $response->data['employee_create'] = new FormValidation($val);
-            $response->header->status          = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $employees = $this->createEmployeeFromAccountFromRequest($request);
         $this->createModels($request->header->account, $employees, EmployeeMapper::class, 'employee', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee(s) successfully created', $employees);
+        $this->createStandardCreateResponse($request, $response, $employees);
     }
 
     /**
@@ -154,15 +152,15 @@ final class ApiController extends Controller
     public function apiEmployeeNewCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeNewCreate($request))) {
-            $response->data['employee_create'] = new FormValidation($val);
-            $response->header->status          = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $employee = $this->createEmployeeNewFromRequest($request);
         $this->createModel($request->header->account, $employee, EmployeeMapper::class, 'employee', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Employee', 'Employee successfully created', $employee);
+        $this->createStandardCreateResponse($request, $response, $employee);
     }
 
     /**
@@ -225,15 +223,15 @@ final class ApiController extends Controller
     public function apiEmployeeHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeHistoryCreate($request))) {
-            $response->data['history_create'] = new FormValidation($val);
-            $response->header->status         = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $history = $this->createEmployeeHistoryFromRequest($request);
         $this->createModel($request->header->account, $history, EmployeeHistoryMapper::class, 'history', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'History', 'History successfully created', $history);
+        $this->createStandardCreateResponse($request, $response, $history);
     }
 
     /**
@@ -297,15 +295,15 @@ final class ApiController extends Controller
     public function apiEmployeeWorkHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeWorkHistoryCreate($request))) {
-            $response->data['history_work_create'] = new FormValidation($val);
-            $response->header->status              = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $history = $this->createEmployeeWorkHistoryFromRequest($request);
         $this->createModel($request->header->account, $history, EmployeeWorkHistoryMapper::class, 'history', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'History', 'History successfully created', $history);
+        $this->createStandardCreateResponse($request, $response, $history);
     }
 
     /**
@@ -373,15 +371,15 @@ final class ApiController extends Controller
     public function apiEmployeeEducationHistoryCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmployeeEducationHistoryCreate($request))) {
-            $response->data['history_education_create'] = new FormValidation($val);
-            $response->header->status                   = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $history = $this->createEmployeeEducationHistoryFromRequest($request);
         $this->createModel($request->header->account, $history, EmployeeEducationHistoryMapper::class, 'history', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'History', 'History successfully created', $history);
+        $this->createStandardCreateResponse($request, $response, $history);
     }
 
     /**
