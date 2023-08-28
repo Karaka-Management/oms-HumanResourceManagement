@@ -200,7 +200,7 @@ final class ApiController extends Controller
         $account->name3 = $request->getDataString('email') ?? '';
 
         $profile           = new Profile($account);
-        $profile->birthday = new \DateTime((string) ($request->getData('birthday') ?? 'now'));
+        $profile->birthday = new \DateTime($request->getDataString('birthday') ?? 'now');
 
         $employee = new Employee($profile);
 
@@ -421,7 +421,7 @@ final class ApiController extends Controller
         $history->end              = $request->getDataDateTime('end');
         $history->educationTitle   = $request->getDataString('title') ?? '';
         $history->score            = $request->getDataString('score') ?? '';
-        $history->passed           = (bool) ($request->getData('passed') ?? true);
+        $history->passed           = $request->getDataBool('passed') ?? true;
         $history->address->name    = $request->getDataString('name') ?? '';
         $history->address->address = $request->getDataString('address') ?? '';
         $history->address->postal  = $request->getDataString('postal') ?? '';
