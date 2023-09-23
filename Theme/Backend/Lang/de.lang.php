@@ -47,4 +47,5 @@ return ['HumanResourceManagement' => [
     'Unit'              => 'Einheit',
     'Vacation'          => 'Urlaub',
     'Work'              => 'Arbeiten',
+    'IMG_alt_staff'              => 'Mitarbeiterfoto',
 ]];
