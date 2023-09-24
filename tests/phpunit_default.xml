@@ -3,11 +3,7 @@
   <coverage includeUncoveredFiles="true" processUncoveredFiles="false">
     <exclude>
       <directory>*vendor*</directory>
-      <directory>vendor</directory>
-      <directory>../vendor</directory>
-      <directory>../phpOMS</directory>
       <directory>../phpOMS*</directory>
-      <directory>../phpOMS/*</directory>
       <directory>../tests*</directory>
       <directory>../*/tests*</directory>
       <directory>../**/tests*</directory>
