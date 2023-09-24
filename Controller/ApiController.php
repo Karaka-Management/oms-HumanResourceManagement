@@ -202,9 +202,7 @@ final class ApiController extends Controller
         $profile           = new Profile($account);
         $profile->birthday = new \DateTime($request->getDataString('birthday') ?? 'now');
 
-        $employee = new Employee($profile);
-
-        return $employee;
+        return new Employee($profile);
     }
 
     /**
