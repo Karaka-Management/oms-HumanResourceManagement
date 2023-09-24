@@ -79,10 +79,7 @@ final class Autoloader
         $class = \strtr($class, '_\\', '//');
 
         foreach (self::$paths as $path) {
-            $file = $path . $class . '.php';
-            $file = \str_replace('/Modules/', '/', $file);
-
-            if (\is_file($file)) {
+            if (\is_file($file = $path . $class . '.php')) {
                 include_once $file;
 
                 return;
