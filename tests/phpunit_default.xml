@@ -27,7 +27,7 @@
   </coverage>
   <testsuites>
     <testsuite name="Install">
-      <directory>../Karaka/Install/tests*</directory>
+      <directory>../MainRepository/Install/tests*</directory>
     </testsuite>
     <testsuite name="Module">
       <directory>../tests*</directory>
