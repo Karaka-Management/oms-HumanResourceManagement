@@ -34,7 +34,7 @@ final class Autoloader
      */
     private static $paths = [
         __DIR__ . '/../',
-        __DIR__ . '/../Karaka/',
+        __DIR__ . '/../MainAutoloader/',
         __DIR__ . '/../../',
     ];
 
