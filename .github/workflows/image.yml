@@ -1,24 +1,10 @@
-name: Compress images
-on:
-  push:
-    paths:
-      - '**.jpg'
-      - '**.png'
-      - '**.webp'
-  pull_request:
-    paths:
-      - '**.jpg'
-      - '**.png'
-      - '**.webp'
-jobs:
-  build:
-    name: calibreapp/image-actions
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
+name: Image optimization
 
-      - name: Compress Images
-        uses: calibreapp/image-actions@main
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+on: [push, pull_request]
+
+jobs:
+  general_image_workflow:
+    uses: Karaka-Management/Karaka/.github/workflows/image.yml@develop
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
