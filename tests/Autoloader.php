@@ -75,11 +75,25 @@ final class Autoloader
      */
     public static function defaultAutoloader(string $class) : void
     {
-        $class = \ltrim($class, '\\');
-        $class = \strtr($class, '_\\', '//');
+        $class  = \ltrim($class, '\\');
+        $class  = \strtr($class, '_\\', '//');
+        $class2 = $class;
+
+        $pos = \stripos($class, '/');
+        if ($pos !== false) {
+            $pos = \stripos($class, '/', $pos + 1);
+
+            if ($pos !== false) {
+                $class2 = \substr($class, $pos + 1);
+            }
+        }
 
         foreach (self::$paths as $path) {
-            if (\is_file($file = $path . $class . '.php')) {
+            if (\is_file($file = $path . $class2 . '.php')) {
+                include_once $file;
+
+                return;
+            } elseif (\is_file($file = $path . $class . '.php')) {
                 include_once $file;
 
                 return;
