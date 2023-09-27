@@ -129,8 +129,10 @@ final class ApiController extends Controller
 
         foreach ($accounts as $account) {
             /** @var Profile $profile Profile */
-            $profile     = ProfileMapper::get()->where('account', (int) $account)->execute();
-            $employees[] = new Employee($profile);
+            $profile  = ProfileMapper::get()->where('account', (int) $account)->execute();
+            $employee = EmployeeMapper::get()->where('profile', $profile->id)->execute();
+
+            $employees[] = $employee->id === 0 ? new Employee($profile) : $employee;
         }
 
         return $employees;
