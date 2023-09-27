@@ -83,9 +83,12 @@ final class Autoloader
         }
 
         $class2 = $class;
+        $class3 = $class;
 
         $pos = \stripos($class, '/');
         if ($pos !== false) {
+            $class3 = \substr($class, $pos + 1);
+
             $pos = \stripos($class, '/', $pos + 1);
 
             if ($pos !== false) {
@@ -94,7 +97,7 @@ final class Autoloader
         }
 
         foreach (self::$paths as $path) {
-            if (\is_file($file = $path . $class2 . '.php')) {
+            if (\is_file($file = $path . $class2 . '.php') && \stripos($file, $class3) !== false) {
                 include_once $file;
 
                 return;
