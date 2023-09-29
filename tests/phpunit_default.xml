@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="Bootstrap.php" colors="true" columns="120" stopOnError="true" stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false" beStrictAboutTestsThatDoNotTestAnything="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <coverage includeUncoveredFiles="true" processUncoveredFiles="false">
+    <include>
+      <directory suffix=".php">../</directory>
+    </include>
     <exclude>
       <directory>*vendor*</directory>
+      <directory>*MainRepository*</directory>
+      <directory>../Admin/Install/Application</directory>
       <directory>../phpOMS*</directory>
       <directory>../tests*</directory>
       <directory>../*/tests*</directory>
