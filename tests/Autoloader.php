@@ -36,6 +36,7 @@ final class Autoloader
         __DIR__ . '/../',
         __DIR__ . '/../MainRepository/',
         __DIR__ . '/../../',
+        __DIR__ . '/../../Karaka/',
     ];
 
     /**
