@@ -59,7 +59,7 @@ class Employee implements \JsonSerializable
      * @var array
      * @since 1.0.0
      */
-    private array $companyHistory = [];
+    public array $companyHistory = [];
 
     /**
      * Employee education history.
@@ -67,7 +67,7 @@ class Employee implements \JsonSerializable
      * @var array
      * @since 1.0.0
      */
-    private array $educationHistory = [];
+    public array $educationHistory = [];
 
     /**
      * Employee external work history.
@@ -75,7 +75,7 @@ class Employee implements \JsonSerializable
      * @var array
      * @since 1.0.0
      */
-    private array $workHistory = [];
+    public array $workHistory = [];
 
     /**
      * Employee hash used for time tracking / employee card
@@ -83,7 +83,7 @@ class Employee implements \JsonSerializable
      * @var string
      * @since 1.0.0
      */
-    private string $semiPrivateHash = '';
+    public string $semiPrivateHash = '';
 
     /**
      * Employee hash length used for time tracking / employee card
@@ -91,7 +91,7 @@ class Employee implements \JsonSerializable
      * @var int
      * @since 1.0.0
      */
-    private const SEMI_PRIVATE_HASH_LENGTH = 64;
+    public const SEMI_PRIVATE_HASH_LENGTH = 64;
 
     /**
      * Constructor.
