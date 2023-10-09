@@ -129,7 +129,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
 
         // can create multiple accounts if profiles is a list of ids e.g. 1,2,3
         $this->module->apiEmployeeCreate($request, $response);
-        self::assertGreaterThan(0, self::$employee = $response->get('')['response'][0]->id);
+        self::assertGreaterThan(0, self::$employee = $response->getDataArray('')['response'][0]->id);
     }
 
     /**
@@ -145,7 +145,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         $request->setData('name1', 'NewEmployee');
 
         $this->module->apiEmployeeCreate($request, $response);
-        self::assertGreaterThan(0, self::$employee = $response->get('')['response']->id);
+        self::assertGreaterThan(0, self::$employee = $response->getDataArray('')['response']->id);
     }
 
     /**
@@ -225,7 +225,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
             $request->setData('department', 1);
             $request->setData('position', 1);
             $this->module->apiEmployeeHistoryCreate($request, $response);
-            self::assertGreaterThan(0, $response->get('')['response']->id);
+            self::assertGreaterThan(0, $response->getDataArray('')['response']->id);
 
             $start = clone $end;
             $end   = DateTime::generateDateTime(
@@ -285,7 +285,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
             $request->setData('state', '');
 
             $this->module->apiEmployeeWorkHistoryCreate($request, $response);
-            self::assertGreaterThan(0, $response->get('')['response']->id);
+            self::assertGreaterThan(0, $response->getDataArray('')['response']->id);
 
             $start = clone $end;
             $end   = DateTime::generateDateTime(
@@ -346,7 +346,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
             $request->setData('state', '');
 
             $this->module->apiEmployeeEducationHistoryCreate($request, $response);
-            self::assertGreaterThan(0, $response->get('')['response']->id);
+            self::assertGreaterThan(0, $response->getDataArray('')['response']->id);
 
             $start = clone $end;
             $end   = DateTime::generateDateTime(
