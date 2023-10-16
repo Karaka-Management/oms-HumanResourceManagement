@@ -23,7 +23,7 @@ final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
-     * @group framework
+     * @group module
      */
     public function testNull() : void
     {
@@ -32,11 +32,21 @@ final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
-     * @group framework
+     * @group module
      */
     public function testId() : void
     {
         $null = new NullEmployeeWorkHistory(2);
         self::assertEquals(2, $null->id);
+    }
+
+    /**
+     * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
+     * @group module
+     */
+    public function testJsonSerialize() : void
+    {
+        $null = new NullEmployeeWorkHistory(2);
+        self::assertEquals(['id' => 2], $null);
     }
 }
