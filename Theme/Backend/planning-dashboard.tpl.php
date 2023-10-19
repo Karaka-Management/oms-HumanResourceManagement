@@ -3,7 +3,7 @@
 
     <div class="bc-1">
         <div class="cT">
-            <i class="fa fa-5x fa-tree"></i>
+            <i class="g-icon">account_tree</i>
         </div>
         <!-- @formatter:off -->
         <table class="tc-1" style="margin-top: 5px">
@@ -36,7 +36,7 @@
 
     <div class="bc-1">
         <div class="cT">
-            <i class="fa fa-5x fa-clock-o"></i>
+            <i class="g-icon">schedule</i>
         </div>
         <!-- @formatter:off -->
         <table class="tc-1" style="margin-top: 5px">
@@ -69,7 +69,7 @@
 
     <div class="bc-1">
         <div class="cT">
-            <i class="fa fa-5x fa-users"></i>
+            <i class="g-icon">person</i>
         </div>
         <!-- @formatter:off -->
         <table class="tc-1" style="margin-top: 5px">

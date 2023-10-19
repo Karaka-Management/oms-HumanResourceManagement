@@ -7,7 +7,7 @@
         "name": "HumanResourceManagement",
         "uri": null,
         "target": "self",
-        "icon": "fa fa-user",
+        "icon": "person",
         "order": 60,
         "from": "HumanResourceManagement",
         "permission": { "permission": 2, "category": null, "element": null },
