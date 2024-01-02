@@ -60,6 +60,32 @@
             }
         }
     },
+    "hr_staff_note": {
+        "name": "hr_staff_note",
+        "fields": {
+            "hr_staff_note_id": {
+                "name": "hr_staff_note_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_staff_note_staff": {
+                "name": "hr_staff_note_staff",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff",
+                "foreignKey": "hr_staff_id"
+            },
+            "hr_staff_note_doc": {
+                "name": "hr_staff_note_doc",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "editor_doc",
+                "foreignKey": "editor_doc_id"
+            }
+        }
+    },
     "hr_staff_history": {
         "name": "hr_staff_history",
         "fields": {

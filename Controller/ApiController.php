@@ -23,12 +23,18 @@ use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistoryMapper;
+use Modules\HumanResourceManagement\Models\PermissionCategory;
+use Modules\Media\Models\CollectionMapper;
+use Modules\Media\Models\MediaMapper;
+use Modules\Media\Models\PathSettings;
 use Modules\Organization\Models\NullDepartment;
 use Modules\Organization\Models\NullPosition;
 use Modules\Organization\Models\NullUnit;
 use Modules\Profile\Models\Profile;
 use Modules\Profile\Models\ProfileMapper;
+use phpOMS\Account\PermissionType;
 use phpOMS\Message\Http\RequestStatusCode;
+use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Stdlib\Base\AddressType;
@@ -431,5 +437,265 @@ final class ApiController extends Controller
         $history->address->setType(AddressType::EDUCATION);
 
         return $history;
+    }
+
+    /**
+     * Api method to create a bill
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiMediaAddToEmployee(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
+    {
+        if (!empty($val = $this->validateMediaAddToEmployee($request))) {
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidAddResponse($request, $response, $val);
+
+            return;
+        }
+
+        /** @var \Modules\HumanResourceManagement\Models\Employee $employee */
+        $employee = EmployeeMapper::get()->where('id', (int) $request->getData('employee'))->execute();
+        $path    = $this->createEmployeeDir($employee);
+
+        $uploaded = [];
+        if (!empty($uploadedFiles = $request->files)) {
+            $uploaded = $this->app->moduleManager->get('Media')->uploadFiles(
+                names: [],
+                fileNames: [],
+                files: $uploadedFiles,
+                account: $request->header->account,
+                basePath: __DIR__ . '/../../../Modules/Media/Files' . $path,
+                virtualPath: $path,
+                pathSettings: PathSettings::FILE_PATH,
+                hasAccountRelation: false,
+                readContent: $request->getDataBool('parse_content') ?? false
+            );
+
+            $collection = null;
+            foreach ($uploaded as $media) {
+                $this->createModelRelation(
+                    $request->header->account,
+                    $employee->id,
+                    $media->id,
+                    EmployeeMapper::class,
+                    'files',
+                    '',
+                    $request->getOrigin()
+                );
+
+                if ($request->hasData('type')) {
+                    $this->createModelRelation(
+                        $request->header->account,
+                        $media->id,
+                        $request->getDataInt('type'),
+                        MediaMapper::class,
+                        'types',
+                        '',
+                        $request->getOrigin()
+                    );
+                }
+
+                if ($collection === null) {
+                    /** @var \Modules\Media\Models\Collection $collection */
+                    $collection = MediaMapper::getParentCollection($path)->limit(1)->execute();
+
+                    if ($collection->id === 0) {
+                        $collection = $this->app->moduleManager->get('Media')->createRecursiveMediaCollection(
+                            $path,
+                            $request->header->account,
+                            __DIR__ . '/../../../Modules/Media/Files' . $path,
+                        );
+                    }
+                }
+
+                $this->createModelRelation(
+                    $request->header->account,
+                    $collection->id,
+                    $media->id,
+                    CollectionMapper::class,
+                    'sources',
+                    '',
+                    $request->getOrigin()
+                );
+            }
+        }
+
+        if (!empty($mediaFiles = $request->getDataJson('media'))) {
+            foreach ($mediaFiles as $media) {
+                $this->createModelRelation(
+                    $request->header->account,
+                    $employee->id,
+                    (int) $media,
+                    EmployeeMapper::class,
+                    'files',
+                    '',
+                    $request->getOrigin()
+                );
+            }
+        }
+
+        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Media', 'Media added to employee.', [
+            'upload' => $uploaded,
+            'media'  => $mediaFiles,
+        ]);
+    }
+
+    /**
+     * Create media directory path
+     *
+     * @param Employee $employee Employee
+     *
+     * @return string
+     *
+     * @since 1.0.0
+     */
+    private function createEmployeeDir(Employee $employee) : string
+    {
+        return '/Modules/HumanResourceManagement/Employee/'
+            . $this->app->unitId . '/'
+            . $employee->id;
+    }
+
+    /**
+     * Method to validate bill creation from request
+     *
+     * @param RequestAbstract $request Request
+     *
+     * @return array<string, bool>
+     *
+     * @since 1.0.0
+     */
+    private function validateMediaAddToEmployee(RequestAbstract $request) : array
+    {
+        $val = [];
+        if (($val['media'] = (!$request->hasData('media') && empty($request->files)))
+            || ($val['employee'] = !$request->hasData('employee'))
+        ) {
+            return $val;
+        }
+
+        return [];
+    }
+
+    /**
+     * Api method to create notes
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiNoteCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
+    {
+        if (!empty($val = $this->validateNoteCreate($request))) {
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
+
+            return;
+        }
+
+        $request->setData('virtualpath', '/Modules/HumanResourceManagement/Employee/' . $request->getData('id'), true);
+        $this->app->moduleManager->get('Editor', 'Api')->apiEditorCreate($request, $response, $data);
+
+        if ($response->header->status !== RequestStatusCode::R_200) {
+            return;
+        }
+
+        $responseData = $response->getDataArray($request->uri->__toString());
+        if (!\is_array($responseData)) {
+            return;
+        }
+
+        $model = $responseData['response'];
+        $this->createModelRelation($request->header->account, (int) $request->getData('id'), $model->id, EmployeeMapper::class, 'notes', '', $request->getOrigin());
+    }
+
+    /**
+     * Validate item note create request
+     *
+     * @param RequestAbstract $request Request
+     *
+     * @return array<string, bool>
+     *
+     * @since 1.0.0
+     */
+    private function validateNoteCreate(RequestAbstract $request) : array
+    {
+        $val = [];
+        if (($val['id'] = !$request->hasData('id'))
+        ) {
+            return $val;
+        }
+
+        return [];
+    }
+
+    /**
+     * Api method to update Note
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiNoteUpdate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
+    {
+        $accountId = $request->header->account;
+        if (!$this->app->accountManager->get($accountId)->hasPermission(
+            PermissionType::MODIFY, $this->app->unitId, $this->app->appId, self::NAME, PermissionCategory::EMPLOYEE_NOTE, $request->getDataInt('id'))
+        ) {
+            $this->fillJsonResponse($request, $response, NotificationLevel::HIDDEN, '', '', []);
+            $response->header->status = RequestStatusCode::R_403;
+
+            return;
+        }
+
+        $this->app->moduleManager->get('Editor', 'Api')->apiEditorUpdate($request, $response, $data);
+    }
+
+    /**
+     * Api method to delete Note
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiNoteDelete(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
+    {
+        $accountId = $request->header->account;
+        if (!$this->app->accountManager->get($accountId)->hasPermission(
+            PermissionType::DELETE, $this->app->unitId, $this->app->appId, self::NAME, PermissionCategory::EMPLOYEE_NOTE, $request->getDataInt('id'))
+        ) {
+            $this->fillJsonResponse($request, $response, NotificationLevel::HIDDEN, '', '', []);
+            $response->header->status = RequestStatusCode::R_403;
+
+            return;
+        }
+
+        $this->app->moduleManager->get('Editor', 'Api')->apiEditorDelete($request, $response, $data);
     }
 }

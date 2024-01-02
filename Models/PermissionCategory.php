@@ -17,7 +17,7 @@ namespace Modules\HumanResourceManagement\Models;
 use phpOMS\Stdlib\Base\Enum;
 
 /**
- * Permision state enum.
+ * Permission category enum.
  *
  * @package Modules\HumanResourceManagement\Models
  * @license OMS License 2.0
@@ -31,4 +31,6 @@ abstract class PermissionCategory extends Enum
     public const DEPARTMENT = 2;
 
     public const POSITION = 3;
+
+    public const EMPLOYEE_NOTE = 4;
 }

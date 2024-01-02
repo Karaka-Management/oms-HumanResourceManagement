@@ -42,10 +42,12 @@ echo $this->data['nav']->render(); ?>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
                     $url = UriFactory::build('{/base}/humanresource/staff/profile?{?}&id=' . $value->id); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
-                        <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_staff'); ?>" width="30" loading="lazy" class="profile-image"
-                            src="<?= $value->profile->image->id === 0 ?
-                                UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                UriFactory::build('{/base}/' . $value->profile->image->getPath()); ?>"></a>
+                        <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_user'); ?>" width="30" loading="lazy" class="profile-image"
+                            src="<?= $value->image->id === 0
+                                ? ($value->profile->image->id === 0
+                                    ? UriFactory::build($this->getData('defaultImage')->getPath())
+                                    : UriFactory::build($value->profile->image->getPath()))
+                                : UriFactory::build($value->image->getPath()); ?>"></a>
                         <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
                         <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml(
                                 \sprintf('%3$s %2$s %1$s', $value->profile->account->name1, $value->profile->account->name2, $value->profile->account->name3)

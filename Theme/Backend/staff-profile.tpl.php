@@ -25,15 +25,15 @@ echo $this->data['nav']->render(); ?>
 <div class="tabview tab-2">
     <div class="box">
         <ul class="tab-links">
-            <li><label for="c-tab-1"><?= $this->getHtml('General'); ?></label></li>
-            <li><label for="c-tab-2"><?= $this->getHtml('Clocking'); ?></label></li>
-            <li><label for="c-tab-3"><?= $this->getHtml('Documents'); ?></label></li>
-            <li><label for="c-tab-4"><?= $this->getHtml('Contracts'); ?></label></li>
-            <li><label for="c-tab-5"><?= $this->getHtml('Remarks'); ?></label></li>
-            <li><label for="c-tab-6"><?= $this->getHtml('Evaluations'); ?></label></li>
-            <li><label for="c-tab-7"><?= $this->getHtml('Salary'); ?></label></li>
-            <li><label for="c-tab-8"><?= $this->getHtml('Education'); ?></label></li>
-            <li><label for="c-tab-9"><?= $this->getHtml('Work'); ?></label></li>
+            <li><label for="c-tab-1"><?= $this->getHtml('General'); ?></label>
+            <li><label for="c-tab-2"><?= $this->getHtml('Clocking'); ?></label>
+            <li><label for="c-tab-3"><?= $this->getHtml('Documents'); ?></label>
+            <li><label for="c-tab-4"><?= $this->getHtml('Contracts'); ?></label>
+            <li><label for="c-tab-5"><?= $this->getHtml('Notes'); ?></label>
+            <li><label for="c-tab-6"><?= $this->getHtml('Evaluations'); ?></label>
+            <li><label for="c-tab-7"><?= $this->getHtml('Salary'); ?></label>
+            <li><label for="c-tab-8"><?= $this->getHtml('Education'); ?></label>
+            <li><label for="c-tab-9"><?= $this->getHtml('Work'); ?></label>
         </ul>
     </div>
     <div class="tab-content">
@@ -44,17 +44,16 @@ echo $this->data['nav']->render(); ?>
                     <section itemscope itemtype="http://schema.org/Person" class="portlet">
                         <div class="portlet-head"><span itemprop="familyName"><?= $this->printHtml($employee->profile->account->name2); ?></span>, <span itemprop="givenName"><?= $this->printHtml($employee->profile->account->name1); ?></span></div>
                         <div class="portlet-body">
-                            <!-- @formatter:off -->
                             <span class="rf">
                                     <img class="m-profile rf"
                                         alt="<?= $this->getHtml('ProfileImage'); ?>"
                                         itemprop="logo" loading="lazy"
                                         src="<?=
-                                            $employee->image->id === 0 ?
-                                                ($employee->profile->image->id === 0 ?
-                                                    UriFactory::build('Web/Backend/img/user_default_' . \mt_rand(1, 6) .'.png') :
-                                                    UriFactory::build('{/base}/' . $employee->profile->image->getPath())) :
-                                                UriFactory::build('{/base}/' . $employee->image->getPath()); ?>"
+                                            $employee->image->id === 0
+                                                ? ($employee->profile->image->id === 0
+                                                    ? UriFactory::build($this->getData('defaultImage')->getPath())
+                                                    : UriFactory::build($employee->profile->image->getPath()))
+                                                : UriFactory::build($employee->image->getPath()); ?>"
                                     >
                                 </span>
                                     <table class="list">
@@ -98,7 +97,6 @@ echo $this->data['nav']->render(); ?>
                                             <th><?= $this->getHtml('Status'); ?>
                                             <td><span class="tag green"><?= $recentHistory->id > 0 ? $this->getHtml('Active') : $this->getHtml('Inactive'); ?></span>
                                     </table>
-                                <!-- @formatter:on -->
                         </div>
                     </section>
                 </div>
@@ -108,7 +106,7 @@ echo $this->data['nav']->render(); ?>
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
                         <div class="portlet-head"><?= $this->getHtml('History'); ?><i class="g-icon download btn end-xs">download</i></div>
-                        <table id="historyList" class="default">
+                        <table id="historyList" class="default sticky">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
                                 <td><?= $this->getHtml('End'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
@@ -142,15 +140,7 @@ echo $this->data['nav']->render(); ?>
         </div>
         <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-3' ? ' checked' : ''; ?>>
         <div class="tab">
-            <div class="row">
-                <div class="col-xs-12">
-                    <section class="portlet">
-                        <div class="portlet-head"><?= $this->getHtml('Documents'); ?></div>
-                        <div class="portlet-body">
-                        </div>
-                    </section>
-                </div>
-            </div>
+            <?= $this->data['media-upload']->render('employee-file', 'files', '', $employee->files); ?>
         </div>
         <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab">
@@ -166,15 +156,7 @@ echo $this->data['nav']->render(); ?>
         </div>
         <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab">
-            <div class="row">
-                <div class="col-xs-12">
-                    <section class="portlet">
-                        <div class="portlet-head"><?= $this->getHtml('Remarks'); ?></div>
-                        <div class="portlet-body">
-                        </div>
-                    </section>
-                </div>
-            </div>
+            <?= $this->data['employee-notes']->render('employee-notes', '', $employee->notes); ?>
         </div>
         <input type="radio" id="c-tab-6" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-6' ? ' checked' : ''; ?>>
         <div class="tab">
@@ -199,7 +181,7 @@ echo $this->data['nav']->render(); ?>
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
                         <div class="portlet-head"><?= $this->getHtml('Education'); ?><i class="g-icon download btn end-xs">download</i></div>
-                        <table id="historyList" class="default">
+                        <table id="historyList" class="default sticky">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
                                 <td><?= $this->getHtml('End'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
@@ -223,7 +205,7 @@ echo $this->data['nav']->render(); ?>
                 <div class="col-xs-12">
                     <div class="portlet x-overflow">
                         <div class="portlet-head"><?= $this->getHtml('Work'); ?><i class="g-icon download btn end-xs">download</i></div>
-                        <table id="historyList" class="default">
+                        <table id="historyList" class="default sticky">
                             <thead>
                                 <td><?= $this->getHtml('Start'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
                                 <td><?= $this->getHtml('End'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>

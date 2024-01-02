@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
+use Modules\Editor\Models\EditorDocMapper;
 use Modules\Media\Models\MediaMapper;
 use Modules\Profile\Models\ProfileMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
@@ -100,6 +101,12 @@ final class EmployeeMapper extends DataMapperFactory
             'table'        => 'hr_staff_education_history',
             'self'         => 'hr_staff_education_history_staff',
             'external'     => null,
+        ],
+        'notes' => [
+            'mapper'   => EditorDocMapper::class,       /* mapper of the related object */
+            'table'    => 'hr_staff_note',         /* table of the related object, null if no relation table is used (many->1) */
+            'external' => 'hr_staff_note_doc',
+            'self'     => 'hr_staff_note_staff',
         ],
     ];
 
