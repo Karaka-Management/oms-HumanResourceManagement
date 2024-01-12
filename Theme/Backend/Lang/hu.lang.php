@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Számla',
     'Active'            => 'Aktív',
     'Address'           => '',
     'Birthday'          => 'Születésnap',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Értékelések',
     'General'           => 'Tábornok',
     'History'           => 'Történelem',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Inaktív',
     'Name'              => 'Név',
     'Parent'            => 'Szülő',
-    'Personnel'         => 'Személyzet',
     'Phone'             => 'Telefon',
     'Position'          => 'Pozíció',
     'ProfileImage'      => 'Profilkép',
-    'Remarks'           => 'Megjegyzések',
     'Salary'            => '',
-    'Shifts'            => 'Műszakok',
     'Staff'             => 'Személyzet',
     'Start'             => 'Rajt',
     'Status'            => 'Állapot',
     'Title'             => '',
     'Unit'              => 'Mértékegység',
-    'Vacation'          => 'Vakáció',
     'Work'              => 'Munka',
 ]];

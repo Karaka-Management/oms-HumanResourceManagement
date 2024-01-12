@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Hesap',
     'Active'            => 'Aktif',
     'Address'           => '',
     'Birthday'          => 'Doğum günü',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Değerlendirme',
     'General'           => 'Genel',
     'History'           => 'Tarih',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Aktif olmayan',
     'Name'              => 'İsim',
     'Parent'            => 'Ebeveyn',
-    'Personnel'         => 'Personel',
     'Phone'             => 'Telefon',
     'Position'          => 'Konum',
     'ProfileImage'      => 'Profil resmi',
-    'Remarks'           => 'Notlar',
     'Salary'            => '',
-    'Shifts'            => 'Vardiya',
     'Staff'             => 'Personel',
     'Start'             => 'Başlangıç',
     'Status'            => 'Durum',
     'Title'             => '',
     'Unit'              => 'Birim',
-    'Vacation'          => 'Tatil',
     'Work'              => 'Çalışmak',
 ]];

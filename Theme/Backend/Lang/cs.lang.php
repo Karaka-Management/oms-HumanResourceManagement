@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Účet',
     'Active'            => 'Aktivní',
     'Address'           => '',
     'Birthday'          => 'Narozeniny',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Hodnocení',
     'General'           => 'Všeobecné',
     'History'           => 'Dějiny',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Neaktivní',
     'Name'              => 'název',
     'Parent'            => 'Rodič',
-    'Personnel'         => 'Personál',
     'Phone'             => 'Telefon',
     'Position'          => 'Pozice',
     'ProfileImage'      => 'Profilový obrázek',
-    'Remarks'           => 'Poznámky',
     'Salary'            => '',
-    'Shifts'            => 'Posunů',
     'Staff'             => 'Personál',
     'Start'             => 'Start',
     'Status'            => 'Postavení',
     'Title'             => '',
     'Unit'              => 'Jednotka',
-    'Vacation'          => 'Dovolená',
     'Work'              => 'Práce',
 ]];

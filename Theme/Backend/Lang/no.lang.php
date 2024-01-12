@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Regnskap',
     'Active'            => 'Aktiv',
     'Address'           => '',
     'Birthday'          => 'Fødselsdag',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Evalueringer',
     'General'           => 'Generell',
     'History'           => 'Historie',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Inaktiv',
     'Name'              => 'Navn',
     'Parent'            => 'Foreldre',
-    'Personnel'         => 'Personale',
     'Phone'             => 'Telefonen',
     'Position'          => 'Posisjon',
     'ProfileImage'      => 'Profilbilde',
-    'Remarks'           => 'Bemerkninger',
     'Salary'            => '',
-    'Shifts'            => 'Skift',
     'Staff'             => 'Personale',
     'Start'             => 'Start',
     'Status'            => 'Status',
     'Title'             => '',
     'Unit'              => 'Enhet',
-    'Vacation'          => 'Ferie',
     'Work'              => 'Arbeid',
 ]];

@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Account',
     'Active'            => 'Active',
     'Address'           => 'Address',
     'Birthday'          => 'Birthday',
@@ -31,23 +30,18 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Evaluations',
     'General'           => 'General',
     'History'           => 'History',
-    'IMG_alt_staff'     => 'Staff image',
     'Inactive'          => 'Inactive',
     'Name'              => 'Name',
     'Parent'            => 'Parent',
-    'Personnel'         => 'Personnel',
     'Phone'             => 'Phone',
     'Position'          => 'Position',
     'ProfileImage'      => 'Profile image',
-    'Remarks'           => 'Remarks',
     'Salary'            => 'Salary',
     'Notes'            => 'Notes',
-    'Shifts'            => 'Shifts',
     'Staff'             => 'Staff',
     'Start'             => 'Start',
     'Status'            => 'Status',
     'Title'             => 'Title',
     'Unit'              => 'Unit',
-    'Vacation'          => 'Vacation',
     'Work'              => 'Work',
 ]];

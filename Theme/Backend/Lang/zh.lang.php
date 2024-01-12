@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => '帐户',
     'Active'            => '积极的',
     'Address'           => '',
     'Birthday'          => '生日',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => '评估',
     'General'           => '一般的',
     'History'           => '历史',
-    'IMG_alt_staff'     => '',
     'Inactive'          => '不活跃',
     'Name'              => '名称',
     'Parent'            => '父母',
-    'Personnel'         => '人员',
     'Phone'             => '电话',
     'Position'          => '位置',
     'ProfileImage'      => '轮廓图像',
-    'Remarks'           => '评论',
     'Salary'            => '',
-    'Shifts'            => '转变',
     'Staff'             => '职员',
     'Start'             => '开始',
     'Status'            => '地位',
     'Title'             => '',
     'Unit'              => '单元',
-    'Vacation'          => '假期',
     'Work'              => '工作',
 ]];

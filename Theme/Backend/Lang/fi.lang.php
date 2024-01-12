@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Tili',
     'Active'            => 'Aktiivinen',
     'Address'           => '',
     'Birthday'          => 'Syntymäpäivä',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Arvioinnit',
     'General'           => 'Yleinen',
     'History'           => 'Historia',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Epäaktiivinen',
     'Name'              => 'Nimi',
     'Parent'            => 'Vanhempi',
-    'Personnel'         => 'Henkilökunta',
     'Phone'             => 'Puhelin',
     'Position'          => 'Asento',
     'ProfileImage'      => 'Profiilikuva',
-    'Remarks'           => 'Huomautukset',
     'Salary'            => '',
-    'Shifts'            => 'Vuorot',
     'Staff'             => 'Henkilökunta',
     'Start'             => 'alkaa',
     'Status'            => 'Tila',
     'Title'             => '',
     'Unit'              => 'Yksikkö',
-    'Vacation'          => 'Loma',
     'Work'              => 'Tehdä työtä',
 ]];

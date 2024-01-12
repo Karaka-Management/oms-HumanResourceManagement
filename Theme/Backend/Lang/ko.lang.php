@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => '계정',
     'Active'            => '활동적인',
     'Address'           => '',
     'Birthday'          => '생일',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => '평가',
     'General'           => '일반적인',
     'History'           => '역사',
-    'IMG_alt_staff'     => '',
     'Inactive'          => '비활성으로',
     'Name'              => '이름',
     'Parent'            => '부모의',
-    'Personnel'         => '인원',
     'Phone'             => '핸드폰',
     'Position'          => '위치',
     'ProfileImage'      => '프로필 이미지',
-    'Remarks'           => '발언',
     'Salary'            => '',
-    'Shifts'            => '교대',
     'Staff'             => '직원',
     'Start'             => '시작',
     'Status'            => '상태',
     'Title'             => '',
     'Unit'              => '단위',
-    'Vacation'          => '휴가',
     'Work'              => '일하다',
 ]];

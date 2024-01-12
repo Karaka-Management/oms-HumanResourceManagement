@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'Счет',
     'Active'            => 'Активный',
     'Address'           => '',
     'Birthday'          => 'День рождения',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Оценки',
     'General'           => 'Общий',
     'History'           => 'История',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Неактивный',
     'Name'              => 'Имя',
     'Parent'            => 'Родитель',
-    'Personnel'         => 'Персонал',
     'Phone'             => 'Телефон',
     'Position'          => 'Должность',
     'ProfileImage'      => 'Изображение профиля',
-    'Remarks'           => 'Замечания',
     'Salary'            => '',
-    'Shifts'            => 'Сдвиги',
     'Staff'             => 'Штат сотрудников',
     'Start'             => 'Начинать',
     'Status'            => 'Статус',
     'Title'             => '',
     'Unit'              => 'Единица измерения',
-    'Vacation'          => 'Отпуск',
     'Work'              => 'Работа',
 ]];

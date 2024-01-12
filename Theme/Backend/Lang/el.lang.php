@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'λογαριασμός',
     'Active'            => 'Ενεργός',
     'Address'           => '',
     'Birthday'          => 'Γενέθλια',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => 'Αξιολογήσεις',
     'General'           => 'Γενικός',
     'History'           => 'Ιστορία',
-    'IMG_alt_staff'     => '',
     'Inactive'          => 'Αδρανής',
     'Name'              => 'Ονομα',
     'Parent'            => 'Μητρική εταιρεία',
-    'Personnel'         => 'Προσωπικό',
     'Phone'             => 'Τηλέφωνο',
     'Position'          => 'Θέση',
     'ProfileImage'      => 'Εικόνα προφίλ',
-    'Remarks'           => 'Παρατηρήσεις',
     'Salary'            => '',
-    'Shifts'            => 'Βάρδιες',
     'Staff'             => 'Προσωπικό',
     'Start'             => 'Αρχή',
     'Status'            => 'Κατάσταση',
     'Title'             => '',
     'Unit'              => 'Μονάδα',
-    'Vacation'          => 'Διακοπές',
     'Work'              => 'Δουλειά',
 ]];

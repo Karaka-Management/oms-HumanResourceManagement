@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['HumanResourceManagement' => [
-    'Account'           => 'アカウント',
     'Active'            => 'アクティブ',
     'Address'           => '',
     'Birthday'          => '誕生日',
@@ -31,22 +30,17 @@ return ['HumanResourceManagement' => [
     'Evaluations'       => '評価',
     'General'           => '全般的',
     'History'           => '歴史',
-    'IMG_alt_staff'     => '',
     'Inactive'          => '非活性',
     'Name'              => '名前',
     'Parent'            => '親',
-    'Personnel'         => '人員',
     'Phone'             => '電話',
     'Position'          => 'ポジション',
     'ProfileImage'      => 'プロフィール画像',
-    'Remarks'           => '備考',
     'Salary'            => '',
-    'Shifts'            => 'シフト',
     'Staff'             => 'スタッフ',
     'Start'             => '始める',
     'Status'            => '状態',
     'Title'             => '',
     'Unit'              => '単位',
-    'Vacation'          => '休暇',
     'Work'              => '仕事',
 ]];
