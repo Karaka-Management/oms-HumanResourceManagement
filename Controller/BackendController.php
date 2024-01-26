@@ -15,13 +15,15 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\Controller;
 
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
+use Modules\HumanResourceTimeRecording\Models\SessionMapper;
 use Modules\Media\Models\MediaMapper;
 use Modules\Organization\Models\DepartmentMapper;
+use Modules\Profile\Models\SettingsEnum;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\DataStorage\Database\Query\OrderType;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
-use Modules\Profile\Models\SettingsEnum;
+use phpOMS\Stdlib\Base\SmartDateTime;
 use phpOMS\Views\View;
 
 /**
@@ -111,10 +113,10 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewHrStaffProfile(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    public function viewHrStaffView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-profile');
+        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
 
         $employee = EmployeeMapper::get()
@@ -144,8 +146,28 @@ final class BackendController extends Controller
 
         $view->data['employee'] = $employee;
 
-        $view->data['media-upload']  = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
-        $view->data['vehicle-notes'] = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['media-upload']   = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['employee-notes'] = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
+
+        if ($this->app->moduleManager->isActive('HumanResourceTimeRecording')) {
+            /** @var \Modules\HumanResourceTimeRecording\Models\Session $lastOpenSession */
+            $lastOpenSession = SessionMapper::getMostPlausibleOpenSessionForEmployee($employee->id);
+
+            $start = new SmartDateTime('now');
+            $start = $start->getEndOfDay();
+            $limit = $start->getEndOfMonth();
+            $limit->smartModify(0, -2, 0);
+
+            $list = SessionMapper::getAll()
+                ->with('sessionElements')
+                ->where('employee', $employee->id)
+                ->where('start', $start, '<=')
+                ->sort('start', OrderType::DESC)
+                ->execute();
+
+            $view->data['sessions']    = $list;
+            $view->data['lastSession'] = $lastOpenSession;
+        }
 
         return $view;
     }

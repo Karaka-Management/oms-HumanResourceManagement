@@ -39,10 +39,10 @@ final class EmployeeMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'hr_staff_id'         => ['name' => 'hr_staff_id',       'type' => 'int',    'internal' => 'id'],
-        'hr_staff_profile'    => ['name' => 'hr_staff_profile',  'type' => 'int',    'internal' => 'profile'],
-        'hr_staff_smiPHash'   => ['name' => 'hr_staff_smiPHash', 'type' => 'string', 'internal' => 'semiPrivateHash', 'private' => true],
-        'hr_staff_image'      => ['name' => 'hr_staff_image',    'type' => 'int',    'internal' => 'image', 'annotations' => ['gdpr' => true]],
+        'hr_staff_id'       => ['name' => 'hr_staff_id',       'type' => 'int',    'internal' => 'id'],
+        'hr_staff_profile'  => ['name' => 'hr_staff_profile',  'type' => 'int',    'internal' => 'profile'],
+        'hr_staff_smiPHash' => ['name' => 'hr_staff_smiPHash', 'type' => 'string', 'internal' => 'semiPrivateHash', 'private' => true],
+        'hr_staff_image'    => ['name' => 'hr_staff_image',    'type' => 'int',    'internal' => 'image', 'annotations' => ['gdpr' => true]],
     ];
 
     /**
@@ -52,9 +52,9 @@ final class EmployeeMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const BELONGS_TO = [
-        'profile'    => [
-            'mapper'     => ProfileMapper::class,
-            'external'   => 'hr_staff_profile',
+        'profile' => [
+            'mapper'   => ProfileMapper::class,
+            'external' => 'hr_staff_profile',
         ],
     ];
 
@@ -65,9 +65,9 @@ final class EmployeeMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const OWNS_ONE = [
-        'image'    => [
-            'mapper'     => MediaMapper::class,
-            'external'   => 'hr_staff_image',
+        'image' => [
+            'mapper'   => MediaMapper::class,
+            'external' => 'hr_staff_image',
         ],
     ];
 
@@ -85,22 +85,22 @@ final class EmployeeMapper extends DataMapperFactory
             'self'     => 'hr_staff_media_item',
         ],
         'companyHistory' => [
-            'mapper'       => EmployeeHistoryMapper::class,
-            'table'        => 'hr_staff_history',
-            'self'         => 'hr_staff_history_staff',
-            'external'     => null,
+            'mapper'   => EmployeeHistoryMapper::class,
+            'table'    => 'hr_staff_history',
+            'self'     => 'hr_staff_history_staff',
+            'external' => null,
         ],
         'workHistory' => [
-            'mapper'       => EmployeeWorkHistoryMapper::class,
-            'table'        => 'hr_staff_work_history',
-            'self'         => 'hr_staff_work_history_staff',
-            'external'     => null,
+            'mapper'   => EmployeeWorkHistoryMapper::class,
+            'table'    => 'hr_staff_work_history',
+            'self'     => 'hr_staff_work_history_staff',
+            'external' => null,
         ],
         'educationHistory' => [
-            'mapper'       => EmployeeEducationHistoryMapper::class,
-            'table'        => 'hr_staff_education_history',
-            'self'         => 'hr_staff_education_history_staff',
-            'external'     => null,
+            'mapper'   => EmployeeEducationHistoryMapper::class,
+            'table'    => 'hr_staff_education_history',
+            'self'     => 'hr_staff_education_history_staff',
+            'external' => null,
         ],
         'notes' => [
             'mapper'   => EditorDocMapper::class,       /* mapper of the related object */

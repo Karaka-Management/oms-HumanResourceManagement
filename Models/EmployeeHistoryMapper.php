@@ -56,21 +56,21 @@ final class EmployeeHistoryMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const BELONGS_TO = [
-        'unit'    => [
-            'mapper'     => UnitMapper::class,
-            'external'   => 'hr_staff_history_unit',
+        'unit' => [
+            'mapper'   => UnitMapper::class,
+            'external' => 'hr_staff_history_unit',
         ],
-        'department'    => [
-            'mapper'     => DepartmentMapper::class,
-            'external'   => 'hr_staff_history_department',
+        'department' => [
+            'mapper'   => DepartmentMapper::class,
+            'external' => 'hr_staff_history_department',
         ],
-        'position'    => [
-            'mapper'     => PositionMapper::class,
-            'external'   => 'hr_staff_history_position',
+        'position' => [
+            'mapper'   => PositionMapper::class,
+            'external' => 'hr_staff_history_position',
         ],
-        'employee'    => [
-            'mapper'     => EmployeeMapper::class,
-            'external'   => 'hr_staff_history_staff',
+        'employee' => [
+            'mapper'   => EmployeeMapper::class,
+            'external' => 'hr_staff_history_staff',
         ],
     ];
 

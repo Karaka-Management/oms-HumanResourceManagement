@@ -79,18 +79,6 @@ class EmployeeWorkHistory implements \JsonSerializable
     }
 
     /**
-     * Get id.
-     *
-     * @return int Model id
-     *
-     * @since 1.0.0
-     */
-    public function getId() : int
-    {
-        return $this->id;
-    }
-
-    /**
      * Get media file by type
      *
      * @param int $type Media type
@@ -136,11 +124,11 @@ class EmployeeWorkHistory implements \JsonSerializable
     public function toArray() : array
     {
         return [
-            'id'              => $this->id,
-            'employee'        => \is_int($this->employee) ? $this->employee : $this->employee->id,
-            'jobTitle'        => $this->jobTitle,
-            'start'           => $this->start,
-            'end'             => $this->end,
+            'id'       => $this->id,
+            'employee' => \is_int($this->employee) ? $this->employee : $this->employee->id,
+            'jobTitle' => $this->jobTitle,
+            'start'    => $this->start,
+            'end'      => $this->end,
         ];
     }
 

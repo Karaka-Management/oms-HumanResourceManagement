@@ -18,7 +18,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/humanresource/staff.*$' => [
+    '^.*/humanresource/staff(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
             'verb'       => RouteVerb::PUT,

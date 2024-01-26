@@ -62,9 +62,9 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'         => 0,
-                'employee'   => 2,
-                'end'        => null,
+                'id'       => 0,
+                'employee' => 2,
+                'end'      => null,
             ],
             $serialized
         );

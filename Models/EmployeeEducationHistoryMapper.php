@@ -37,14 +37,14 @@ final class EmployeeEducationHistoryMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'hr_staff_education_history_id'           => ['name' => 'hr_staff_education_history_id',         'type' => 'int',      'internal' => 'id'],
-        'hr_staff_education_history_staff'        => ['name' => 'hr_staff_education_history_staff',      'type' => 'int',      'internal' => 'employee'],
-        'hr_staff_education_history_address'      => ['name' => 'hr_staff_education_history_address',      'type' => 'Serializable',      'internal' => 'address'],
-        'hr_staff_education_history_title'        => ['name' => 'hr_staff_education_history_title',      'type' => 'string',      'internal' => 'educationTitle'],
-        'hr_staff_education_history_passed'       => ['name' => 'hr_staff_education_history_passed',      'type' => 'bool',      'internal' => 'passed'],
-        'hr_staff_education_history_score'        => ['name' => 'hr_staff_education_history_score',      'type' => 'string',      'internal' => 'score'],
-        'hr_staff_education_history_start'        => ['name' => 'hr_staff_education_history_start',      'type' => 'DateTime', 'internal' => 'start'],
-        'hr_staff_education_history_end'          => ['name' => 'hr_staff_education_history_end',        'type' => 'DateTime', 'internal' => 'end'],
+        'hr_staff_education_history_id'      => ['name' => 'hr_staff_education_history_id',         'type' => 'int',      'internal' => 'id'],
+        'hr_staff_education_history_staff'   => ['name' => 'hr_staff_education_history_staff',      'type' => 'int',      'internal' => 'employee'],
+        'hr_staff_education_history_address' => ['name' => 'hr_staff_education_history_address',      'type' => 'Serializable',      'internal' => 'address'],
+        'hr_staff_education_history_title'   => ['name' => 'hr_staff_education_history_title',      'type' => 'string',      'internal' => 'educationTitle'],
+        'hr_staff_education_history_passed'  => ['name' => 'hr_staff_education_history_passed',      'type' => 'bool',      'internal' => 'passed'],
+        'hr_staff_education_history_score'   => ['name' => 'hr_staff_education_history_score',      'type' => 'string',      'internal' => 'score'],
+        'hr_staff_education_history_start'   => ['name' => 'hr_staff_education_history_start',      'type' => 'DateTime', 'internal' => 'start'],
+        'hr_staff_education_history_end'     => ['name' => 'hr_staff_education_history_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**
@@ -54,9 +54,9 @@ final class EmployeeEducationHistoryMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const BELONGS_TO = [
-        'employee'    => [
-            'mapper'     => EmployeeMapper::class,
-            'external'   => 'hr_staff_education_history_staff',
+        'employee' => [
+            'mapper'   => EmployeeMapper::class,
+            'external' => 'hr_staff_education_history_staff',
         ],
     ];
 

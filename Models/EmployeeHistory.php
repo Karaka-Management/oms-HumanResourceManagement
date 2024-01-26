@@ -106,18 +106,6 @@ class EmployeeHistory implements \JsonSerializable
     }
 
     /**
-     * Get id.
-     *
-     * @return int Model id
-     *
-     * @since 1.0.0
-     */
-    public function getId() : int
-    {
-        return $this->id;
-    }
-
-    /**
      * Get media file by type
      *
      * @param int $type Media type

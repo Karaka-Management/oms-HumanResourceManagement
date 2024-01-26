@@ -100,23 +100,11 @@ class Employee implements \JsonSerializable
      *
      * @since 1.0.0
      */
-    public function __construct(Profile $profile = null)
+    public function __construct(?Profile $profile = null)
     {
         $this->profile         = $profile ?? new NullProfile();
         $this->semiPrivateHash = \random_bytes(self::SEMI_PRIVATE_HASH_LENGTH);
         $this->image           = new NullMedia();
-    }
-
-    /**
-     * Get id.
-     *
-     * @return int Employee id
-     *
-     * @since 1.0.0
-     */
-    public function getId() : int
-    {
-        return $this->id;
     }
 
     /**

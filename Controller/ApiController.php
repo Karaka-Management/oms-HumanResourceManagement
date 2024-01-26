@@ -346,17 +346,13 @@ final class ApiController extends Controller
      */
     private function createEmployeeWorkHistoryFromRequest(RequestAbstract $request) : EmployeeWorkHistory
     {
-        $history                   = new EmployeeWorkHistory($request->getDataInt('employee') ?? 0);
-        $history->start            = $request->getDataDateTime('start') ?? new \DateTime('now');
-        $history->end              = $request->getDataDateTime('end');
-        $history->jobTitle         = $request->getDataString('title') ?? '';
-        $history->address->name    = $request->getDataString('name') ?? '';
-        $history->address->address = $request->getDataString('address') ?? '';
-        $history->address->postal  = $request->getDataString('postal') ?? '';
-        $history->address->city    = $request->getDataString('city') ?? '';
-        $history->address->state   = $request->getDataString('state') ?? '';
-        $history->address->setCountry($request->getDataString('country') ?? '');
-        $history->address->setType(AddressType::WORK);
+        $history           = new EmployeeWorkHistory($request->getDataInt('employee') ?? 0);
+        $history->start    = $request->getDataDateTime('start') ?? new \DateTime('now');
+        $history->end      = $request->getDataDateTime('end');
+        $history->jobTitle = $request->getDataString('title') ?? '';
+
+        $history->address       = $this->app->moduleManager->get('Admin', 'Api')->createAddressFromRequest($request);
+        $history->address->type = AddressType::WORK;
 
         return $history;
     }
@@ -422,19 +418,15 @@ final class ApiController extends Controller
      */
     private function createEmployeeEducationHistoryFromRequest(RequestAbstract $request) : EmployeeEducationHistory
     {
-        $history                   = new EmployeeEducationHistory($request->getDataInt('employee') ?? 0);
-        $history->start            = $request->getDataDateTime('start') ?? new \DateTime('now');
-        $history->end              = $request->getDataDateTime('end');
-        $history->educationTitle   = $request->getDataString('title') ?? '';
-        $history->score            = $request->getDataString('score') ?? '';
-        $history->passed           = $request->getDataBool('passed') ?? true;
-        $history->address->name    = $request->getDataString('name') ?? '';
-        $history->address->address = $request->getDataString('address') ?? '';
-        $history->address->postal  = $request->getDataString('postal') ?? '';
-        $history->address->city    = $request->getDataString('city') ?? '';
-        $history->address->state   = $request->getDataString('state') ?? '';
-        $history->address->setCountry($request->getDataString('country') ?? '');
-        $history->address->setType(AddressType::EDUCATION);
+        $history                 = new EmployeeEducationHistory($request->getDataInt('employee') ?? 0);
+        $history->start          = $request->getDataDateTime('start') ?? new \DateTime('now');
+        $history->end            = $request->getDataDateTime('end');
+        $history->educationTitle = $request->getDataString('title') ?? '';
+        $history->score          = $request->getDataString('score') ?? '';
+        $history->passed         = $request->getDataBool('passed') ?? true;
+
+        $history->address       = $this->app->moduleManager->get('Admin', 'Api')->createAddressFromRequest($request);
+        $history->address->type = AddressType::EDUCATION;
 
         return $history;
     }
@@ -463,7 +455,7 @@ final class ApiController extends Controller
 
         /** @var \Modules\HumanResourceManagement\Models\Employee $employee */
         $employee = EmployeeMapper::get()->where('id', (int) $request->getData('employee'))->execute();
-        $path    = $this->createEmployeeDir($employee);
+        $path     = $this->createEmployeeDir($employee);
 
         $uploaded = [];
         if (!empty($uploadedFiles = $request->files)) {

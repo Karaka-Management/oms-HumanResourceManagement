@@ -40,7 +40,7 @@ echo $this->data['nav']->render(); ?>
                     <td><?= $this->getHtml('Status'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
                 <tbody>
                 <?php $c = 0; foreach ($employees as $key => $value) : ++$c;
-                    $url = UriFactory::build('{/base}/humanresource/staff/profile?{?}&id=' . $value->id); ?>
+                    $url = UriFactory::build('{/base}/humanresource/staff/view?{?}&id=' . $value->id); ?>
                     <tr tabindex="0" data-href="<?= $url; ?>">
                         <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_user'); ?>" width="30" loading="lazy" class="profile-image"
                             src="<?= $value->image->id === 0
