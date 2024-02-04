@@ -459,7 +459,7 @@ final class ApiController extends Controller
 
         $uploaded = [];
         if (!empty($uploadedFiles = $request->files)) {
-            $uploaded = $this->app->moduleManager->get('Media')->uploadFiles(
+            $uploaded = $this->app->moduleManager->get('Media', 'Api')->uploadFiles(
                 names: [],
                 fileNames: [],
                 files: $uploadedFiles,
@@ -520,18 +520,17 @@ final class ApiController extends Controller
             }
         }
 
-        if (!empty($mediaFiles = $request->getDataJson('media'))) {
-            foreach ($mediaFiles as $media) {
-                $this->createModelRelation(
-                    $request->header->account,
-                    $employee->id,
-                    (int) $media,
-                    EmployeeMapper::class,
-                    'files',
-                    '',
-                    $request->getOrigin()
-                );
-            }
+        $mediaFiles = $request->getDataJson('media');
+        foreach ($mediaFiles as $media) {
+            $this->createModelRelation(
+                $request->header->account,
+                $employee->id,
+                (int) $media,
+                EmployeeMapper::class,
+                'files',
+                '',
+                $request->getOrigin()
+            );
         }
 
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Media', 'Media added to employee.', [
