@@ -292,8 +292,8 @@ echo $this->data['nav']->render(); ?>
                             <?php endif; ?>
                             <?php if ($current->getTimestamp() <= $startWeek->getTimestamp()) : ?>
                             <tr>
-                                <th colspan="6" class="highlight-3"> <?= $startWeek->format('Y/m/d'); ?> - <?= $endWeek->format('Y/m/d'); ?>
-                                <th class="highlight-3"><?= (int) ($busy['week'] / 3600); ?>h <?= ((int) ($busy['week'] / 60) % 60); ?>m
+                                <th colspan="6" class="hl-3"> <?= $startWeek->format('Y/m/d'); ?> - <?= $endWeek->format('Y/m/d'); ?>
+                                <th class="hl-3"><?= (int) ($busy['week'] / 3600); ?>h <?= ((int) ($busy['week'] / 60) % 60); ?>m
                             <?php
                                     $endWeek      = $startWeek->createModify(0, 0, -1);
                                     $startWeek    = $startWeek->createModify(0, 0, -7);
@@ -302,8 +302,8 @@ echo $this->data['nav']->render(); ?>
                             ?>
                             <?php if ($current->getTimestamp() <= $startMonth->getTimestamp()) : ?>
                             <tr>
-                                <th colspan="6" class="highlight-2"><?= $startMonth->format('Y/m/d'); ?> - <?= $endMonth->format('Y/m/d'); ?>
-                                <th class="highlight-2"><?= (int) ($busy['month'] / 3600); ?>h <?= ((int) ($busy['month'] / 60) % 60); ?>m
+                                <th colspan="6" class="hl-2"><?= $startMonth->format('Y/m/d'); ?> - <?= $endMonth->format('Y/m/d'); ?>
+                                <th class="hl-2"><?= (int) ($busy['month'] / 3600); ?>h <?= ((int) ($busy['month'] / 60) % 60); ?>m
                             <?php
                                     $endMonth      = $startMonth->createModify(0, 0, -1);
                                     $startMonth    = $startMonth->createModify(0, -1, 0);
