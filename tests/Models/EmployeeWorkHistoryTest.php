@@ -42,7 +42,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(0, $this->history->employee);
         self::assertEquals('', $this->history->jobTitle);
         self::assertInstanceOf('\DateTime', $this->history->start);
-        self::assertInstanceOf('\Modules\Admin\Models\Address', $this->history->address);
+        self::assertInstanceOf('\phpOMS\Stdlib\Base\Address', $this->history->address);
     }
 
     /**

@@ -44,7 +44,7 @@ final class EmployeeEducationHistoryTest extends \PHPUnit\Framework\TestCase
         self::assertTrue($this->history->passed);
         self::assertEquals('', $this->history->score);
         self::assertInstanceOf('\DateTime', $this->history->start);
-        self::assertInstanceOf('\Modules\Admin\Models\Address', $this->history->address);
+        self::assertInstanceOf('\phpOMS\Stdlib\Base\Address', $this->history->address);
     }
 
     /**
