@@ -37,6 +37,7 @@ return ['HumanResourceManagement' => [
     'Position'          => 'Position',
     'ProfileImage'      => 'Profilbild',
     'Salary'            => 'Gehalt',
+    'Notes'             => 'Notizen',
     'Staff'             => 'Mitarbeiter',
     'Start'             => 'Start',
     'Status'            => 'Status',
