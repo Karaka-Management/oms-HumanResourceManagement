@@ -22,12 +22,10 @@ use Modules\Profile\Models\ProfileMapper;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\EmployeeHistoryMapper::class)]
 final class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCRUD() : void
     {
         $employee = new Employee(ProfileMapper::get()->where('id', 1)->execute());

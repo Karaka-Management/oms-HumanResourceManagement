@@ -22,6 +22,7 @@ use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\Employee::class)]
 final class EmployeeTest extends \PHPUnit\Framework\TestCase
 {
     private Employee $employee;
@@ -34,10 +35,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         $this->employee = new Employee();
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDefault() : void
     {
         self::assertEquals(0, $this->employee->id);
@@ -50,10 +48,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertEquals([], $this->employee->getWorkHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testPrivateHashInputOutput() : void
     {
         $temp = $this->employee->getSemiPrivateHash();
@@ -62,10 +57,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertFalse($this->employee->compareSemiPrivateHash($temp));
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testHistoryInputOutput() : void
     {
         $this->employee->addHistory($a = new EmployeeHistory());
@@ -74,10 +66,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($b, $this->employee->getNewestHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testWorkHistoryInputOutput() : void
     {
         $this->employee->addWorkHistory($a = new EmployeeWorkHistory());
@@ -86,10 +75,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($b, $this->employee->getNewestWorkHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEducationHistoryInputOutput() : void
     {
         $this->employee->addEducationHistory($a = new EmployeeEducationHistory());
@@ -98,10 +84,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($b, $this->employee->getNewestEducationHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\Employee
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
         $serialized = $this->employee->jsonSerialize();

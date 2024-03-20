@@ -19,31 +19,23 @@ use Modules\HumanResourceManagement\Models\NullEmployeeEducationHistory;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\NullEmployeeEducationHistory::class)]
 final class NullEmployeeEducationHistoryTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeEducationHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\HumanResourceManagement\Models\EmployeeEducationHistory', new NullEmployeeEducationHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeEducationHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullEmployeeEducationHistory(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeEducationHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullEmployeeEducationHistory(2);

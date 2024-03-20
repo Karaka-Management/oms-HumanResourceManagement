@@ -40,10 +40,10 @@ use phpOMS\Utils\RnG\DateTime;
 use phpOMS\Utils\TestUtils;
 
 /**
- * @testdox Modules\HumanResourceManagement\tests\Controller\ApiControllerTest: HumanResourceManagement api controller
- *
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Controller\ApiController::class)]
+#[\PHPUnit\Framework\Attributes\TestDox('Modules\HumanResourceManagement\tests\Controller\ApiControllerTest: HumanResourceManagement api controller')]
 final class ApiControllerTest extends \PHPUnit\Framework\TestCase
 {
     protected ApplicationAbstract $app;
@@ -114,10 +114,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         TestUtils::setMember($this->module, 'app', $this->app);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeFromAccountCreate() : void
     {
         $response = new HttpResponse();
@@ -131,10 +128,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertGreaterThan(0, self::$employee = $response->getDataArray('')['response'][0]->id);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNewEmployeeCreate() : void
     {
         $response = new HttpResponse();
@@ -147,10 +141,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertGreaterThan(0, self::$employee = $response->getDataArray('')['response']->id);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testApiEmployeeCreateInvalidData() : void
     {
         $response = new HttpResponse();
@@ -163,10 +154,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(RequestStatusCode::R_400, $response->header->status);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeCreateFromAccountInvalidData() : void
     {
         $response = new HttpResponse();
@@ -179,10 +167,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(RequestStatusCode::R_400, $response->header->status);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNewEmployeeCreateInvalidData() : void
     {
         $response = new HttpResponse();
@@ -195,11 +180,8 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(RequestStatusCode::R_400, $response->header->status);
     }
 
-    /**
-     * @depends testEmployeeFromAccountCreate
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Depends('testEmployeeFromAccountCreate')]
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeHistoryCreate() : void
     {
         $start = DateTime::generateDateTime(
@@ -234,10 +216,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeHistoryCreateInvalidData() : void
     {
         $response = new HttpResponse();
@@ -250,11 +229,8 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(RequestStatusCode::R_400, $response->header->status);
     }
 
-    /**
-     * @depends testEmployeeFromAccountCreate
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Depends('testEmployeeFromAccountCreate')]
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeWorkHistoryCreate() : void
     {
         $start = DateTime::generateDateTime(
@@ -294,10 +270,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeWorkHistoryCreateInvalidData() : void
     {
         $response = new HttpResponse();
@@ -310,11 +283,8 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(RequestStatusCode::R_400, $response->header->status);
     }
 
-    /**
-     * @depends testEmployeeFromAccountCreate
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Depends('testEmployeeFromAccountCreate')]
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeEducationHistoryCreate() : void
     {
         $start = DateTime::generateDateTime(
@@ -355,10 +325,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Controller\ApiController
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEmployeeEducationHistoryCreateInvalidData() : void
     {
         $response = new HttpResponse();

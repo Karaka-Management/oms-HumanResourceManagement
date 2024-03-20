@@ -19,31 +19,23 @@ use Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory::class)]
 final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\HumanResourceManagement\Models\EmployeeWorkHistory', new NullEmployeeWorkHistory());
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullEmployeeWorkHistory(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullEmployeeWorkHistory(2);

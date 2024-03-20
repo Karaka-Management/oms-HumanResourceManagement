@@ -19,6 +19,7 @@ use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\EmployeeWorkHistory::class)]
 final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 {
     private EmployeeWorkHistory $history;
@@ -31,10 +32,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
         $this->history = new EmployeeWorkHistory();
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\EmployeeWorkHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDefault() : void
     {
         self::assertEquals(0, $this->history->id);
@@ -45,10 +43,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
         self::assertInstanceOf('\phpOMS\Stdlib\Base\Address', $this->history->address);
     }
 
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\EmployeeWorkHistory
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
         $this->history->employee = 2;

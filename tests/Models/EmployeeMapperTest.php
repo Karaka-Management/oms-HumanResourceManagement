@@ -23,12 +23,10 @@ use Modules\Profile\Models\ProfileMapper;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\HumanResourceManagement\Models\EmployeeMapper::class)]
 final class EmployeeMapperTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\HumanResourceManagement\Models\EmployeeMapper
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCR() : void
     {
         if (($profile = ProfileMapper::get()->where('account', 1)->execute())->id === 0) {
