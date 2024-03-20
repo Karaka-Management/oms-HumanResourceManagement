@@ -22,7 +22,7 @@ use Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory;
 final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
      * @group module
      */
     public function testNull() : void
@@ -31,7 +31,7 @@ final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
      * @group module
      */
     public function testId() : void
@@ -41,7 +41,7 @@ final class NullEmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployeeWorkHistory
      * @group module
      */
     public function testJsonSerialize() : void

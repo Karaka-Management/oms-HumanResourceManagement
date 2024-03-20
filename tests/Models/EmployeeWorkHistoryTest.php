@@ -32,7 +32,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\EmployeeWorkHistory
+     * @covers \Modules\HumanResourceManagement\Models\EmployeeWorkHistory
      * @group module
      */
     public function testDefault() : void
@@ -46,7 +46,7 @@ final class EmployeeWorkHistoryTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\EmployeeWorkHistory
+     * @covers \Modules\HumanResourceManagement\Models\EmployeeWorkHistory
      * @group module
      */
     public function testSerialize() : void

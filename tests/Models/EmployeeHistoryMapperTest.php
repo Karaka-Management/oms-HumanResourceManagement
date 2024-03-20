@@ -25,7 +25,7 @@ use Modules\Profile\Models\ProfileMapper;
 final class EmployeeHistoryMapperTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\HumanResourceManagement\Models\EmployeeHistoryMapper
+     * @covers \Modules\HumanResourceManagement\Models\EmployeeHistoryMapper
      * @group module
      */
     public function testCRUD() : void

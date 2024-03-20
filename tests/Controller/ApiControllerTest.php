@@ -115,7 +115,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeFromAccountCreate() : void
@@ -132,7 +132,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testNewEmployeeCreate() : void
@@ -148,7 +148,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testApiEmployeeCreateInvalidData() : void
@@ -164,7 +164,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeCreateFromAccountInvalidData() : void
@@ -180,7 +180,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testNewEmployeeCreateInvalidData() : void
@@ -197,7 +197,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @depends testEmployeeFromAccountCreate
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeHistoryCreate() : void
@@ -235,7 +235,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeHistoryCreateInvalidData() : void
@@ -252,7 +252,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @depends testEmployeeFromAccountCreate
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeWorkHistoryCreate() : void
@@ -295,7 +295,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeWorkHistoryCreateInvalidData() : void
@@ -312,7 +312,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @depends testEmployeeFromAccountCreate
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeEducationHistoryCreate() : void
@@ -356,7 +356,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Controller\ApiController
+     * @covers \Modules\HumanResourceManagement\Controller\ApiController
      * @group module
      */
     public function testEmployeeEducationHistoryCreateInvalidData() : void

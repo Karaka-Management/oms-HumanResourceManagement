@@ -35,7 +35,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testDefault() : void
@@ -51,7 +51,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testPrivateHashInputOutput() : void
@@ -63,7 +63,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testHistoryInputOutput() : void
@@ -75,7 +75,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testWorkHistoryInputOutput() : void
@@ -87,7 +87,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testEducationHistoryInputOutput() : void
@@ -99,7 +99,7 @@ final class EmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\Employee
+     * @covers \Modules\HumanResourceManagement\Models\Employee
      * @group module
      */
     public function testSerialize() : void

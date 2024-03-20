@@ -22,7 +22,7 @@ use Modules\HumanResourceManagement\Models\NullEmployee;
 final class NullEmployeeTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployee
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployee
      * @group module
      */
     public function testNull() : void
@@ -31,7 +31,7 @@ final class NullEmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployee
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployee
      * @group module
      */
     public function testId() : void
@@ -41,7 +41,7 @@ final class NullEmployeeTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\HumanResourceManagement\Models\NullEmployee
+     * @covers \Modules\HumanResourceManagement\Models\NullEmployee
      * @group module
      */
     public function testJsonSerialize() : void
