@@ -18,7 +18,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/humanresource/staff/list(\?.*$|$)' => [
+    '^/humanresource/staff/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffList',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
             ],
         ],
     ],
-    '^.*/humanresource/staff/view(\?.*$|$)' => [
+    '^/humanresource/staff/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffView',
             'verb'       => RouteVerb::GET,
@@ -40,7 +40,7 @@ return [
             ],
         ],
     ],
-    '^.*/humanresource/staff/create(\?.*$|$)' => [
+    '^/humanresource/staff/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrStaffCreate',
             'verb'       => RouteVerb::GET,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/humanresource/department/list(\?.*$|$)' => [
+    '^/humanresource/department/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrDepartmentList',
             'verb'       => RouteVerb::GET,
@@ -62,7 +62,7 @@ return [
             ],
         ],
     ],
-    '^.*/humanresource/position/list(\?.*$|$)' => [
+    '^/humanresource/position/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionList',
             'verb'       => RouteVerb::GET,
@@ -73,7 +73,7 @@ return [
             ],
         ],
     ],
-    '^.*/humanresource/position/create(\?.*$|$)' => [
+    '^/humanresource/position/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\BackendController:viewHrPositionCreate',
             'verb'       => RouteVerb::GET,
