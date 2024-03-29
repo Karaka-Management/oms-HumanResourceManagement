@@ -26,20 +26,20 @@ echo $this->data['nav']->render();
         <section class="box wf-100">
             <header><h1><?= $this->getHtml('Employee'); ?></h1></header>
             <div class="inner">
-                <form id="fEmployee" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff'); ?>" method="put">
+                <form id="fEmployee" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
                     <table class="layout wf-100">
                         <tbody>
                         <tr><td><label for="iStatus"><?= $this->getHtml('Status'); ?></label>
                         <tr><td><select id="iStatus" name="status">
-                                    <option value="<?= $this->printHtml(EmployeeActivityStatus::ACTIVE); ?>"><?= $this->getHtml('Active'); ?>
-                                    <option value="<?= $this->printHtml(EmployeeActivityStatus::INACTIVE); ?>"><?= $this->getHtml('Inactive'); ?>
+                                    <option value="<?= EmployeeActivityStatus::ACTIVE; ?>"><?= $this->getHtml('Active'); ?>
+                                    <option value="<?= EmployeeActivityStatus::INACTIVE; ?>"><?= $this->getHtml('Inactive'); ?>
                                 </select>
                         <tr><td><label for="iName1"><?= $this->getHtml('Name1', 'Admin'); ?></label>
-                        <tr><td><input id="iName1" name="name1" type="text" placeholder="Donald" required>
+                        <tr><td><input id="iName1" name="name1" type="text" required>
                         <tr><td><label for="iName2"><?= $this->getHtml('Name2', 'Admin'); ?></label>
-                        <tr><td><input id="iName2" name="name2" type="text" placeholder="Fauntleroy">
+                        <tr><td><input id="iName2" name="name2" type="text">
                         <tr><td><label for="iName3"><?= $this->getHtml('Name3', 'Admin'); ?></label>
-                        <tr><td><input id="iName3" name="name3" type="text" placeholder="Duck">
+                        <tr><td><input id="iName3" name="name3" type="text">
                         <tr><td><label for="iAddress"><?= $this->getHtml('Address', 'Profile'); ?></label>
                         <tr><td><input type="text" id="iAddress" name="address">
                         <tr><td><label for="iZip"><?= $this->getHtml('Zip', 'Profile'); ?></label>
@@ -53,7 +53,7 @@ echo $this->data['nav']->render();
                         <tr><td><label for="iPhone"><?= $this->getHtml('Phone', 'Profile'); ?></label>
                         <tr><td><input id="iPhone" name="phone" type="text">
                         <tr><td><label for="iEmail"><?= $this->getHtml('Email', 'Admin'); ?></label>
-                        <tr><td><input id="iEmail" name="email" type="email" placeholder="d.duck@duckburg.com">
+                        <tr><td><input id="iEmail" name="email" type="email">
                         <tr><td><label for="iUnit"><?= $this->getHtml('Unit', 'Organization'); ?></label>
                         <tr><td><input id="iUnit" name="unit" type="text">
                         <tr><td><label for="iPosition"><?= $this->getHtml('Position', 'Organization'); ?></label>
@@ -73,7 +73,7 @@ echo $this->data['nav']->render();
         <section class="box wf-100">
             <header><h1><?= $this->getHtml('CreateFromAccount'); ?></h1></header>
             <div class="inner">
-                <form id="fAccount" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff'); ?>" method="put">
+                <form id="fAccount" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
                     <table class="layout wf-100">
                         <tbody>
                         <tr><td><label for="iAccount"><?= $this->getHtml('Account', 'Admin'); ?></label>

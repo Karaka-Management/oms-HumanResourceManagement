@@ -22,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
             'verb'       => RouteVerb::PUT,
+            'csrf'       => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
