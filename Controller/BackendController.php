@@ -62,7 +62,7 @@ final class BackendController extends Controller
             ->with('profile/image')
             ->with('companyHistory')
             ->with('companyHistory/unit')
-            ->execute();
+            ->executeGetArray();
 
         /** @var \Model\Setting $profileImage */
         $profileImage = $this->app->appSettings->get(names: SettingsEnum::DEFAULT_PROFILE_IMAGE, module: 'Profile');
@@ -163,7 +163,7 @@ final class BackendController extends Controller
                 ->where('employee', $employee->id)
                 ->where('start', $start, '<=')
                 ->sort('start', OrderType::DESC)
-                ->execute();
+                ->executeGetArray();
 
             $view->data['sessions']    = $list;
             $view->data['lastSession'] = $lastOpenSession;

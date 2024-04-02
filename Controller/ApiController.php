@@ -64,7 +64,7 @@ final class ApiController extends Controller
      */
     public function apiEmployeeCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
     {
-        if ($request->hasData('profiles')) {
+        if ($request->hasData('accounts')) {
             $this->apiEmployeeFromAccountCreate($request, $response, $data);
 
             return;
@@ -112,7 +112,7 @@ final class ApiController extends Controller
     private function validateEmployeeFromAccountCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['profiles'] = !$request->hasData('profiles'))) {
+        if (($val['accounts'] = !$request->hasData('accounts'))) {
             return $val;
         }
 
@@ -130,7 +130,7 @@ final class ApiController extends Controller
      */
     private function createEmployeeFromAccountFromRequest(RequestAbstract $request) : array
     {
-        $accounts  = $request->getDataList('profiles');
+        $accounts  = $request->getDataList('accounts');
         $employees = [];
 
         foreach ($accounts as $account) {
