@@ -158,7 +158,7 @@ final class BackendController extends Controller
 
         if ($this->app->moduleManager->isActive('HumanResourceTimeRecording')) {
             /** @var \Modules\HumanResourceTimeRecording\Models\Session $lastOpenSession */
-            $lastOpenSession = SessionMapper::getMostPlausibleOpenSessionForEmployee( $view->data['employee']->id);
+            $lastOpenSession = SessionMapper::getMostPlausibleOpenSessionForEmployee($view->data['employee']->id);
 
             $start = new SmartDateTime('now');
             $start = $start->getEndOfDay();

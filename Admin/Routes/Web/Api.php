@@ -23,7 +23,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeCreate',
             'verb'       => RouteVerb::PUT,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
@@ -36,7 +36,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeHistoryCreate',
             'verb'       => RouteVerb::PUT,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
@@ -47,7 +47,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeHistoryUpdate',
             'verb'       => RouteVerb::SET,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::MODIFY,
@@ -60,7 +60,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeWorkHistoryCreate',
             'verb'       => RouteVerb::PUT,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
@@ -71,7 +71,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeWorkHistoryUpdate',
             'verb'       => RouteVerb::SET,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::MODIFY,
@@ -84,7 +84,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeEducationHistoryCreate',
             'verb'       => RouteVerb::PUT,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,
@@ -95,7 +95,7 @@ return [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeEducationHistoryUpdate',
             'verb'       => RouteVerb::SET,
             'csrf'       => true,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::MODIFY,
