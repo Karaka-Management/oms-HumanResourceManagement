@@ -21,7 +21,7 @@ use Modules\Organization\Models\UnitMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
- * EmployeHistory mapper class.
+ * EmployeeHistory mapper class.
  *
  * @package Modules\HumanResourceManagement\Models
  * @license OMS License 2.0

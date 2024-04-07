@@ -18,13 +18,6 @@ use phpOMS\Uri\UriFactory;
  * @var \phpOMS\Views\View $this
  */
 
-$footerView = new \phpOMS\Views\PaginationView($this->l11nManager, $this->request, $this->response);
-$footerView->setTemplate('/Web/Templates/Lists/Footer/PaginationBig');
-
-$footerView->setPages(25);
-$footerView->setPage(1);
-$footerView->setResults(1);
-
 $departments = $this->data['departments'];
 
 echo $this->data['nav']->render(); ?>
@@ -43,11 +36,11 @@ echo $this->data['nav']->render(); ?>
                     <td><?= $this->getHtml('Parent'); ?>
                 <tbody>
                 <?php $c = 0; foreach ($departments as $key => $value) : ++$c;
-                $url     = UriFactory::build('{/base}/hr/department/view?{?}&id=' . $value->id); ?>
+                $url     = UriFactory::build('{/base}/humanresource/department/view?{?}&id=' . $value->id); ?>
                 <tr tabindex="0" data-href="<?= $url; ?>">
                     <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
-                    <td data-label="<?= $this->getHtml('Employees'); ?>">
+                    <td data-label="<?= $this->getHtml('Employees'); ?>"><?= $this->data['stats'][$value->id] ?? 0; ?>
                     <td data-label="<?= $this->getHtml('Parent'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->parent->name); ?></a>
                         <?php endforeach; ?>
                         <?php if ($c === 0) : ?>

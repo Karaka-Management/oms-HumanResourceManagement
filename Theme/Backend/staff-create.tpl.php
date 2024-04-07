@@ -23,65 +23,54 @@ echo $this->data['nav']->render();
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <section class="box wf-100">
-            <header><h1><?= $this->getHtml('Employee'); ?></h1></header>
-            <div class="inner">
-                <form id="fEmployee" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
-                    <table class="layout wf-100">
-                        <tbody>
-                        <tr><td><label for="iStatus"><?= $this->getHtml('Status'); ?></label>
-                        <tr><td><select id="iStatus" name="status">
-                                    <option value="<?= EmployeeActivityStatus::ACTIVE; ?>"><?= $this->getHtml('Active'); ?>
-                                    <option value="<?= EmployeeActivityStatus::INACTIVE; ?>"><?= $this->getHtml('Inactive'); ?>
-                                </select>
-                        <tr><td><label for="iName1"><?= $this->getHtml('Name1', 'Admin'); ?></label>
-                        <tr><td><input id="iName1" name="name1" type="text" required>
-                        <tr><td><label for="iName2"><?= $this->getHtml('Name2', 'Admin'); ?></label>
-                        <tr><td><input id="iName2" name="name2" type="text">
-                        <tr><td><label for="iName3"><?= $this->getHtml('Name3', 'Admin'); ?></label>
-                        <tr><td><input id="iName3" name="name3" type="text">
-                        <tr><td><label for="iAddress"><?= $this->getHtml('Address', 'Profile'); ?></label>
-                        <tr><td><input type="text" id="iAddress" name="address">
-                        <tr><td><label for="iZip"><?= $this->getHtml('Zip', 'Profile'); ?></label>
-                        <tr><td><input type="text" id="iZip" name="zip">
-                        <tr><td><label for="iCity"><?= $this->getHtml('City', 'Profile'); ?></label>
-                        <tr><td><input type="text" id="iCity" name="city">
-                        <tr><td><label for="iCountry"><?= $this->getHtml('Country', 'Profile'); ?></label>
-                        <tr><td><input type="text" id="iCountry" name="country">
-                        <tr><td><label for="iBirthday"><?= $this->getHtml('Birthday', 'Profile'); ?></label>
-                        <tr><td><input id="iBirthday" name="pirthday" type="text">
-                        <tr><td><label for="iPhone"><?= $this->getHtml('Phone', 'Profile'); ?></label>
-                        <tr><td><input id="iPhone" name="phone" type="text">
-                        <tr><td><label for="iEmail"><?= $this->getHtml('Email', 'Admin'); ?></label>
-                        <tr><td><input id="iEmail" name="email" type="email">
-                        <tr><td><label for="iUnit"><?= $this->getHtml('Unit', 'Organization'); ?></label>
-                        <tr><td><input id="iUnit" name="unit" type="text">
-                        <tr><td><label for="iPosition"><?= $this->getHtml('Position', 'Organization'); ?></label>
-                        <tr><td><input id="iPosition" name="position" type="text">
-                        <tr><td><label for="iStart"><?= $this->getHtml('Start'); ?></label>
-                        <tr><td><input id="iStart" name="start" type="datetime-local">
-                        <tr><td><label for="iEnd"><?= $this->getHtml('End'); ?></label>
-                        <tr><td><input id="iEnd" name="end" type="datetime-local">
-                        <tr><td><input id="employee-create-submit" name="createSubmit" type="submit" value="<?= $this->getHtml('Create', '0', '0'); ?>">
-                    </table>
-                </form>
-            </div>
+        <section class="portlet">
+            <form id="fEmployee" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
+                <div class="portlet-head"><?= $this->getHtml('Employee'); ?></div>
+                <div class="portlet-body">
+                    <div class="form-group">
+                        <label for="iStatus"><?= $this->getHtml('Status'); ?></label>
+                        <select id="iStatus" name="status">
+                            <option value="<?= EmployeeActivityStatus::ACTIVE; ?>"><?= $this->getHtml('Active'); ?>
+                            <option value="<?= EmployeeActivityStatus::INACTIVE; ?>"><?= $this->getHtml('Inactive'); ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="iName1"><?= $this->getHtml('Name1', 'Admin', 'Backend'); ?></label>
+                        <input type="text" id="iName1" name="name1" value="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="iName2"><?= $this->getHtml('Name2', 'Admin', 'Backend'); ?></label>
+                        <input type="text" id="iName2" name="name2" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="iName3"><?= $this->getHtml('Name3', 'Admin', 'Backend'); ?></label>
+                        <input type="text" id="iName3" name="name3" value="">
+                    </div>
+                </div>
+                <div class="portlet-foot">
+                    <input type="submit" value="<?= $this->getHtml('Create', '0', '0'); ?>" name="employee-client">
+                </div>
+            </form>
         </section>
     </div>
 
     <div class="col-xs-12 col-md-6">
-        <section class="box wf-100">
-            <header><h1><?= $this->getHtml('CreateFromAccount'); ?></h1></header>
-            <div class="inner">
-                <form id="fAccount" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
-                    <table class="layout wf-100">
-                        <tbody>
-                        <tr><td><label for="iAccount"><?= $this->getHtml('Account', 'Admin'); ?></label>
-                        <tr><td><?= $this->getData('accSelector')->render('iAccount', 'accounts', true); ?>
-                        <tr><td><input id="employee-create-submit" name="createSubmit" type="submit" value="<?= $this->getHtml('Create', '0', '0'); ?>">
-                    </table>
-                </form>
-            </div>
+        <section class="portlet">
+            <form id="fAccount" action="<?= \phpOMS\Uri\UriFactory::build('{/api}humanresource/staff?csrf={$CSRF}'); ?>" method="put">
+                <div class="portlet-head"><?= $this->getHtml('CreateFromAccount'); ?></div>
+                <div class="portlet-body">
+                    <div class="form-group">
+                        <label for="iAccount"><?= $this->getHtml('Account', 'Admin'); ?></label>
+                        <?= $this->getData('accSelector')->render('iAccount', 'accounts', true); ?>
+                    </div>
+                </div>
+                <div class="portlet-foot">
+                    <input type="submit" value="<?= $this->getHtml('Create', '0', '0'); ?>" name="employee-client">
+                </div>
+            </form>
         </section>
     </div>
 </div>

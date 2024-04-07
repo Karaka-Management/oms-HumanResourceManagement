@@ -1,0 +1,3754 @@
+[
+    {
+        "name": "101",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Hourly wage",
+            "de": "Stundenlohn"
+        }
+    },
+    {
+        "name": "102",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Hourly wage",
+            "de": "Stundenlohn"
+        }
+    },
+    {
+        "name": "103",
+        "isSalary": true,
+        "l11n": {
+            "en": "Basic overtime pay",
+            "de": "Überstundengrundvergütung"
+        }
+    },
+    {
+        "name": "104",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay",
+            "de": "Überstundengrundvergütung"
+        }
+    },
+    {
+        "name": "108",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net hourly wage",
+            "de": "Netto Stundenlohn"
+        }
+    },
+    {
+        "name": "110",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 25 % compulsory",
+            "de": "Zuschlag 25 % pflichtig"
+        }
+    },
+    {
+        "name": "111",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 30 % compulsory",
+            "de": "Zuschlag 30 % pflichtig"
+        }
+    },
+    {
+        "name": "112",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 40 % compulsory",
+            "de": "Zuschlag 40 % pflichtig"
+        }
+    },
+    {
+        "name": "113",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 50 % compulsory",
+            "de": "Zuschlag 50 % pflichtig"
+        }
+    },
+    {
+        "name": "114",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 60 % free",
+            "de": "Zuschlag 60 % frei"
+        }
+    },
+    {
+        "name": "115",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 100 % free",
+            "de": "Zuschlag 100 % frei"
+        }
+    },
+    {
+        "name": "116",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 150 % free",
+            "de": "Zuschlag 150 % frei"
+        }
+    },
+    {
+        "name": "117",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 15 % compulsory",
+            "de": "Zuschlag 15 % pflichtig"
+        }
+    },
+    {
+        "name": "118",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay + 25 % supplement",
+            "de": "Überstundengrundvergütung + 25 % Zuschlag"
+        }
+    },
+    {
+        "name": "119",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay + 25 % supplement",
+            "de": "Überstundengrundvergütung + 25 % Zuschlag"
+        }
+    },
+    {
+        "name": "120",
+        "isSalary": true,
+        "l11n": {
+            "en": "Time chord",
+            "de": "Zeitakkord"
+        }
+    },
+    {
+        "name": "121",
+        "isSalary": true,
+        "l11n": {
+            "en": "Time piecework",
+            "de": "Zeitakkord"
+        }
+    },
+    {
+        "name": "122",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework with specified paid time",
+            "de": "Akkord mit vorgegebener bezahlter Zeit"
+        }
+    },
+    {
+        "name": "123",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework with predetermined paid time",
+            "de": "Akkord mit vorgegebener bezahlter Zeit"
+        }
+    },
+    {
+        "name": "124",
+        "isSalary": true,
+        "l11n": {
+            "en": "Money/piece piecework",
+            "de": "Geld/Stück-Akkord"
+        }
+    },
+    {
+        "name": "125",
+        "isSalary": true,
+        "l11n": {
+            "en": "Money/piece chord",
+            "de": "Geld/Stück-Akkord"
+        }
+    },
+    {
+        "name": "126",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework average previous month",
+            "de": "Akkord-Durchschnitt Vormonat"
+        }
+    },
+    {
+        "name": "127",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework average previous month",
+            "de": "Akkord-Durchschnitt Vormonat"
+        }
+    },
+    {
+        "name": "128",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework average current month",
+            "de": "Akkord-Durchschnitt lfd. Monat"
+        }
+    },
+    {
+        "name": "129",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework average current month",
+            "de": "Akkord-Durchschnitt lfd. Monat"
+        }
+    },
+    {
+        "name": "130",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 25% compulsory",
+            "de": "Zuschlag Akkord 25 % pflichtig"
+        }
+    },
+    {
+        "name": "131",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 50% compulsory",
+            "de": "Zuschlag Akkord 50 % pflichtig"
+        }
+    },
+    {
+        "name": "132",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 60%",
+            "de": "Zuschlag Akkord 60 % frei"
+        }
+    },
+    {
+        "name": "133",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 100%",
+            "de": "Zuschlag Akkord 100 % frei"
+        }
+    },
+    {
+        "name": "134",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 150%",
+            "de": "Zuschlag Akkord 150 % frei"
+        }
+    },
+    {
+        "name": "135",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework surcharge 15 % compulsory",
+            "de": "Zuschlag Akkord 15 % pflichtig"
+        }
+    },
+    {
+        "name": "136",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework compensation",
+            "de": "Akkordausgleich"
+        }
+    },
+    {
+        "name": "140",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay hourly basis",
+            "de": "Urlaubslohn-Stundenbasis"
+        }
+    },
+    {
+        "name": "141",
+        "isSalary": true,
+        "l11n": {
+            "en": "General",
+            "de": "Allgemeines"
+        }
+    },
+    {
+        "name": "142",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay 30 % - hourly basis",
+            "de": "Zus. Urlaubsgeld 30 % - Stundenbasis"
+        }
+    },
+    {
+        "name": "144",
+        "l11n": {
+            "en": "Fikt. Rem. Child sick",
+            "de": "Fikt. Entg. Kind krank"
+        }
+    },
+    {
+        "name": "145",
+        "l11n": {
+            "en": "Continued remuneration - hourly basis",
+            "de": "Entgeltfortzahlung-Stundenbasis"
+        }
+    },
+    {
+        "name": "146",
+        "l11n": {
+            "en": "General",
+            "de": "Allgemeines"
+        }
+    },
+    {
+        "name": "147",
+        "l11n": {
+            "en": "Factor key",
+            "de": "Faktorschlüssel"
+        }
+    },
+    {
+        "name": "148",
+        "l11n": {
+            "en": "Maternity protection pay hours",
+            "de": "Mutterschutzlohn Stunden"
+        }
+    },
+    {
+        "name": "150",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay - daily basis",
+            "de": "Urlaubslohn-Tagesbasis"
+        }
+    },
+    {
+        "name": "151",
+        "l11n": {
+            "en": "General",
+            "de": "Allgemeines"
+        }
+    },
+    {
+        "name": "152",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay 30 % - daily basis",
+            "de": "Zus. Urlaubsgeld 30 % - Tagesbasis"
+        }
+    },
+    {
+        "name": "155",
+        "l11n": {
+            "en": "Continued remuneration - daily basis",
+            "de": "Entgeltfortzahlung-Tagesbasis"
+        }
+    },
+    {
+        "name": "156",
+        "l11n": {
+            "en": "General",
+            "de": "Allgemeines"
+        }
+    },
+    {
+        "name": "157",
+        "l11n": {
+            "en": "Factor key",
+            "de": "Faktorschlüssel"
+        }
+    },
+    {
+        "name": "185",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation b. Vacation - vacation days",
+            "de": "Mehrarbeitsausgleich b. Urlaub - Url.Tage"
+        }
+    },
+    {
+        "name": "186",
+        "l11n": {
+            "en": "General",
+            "de": "Allgemeines"
+        }
+    },
+    {
+        "name": "187",
+        "l11n": {
+            "en": "Factor key",
+            "de": "Faktorschlüssel"
+        }
+    },
+    {
+        "name": "188",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation allowance - Tg basis",
+            "de": "Zus. Urlaubsg. - Tgbasis"
+        }
+    },
+    {
+        "name": "189",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation b. vacation days",
+            "de": "Mehrarbeitsausgleich b. Urlaubstagen"
+        }
+    },
+    {
+        "name": "190",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation b. vacation hours Vacation hours ",
+            "de": "Mehrarbeitsausgleich b. Urlaubsstunden "
+        }
+    },
+    {
+        "name": "191",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation b. vacation hours Vacation hours ",
+            "de": "Mehrarbeitsausgleich b. Urlaubsstunden "
+        }
+    },
+    {
+        "name": "192",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay 50 % - hourly basis",
+            "de": "Zus. Urlaubsgeld 50 % - Stundenbasis"
+        }
+    },
+    {
+        "name": "200",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Fixed salary, wage/salary",
+            "de": "Festbezug, Lohn/Gehalt"
+        }
+    },
+    {
+        "name": "201",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Fixed salary, tax- and social security-free",
+            "de": "Festbezug, steuer- und sv-frei"
+        }
+    },
+    {
+        "name": "202",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Fixed salary, monthly taxation",
+            "de": "Festbezug, monatliche Versteuerung"
+        }
+    },
+    {
+        "name": "203",
+        "isSalary": true,
+        "l11n": {
+            "en": "Other gross remuneration, annual table",
+            "de": "Sonstiger Brutto-Bezug, Jahrestabelle"
+        }
+    },
+    {
+        "name": "205",
+        "isSalary": true,
+        "l11n": {
+            "en": "Remuneration for work over several years",
+            "de": "Vergütung für mehrjährige Tätigkeit"
+        }
+    },
+    {
+        "name": "206",
+        "l11n": {
+            "en": "Fixed salary, allocation to cost centers",
+            "de": "Festbezug, Verteilung auf Kostenstellen"
+        }
+    },
+    {
+        "name": "208",
+        "isSalary": true,
+        "l11n": {
+            "en": "Severance pay",
+            "de": "Abfindung"
+        }
+    },
+    {
+        "name": "209",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net severance pay",
+            "de": "Abfindung netto"
+        }
+    },
+    {
+        "name": "210",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic remuneration",
+            "de": "Überstundengrundvergütung"
+        }
+    },
+    {
+        "name": "211",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 25% compulsory",
+            "de": "Zuschlag 25 % pflichtig"
+        }
+    },
+    {
+        "name": "212",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 50 % compulsory",
+            "de": "Zuschlag 50 % pflichtig"
+        }
+    },
+    {
+        "name": "212",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 50 % compulsory",
+            "de": "Zuschlag 50 % pflichtig"
+        }
+    },
+    {
+        "name": "213",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 60 % free",
+            "de": "Zuschlag 60 % frei"
+        }
+    },
+    {
+        "name": "214",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 100 % free",
+            "de": "Zuschlag 100 % frei"
+        }
+    },
+    {
+        "name": "215",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 150 % free",
+            "de": "Zuschlag 150 % frei"
+        }
+    },
+    {
+        "name": "216",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay + supplement 25 % compulsory",
+            "de": "Überstd.-Grundvergütung + Zuschl. 25 % pflichtig"
+        }
+    },
+    {
+        "name": "220",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Vacation pay 30 % - fixed wage/salary",
+            "de": "Urlaubsgeld 30 % - Festlohn/Gehalt"
+        }
+    },
+    {
+        "name": "221",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation for vacation",
+            "de": "Überstundenausgleich bei Urlaub"
+        }
+    },
+    {
+        "name": "222",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay 30 % - overtime compensation",
+            "de": "Urlaubsgeld 30 % - Überstundenausgleich"
+        }
+    },
+    {
+        "name": "223",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay",
+            "de": "Urlaubsabgeltung"
+        }
+    },
+    {
+        "name": "225",
+        "isSalary": true,
+        "l11n": {
+            "en": "Percentage from fixed amount",
+            "de": "Prozentsatz aus Festbetrag"
+        }
+    },
+    {
+        "name": "226",
+        "isSalary": true,
+        "l11n": {
+            "en": "Percentage from fixed amount Annual table",
+            "de": "Prozentsatz aus Festbetrag Jahrestabelle"
+        }
+    },
+    {
+        "name": "229",
+        "isSalary": true,
+        "l11n": {
+            "en": "Other net remuneration, 5-yearly taxation",
+            "de": "Sonstiger Netto-Bezug, 5-jährliche Versteuerung"
+        }
+    },
+    {
+        "name": "230",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Net fixed salary",
+            "de": "Festbezug netto"
+        }
+    },
+    {
+        "name": "231",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Net fixed salary Annual table",
+            "de": "Festbezug netto Jahrestabelle"
+        }
+    },
+    {
+        "name": "233",
+        "isSalary": true,
+        "l11n": {
+            "en": "Company discount monthly",
+            "de": "Firmenrabatt monatlich"
+        }
+    },
+    {
+        "name": "234",
+        "isSalary": true,
+        "l11n": {
+            "en": "Annual company discount",
+            "de": "Firmenrabatt jährlich"
+        }
+    },
+    {
+        "name": "235",
+        "isSalary": true,
+        "l11n": {
+            "en": "Gross non-cash benefit",
+            "de": "Sachbezug brutto"
+        }
+    },
+    {
+        "name": "236",
+        "isSalary": true,
+        "l11n": {
+            "en": "Gross non-cash benefit, annual table",
+            "de": "Sachbezug brutto, Jahrestabelle"
+        }
+    },
+    {
+        "name": "237",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net non-cash benefit",
+            "de": "Sachbezug netto"
+        }
+    },
+    {
+        "name": "238",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net non-cash benefit, annual table",
+            "de": "Sachbezug netto, Jahrestabelle"
+        }
+    },
+    {
+        "name": "239",
+        "isSalary": true,
+        "l11n": {
+            "en": "Gross non-cash benefit, without partial month reduction",
+            "de": "Sachbezug brutto, ohne Teilmonatskürzung"
+        }
+    },
+    {
+        "name": "241",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Gross Christmas bonus, annual table",
+            "de": "Weihnachtsgeld brutto, Jahrestabelle"
+        }
+    },
+    {
+        "name": "243",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Net Christmas bonus, annual table",
+            "de": "Weihnachtsgeld netto, Jahrestabelle"
+        }
+    },
+    {
+        "name": "244",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net calculation monthly automatic compensation",
+            "de": "Nettoberechnung mtl. autom. Ausgleich"
+        }
+    },
+    {
+        "name": "245",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net calculation annual automatic equalization",
+            "de": "Nettoberechnung jhrl. autom. Ausgleich"
+        }
+    },
+    {
+        "name": "246",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net calculation 5yr automatic equalization",
+            "de": "Nettoberechnung 5jhrl. autom. Ausgleich"
+        }
+    },
+    {
+        "name": "247",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net calculation of severance pay, automatic equalization",
+            "de": "Nettoberechnung Abfindung, autom. Ausgleich"
+        }
+    },
+    {
+        "name": "248",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net calculation of overpayment, equalization",
+            "de": "Nettoberechnung Überzahlung, Ausgleich"
+        }
+    },
+    {
+        "name": "255",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional pension contribution monthly",
+            "de": "Tarifliche Zusatzrente Beitrag monatlich"
+        }
+    },
+    {
+        "name": "256",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional pension contribution annual",
+            "de": "Tarifliche Zusatzrente Beitrag jährlich"
+        }
+    },
+    {
+        "name": "257",
+        "isSalary": true,
+        "l11n": {
+            "en": "Collectively agreed supplementary pension Contribution to provident fund",
+            "de": "Tarifliche Zusatzrente Beitrag Unterstützungskasse"
+        }
+    },
+    {
+        "name": "258",
+        "isSalary": true,
+        "l11n": {
+            "en": "Deferred compensation Collectively agreed supplementary pension",
+            "de": "Entgeltumwandlung Tarifliche Zusatzrente"
+        }
+    },
+    {
+        "name": "259",
+        "isSalary": true,
+        "l11n": {
+            "en": "Collectively agreed supplementary pension annual contribution",
+            "de": "Tarifliche Zusatzrente Beitrag jährlich"
+        }
+    },
+    {
+        "name": "260",
+        "isSalary": true,
+        "l11n": {
+            "en": "Pension payments ongoing",
+            "de": "Versorgungsbezüge laufend"
+        }
+    },
+    {
+        "name": "261",
+        "isSalary": true,
+        "l11n": {
+            "en": "Pension benefits One-off payment",
+            "de": "Versorgungsbezüge Einmalzahlung"
+        }
+    },
+    {
+        "name": "263",
+        "isSalary": true,
+        "l11n": {
+            "en": "Death benefit",
+            "de": "Sterbegeld"
+        }
+    },
+    {
+        "name": "264",
+        "isSalary": true,
+        "l11n": {
+            "en": "Lump-sum payment/severance payments per annum",
+            "de": "Kapitalauszahlung/Abfindungen mehrjährig"
+        }
+    },
+    {
+        "name": "265",
+        "l11n": {
+            "en": "Reduction daily Collectively agreed supplementary pension / ÜW Bau",
+            "de": "Kürzung täglich Tarifliche Zusatzrente / ÜW Bau"
+        }
+    },
+    {
+        "name": "266",
+        "l11n": {
+            "en": "Reduction daily Collectively agreed supplementary pension construction",
+            "de": "Kürzung täglich Tarifliche Zusatzrente Bau"
+        }
+    },
+    {
+        "name": "267",
+        "l11n": {
+            "en": "Lump-sum payment/settlements other Payment",
+            "de": "Kapitalauszahlung/Abfindungen sonst. Bezug"
+        }
+    },
+    {
+        "name": "268",
+        "isSalary": true,
+        "l11n": {
+            "en": "Back payment of pension benefits",
+            "de": "Nachzahlung von Versorgungsbezügen"
+        }
+    },
+    {
+        "name": "269",
+        "l11n": {
+            "en": "Compensation/severance pay, per annum",
+            "de": "Entsch./Abf.Vbez,mehrj."
+        }
+    },
+    {
+        "name": "270",
+        "l11n": {
+            "en": "Severance payment, annual",
+            "de": "Abfindung, jhrl."
+        }
+    },
+    {
+        "name": "272",
+        "l11n": {
+            "en": "Annual lump sum",
+            "de": "Kapitalleistung jhrl."
+        }
+    },
+    {
+        "name": "273",
+        "l11n": {
+            "en": "Lump-sum payment per annum",
+            "de": "Kapitalleistung mehrj."
+        }
+    },
+    {
+        "name": "274",
+        "l11n": {
+            "en": "Current pension, SI-free",
+            "de": "Versorgbez.lfd., SV-frei"
+        }
+    },
+    {
+        "name": "275",
+        "l11n": {
+            "en": "Double pension, exempt from SI",
+            "de": "Bez.Doppelbest.SV-frei"
+        }
+    },
+    {
+        "name": "276",
+        "l11n": {
+            "en": "Foreign tax-free",
+            "de": "Bez.Auslandst.SV-frei"
+        }
+    },
+    {
+        "name": "277",
+        "l11n": {
+            "en": "VB current, co-taxed",
+            "de": "VB lfd, mitversteuert"
+        }
+    },
+    {
+        "name": "278",
+        "l11n": {
+            "en": "VB annual, also taxed",
+            "de": "VB jhrl, mitversteuert"
+        }
+    },
+    {
+        "name": "279",
+        "l11n": {
+            "en": "Supply pay yearly, SI-free",
+            "de": "Versorgbez.jhr,SV-frei"
+        }
+    },
+    {
+        "name": "280",
+        "isSalary": true,
+        "l11n": {
+            "en": "Hours x supplement",
+            "de": "Stunden x Zuschlag"
+        }
+    },
+    {
+        "name": "281",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "282",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "283",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "284",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "285",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "286",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "287",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "288",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "289",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "290",
+        "isSalary": true,
+        "l11n": {
+            "en": "Days x surcharge",
+            "de": "Tage x Zuschlag"
+        }
+    },
+    {
+        "name": "291",
+        "isSalary": true,
+        "l11n": {
+            "en": "Days x surcharge Annual table",
+            "de": "Tage x Zuschlag Jahrestabelle"
+        }
+    },
+    {
+        "name": "295",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Km x surcharge",
+            "de": "Km x Zuschlag"
+        }
+    },
+    {
+        "name": "296",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Km x supplement",
+            "de": "Km x Zuschlag"
+        }
+    },
+    {
+        "name": "300",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker piece rate",
+            "de": "Heimarbeiter Stücklohn"
+        }
+    },
+    {
+        "name": "301",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker hourly wage",
+            "de": "Heimarbeiter Stundenlohn"
+        }
+    },
+    {
+        "name": "302",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker cost supplement",
+            "de": "Heimarbeiter Kostenzuschlag"
+        }
+    },
+    {
+        "name": "303",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker sickness supplement",
+            "de": "Heimarbeiter Krankheitszuschlag"
+        }
+    },
+    {
+        "name": "304",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker vacation supplement",
+            "de": "Heimarbeiter Urlaubszuschlag"
+        }
+    },
+    {
+        "name": "305",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker holiday supplement 3.60%",
+            "de": "Heimarbeiter Feiertagszuschlag 3,60 %"
+        }
+    },
+    {
+        "name": "306",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker transportation surcharge",
+            "de": "Heimarbeiter Transportkostenzuschlag"
+        }
+    },
+    {
+        "name": "307",
+        "isSalary": true,
+        "l11n": {
+            "en": "Homeworker AG share of VWL",
+            "de": "Heimarbeiter AG-Anteil VWL"
+        }
+    },
+    {
+        "name": "360",
+        "l11n": {
+            "en": "Value credit West - multi-year withdrawal",
+            "de": "Wertguthaben West - mehrjähriger Bezug"
+        }
+    },
+    {
+        "name": "361",
+        "l11n": {
+            "en": "Value credit West - annual withdrawal",
+            "de": "Wertguthaben West - jährlicher Bezug"
+        }
+    },
+    {
+        "name": "362",
+        "l11n": {
+            "en": "Value credit East - multi-year reference",
+            "de": "Wertguthaben Ost - mehrjähriger Bezug"
+        }
+    },
+    {
+        "name": "363",
+        "l11n": {
+            "en": "Value credit East - annual withdrawal",
+            "de": "Wertguthaben Ost - jährlicher Bezug"
+        }
+    },
+    {
+        "name": "364",
+        "l11n": {
+            "en": "Exemption phase West",
+            "de": "Freistellungsphase West"
+        }
+    },
+    {
+        "name": "365",
+        "l11n": {
+            "en": "Exemption phase East",
+            "de": "Freistellungsphase Ost"
+        }
+    },
+    {
+        "name": "366",
+        "l11n": {
+            "en": "Remaining credit West total",
+            "de": "Rest Wertguthaben West ges."
+        }
+    },
+    {
+        "name": "367",
+        "l11n": {
+            "en": "Remaining value credit East total",
+            "de": "Rest Wertguthaben Ost ges."
+        }
+    },
+    {
+        "name": "368",
+        "l11n": {
+            "en": "Value credit increase ABL",
+            "de": "Wertguthaben Zuwachs ABL"
+        }
+    },
+    {
+        "name": "369",
+        "l11n": {
+            "en": "Value credit increase NBL",
+            "de": "Wertguthaben Zuwachs NBL"
+        }
+    },
+    {
+        "name": "370",
+        "l11n": {
+            "en": "Value growth of old accounts ABL UV-free",
+            "de": "Wertzuwachs Altkonten ABL UV-frei"
+        }
+    },
+    {
+        "name": "371",
+        "l11n": {
+            "en": "Value growth of old accounts NBL UV-free",
+            "de": "Wertzuwachs Altkonten NBL UV-frei"
+        }
+    },
+    {
+        "name": "400",
+        "l11n": {
+            "en": "Distribution of hours",
+            "de": "Stundenverteilung"
+        }
+    },
+    {
+        "name": "406",
+        "l11n": {
+            "en": "KugZusch. st/sv-fr",
+            "de": "KugZusch. st/sv-fr"
+        }
+    },
+    {
+        "name": "407",
+        "l11n": {
+            "en": "KugZusch.net st/sv-pf.",
+            "de": "KugZusch.netto st/sv-pf."
+        }
+    },
+    {
+        "name": "408",
+        "l11n": {
+            "en": "KugZusch.net st-pfl.",
+            "de": "KugZusch.netto st-pfl."
+        }
+    },
+    {
+        "name": "410",
+        "l11n": {
+            "en": "Short-time allowance",
+            "de": "Kurzarbeitergeld"
+        }
+    },
+    {
+        "name": "411",
+        "l11n": {
+            "en": "Correction target remuneration",
+            "de": "Korrektur Soll-Entgelt"
+        }
+    },
+    {
+        "name": "412",
+        "l11n": {
+            "en": "Correction of actual pay",
+            "de": "Korrektur Ist-Entgelt"
+        }
+    },
+    {
+        "name": "413",
+        "l11n": {
+            "en": "Sick pay in the amount of KUG",
+            "de": "Krankengeld in Höhe KUG"
+        }
+    },
+    {
+        "name": "414",
+        "l11n": {
+            "en": "Public holiday pay in the amount of KUG",
+            "de": "Feiertagsentgelt in Höhe KUG"
+        }
+    },
+    {
+        "name": "415",
+        "l11n": {
+            "en": "Allowance for short-time allowance",
+            "de": "Zuschuss zum Kurzarbeitergeld"
+        }
+    },
+    {
+        "name": "416",
+        "l11n": {
+            "en": "Corr. variable remuneration components daily basis",
+            "de": "Korr. variable Entg.-Bestandteile Tagesbasis"
+        }
+    },
+    {
+        "name": "417",
+        "l11n": {
+            "en": "Corr. variable remuneration components hourly basis",
+            "de": "Korr. variable Entg.-Bestandteile Std.basis"
+        }
+    },
+    {
+        "name": "420",
+        "l11n": {
+            "en": "Correction basic wage",
+            "de": "Korrektur Grundlohn"
+        }
+    },
+    {
+        "name": "421",
+        "l11n": {
+            "en": "Correction of regular working hours",
+            "de": "Korrektur regelmäßige Arbeitszeit"
+        }
+    },
+    {
+        "name": "422",
+        "l11n": {
+            "en": "Correction actual working hours",
+            "de": "Korrektur tatsächliche Arbeitsstunden"
+        }
+    },
+    {
+        "name": "423",
+        "l11n": {
+            "en": "Correction actual working hours previous month",
+            "de": "Korr. tatsächliche Arbeitsstunden Vormonat"
+        }
+    },
+    {
+        "name": "429",
+        "l11n": {
+            "en": "Correction SolZ from pausch. LSt",
+            "de": "Korrektur SolZ aus pausch. LSt"
+        }
+    },
+    {
+        "name": "430",
+        "l11n": {
+            "en": "Correction of flat-rate LSt",
+            "de": "Korrektur pauschale LSt"
+        }
+    },
+    {
+        "name": "431",
+        "l11n": {
+            "en": "Correction of flat-rate KiSt",
+            "de": "Korrektur pauschale KiSt"
+        }
+    },
+    {
+        "name": "432",
+        "l11n": {
+            "en": "Correction SolZ from monthly/annual reference",
+            "de": "Korrektur SolZ aus monat./jährl. Bezug"
+        }
+    },
+    {
+        "name": "440",
+        "l11n": {
+            "en": "Top-up payment",
+            "de": "Aufstockungsvergütung"
+        }
+    },
+    {
+        "name": "445",
+        "l11n": {
+            "en": "Correction hours average memory 4",
+            "de": "Korrektur Stunden Durchschnittsspeicher 4"
+        }
+    },
+    {
+        "name": "446",
+        "l11n": {
+            "en": "Correction days average memory 4",
+            "de": "Korrektur Tage Durchschnittsspeicher 4"
+        }
+    },
+    {
+        "name": "447",
+        "l11n": {
+            "en": "Correction hours average memory 5",
+            "de": "Korrektur Stunden Durchschnittsspeicher 5"
+        }
+    },
+    {
+        "name": "448",
+        "l11n": {
+            "en": "Correction days average memory 5",
+            "de": "Korrektur Tage Durchschnittsspeicher 5"
+        }
+    },
+    {
+        "name": "449",
+        "l11n": {
+            "en": "Correction values average memory",
+            "de": "Korrektur Werte Durchschnittsspeicher"
+        }
+    },
+    {
+        "name": "460",
+        "l11n": {
+            "en": "Manual working time account",
+            "de": "Manuelles Arbeitszeitkonto"
+        }
+    },
+    {
+        "name": "461",
+        "l11n": {
+            "en": "Automatic balancing of working time account",
+            "de": "Automatischer Ausgleich Arbeitszeitkonto"
+        }
+    },
+    {
+        "name": "462",
+        "l11n": {
+            "en": "Automatic working time account",
+            "de": "Automatisches Arbeitszeitkonto"
+        }
+    },
+    {
+        "name": "462",
+        "l11n": {
+            "en": "Automatic working time account",
+            "de": "Automatisches Arbeitszeitkonto"
+        }
+    },
+    {
+        "name": "465",
+        "l11n": {
+            "en": "Correction hours average memory 6",
+            "de": "Korrektur Stunden Durchschnittsspeicher 6"
+        }
+    },
+    {
+        "name": "466",
+        "l11n": {
+            "en": "Correction days average memory 6",
+            "de": "Korrektur Tage Durchschnittsspeicher 6"
+        }
+    },
+    {
+        "name": "467",
+        "l11n": {
+            "en": "Correction hours average memory 7",
+            "de": "Korrektur Stunden Durchschnittsspeicher 7"
+        }
+    },
+    {
+        "name": "468",
+        "l11n": {
+            "en": "Correction days average memory 7",
+            "de": "Korrektur Tage Durchschnittsspeicher 7"
+        }
+    },
+    {
+        "name": "469",
+        "l11n": {
+            "en": "Correction hours average memory 8",
+            "de": "Korrektur Stunden Durchschnittsspeicher 8"
+        }
+    },
+    {
+        "name": "470",
+        "l11n": {
+            "en": "Correction days average memory 8",
+            "de": "Korrektur Tage Durchschnittsspeicher 8"
+        }
+    },
+    {
+        "name": "471",
+        "l11n": {
+            "en": "Correction hours average memory 9",
+            "de": "Korrektur Stunden Durchschnittsspeicher 9"
+        }
+    },
+    {
+        "name": "472",
+        "l11n": {
+            "en": "Correction days average memory 9",
+            "de": "Korrektur Tage Durchschnittsspeicher 9"
+        }
+    },
+    {
+        "name": "473",
+        "l11n": {
+            "en": "Correction hours average memory 10",
+            "de": "Korrektur Stunden Durchschnittsspeicher 10"
+        }
+    },
+    {
+        "name": "474",
+        "l11n": {
+            "en": "Correction days average memory 10",
+            "de": "Korrektur Tage Durchschnittsspeicher 10"
+        }
+    },
+    {
+        "name": "480",
+        "l11n": {
+            "en": "Fictitious IfSG,SV only AG",
+            "de": "Fiktivl. IfSG,SV nur AG"
+        }
+    },
+    {
+        "name": "481",
+        "l11n": {
+            "en": "Loss of earnings na. IfSG",
+            "de": "Verdienstausfall na. IfSG"
+        }
+    },
+    {
+        "name": "482",
+        "l11n": {
+            "en": "Fictitious care, SI AG",
+            "de": "Fiktivl. Betreu., SV AG"
+        }
+    },
+    {
+        "name": "483",
+        "l11n": {
+            "en": "Loss of earnings Care.",
+            "de": "Verdienstausf. Betreu."
+        }
+    },
+    {
+        "name": "500",
+        "l11n": {
+            "en": "Capital formation Building wages",
+            "de": "Vermögensbildung Baulohn"
+        }
+    },
+    {
+        "name": "501",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay calendar year",
+            "de": "Urlaubsentgelt Kalenderjahr"
+        }
+    },
+    {
+        "name": "502",
+        "l11n": {
+            "en": "Vacation compensation sickness/accident",
+            "de": "Urlaubsausgleich Krankheit/Unfall"
+        }
+    },
+    {
+        "name": "504",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay previous year",
+            "de": "Urlaubsentgelt Vorjahr"
+        }
+    },
+    {
+        "name": "504",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay previous year",
+            "de": "Urlaubsentgelt Vorjahr"
+        }
+    },
+    {
+        "name": "505",
+        "l11n": {
+            "en": "Foreman's contribution ZVK",
+            "de": "Polierbeitrag ZVK"
+        }
+    },
+    {
+        "name": "506",
+        "l11n": {
+            "en": "Capital accumulation piecework",
+            "de": "Vermögensbildung Akkord"
+        }
+    },
+    {
+        "name": "507",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime bonus 25 %",
+            "de": "Überstundenzuschlag 25 %"
+        }
+    },
+    {
+        "name": "508",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation pay calendar year/previous year",
+            "de": "Urlaubsentgelt Kalenderjahr/Vorjahr"
+        }
+    },
+    {
+        "name": "509",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay",
+            "de": "Überstundengrundvergütung"
+        }
+    },
+    {
+        "name": "511",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime winter allowance",
+            "de": "Mehraufwands-Wintergeld"
+        }
+    },
+    {
+        "name": "514",
+        "l11n": {
+            "en": "Wage compensation",
+            "de": "Lohnausgleich"
+        }
+    },
+    {
+        "name": "517",
+        "l11n": {
+            "en": "Target hours",
+            "de": "Soll-Stunden"
+        }
+    },
+    {
+        "name": "518",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework hours",
+            "de": "Akkordstunden"
+        }
+    },
+    {
+        "name": "517",
+        "l11n": {
+            "en": "Target hours",
+            "de": "Soll-Stunden"
+        }
+    },
+    {
+        "name": "518",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework hours",
+            "de": "Akkordstunden"
+        }
+    },
+    {
+        "name": "519",
+        "l11n": {
+            "en": "Annual special payment (GaLa-Bau)",
+            "de": "Jahressonderzahlung (GaLa-Bau)"
+        }
+    },
+    {
+        "name": "520",
+        "l11n": {
+            "en": "Vacation daily basis (GaLa-Bau)",
+            "de": "Urlaub Tagesbasis (GaLa-Bau)"
+        }
+    },
+    {
+        "name": "521",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "13th monthly income (BHG)",
+            "de": "13. Monatseinkommen (BHG)"
+        }
+    },
+    {
+        "name": "522",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "13th MEK for roofers",
+            "de": "13. MEK gew. Dachdecker"
+        }
+    },
+    {
+        "name": "526",
+        "isSalary": true,
+        "l11n": {
+            "en": "Winter allowance",
+            "de": "Zuschuss Wintergeld"
+        }
+    },
+    {
+        "name": "530",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime bonus 25% AZK (BHG)",
+            "de": "Überstundenzuschlag 25 % AZK (BHG)"
+        }
+    },
+    {
+        "name": "531",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay AZK (BHG)",
+            "de": "Überstundengrundvergütung AZK (BHG)"
+        }
+    },
+    {
+        "name": "532",
+        "l11n": {
+            "en": "VL for seasonal KUG hours from AZK",
+            "de": "VL für Saison-KUG-Stunden aus AZK"
+        }
+    },
+    {
+        "name": "537",
+        "l11n": {
+            "en": "Vacation for trainees/young people in their training year ",
+            "de": "Urlaub Azubi/Jugendliche im Auslernjahr "
+        }
+    },
+    {
+        "name": "538",
+        "l11n": {
+            "en": "Construction training allowance ",
+            "de": "Ausbildungsvergütung Bau "
+        }
+    },
+    {
+        "name": "539",
+        "l11n": {
+            "en": "Accommodation/travel costs",
+            "de": "Unterbringungs-/Fahrtkosten"
+        }
+    },
+    {
+        "name": "540",
+        "isSalary": true,
+        "l11n": {
+            "en": "Hours lost for seasonal KUG",
+            "de": "Ausfallstunden für Saison-KUG"
+        }
+    },
+    {
+        "name": "541",
+        "l11n": {
+            "en": "Sick before seasonal KUG",
+            "de": "Krank vor Saison-KUG"
+        }
+    },
+    {
+        "name": "542",
+        "isSalary": true,
+        "l11n": {
+            "en": "Seasonal KUG",
+            "de": "Saison-KUG"
+        }
+    },
+    {
+        "name": "543",
+        "isSalary": true,
+        "l11n": {
+            "en": "Sick pay / seasonal KUG",
+            "de": "Krankengeld / Saison-KUG"
+        }
+    },
+    {
+        "name": "544",
+        "l11n": {
+            "en": "Remuneration in the amount of Kug/S-Kug",
+            "de": "Entgelt in Höhe Kug/S-Kug"
+        }
+    },
+    {
+        "name": "545",
+        "l11n": {
+            "en": "Roofer's compensation",
+            "de": "Ausfallgeld Dachdecker"
+        }
+    },
+    {
+        "name": "546",
+        "l11n": {
+            "en": "EFZ in the amount of bridging allowance",
+            "de": "EFZ in Höhe Überbrückungsgeld"
+        }
+    },
+    {
+        "name": "550",
+        "l11n": {
+            "en": "Vacation hourly basis",
+            "de": "Urlaub Stundenbasis"
+        }
+    },
+    {
+        "name": "551",
+        "l11n": {
+            "en": "Corr.Mind.url.vgt Sick",
+            "de": "Korr.Mind.url.vgt Krank"
+        }
+    },
+    {
+        "name": "552",
+        "l11n": {
+            "en": "Corr.min.url.vgt S-KUG",
+            "de": "Korr.Mind.url.vgt S-KUG"
+        }
+    },
+    {
+        "name": "601",
+        "isSalary": true,
+        "l11n": {
+            "en": "Basic monthly wage",
+            "de": "Monatsgrundlohn"
+        }
+    },
+    {
+        "name": "602",
+        "isSalary": true,
+        "l11n": {
+            "en": "Fixed bonuses ",
+            "de": "Feste Zuschläge "
+        }
+    },
+    {
+        "name": "603",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay",
+            "de": "Überstundengrundvergütung"
+        }
+    },
+    {
+        "name": "610",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime bonus 25 % compulsory ",
+            "de": "Mehrarbeitszuschlag 25 % pflichtig "
+        }
+    },
+    {
+        "name": "611",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 30 %",
+            "de": "Zuschlag 30 %"
+        }
+    },
+    {
+        "name": "612",
+        "isSalary": true,
+        "l11n": {
+            "en": "40 % supplement",
+            "de": "Zuschlag 40 %"
+        }
+    },
+    {
+        "name": "613",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 50",
+            "de": "Zuschlag 50 %"
+        }
+    },
+    {
+        "name": "614",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 60 % free ",
+            "de": "Zuschlag 60 % frei "
+        }
+    },
+    {
+        "name": "615",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "616",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge",
+            "de": "Zuschlag"
+        }
+    },
+    {
+        "name": "617",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime supplement 15 % compulsory ",
+            "de": "Mehrarbeitszuschlag 15 % pflichtig "
+        }
+    },
+    {
+        "name": "618",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay + 25 % supplement",
+            "de": "Überstundengrundvergütung + 25 % Zuschlag"
+        }
+    },
+    {
+        "name": "620",
+        "isSalary": true,
+        "l11n": {
+            "en": "Time piecework",
+            "de": "Zeitakkord"
+        }
+    },
+    {
+        "name": "622",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework with predetermined paid time Supplements ",
+            "de": "Akkord mit vorgegebener bezahlter Zeit Zuschläge "
+        }
+    },
+    {
+        "name": "624",
+        "isSalary": true,
+        "l11n": {
+            "en": "Money/piece piecework",
+            "de": "Geld/Stück-Akkord"
+        }
+    },
+    {
+        "name": "626",
+        "isSalary": true,
+        "l11n": {
+            "en": "Average paid hours",
+            "de": "Durchschnittsbezahlte Stunden"
+        }
+    },
+    {
+        "name": "629",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Piecework average",
+            "de": "Akkord-Durchschnitt"
+        }
+    },
+    {
+        "name": "630",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 25% compulsory",
+            "de": "Zuschlag Akkord 25 % pflichtig"
+        }
+    },
+    {
+        "name": "631",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 50 % compulsory ",
+            "de": "Zuschlag Akkord 50 % pflichtig "
+        }
+    },
+    {
+        "name": "632",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement piecework 60 % free ",
+            "de": "Zuschlag Akkord 60 % frei "
+        }
+    },
+    {
+        "name": "633",
+        "isSalary": true,
+        "l11n": {
+            "en": "Supplement 100 % free",
+            "de": "Zuschlag 100 % frei"
+        }
+    },
+    {
+        "name": "634",
+        "isSalary": true,
+        "l11n": {
+            "en": "Surcharge 150 % free",
+            "de": "Zuschlag 150 % frei"
+        }
+    },
+    {
+        "name": "635",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework supplement 15 % compulsory ",
+            "de": "Zuschlag Akkord 15 % pflichtig "
+        }
+    },
+    {
+        "name": "636",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework compensation on fictitious wage",
+            "de": "Akkordausgleich auf Fiktivlohn"
+        }
+    },
+    {
+        "name": "637",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance-related additional piecework earnings",
+            "de": "Leistungsbezogener Akkordmehrverdienst"
+        }
+    },
+    {
+        "name": "638",
+        "l11n": {
+            "en": "Days for earning rate reductions",
+            "de": "Tage für Verdienstgradkürzungen"
+        }
+    },
+    {
+        "name": "639",
+        "l11n": {
+            "en": "Hours for earning rate reductions",
+            "de": "Stunden für Verdienstgradkürzungen"
+        }
+    },
+    {
+        "name": "640",
+        "isSalary": true,
+        "l11n": {
+            "en": "Time piecework/2nd wage group",
+            "de": "Zeitakkord/2. Lohngruppe"
+        }
+    },
+    {
+        "name": "641",
+        "isSalary": true,
+        "l11n": {
+            "en": "Piecework with predetermined paid time / 2nd wage group",
+            "de": "Akkord mit vorgegeb. bezahlter Zeit / 2. LG"
+        }
+    },
+    {
+        "name": "642",
+        "isSalary": true,
+        "l11n": {
+            "en": "Money/piece piecework / 2nd wage group",
+            "de": "Geld/Stück-Akkord / 2. Lohngruppe"
+        }
+    },
+    {
+        "name": "643",
+        "l11n": {
+            "en": "Average paid hours",
+            "de": "Durchschnittsbezahlte Stunden"
+        }
+    },
+    {
+        "name": "644",
+        "l11n": {
+            "en": "Additional earnings for piecework / 2nd wage group",
+            "de": "Leistungsbez. Akkordmehrverdienst / 2. LG"
+        }
+    },
+    {
+        "name": "645",
+        "l11n": {
+            "en": "Difference between different wage groups",
+            "de": "Unterschiedsbetrag verschiedener Lohngr."
+        }
+    },
+    {
+        "name": "646",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime basic pay piecework",
+            "de": "Überstunden-Grundvergütung Akkord"
+        }
+    },
+    {
+        "name": "647",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance-related piecework additional earnings Overtime hours",
+            "de": "Leistungsbez. Akkord-Mehrverdienst Ü-Std."
+        }
+    },
+    {
+        "name": "650",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation for vacation",
+            "de": "Mehrarbeits-Ausgleich bei Urlaub"
+        }
+    },
+    {
+        "name": "653",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay on a daily basis",
+            "de": "Zusätzliches Urlaubsgeld Tagesbasis"
+        }
+    },
+    {
+        "name": "655",
+        "isSalary": true,
+        "l11n": {
+            "en": "Compensation for overtime in the event of illness",
+            "de": "Mehrarbeits-Ausgleich bei Krankheit"
+        }
+    },
+    {
+        "name": "660",
+        "isSalary": true,
+        "l11n": {
+            "en": "Special company payments",
+            "de": "Betriebliche Sonderzahlungen"
+        }
+    },
+    {
+        "name": "662",
+        "isSalary": true,
+        "l11n": {
+            "en": "Special company payments",
+            "de": "Betriebliche Sonderzahlungen"
+        }
+    },
+    {
+        "name": "670",
+        "l11n": {
+            "en": "Days for fixed pay reductions",
+            "de": "Tage für Festbezugskürzungen"
+        }
+    },
+    {
+        "name": "671",
+        "l11n": {
+            "en": "Hours for fixed pay reductions",
+            "de": "Stunden für Festbezugskürzungen"
+        }
+    },
+    {
+        "name": "685",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation - vacation days",
+            "de": "Mehrarbeits-Ausgleich - Urlaubstage"
+        }
+    },
+    {
+        "name": "688",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay daily basis 50%",
+            "de": "Zusätzliches Urlaubsgeld Tagesbasis 50 %"
+        }
+    },
+    {
+        "name": "689",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation - sick days",
+            "de": "Mehrarbeits-Ausgleich - Krankheitstage"
+        }
+    },
+    {
+        "name": "692",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation - vacation hours",
+            "de": "Mehrarbeits-Ausgleich - Urlaubsstunden"
+        }
+    },
+    {
+        "name": "695",
+        "isSalary": true,
+        "l11n": {
+            "en": "Additional vacation pay hourly basis 50",
+            "de": "Zusätzliches Urlaubsgeld Stundenbasis 50 %"
+        }
+    },
+    {
+        "name": "696",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime compensation - sick hours",
+            "de": "Mehrarbeits-Ausgleich - Krankheitsstunden"
+        }
+    },
+    {
+        "name": "700",
+        "isSalary": true,
+        "l11n": {
+            "en": "Hourly compensation",
+            "de": "Stundenvergütung"
+        }
+    },
+    {
+        "name": "701",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime premium",
+            "de": "Überstundenzuschlag"
+        }
+    },
+    {
+        "name": "702",
+        "isSalary": true,
+        "l11n": {
+            "en": "Overtime pay",
+            "de": "Überstundenvergütung"
+        }
+    },
+    {
+        "name": "704",
+        "l11n": {
+            "en": "Allowance/special payment",
+            "de": "Zuwendung/Sonderzahlung"
+        }
+    },
+    {
+        "name": "705",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation supplement/days",
+            "de": "Urlaubsaufschlag/Tage"
+        }
+    },
+    {
+        "name": "706",
+        "isSalary": true,
+        "l11n": {
+            "en": "Vacation premium/hours",
+            "de": "Urlaubsaufschlag/Stunden"
+        }
+    },
+    {
+        "name": "707",
+        "isSalary": true,
+        "l11n": {
+            "en": "Sickness premium/days",
+            "de": "Krankheitsaufschlag/Tage"
+        }
+    },
+    {
+        "name": "708",
+        "isSalary": true,
+        "l11n": {
+            "en": "Sickness premium/hours",
+            "de": "Krankheitsaufschlag/Stunden"
+        }
+    },
+    {
+        "name": "710",
+        "l11n": {
+            "en": "General contribution ZVK, lump sum / sv-free",
+            "de": "Allg. Umlage ZVK, pausch. / sv-frei"
+        }
+    },
+    {
+        "name": "711",
+        "l11n": {
+            "en": "General ZVK contribution, lump sum / subject to social security contributions",
+            "de": "Allg. Umlage ZVK, pausch. / sv-pflichtig"
+        }
+    },
+    {
+        "name": "712",
+        "l11n": {
+            "en": "General ZVK contribution, lump sum / subject to social security contributions (EBZ)",
+            "de": "Allg. Umlage ZVK, pausch. / sv-pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "713",
+        "l11n": {
+            "en": "General ZVK contribution, mandatory",
+            "de": "Allg. Umlage ZVK, pflichtig"
+        }
+    },
+    {
+        "name": "714",
+        "l11n": {
+            "en": "General ZVK contribution, mandatory (EBZ)",
+            "de": "Allg. Umlage ZVK, pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "715",
+        "l11n": {
+            "en": "Additional ZVK contribution, flat-rate / sv-free",
+            "de": "Zus. Umlage ZVK, pausch. / sv-frei"
+        }
+    },
+    {
+        "name": "716",
+        "l11n": {
+            "en": "Additional ZVK contribution, lump sum / subject to social security contributions",
+            "de": "Zus. Umlage ZVK, pausch. / sv-pflichtig"
+        }
+    },
+    {
+        "name": "717",
+        "l11n": {
+            "en": "Additional ZVK contribution, lump sum / subject to social security contributions (EBZ)",
+            "de": "Zus. Umlage ZVK, pausch. / sv-pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "718",
+        "l11n": {
+            "en": "Additional ZVK contribution, compulsory",
+            "de": "Zus. Umlage ZVK, pflichtig"
+        }
+    },
+    {
+        "name": "719",
+        "l11n": {
+            "en": "Additional ZVK contribution, mandatory (EBZ)",
+            "de": "Zus. Umlage ZVK, pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "710",
+        "l11n": {
+            "en": "General ZVK contribution, flat-rate / sv-free",
+            "de": "Allg. Umlage ZVK, pausch. / sv-frei"
+        }
+    },
+    {
+        "name": "711",
+        "l11n": {
+            "en": "General ZVK contribution, lump sum / subject to social security contributions",
+            "de": "Allg. Umlage ZVK, pausch. / sv-pflichtig"
+        }
+    },
+    {
+        "name": "712",
+        "l11n": {
+            "en": "General contribution ZVK, lump sum. / subject to social security contributions (EBZ)",
+            "de": "Allg. Umlage ZVK, pausch. / sv-pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "713",
+        "l11n": {
+            "en": "General ZVK contribution, mandatory",
+            "de": "Allg. Umlage ZVK, pflichtig"
+        }
+    },
+    {
+        "name": "714",
+        "l11n": {
+            "en": "General ZVK contribution, mandatory (EBZ)",
+            "de": "Allg. Umlage ZVK, pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "715",
+        "l11n": {
+            "en": "Additional ZVK contribution, flat-rate / sv-free",
+            "de": "Zus. Umlage ZVK, pausch. / sv-frei"
+        }
+    },
+    {
+        "name": "716",
+        "l11n": {
+            "en": "Additional ZVK contribution, lump sum / subject to social security contributions",
+            "de": "Zus. Umlage ZVK, pausch. / sv-pflichtig"
+        }
+    },
+    {
+        "name": "717",
+        "l11n": {
+            "en": "Additional ZVK contribution, lump sum / subject to social security contributions (EBZ)",
+            "de": "Zus. Umlage ZVK, pausch. / sv-pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "718",
+        "l11n": {
+            "en": "Additional ZVK contribution, compulsory",
+            "de": "Zus. Umlage ZVK, pflichtig"
+        }
+    },
+    {
+        "name": "719",
+        "l11n": {
+            "en": "Additional ZVK contribution, mandatory (EBZ)",
+            "de": "Zus. Umlage ZVK, pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "720",
+        "isSalary": true,
+        "l11n": {
+            "en": "Collectively agreed one-off payment ÖD",
+            "de": "Tarifliche Einmalzahlung ÖD"
+        }
+    },
+    {
+        "name": "720",
+        "isSalary": true,
+        "l11n": {
+            "en": "Collectively agreed one-off payment ÖD",
+            "de": "Tarifliche Einmalzahlung ÖD"
+        }
+    },
+    {
+        "name": "721",
+        "l11n": {
+            "en": "VBLU AG share, lump sum",
+            "de": "VBLU AG-Anteil, pausch."
+        }
+    },
+    {
+        "name": "722",
+        "l11n": {
+            "en": "VBLU AG share, mandatory",
+            "de": "VBLU AG-Anteil, pflichtig"
+        }
+    },
+    {
+        "name": "723",
+        "l11n": {
+            "en": "VBLU AG share, mandatory (EBZ)",
+            "de": "VBLU AG-Anteil, pflichtig (EBZ)"
+        }
+    },
+    {
+        "name": "721",
+        "l11n": {
+            "en": "Eligibility for reimbursement under the AAG",
+            "de": "Erstattungsfähigkeit nach dem AAG"
+        }
+    },
+    {
+        "name": "722",
+        "l11n": {
+            "en": "Eligibility for reimbursement under the AAG",
+            "de": "Erstattungsfähigkeit nach dem AAG"
+        }
+    },
+    {
+        "name": "723",
+        "l11n": {
+            "en": "Eligibility for reimbursement under the AAG",
+            "de": "Erstattungsfähigkeit nach dem AAG"
+        }
+    },
+    {
+        "name": "724",
+        "l11n": {
+            "en": "VBLU AG share, free",
+            "de": "VBLU AG-Anteil, frei"
+        }
+    },
+    {
+        "name": "725",
+        "l11n": {
+            "en": "Sick pay supplement",
+            "de": "Krankengeldzuschuss"
+        }
+    },
+    {
+        "name": "726",
+        "l11n": {
+            "en": "Fictitious ZVK remuneration",
+            "de": "Fiktives ZVK-Entgelt"
+        }
+    },
+    {
+        "name": "727",
+        "l11n": {
+            "en": "Fictitious KGZ supplement",
+            "de": "Fiktiver Aufschlag KGZ"
+        }
+    },
+    {
+        "name": "728",
+        "l11n": {
+            "en": "Deviating collectively agreed remuneration KGZ",
+            "de": "Abweichendes tarifliches Entgelt KGZ"
+        }
+    },
+    {
+        "name": "728",
+        "l11n": {
+            "en": "Differing collectively agreed remuneration KGZ",
+            "de": "Abweichendes tarifliches Entgelt KGZ"
+        }
+    },
+    {
+        "name": "730",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants Special annual payment",
+            "de": "Beamte Sonderzahlung jährlich"
+        }
+    },
+    {
+        "name": "731",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants Sunday/holiday bonus",
+            "de": "Beamte Zulage Sonn-/Feiertage"
+        }
+    },
+    {
+        "name": "732",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servant allowance Saturday Easter/Pentecost",
+            "de": "Beamte Zulage Samstag Ostern/Pfingsten"
+        }
+    },
+    {
+        "name": "733",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants allowance Saturday",
+            "de": "Beamte Zulage Samstag"
+        }
+    },
+    {
+        "name": "734",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants (FW) Saturday allowance",
+            "de": "Beamte (FW) Zulage Samstag"
+        }
+    },
+    {
+        "name": "734",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants (FW) Saturday allowance",
+            "de": "Beamte (FW) Zulage Samstag"
+        }
+    },
+    {
+        "name": "735",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants Allowance from 8 p.m.",
+            "de": "Beamte Zulage ab 20 Uhr"
+        }
+    },
+    {
+        "name": "736",
+        "isSalary": true,
+        "l11n": {
+            "en": "Officials Overtime allowance",
+            "de": "Beamte Mehrarbeitsvergütung"
+        }
+    },
+    {
+        "name": "737",
+        "isSalary": true,
+        "l11n": {
+            "en": "Civil servants Special monthly payment",
+            "de": "Beamte Sonderzahlung monatlich"
+        }
+    },
+    {
+        "name": "738",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance bonus for civil servants",
+            "de": "Leistungsprämie Beamte"
+        }
+    },
+    {
+        "name": "739",
+        "isSalary": true,
+        "l11n": {
+            "en": "Compensation for municipal council",
+            "de": "Entschädigung Gemeinderat"
+        }
+    },
+    {
+        "name": "740",
+        "isSalary": true,
+        "l11n": {
+            "en": "Remuneration of civil servants",
+            "de": "Dienstbezüge Beamte"
+        }
+    },
+    {
+        "name": "741",
+        "isSalary": true,
+        "l11n": {
+            "en": "Partial retirement supplement",
+            "de": "Altersteilzeitzuschlag"
+        }
+    },
+    {
+        "name": "750",
+        "l11n": {
+            "en": "Diakonie EKD Poss. dyn.",
+            "de": "Diakonie EKD Besitz. dyn."
+        }
+    },
+    {
+        "name": "751",
+        "l11n": {
+            "en": "Diakonie Bayern Poss. general",
+            "de": "Diakonie Bayern Besitz. allg"
+        }
+    },
+    {
+        "name": "752",
+        "l11n": {
+            "en": "Diakonie Bayern Property. Child",
+            "de": "Diakonie Bayern Besitz. Kind"
+        }
+    },
+    {
+        "name": "770",
+        "isSalary": true,
+        "l11n": {
+            "en": "Night allowance",
+            "de": "Nachtzuschlag"
+        }
+    },
+    {
+        "name": "771",
+        "isSalary": true,
+        "l11n": {
+            "en": "Airport ramp service allowance",
+            "de": "Zulage Flughafen Rampendienst"
+        }
+    },
+    {
+        "name": "772",
+        "isSalary": true,
+        "l11n": {
+            "en": "Saturday supplement",
+            "de": "Samstagszuschlag"
+        }
+    },
+    {
+        "name": "773",
+        "isSalary": true,
+        "l11n": {
+            "en": "hardship supplement",
+            "de": "Erschwerniszuschlag"
+        }
+    },
+    {
+        "name": "774",
+        "isSalary": true,
+        "l11n": {
+            "en": "Sunday supplement",
+            "de": "Sonntagszuschlag"
+        }
+    },
+    {
+        "name": "775",
+        "isSalary": true,
+        "l11n": {
+            "en": "On-call hours",
+            "de": "Rufbereitschaft Stunden"
+        }
+    },
+    {
+        "name": "776",
+        "isSalary": true,
+        "l11n": {
+            "en": "24/31/12 supplement",
+            "de": "Zuschlag 24./31.12"
+        }
+    },
+    {
+        "name": "777",
+        "isSalary": true,
+        "l11n": {
+            "en": "On-call duty",
+            "de": "Rufbereitschaft"
+        }
+    },
+    {
+        "name": "778",
+        "isSalary": true,
+        "l11n": {
+            "en": "Public holiday supplement",
+            "de": "Feiertagszuschlag"
+        }
+    },
+    {
+        "name": "779",
+        "isSalary": true,
+        "l11n": {
+            "en": "Public holiday supplement 135 %",
+            "de": "Feiertagszuschlag 135 %"
+        }
+    },
+    {
+        "name": "780",
+        "isSalary": true,
+        "l11n": {
+            "en": "Compensation for working hours",
+            "de": "Ausgleich Arbeitsstunden"
+        }
+    },
+    {
+        "name": "781",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance bonus",
+            "de": "Leistungsprämie"
+        }
+    },
+    {
+        "name": "781",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance bonus",
+            "de": "Leistungsprämie"
+        }
+    },
+    {
+        "name": "782",
+        "isSalary": true,
+        "l11n": {
+            "en": "Performance bonus",
+            "de": "Leistungszulage"
+        }
+    },
+    {
+        "name": "783",
+        "l11n": {
+            "en": "Fictitious ZV-Ent.MuschG",
+            "de": "Fiktiv.ZV-Ent.MuschG"
+        }
+    },
+    {
+        "name": "784",
+        "l11n": {
+            "en": "Fictitious.ZV-Ent.MuschG",
+            "de": "Fiktiv.ZV-Ent.MuschG"
+        }
+    },
+    {
+        "name": "790",
+        "l11n": {
+            "en": "Intermediate/final stage TVöD",
+            "de": "Zwischen-/Endstufe TVöD"
+        }
+    },
+    {
+        "name": "791",
+        "isSalary": true,
+        "l11n": {
+            "en": "Structural compensation TVöD",
+            "de": "Strukturausgleich TVöD"
+        }
+    },
+    {
+        "name": "839",
+        "isSalary": true,
+        "l11n": {
+            "en": "Job ticket p.v. 25%",
+            "de": "Jobticket p.v. 25%"
+        }
+    },
+    {
+        "name": "840",
+        "isSalary": true,
+        "l11n": {
+            "en": "Travel allowance p.v. 25%",
+            "de": "Fahrgeld p.v. 25%"
+        }
+    },
+    {
+        "name": "841",
+        "l11n": {
+            "en": "Agreement. Charging p.p.",
+            "de": "Übereig. Ladevorr. p.St"
+        }
+    },
+    {
+        "name": "842",
+        "l11n": {
+            "en": "AG supplement Charging p. p. P. p. p.",
+            "de": "AG-Zusch. Ladevor. P. St."
+        }
+    },
+    {
+        "name": "843",
+        "isSalary": true,
+        "l11n": {
+            "en": "Net benefit in kind",
+            "de": "Netto Sachzuwendung"
+        }
+    },
+    {
+        "name": "844",
+        "isSalary": true,
+        "l11n": {
+            "en": "Transfer. SV AN from benefit in kind",
+            "de": "Übern. SV AN aus Sachz."
+        }
+    },
+    {
+        "name": "845",
+        "isSalary": true,
+        "l11n": {
+            "en": "Transfer Tax from SI employee",
+            "de": "Übern. Steuer aus SV AN"
+        }
+    },
+    {
+        "name": "846",
+        "isSalary": true,
+        "l11n": {
+            "en": "Recreational allowances taxed at a flat rate, SI free",
+            "de": "Erholungsbeihilfen pauschal versteuert, SV frei"
+        }
+    },
+    {
+        "name": "847",
+        "isSalary": true,
+        "l11n": {
+            "en": "Benefit in kind, taxed at a flat rate, SV free",
+            "de": "Sachzuwendung, pauschal versteuert, SV frei"
+        }
+    },
+    {
+        "name": "848",
+        "l11n": {
+            "en": "Interest advantage loan",
+            "de": "Zinsvorteil Darlehen"
+        }
+    },
+    {
+        "name": "849",
+        "isSalary": true,
+        "l11n": {
+            "en": "Benefit in kind, taxed at a flat rate",
+            "de": "Sachzuwendung, pauschal versteuert"
+        }
+    },
+    {
+        "name": "849",
+        "isSalary": true,
+        "l11n": {
+            "en": "Benefit in kind, taxed at a flat rate",
+            "de": "Sachzuwendung, pauschal versteuert"
+        }
+    },
+    {
+        "name": "850",
+        "isSalary": true,
+        "l11n": {
+            "en": "Training allowance",
+            "de": "Ausbildungsvergütung"
+        }
+    },
+    {
+        "name": "852",
+        "isSalary": true,
+        "l11n": {
+            "en": "Travel allowance - subject to tax and social security contributions",
+            "de": "Fahrgeld - steuer- und sv-pflichtig"
+        }
+    },
+    {
+        "name": "853",
+        "isSalary": true,
+        "l11n": {
+            "en": "Car allowance - taxed at a flat rate",
+            "de": "Fahrgeld - pauschal versteuert"
+        }
+    },
+    {
+        "name": "854",
+        "isSalary": true,
+        "l11n": {
+            "en": "Travel allowance - tax and social security exempt",
+            "de": "Fahrgeld - steuer- und sv-frei"
+        }
+    },
+    {
+        "name": "855",
+        "isSalary": true,
+        "l11n": {
+            "en": "Fixed salary",
+            "de": "Festlohn"
+        }
+    },
+    {
+        "name": "856",
+        "isSalary": true,
+        "l11n": {
+            "en": "Birth allowance",
+            "de": "Geburtsbeihilfe"
+        }
+    },
+    {
+        "name": "857",
+        "isSalary": true,
+        "l11n": {
+            "en": "Marriage allowance",
+            "de": "Heiratsbeihilfe"
+        }
+    },
+    {
+        "name": "858",
+        "isSalary": true,
+        "l11n": {
+            "en": "Anniversary bonus",
+            "de": "Jubiläumsgratifikation"
+        }
+    },
+    {
+        "name": "859",
+        "isSalary": true,
+        "l11n": {
+            "en": "Maternity allowance",
+            "de": "Mutterschaftsgeld-Zuschuss"
+        }
+    },
+    {
+        "name": "860",
+        "isSalary": true,
+        "l11n": {
+            "en": "Bonus/commission EBZ",
+            "de": "Prämie/Provision EBZ"
+        }
+    },
+    {
+        "name": "861",
+        "isSalary": true,
+        "l11n": {
+            "en": "Bonus/commission ongoing",
+            "de": "Prämie/Provision laufend"
+        }
+    },
+    {
+        "name": "862",
+        "l11n": {
+            "en": "Car benefit in kind - taxed at a flat rate",
+            "de": "Sachbezug Pkw - pauschal versteuert"
+        }
+    },
+    {
+        "name": "863",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "bonus",
+            "de": "Tantieme"
+        }
+    },
+    {
+        "name": "864",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Vacation pay",
+            "de": "Urlaubsgeld"
+        }
+    },
+    {
+        "name": "865",
+        "l11n": {
+            "en": "VWL AG share",
+            "de": "VWL AG-Anteil"
+        }
+    },
+    {
+        "name": "866",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Job ticket - tax and social security exempt",
+            "de": "Jobticket - steuer- und sv-frei"
+        }
+    },
+    {
+        "name": "867",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Job ticket - taxed at a flat rate",
+            "de": "Jobticket - pauschal versteuert"
+        }
+    },
+    {
+        "name": "868",
+        "isSalary": true,
+        "isRegular": true,
+        "l11n": {
+            "en": "Job ticket - taxable and subject to social security contributions",
+            "de": "Jobticket - steuer- und sv-pflichtig"
+        }
+    },
+    {
+        "name": "869",
+        "isSalary": true,
+        "l11n": {
+            "en": "Non-cash benefit - tax- and SI-free",
+            "de": "Sachbezug - steuer- und sv-frei"
+        }
+    },
+    {
+        "name": "870",
+        "l11n": {
+            "en": "Special lump sum / SI ongoing",
+            "de": "Besondere Pauschalierung / SV laufend"
+        }
+    },
+    {
+        "name": "871",
+        "l11n": {
+            "en": "Special lump sum / SI annual",
+            "de": "Besondere Pauschalierung / SV jährlich"
+        }
+    },
+    {
+        "name": "872",
+        "l11n": {
+            "en": "Special flat rate / SV free",
+            "de": "Besondere Pauschalierung / SV frei"
+        }
+    },
+    {
+        "name": "873",
+        "l11n": {
+            "en": "Private journeys",
+            "de": "Privatfahrten"
+        }
+    },
+    {
+        "name": "874",
+        "l11n": {
+            "en": "Journeys between home/work - taxable and subject to social security contributions",
+            "de": "Fahrten zw. Whg/Arbeit - steuer - und sv-pflichtig"
+        }
+    },
+    {
+        "name": "875",
+        "isSalary": true,
+        "l11n": {
+            "en": "Journeys between home/work - taxed at a flat rate",
+            "de": "Fahrten zw. Wohnung/Arbeit - pauschal versteuert"
+        }
+    },
+    {
+        "name": "876",
+        "isSalary": true,
+        "l11n": {
+            "en": "Family home trips",
+            "de": "Familienheimfahrten"
+        }
+    },
+    {
+        "name": "877",
+        "isSalary": true,
+        "l11n": {
+            "en": "Annual overtime allowance",
+            "de": "Jährl. Überstundenverg."
+        }
+    },
+    {
+        "name": "878",
+        "isSalary": true,
+        "l11n": {
+            "en": "Travel expenses away from home",
+            "de": "Fahrtkosten Auswärtstätigkeit"
+        }
+    },
+    {
+        "name": "880",
+        "isSalary": true,
+        "l11n": {
+            "en": "Kindergarten allowance",
+            "de": "Kindergartenzuschuss"
+        }
+    },
+    {
+        "name": "881",
+        "l11n": {
+            "en": "Additional payment Company w. taxable",
+            "de": "Zuzahl. Firmenw. stpfl."
+        }
+    },
+    {
+        "name": "882",
+        "l11n": {
+            "en": "Co-pay. Company allowance p.p.",
+            "de": "Zuzahl. Firmenw. p.St."
+        }
+    },
+    {
+        "name": "885",
+        "l11n": {
+            "en": "Employment promotion allowance",
+            "de": "Arbeitsförderungsgeld"
+        }
+    },
+    {
+        "name": "888",
+        "l11n": {
+            "en": "Assumed flat-rate taxes",
+            "de": "Übernommene pauschale Steuern"
+        }
+    },
+    {
+        "name": "889",
+        "l11n": {
+            "en": "Maternity protection pay Amount",
+            "de": "Mutterschutzlohn Betrag"
+        }
+    },
+    {
+        "name": "890",
+        "l11n": {
+            "en": "bAV AG-incurred ST-pfl",
+            "de": "bAV AG-Zus.lfd. ST-pfl"
+        }
+    },
+    {
+        "name": "891",
+        "l11n": {
+            "en": "bAV AG-income current ST-free",
+            "de": "bAV AG-Zus. Lfd. ST-frei"
+        }
+    },
+    {
+        "name": "892",
+        "l11n": {
+            "en": "bAV AG add. current SI-liable",
+            "de": "bAV AG-Zus. lfd. SV-pfl"
+        }
+    },
+    {
+        "name": "893",
+        "l11n": {
+            "en": "bAV AG current ST-pau",
+            "de": "bAV AG lfd. ST-pau"
+        }
+    },
+    {
+        "name": "895",
+        "l11n": {
+            "en": "bAV AG-add. current from 1981",
+            "de": "bAV AG-Zus. Lfd. v. 1981"
+        }
+    },
+    {
+        "name": "896",
+        "l11n": {
+            "en": "bAV AG-add. EBZ St-pfl",
+            "de": "bAV AG-Zus. EBZ St-pfl"
+        }
+    },
+    {
+        "name": "897",
+        "l11n": {
+            "en": "bAV AG-add. EBZ ST-free",
+            "de": "bAV AG-Zus. EBZ ST-frei"
+        }
+    },
+    {
+        "name": "898",
+        "l11n": {
+            "en": "bAV AG-add. EBZ SV-pfl",
+            "de": "bAV AG-Zus. EBZ SV-pfl"
+        }
+    },
+    {
+        "name": "899",
+        "l11n": {
+            "en": "bAV AG-add. EBZ ST-pau",
+            "de": "bAV AG-Zus. EBZ ST-pau"
+        }
+    },
+    {
+        "name": "900",
+        "l11n": {
+            "en": "Betr AV AG ongoing ST-pfl",
+            "de": "Betr AV AG lfd. ST-pfl"
+        }
+    },
+    {
+        "name": "901",
+        "l11n": {
+            "en": "Betr AV AG current ST-free",
+            "de": "Betr AV AG lfd. ST-frei"
+        }
+    },
+    {
+        "name": "902",
+        "l11n": {
+            "en": "Employee AV AG current ST-pau",
+            "de": "Betr AV AG lfd. ST-pau"
+        }
+    },
+    {
+        "name": "903",
+        "l11n": {
+            "en": "Employee AV AG ongoing SV-pfl",
+            "de": "Betr AV AG lfd. SV-pfl"
+        }
+    },
+    {
+        "name": "905",
+        "l11n": {
+            "en": "AV AG EBZ ST-pfl",
+            "de": "Betr AV AG EBZ ST-pfl"
+        }
+    },
+    {
+        "name": "906",
+        "l11n": {
+            "en": "Betr AV AG EBZ ST-free",
+            "de": "Betr AV AG EBZ ST-frei"
+        }
+    },
+    {
+        "name": "907",
+        "l11n": {
+            "en": "Betr AV AG EBZ ST-pau",
+            "de": "Betr AV AG EBZ ST-pau"
+        }
+    },
+    {
+        "name": "908",
+        "l11n": {
+            "en": "Employee AV AG EBZ SV-pfl",
+            "de": "Betr AV AG EBZ SV-pfl"
+        }
+    },
+    {
+        "name": "910",
+        "l11n": {
+            "en": "Employee AV employee ongoing ST-pfl",
+            "de": "Betr AV AN lfd. ST-pfl"
+        }
+    },
+    {
+        "name": "911",
+        "l11n": {
+            "en": "Employee's current AV ST-free",
+            "de": "Betr AV AN lfd. ST-frei"
+        }
+    },
+    {
+        "name": "912",
+        "l11n": {
+            "en": "Employee's current AV employee SV-pfl",
+            "de": "Betr AV AN lfd. SV-pfl"
+        }
+    },
+    {
+        "name": "913",
+        "l11n": {
+            "en": "Employee's current AV-pau",
+            "de": "Betr AV AN lfd. ST-pau"
+        }
+    },
+    {
+        "name": "914",
+        "l11n": {
+            "en": "Current AV employee salary",
+            "de": "Betr AV AN lfd. Geh.Ver"
+        }
+    },
+    {
+        "name": "915",
+        "l11n": {
+            "en": "Current payroll employee from 1981",
+            "de": "Betr AV AN lfd.v.1981"
+        }
+    },
+    {
+        "name": "920",
+        "l11n": {
+            "en": "Current AV AN EBZ ST-pfl",
+            "de": "Betr AV AN EBZ ST-pfl"
+        }
+    },
+    {
+        "name": "921",
+        "l11n": {
+            "en": "Employee AV EBZ ST-free",
+            "de": "Betr AV AN EBZ ST-frei"
+        }
+    },
+    {
+        "name": "922",
+        "l11n": {
+            "en": "Employee AV EBZ SV-pfl",
+            "de": "Betr AV AN EBZ SV-pfl"
+        }
+    },
+    {
+        "name": "923",
+        "l11n": {
+            "en": "Employee AV EBZ ST-pau",
+            "de": "Betr AV AN EBZ ST-pau"
+        }
+    },
+    {
+        "name": "924",
+        "l11n": {
+            "en": "AV AV AN EBZ Geh.Ver",
+            "de": "Betr AV AN EBZ Geh.Ver"
+        }
+    },
+    {
+        "name": "928",
+        "l11n": {
+            "en": "RG-contribution Hamburg current",
+            "de": "RG-Beitrag Hamburg lfd."
+        }
+    },
+    {
+        "name": "929",
+        "l11n": {
+            "en": "RG contribution Hamburg EBZ",
+            "de": "RG-Beitrag Hamburg EBZ"
+        }
+    },
+    {
+        "name": "930",
+        "l11n": {
+            "en": "ZVK AG contribution current taxable",
+            "de": "ZVK AG-Beitrag lfd. steuerpflichtig"
+        }
+    },
+    {
+        "name": "931",
+        "l11n": {
+            "en": "ZVK AG contribution current tax-exempt",
+            "de": "ZVK AG-Beitrag lfd. steuerfrei"
+        }
+    },
+    {
+        "name": "932",
+        "l11n": {
+            "en": "ZVK AG contribution current lump sum",
+            "de": "ZVK AG-Beitrag lfd. pauschal"
+        }
+    },
+    {
+        "name": "933",
+        "l11n": {
+            "en": "ZVK AG contribution EBZ taxable",
+            "de": "ZVK AG-Beitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "934",
+        "l11n": {
+            "en": "ZVK AG contribution EBZ tax-free",
+            "de": "ZVK AG-Beitrag EBZ steuerfrei"
+        }
+    },
+    {
+        "name": "935",
+        "l11n": {
+            "en": "ZVK AG contribution EBZ lump sum",
+            "de": "ZVK AG-Beitrag EBZ pauschal"
+        }
+    },
+    {
+        "name": "936",
+        "l11n": {
+            "en": "ZVK employee contribution ongoing taxable",
+            "de": "ZVK AN-Beitrag lfd. steuerpflichtig"
+        }
+    },
+    {
+        "name": "937",
+        "l11n": {
+            "en": "ZVK employee contribution ongoing tax-free",
+            "de": "ZVK AN-Beitrag lfd. steuerfrei"
+        }
+    },
+    {
+        "name": "937",
+        "l11n": {
+            "en": "ZVK employee contribution ongoing tax-free",
+            "de": "ZVK AN-Beitrag lfd. steuerfrei"
+        }
+    },
+    {
+        "name": "938",
+        "l11n": {
+            "en": "ZVK employee contribution ongoing lump sum",
+            "de": "ZVK AN-Beitrag lfd. pauschal"
+        }
+    },
+    {
+        "name": "939",
+        "l11n": {
+            "en": "ZVK employee ongoing salary waiver",
+            "de": "ZVK AN lfd. Gehaltsverzicht"
+        }
+    },
+    {
+        "name": "940",
+        "l11n": {
+            "en": "ZVK employee contribution EBZ taxable",
+            "de": "ZVK AN-Beitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "941",
+        "l11n": {
+            "en": "ZVK employee contribution EBZ tax-free",
+            "de": "ZVK AN-Beitrag EBZ steuerfrei"
+        }
+    },
+    {
+        "name": "942",
+        "l11n": {
+            "en": "ZVK employee contribution EBZ lump sum",
+            "de": "ZVK AN-Beitrag EBZ pauschal"
+        }
+    },
+    {
+        "name": "942",
+        "l11n": {
+            "en": "ZVK employee contribution EBZ lump sum",
+            "de": "ZVK AN-Beitrag EBZ pauschal"
+        }
+    },
+    {
+        "name": "943",
+        "l11n": {
+            "en": "ZVK AN EBZ salary waiver",
+            "de": "ZVK AN EBZ Gehaltsverzicht"
+        }
+    },
+    {
+        "name": "944",
+        "l11n": {
+            "en": "ZVK additional contribution ongoing taxable",
+            "de": "ZVK zus. Beitrag lfd. steuerpflichtig"
+        }
+    },
+    {
+        "name": "945",
+        "l11n": {
+            "en": "ZVK additional contribution ongoing tax-free",
+            "de": "ZVK zus. Beitrag lfd. steuerfrei"
+        }
+    },
+    {
+        "name": "946",
+        "l11n": {
+            "en": "ZVK additional ongoing contribution lump sum",
+            "de": "ZVK zus. Beitrag lfd. pauschal"
+        }
+    },
+    {
+        "name": "947",
+        "l11n": {
+            "en": "ZVK additional contribution EBZ taxable",
+            "de": "ZVK zus. Beitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "947",
+        "l11n": {
+            "en": "ZVK additional EBZ contribution taxable",
+            "de": "ZVK zus. Beitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "948",
+        "l11n": {
+            "en": "ZVK additional EBZ contribution tax-free",
+            "de": "ZVK zus. Beitrag EBZ steuerfrei"
+        }
+    },
+    {
+        "name": "949",
+        "l11n": {
+            "en": "ZVK additional EBZ contribution lump sum",
+            "de": "ZVK zus. Beitrag EBZ pauschal"
+        }
+    },
+    {
+        "name": "950",
+        "l11n": {
+            "en": "Reorganization allowance ongoing taxable",
+            "de": "Sanierungsgeld lfd. steuerpflichtig"
+        }
+    },
+    {
+        "name": "951",
+        "l11n": {
+            "en": "Remediation allowance ongoing lump sum",
+            "de": "Sanierungsgeld lfd. pauschal"
+        }
+    },
+    {
+        "name": "952",
+        "l11n": {
+            "en": "EBZ restructuring allowance taxable",
+            "de": "Sanierungsgeld EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "952",
+        "l11n": {
+            "en": "EBZ taxable restructuring allowance",
+            "de": "Sanierungsgeld EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "953",
+        "l11n": {
+            "en": "EBZ restructuring allowance lump sum",
+            "de": "Sanierungsgeld EBZ pauschal"
+        }
+    },
+    {
+        "name": "954",
+        "l11n": {
+            "en": "Additional contribution ongoing taxable",
+            "de": "Zusatzbeitrag lfd. steuerpflichtig"
+        }
+    },
+    {
+        "name": "955",
+        "l11n": {
+            "en": "Additional ongoing contribution tax-free",
+            "de": "Zusatzbeitrag lfd. steuerfrei"
+        }
+    },
+    {
+        "name": "956",
+        "l11n": {
+            "en": "Additional ongoing contribution lump sum",
+            "de": "Zusatzbeitrag lfd. pauschal"
+        }
+    },
+    {
+        "name": "957",
+        "l11n": {
+            "en": "Additional contribution EBZ taxable",
+            "de": "Zusatzbeitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "957",
+        "l11n": {
+            "en": "Additional EBZ contribution taxable",
+            "de": "Zusatzbeitrag EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "958",
+        "l11n": {
+            "en": "Additional EBZ contribution tax-free",
+            "de": "Zusatzbeitrag EBZ steuerfrei"
+        }
+    },
+    {
+        "name": "959",
+        "l11n": {
+            "en": "Additional EBZ contribution lump sum",
+            "de": "Zusatzbeitrag EBZ pauschal"
+        }
+    },
+    {
+        "name": "960",
+        "l11n": {
+            "en": "Reorganization allowance ongoing lump sum subject to SI",
+            "de": "Sanierungsgeld lfd. pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "961",
+        "l11n": {
+            "en": "EBZ restructuring allowance lump sum subject to social security contributions",
+            "de": "Sanierungsgeld EBZ pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "962",
+        "l11n": {
+            "en": "ZVK AG contribution ongoing lump sum subject to social security contributions",
+            "de": "ZVK AG-Beitrag lfd. pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "962",
+        "l11n": {
+            "en": "ZVK AG contribution ongoing lump sum subject to SI",
+            "de": "ZVK AG-Beitrag lfd. pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "963",
+        "l11n": {
+            "en": "ZVK AG contribution EBZ lump sum subject to SI",
+            "de": "ZVK AG-Beitrag EBZ pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "964",
+        "l11n": {
+            "en": "ZVK employee contribution EBZ lump sum subject to SI",
+            "de": "ZVK AN-Beitrag EBZ pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "965",
+        "l11n": {
+            "en": "ZVK additional contribution ongoing lump sum SV-liable",
+            "de": "ZVK zus. Beitrag lfd. pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "966",
+        "l11n": {
+            "en": "ZVK additional EBZ contribution subject to flat-rate social security contributions",
+            "de": "ZVK zus. Beitrag EBZ pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "967",
+        "l11n": {
+            "en": "Additional contribution ongoing flat-rate SV-liable",
+            "de": "Zusatzbeitrag lfd. pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "968",
+        "l11n": {
+            "en": "Additional EBZ contribution subject to flat-rate social security contributions",
+            "de": "Zusatzbeitrag EBZ pauschal SV-pflichtig"
+        }
+    },
+    {
+        "name": "969",
+        "l11n": {
+            "en": "ZVK AG contribution, ongoing tax-exempt/liable to tax",
+            "de": "ZVK AG-Beitrag, laufend steuerfrei/SV-pflichtig"
+        }
+    },
+    {
+        "name": "970",
+        "l11n": {
+            "en": "ZVK AG contribution, EBZ tax-free/liable to tax",
+            "de": "ZVK AG-Beitrag, EBZ steuerfrei/SV-pflichtig"
+        }
+    },
+    {
+        "name": "971",
+        "l11n": {
+            "en": "ZVK AN contribution, ongoing tax-exempt/liable to tax",
+            "de": "ZVK AN-Beitrag, laufend steuerfrei/SV-pflichtig"
+        }
+    },
+    {
+        "name": "972",
+        "l11n": {
+            "en": "ZVK AN contribution, EBZ tax-free/liable to SI",
+            "de": "ZVK AN-Beitrag, EBZ steuerfrei/SV-pflichtig"
+        }
+    },
+    {
+        "name": "973",
+        "l11n": {
+            "en": "Additional contribution, current, subject to SI",
+            "de": "Zusatzbeitrag laufend SV-pflichtig"
+        }
+    },
+    {
+        "name": "974",
+        "l11n": {
+            "en": "Additional EBZ contribution subject to SI",
+            "de": "Zusatzbeitrag EBZ SV-pflichtig"
+        }
+    },
+    {
+        "name": "975",
+        "l11n": {
+            "en": "Additional employee contribution ongoing taxable",
+            "de": "Zus. Beitrag AN laufend steuerpflichtig"
+        }
+    },
+    {
+        "name": "976",
+        "l11n": {
+            "en": "Additional employee contribution ongoing tax-free",
+            "de": "Zus. Beitrag AN laufend steuerfrei"
+        }
+    },
+    {
+        "name": "977",
+        "l11n": {
+            "en": "Additional employee contribution ongoing lump sum/liable for social security contributions",
+            "de": "Zus. Beitrag AN laufend pauschal/SV-pflichtig"
+        }
+    },
+    {
+        "name": "978",
+        "l11n": {
+            "en": "Additional employee contribution subject to SI on an ongoing basis",
+            "de": "Zus. Beitrag AN laufend SV-pflichtig"
+        }
+    },
+    {
+        "name": "979",
+        "l11n": {
+            "en": "Additional employee contribution EBZ taxable",
+            "de": "Zus. Beitrag AN EBZ steuerpflichtig"
+        }
+    },
+    {
+        "name": "980",
+        "l11n": {
+            "en": "Additional employee EBZ contribution tax-free",
+            "de": "Zus. Beitrag AN EBZ steuerfrei"
+        }
+    },
+    {
+        "name": "981",
+        "l11n": {
+            "en": "Additional employee EBZ contribution flat rate",
+            "de": "Zus. Beitrag AN EBZ pauschal"
+        }
+    },
+    {
+        "name": "982",
+        "l11n": {
+            "en": "Additional employee EBZ contribution subject to SI",
+            "de": "Zus. Beitrag AN EBZ SV-pflichtig"
+        }
+    },
+    {
+        "name": "983",
+        "l11n": {
+            "en": "Additional contribution AN EBZ lump sum / subject to SI",
+            "de": "Zus. Beitrag AN EBZ pauschal/SV-pflichtig"
+        }
+    },
+    {
+        "name": "984",
+        "l11n": {
+            "en": "ZVK additional ongoing contribution subject to SI",
+            "de": "ZVK zus. Beitrag laufend SV-pflichtig"
+        }
+    },
+    {
+        "name": "985",
+        "l11n": {
+            "en": "ZVK additional EBZ contribution subject to SI",
+            "de": "ZVK zus. Beitrag EBZ SV-pflichtig"
+        }
+    },
+    {
+        "name": "986",
+        "l11n": {
+            "en": "General ZVK contribution tax-free",
+            "de": "Allg. Umlage ZVK st-frei"
+        }
+    },
+    {
+        "name": "987",
+        "l11n": {
+            "en": "General ZVK EBZ contribution tax-free",
+            "de": "Allg. Umlage ZVK EBZ st-frei"
+        }
+    },
+    {
+        "name": "988",
+        "l11n": {
+            "en": "Additional ZVK contribution st-free",
+            "de": "Zus. Umlage ZVK st-frei"
+        }
+    },
+    {
+        "name": "989",
+        "l11n": {
+            "en": "Additional ZVK EBZ contribution tax-free",
+            "de": "Zus. Umlage ZVK EBZ st-frei"
+        }
+    },
+    {
+        "name": "990",
+        "l11n": {
+            "en": "Settlement of general ZVK contribution",
+            "de": "Ausgl. Allg. Umlage ZVK"
+        }
+    },
+    {
+        "name": "991",
+        "l11n": {
+            "en": "Compensation for additional ZVK contribution",
+            "de": "Ausgl. Zus. Umlage ZVK"
+        }
+    }
+]

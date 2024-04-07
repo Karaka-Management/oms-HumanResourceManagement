@@ -308,6 +308,115 @@
             }
         }
     },
+    "hr_salary_type": {
+        "name": "hr_salary_type",
+        "fields": {
+            "hr_salary_type_id": {
+                "name": "hr_salary_type_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_salary_type_name": {
+                "name": "hr_salary_type_name",
+                "type": "VARCHAR(64)",
+                "null": false,
+                "unique": true
+            },
+            "hr_salary_type_salary": {
+                "description": "Not all salary types are considered salary by the employee",
+                "name": "hr_salary_type_salary",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "hr_salary_type_regular": {
+                "description": "Not all salary types are regular payments. Can be overwritten by salary",
+                "name": "hr_salary_type_regular",
+                "type": "TINYINT(1)",
+                "null": false
+            }
+        }
+    },
+    "hr_salary_type_l11n": {
+        "name": "hr_salary_type_l11n",
+        "fields": {
+            "hr_salary_type_l11n_id": {
+                "name": "hr_salary_type_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_salary_type_l11n_title": {
+                "name": "hr_salary_type_l11n_title",
+                "type": "VARCHAR(64)",
+                "null": false
+            },
+            "hr_salary_type_l11n_type": {
+                "name": "hr_salary_type_l11n_type",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_salary_type",
+                "foreignKey": "hr_salary_type_id"
+            },
+            "hr_salary_type_l11n_language": {
+                "name": "hr_salary_type_l11n_language",
+                "type": "VARCHAR(2)",
+                "default": null,
+                "null": true,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    },
+    "hr_salary": {
+        "name": "hr_salary",
+        "fields": {
+            "hr_salary_id": {
+                "name": "hr_salary_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "hr_salary_description": {
+                "name": "hr_salary_description",
+                "type": "TEXT",
+                "null": false
+            },
+            "hr_salary_staff": {
+                "name": "hr_salary_staff",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_staff",
+                "foreignKey": "hr_staff_id"
+            },
+            "hr_salary_amount": {
+                "name": "hr_salary_amount",
+                "type": "BIGINT",
+                "null": false
+            },
+            "hr_salary_type": {
+                "name": "hr_salary_type",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "hr_salary_type",
+                "foreignKey": "hr_salary_type_id"
+            },
+            "hr_salary_date": {
+                "name": "hr_salary_date",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            },
+            "hr_salary_regular": {
+                "name": "hr_salary_regular",
+                "type": "TINYINT(1)",
+                "null": false
+            }
+        }
+    },
     "hr_position": {
         "name": "hr_position",
         "fields": {

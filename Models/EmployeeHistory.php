@@ -73,6 +73,9 @@ class EmployeeHistory implements \JsonSerializable
      */
     public Position $position;
 
+    /** @todo Implement */
+    public float $fte = 1.0;
+
     /**
      * Start date
      *

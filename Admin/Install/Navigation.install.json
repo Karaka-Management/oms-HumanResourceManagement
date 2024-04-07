@@ -74,24 +74,7 @@
                 "from": "HumanResourceManagement",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1002401001,
-                "children": [
-                    {
-                        "id": 1002403101,
-                        "pid": "/humanresource/department",
-                        "type": 3,
-                        "subtype": 1,
-                        "name": "List",
-                        "uri": "{/base}/humanresource/department/list?{?}",
-                        "target": "self",
-                        "icon": null,
-                        "order": 1,
-                        "from": "HumanResourceManagement",
-                        "permission": { "permission": 2, "category": null, "element": null },
-                        "parent": 1002403001,
-                        "children": [
-                        ]
-                    }
-                ]
+                "children": []
             },
             {
                 "id": 1002404001,
@@ -106,40 +89,7 @@
                 "from": "HumanResourceManagement",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1002401001,
-                "children": [
-                    {
-                        "id": 1002404101,
-                        "pid": "/humanresource/position",
-                        "type": 3,
-                        "subtype": 1,
-                        "name": "List",
-                        "uri": "{/base}/humanresource/position/list?{?}",
-                        "target": "self",
-                        "icon": null,
-                        "order": 1,
-                        "from": "HumanResourceManagement",
-                        "permission": { "permission": 2, "category": null, "element": null },
-                        "parent": 1002404001,
-                        "children": [
-                        ]
-                    },
-                    {
-                        "id": 1002404201,
-                        "pid": "/humanresource/position",
-                        "type": 3,
-                        "subtype": 1,
-                        "name": "Create",
-                        "uri": "{/base}/humanresource/position/create?{?}",
-                        "target": "self",
-                        "icon": null,
-                        "order": 5,
-                        "from": "HumanResourceManagement",
-                        "permission": { "permission": 4, "category": null, "element": null },
-                        "parent": 1002404001,
-                        "children": [
-                        ]
-                    }
-                ]
+                "children": []
             }
         ]
     }
