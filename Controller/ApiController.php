@@ -24,8 +24,7 @@ use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistoryMapper;
 use Modules\HumanResourceManagement\Models\PermissionCategory;
-use Modules\Media\Models\CollectionMapper;
-use Modules\Media\Models\MediaMapper;
+use Modules\Media\Models\NullCollection;
 use Modules\Media\Models\PathSettings;
 use Modules\Organization\Models\NullDepartment;
 use Modules\Organization\Models\NullPosition;
@@ -457,85 +456,39 @@ final class ApiController extends Controller
         $employee = EmployeeMapper::get()->where('id', (int) $request->getData('employee'))->execute();
         $path     = $this->createEmployeeDir($employee);
 
-        $uploaded = [];
-        if (!empty($uploadedFiles = $request->files)) {
+        $uploaded = new NullCollection();
+        if (!empty($request->files)) {
             $uploaded = $this->app->moduleManager->get('Media', 'Api')->uploadFiles(
                 names: [],
                 fileNames: [],
-                files: $uploadedFiles,
+                files: $request->files,
                 account: $request->header->account,
                 basePath: __DIR__ . '/../../../Modules/Media/Files' . $path,
                 virtualPath: $path,
                 pathSettings: PathSettings::FILE_PATH,
                 hasAccountRelation: false,
-                readContent: $request->getDataBool('parse_content') ?? false
+                readContent: $request->getDataBool('parse_content') ?? false,
+                type: $request->getDataInt('type'),
+                rel: $employee->id,
+                mapper: EmployeeMapper::class,
+                field: 'files'
             );
-
-            $collection = null;
-            foreach ($uploaded as $media) {
-                $this->createModelRelation(
-                    $request->header->account,
-                    $employee->id,
-                    $media->id,
-                    EmployeeMapper::class,
-                    'files',
-                    '',
-                    $request->getOrigin()
-                );
-
-                if ($request->hasData('type')) {
-                    $this->createModelRelation(
-                        $request->header->account,
-                        $media->id,
-                        $request->getDataInt('type'),
-                        MediaMapper::class,
-                        'types',
-                        '',
-                        $request->getOrigin()
-                    );
-                }
-
-                if ($collection === null) {
-                    /** @var \Modules\Media\Models\Collection $collection */
-                    $collection = MediaMapper::getParentCollection($path)->limit(1)->execute();
-
-                    if ($collection->id === 0) {
-                        $collection = $this->app->moduleManager->get('Media')->createRecursiveMediaCollection(
-                            $path,
-                            $request->header->account,
-                            __DIR__ . '/../../../Modules/Media/Files' . $path,
-                        );
-                    }
-                }
-
-                $this->createModelRelation(
-                    $request->header->account,
-                    $collection->id,
-                    $media->id,
-                    CollectionMapper::class,
-                    'sources',
-                    '',
-                    $request->getOrigin()
-                );
-            }
         }
 
-        $mediaFiles = $request->getDataJson('media');
-        foreach ($mediaFiles as $media) {
-            $this->createModelRelation(
+        if (!empty($media = $request->getDataJson('media'))) {
+            $this->app->moduleManager->get('Media', 'Api')->addMediaToCollectionAndModel(
                 $request->header->account,
+                $media,
                 $employee->id,
-                (int) $media,
                 EmployeeMapper::class,
                 'files',
-                '',
-                $request->getOrigin()
+                $path
             );
         }
 
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Media', 'Media added to employee.', [
-            'upload' => $uploaded,
-            'media'  => $mediaFiles,
+        $this->fillJsonResponse($request, $response, NotificationLevel::OK, '', $this->app->l11nManager->getText($response->header->l11n->language, '0', '0', 'SuccessfulAdd'), [
+            'upload' => $uploaded->sources,
+            'media'  => $media,
         ]);
     }
 
