@@ -46,4 +46,6 @@ return ['HumanResourceManagement' => [
     'Title'             => 'Titel',
     'Unit'              => 'Einheit',
     'Work'              => 'Arbeiten',
+    'Total'              => 'Gesamt',
+    'FTE'              => 'MAK',
 ]];

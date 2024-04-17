@@ -46,4 +46,6 @@ return ['HumanResourceManagement' => [
     'Title'             => 'Title',
     'Unit'              => 'Unit',
     'Work'              => 'Work',
+    'Total'              => 'Total',
+    'FTE'              => 'FTE',
 ]];

@@ -397,20 +397,20 @@ echo $this->data['nav']->render(); ?>
                                 <th colspan="6" class="hl-3"> <?= $startWeek->format('Y/m/d'); ?> - <?= $endWeek->format('Y/m/d'); ?>
                                 <th class="hl-3"><?= (int) ($busy['week'] / 3600); ?>h <?= ((int) ($busy['week'] / 60) % 60); ?>m
                             <?php
-                                    $endWeek      = $startWeek->createModify(0, 0, -1);
-                                    $startWeek    = $startWeek->createModify(0, 0, -7);
-                                    $busy['week'] = 0;
-                                endif;
+                                $endWeek      = $startWeek->createModify(0, 0, -1);
+                                $startWeek    = $startWeek->createModify(0, 0, -7);
+                                $busy['week'] = 0;
+                            endif;
                             ?>
                             <?php if ($current->getTimestamp() <= $startMonth->getTimestamp()) : ?>
                             <tr>
                                 <th colspan="6" class="hl-2"><?= $startMonth->format('Y/m/d'); ?> - <?= $endMonth->format('Y/m/d'); ?>
                                 <th class="hl-2"><?= (int) ($busy['month'] / 3600); ?>h <?= ((int) ($busy['month'] / 60) % 60); ?>m
                             <?php
-                                    $endMonth      = $startMonth->createModify(0, 0, -1);
-                                    $startMonth    = $startMonth->createModify(0, -1, 0);
-                                    $busy['month'] = 0;
-                                endif;
+                                $endMonth      = $startMonth->createModify(0, 0, -1);
+                                $startMonth    = $startMonth->createModify(0, -1, 0);
+                                $busy['month'] = 0;
+                            endif;
                             ?>
                             <?php endwhile; ?>
                         </table>

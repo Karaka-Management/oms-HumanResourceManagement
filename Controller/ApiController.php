@@ -23,6 +23,7 @@ use Modules\HumanResourceManagement\Models\EmployeeHistoryMapper;
 use Modules\HumanResourceManagement\Models\EmployeeMapper;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistory;
 use Modules\HumanResourceManagement\Models\EmployeeWorkHistoryMapper;
+use Modules\HumanResourceManagement\Models\NullEmployee;
 use Modules\HumanResourceManagement\Models\PermissionCategory;
 use Modules\Media\Models\NullCollection;
 use Modules\Media\Models\PathSettings;
@@ -274,7 +275,8 @@ final class ApiController extends Controller
      */
     private function createEmployeeHistoryFromRequest(RequestAbstract $request) : EmployeeHistory
     {
-        $history             = new EmployeeHistory($request->getDataInt('employee') ?? 0);
+        $history             = new EmployeeHistory();
+        $history->employee   = new NullEmployee($request->getDataInt('employee') ?? 0);
         $history->unit       = new NullUnit($request->getDataInt('unit') ?? 0);
         $history->department = new NullDepartment($request->getDataInt('department') ?? 0);
         $history->position   = new NullPosition($request->getDataInt('position') ?? 0);

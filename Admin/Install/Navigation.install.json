@@ -29,7 +29,7 @@
                 "children": [
                     {
                         "id": 1002402101,
-                        "pid": "/humanresource/staff",
+                        "pid": "/humanresource",
                         "type": 3,
                         "subtype": 1,
                         "name": "List",
@@ -45,7 +45,7 @@
                     },
                     {
                         "id": 1002402201,
-                        "pid": "/humanresource/staff",
+                        "pid": "/humanresource",
                         "type": 3,
                         "subtype": 1,
                         "name": "Create",

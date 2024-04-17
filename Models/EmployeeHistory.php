@@ -44,10 +44,10 @@ class EmployeeHistory implements \JsonSerializable
     /**
      * Employee
      *
-     * @var int|Employee
+     * @var Employee
      * @since 1.0.0
      */
-    public $employee = 0;
+    public Employee $employee;
 
     /**
      * Unit
@@ -99,9 +99,9 @@ class EmployeeHistory implements \JsonSerializable
      *
      * @since 1.0.0
      */
-    public function __construct($employee = 0)
+    public function __construct()
     {
-        $this->employee   = $employee;
+        $this->employee   = new NullEmployee();
         $this->start      = new \DateTime('now');
         $this->unit       = new NullUnit();
         $this->department = new NullDepartment();
