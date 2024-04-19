@@ -54,7 +54,7 @@ echo $this->data['nav']->render(); ?>
                                         src="<?=
                                             $employee->image->id === 0
                                                 ? ($employee->profile->image->id === 0
-                                                    ? UriFactory::build($this->getData('defaultImage')->getPath())
+                                                    ? UriFactory::build($this->data['defaultImage']->getPath())
                                                     : UriFactory::build($employee->profile->image->getPath()))
                                                 : UriFactory::build($employee->image->getPath()); ?>"
                                     >

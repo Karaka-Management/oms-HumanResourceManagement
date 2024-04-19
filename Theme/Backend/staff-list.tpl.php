@@ -45,7 +45,7 @@ echo $this->data['nav']->render(); ?>
                         <td><a href="<?= $url; ?>"><img alt="<?= $this->getHtml('IMG_alt_user'); ?>" width="30" loading="lazy" class="profile-image"
                             src="<?= $value->image->id === 0
                                 ? ($value->profile->image->id === 0
-                                    ? UriFactory::build($this->getData('defaultImage')->getPath())
+                                    ? UriFactory::build($this->data['defaultImage']->getPath())
                                     : UriFactory::build($value->profile->image->getPath()))
                                 : UriFactory::build($value->image->getPath()); ?>"></a>
                         <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>

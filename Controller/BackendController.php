@@ -124,17 +124,8 @@ final class BackendController extends Controller
     public function viewHrStaffView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        if (!$request->hasData('id')) {
-            $response->header->status = RequestStatusCode::R_404;
-            $view->setTemplate('/Web/Backend/Error/404');
 
-            return $view;
-        }
-
-        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-view');
-        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
-
-         $view->data['employee'] = EmployeeMapper::get()
+        $view->data['employee'] = EmployeeMapper::get()
             ->with('profile')
             ->with('profile/account')
             ->with('profile/account/address')
@@ -155,12 +146,29 @@ final class BackendController extends Controller
             ->sort('workHistory/start', OrderType::DESC)
             ->execute();
 
+        if ($view->data['employee']->id === 0) {
+            $response->header->status = RequestStatusCode::R_404;
+            $view->setTemplate('/Web/Backend/Error/404');
+
+            return $view;
+        }
+
+        $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1002402001, $request, $response);
+
         $view->data['units']       = UnitMapper::getAll()->executeGetArray();
         $view->data['departments'] = DepartmentMapper::getAll()->executeGetArray();
         $view->data['positions']   = PositionMapper::getAll()->executeGetArray();
 
         $view->data['media-upload']   = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
         $view->data['employee-notes'] = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
+
+        /** @var \Model\Setting $profileImage */
+        $profileImage = $this->app->appSettings->get(names: SettingsEnum::DEFAULT_PROFILE_IMAGE, module: 'Profile');
+
+        $view->data['defaultImage'] = MediaMapper::get()
+            ->where('id', (int) $profileImage->content)
+            ->execute();
 
         if ($this->app->moduleManager->isActive('HumanResourceTimeRecording')) {
             /** @var \Modules\HumanResourceTimeRecording\Models\Session $lastOpenSession */
