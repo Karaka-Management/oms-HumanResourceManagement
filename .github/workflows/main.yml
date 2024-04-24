@@ -13,10 +13,15 @@ on:
     - cron: '0 0 1,15 * *'
 
 jobs:
-  general_module_workflow:
+  general_module_workflow_php:
     uses: Karaka-Management/Karaka/.github/workflows/php_template.yml@develop
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_PAT: ${{ secrets.GH_PAT }}
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+  general_module_workflow_js:
+    uses: Karaka-Management/Karaka/.github/workflows/js_template.yml@develop
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
