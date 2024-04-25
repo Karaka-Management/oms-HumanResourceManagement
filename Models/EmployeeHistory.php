@@ -153,7 +153,7 @@ class EmployeeHistory implements \JsonSerializable
     {
         return [
             'id'         => $this->id,
-            'employee'   => \is_int($this->employee) ? $this->employee : $this->employee->id,
+            'employee'   => $this->employee->id,
             'unit'       => $this->unit,
             'department' => $this->department,
             'position'   => $this->position,
