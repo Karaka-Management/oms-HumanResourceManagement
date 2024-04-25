@@ -95,8 +95,6 @@ class EmployeeHistory implements \JsonSerializable
     /**
      * Constructor.
      *
-     * @param int|Employee $employee Employee
-     *
      * @since 1.0.0
      */
     public function __construct()
