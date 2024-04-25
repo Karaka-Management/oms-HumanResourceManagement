@@ -121,7 +121,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
         $request  = new HttpRequest();
 
         $request->header->account = 1;
-        $request->setData('profiles', '1');
+        $request->setData('accounts', '1');
 
         // can create multiple accounts if profiles is a list of ids e.g. 1,2,3
         $this->module->apiEmployeeCreate($request, $response);
