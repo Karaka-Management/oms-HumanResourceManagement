@@ -53,7 +53,7 @@ final class ApiControllerTest extends \PHPUnit\Framework\TestCase
      */
     protected ModuleAbstract $module;
 
-    protected static int $employee = 0;
+    protected static mixed $employee = 0;
 
     public static function setUpBeforeClass() : void
     {

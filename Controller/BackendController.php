@@ -219,6 +219,7 @@ final class BackendController extends Controller
             ->where('unit', $this->app->unitId)
             ->executeGetArray();
 
+        /** @var \Modules\HumanResourceManagement\Models\EmployeeHistory[] $histories */
         $histories = EmployeeHistoryMapper::getAll()
             ->where('department', \array_map(function (Department $department) : int { return $department->id; }, $view->data['departments']))
             ->where('unit', $this->app->unitId)
@@ -360,6 +361,7 @@ final class BackendController extends Controller
             ->where('department', \array_map(function (Department $department) : int { return $department->id; }, $departments))
             ->executeGetArray();
 
+        /** @var \Modules\HumanResourceManagement\Models\EmployeeHistory[] $histories */
         $histories = EmployeeHistoryMapper::getAll()
             ->where('department', \array_map(function (Department $department) : int { return $department->id; }, $departments))
             ->where('position', \array_map(function (Position $position) : int { return $position->id; }, $view->data['positions']))

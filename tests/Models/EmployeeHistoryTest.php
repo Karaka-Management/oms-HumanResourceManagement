@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Modules\HumanResourceManagement\tests\Models;
 
 use Modules\HumanResourceManagement\Models\EmployeeHistory;
+use Modules\HumanResourceManagement\Models\NullEmployee;
 
 /**
  * @internal
@@ -47,7 +48,7 @@ final class EmployeeHistoryTest extends \PHPUnit\Framework\TestCase
     #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
-        $this->history->employee = 2;
+        $this->history->employee = new NullEmployee(2);
 
         $serialized = $this->history->jsonSerialize();
         unset($serialized['start']);
