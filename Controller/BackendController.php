@@ -30,6 +30,7 @@ use phpOMS\DataStorage\Database\Query\OrderType;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
+use phpOMS\Security\EncryptionHelper;
 use phpOMS\Stdlib\Base\SmartDateTime;
 use phpOMS\Views\View;
 
@@ -151,6 +152,24 @@ final class BackendController extends Controller
             $view->setTemplate('/Web/Backend/Error/404');
 
             return $view;
+        }
+
+        if (!empty($_SERVER['OMS_PRIVATE_KEY_I'] ?? '')) {
+            foreach ($view->data['employee']->educationHistory as $history) {
+                $history->score = !empty($history->score)
+                    ? (EncryptionHelper::decryptShared($history->score, $_SERVER['OMS_PRIVATE_KEY_I']))
+                    : $history->score;
+            }
+
+            foreach ($view->data['employee']->notes as $note) {
+                $note->plain = !empty($note->plain)
+                    ? (EncryptionHelper::decryptShared($note->plain, $_SERVER['OMS_PRIVATE_KEY_I']))
+                    : $note->plain;
+
+                $note->content = !empty($note->content)
+                    ? (EncryptionHelper::decryptShared($note->content, $_SERVER['OMS_PRIVATE_KEY_I']))
+                    : $note->content;
+            }
         }
 
         $view->setTemplate('/Modules/HumanResourceManagement/Theme/Backend/staff-view');

@@ -37,6 +37,7 @@ use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
+use phpOMS\Security\EncryptionHelper;
 use phpOMS\Stdlib\Base\AddressType;
 
 /**
@@ -46,6 +47,9 @@ use phpOMS\Stdlib\Base\AddressType;
  * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
+ *
+ * @feature List of assets and documents handed over to employees (to be returned on leave)
+ *      https://github.com/Karaka-Management/oms-HumanResourceManagement/issues/4
  */
 final class ApiController extends Controller
 {
@@ -423,8 +427,11 @@ final class ApiController extends Controller
         $history->start          = $request->getDataDateTime('start') ?? new \DateTime('now');
         $history->end            = $request->getDataDateTime('end');
         $history->educationTitle = $request->getDataString('title') ?? '';
-        $history->score          = $request->getDataString('score') ?? '';
         $history->passed         = $request->getDataBool('passed') ?? true;
+
+        $history->score = !empty($request->getDataString('score') ?? '') && !empty($_SERVER['OMS_PRIVATE_KEY_I'] ?? '')
+            ? (EncryptionHelper::encryptShared($request->getDataString('score') ?? '', $_SERVER['OMS_PRIVATE_KEY_I']))
+            : ($request->getDataString('score') ?? '');
 
         $history->address       = $this->app->moduleManager->get('Admin', 'Api')->createAddressFromRequest($request);
         $history->address->type = AddressType::EDUCATION;
@@ -467,6 +474,7 @@ final class ApiController extends Controller
                 account: $request->header->account,
                 basePath: __DIR__ . '/../../../Modules/Media/Files' . $path,
                 virtualPath: $path,
+                encryptionKey: $_SERVER['OMS_PRIVATE_KEY_I'] ?? '',
                 pathSettings: PathSettings::FILE_PATH,
                 hasAccountRelation: false,
                 readContent: $request->getDataBool('parse_content') ?? false,
@@ -553,7 +561,10 @@ final class ApiController extends Controller
             return;
         }
 
+        $request->setData('isencrypted', true, true);
+        $request->setData('isvisible', false, true);
         $request->setData('virtualpath', '/Modules/HumanResourceManagement/Employee/' . $request->getData('id'), true);
+
         $this->app->moduleManager->get('Editor', 'Api')->apiEditorCreate($request, $response, $data);
 
         if ($response->header->status !== RequestStatusCode::R_200) {
