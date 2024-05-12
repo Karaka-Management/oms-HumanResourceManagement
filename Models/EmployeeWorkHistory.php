@@ -79,46 +79,6 @@ class EmployeeWorkHistory implements \JsonSerializable
     }
 
     /**
-     * Get media file by type
-     *
-     * @param int $type Media type
-     *
-     * @return Media
-     *
-     * @since 1.0.0
-     */
-    public function getFileByType(int $type) : Media
-    {
-        foreach ($this->files as $file) {
-            if ($file->hasMediaTypeId($type)) {
-                return $file;
-            }
-        }
-
-        return new NullMedia();
-    }
-
-    /**
-     * Get all media files by type name
-     *
-     * @param string $type Media type
-     *
-     * @return Media
-     *
-     * @since 1.0.0
-     */
-    public function getFileByTypeName(string $type) : Media
-    {
-        foreach ($this->files as $file) {
-            if ($file->hasMediaTypeName($type)) {
-                return $file;
-            }
-        }
-
-        return new NullMedia();
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function toArray() : array

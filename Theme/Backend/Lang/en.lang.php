@@ -48,4 +48,7 @@ return ['HumanResourceManagement' => [
     'Work'              => 'Work',
     'Total'              => 'Total',
     'FTE'              => 'FTE',
+    ':status-1'              => 'Active',
+    ':status-2'              => 'Inactive',
+    ':status-3'              => 'Unavailable',
 ]];

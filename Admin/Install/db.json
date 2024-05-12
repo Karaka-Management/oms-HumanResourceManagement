@@ -9,6 +9,11 @@
                 "primary": true,
                 "autoincrement": true
             },
+            "hr_staff_status": {
+                "name": "hr_staff_status",
+                "type": "TINYINT(1)",
+                "null": false
+            },
             "hr_staff_profile": {
                 "name": "hr_staff_profile",
                 "type": "INT",

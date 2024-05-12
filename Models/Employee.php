@@ -26,12 +26,6 @@ use Modules\Profile\Models\Profile;
  * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
- *
- * @question Consider to add employee status (active, inactive, ...)
- *      We might not need it because we can see the activity from the workHistory.
- *      However, we have no easy way to see if someone is on maternity leave etc.
- *      We would have to parse TimeRecording for this which may not be installed.
- *      https://github.com/Karaka-Management/oms-HumanResourceManagement/issues/10
  */
 class Employee implements \JsonSerializable
 {
@@ -53,6 +47,8 @@ class Employee implements \JsonSerializable
      * @since 1.0.0
      */
     public Profile $profile;
+
+    public int $status = EmployeeStatus::ACTIVE;
 
     /**
      * Employee image.
@@ -150,46 +146,6 @@ class Employee implements \JsonSerializable
     public function compareSemiPrivateHash(string $hash) : bool
     {
         return \hash_equals($this->semiPrivateHash, $hash);
-    }
-
-    /**
-     * Get media file by type
-     *
-     * @param int $type Media type
-     *
-     * @return Media
-     *
-     * @since 1.0.0
-     */
-    public function getFileByType(int $type) : Media
-    {
-        foreach ($this->files as $file) {
-            if ($file->hasMediaTypeId($type)) {
-                return $file;
-            }
-        }
-
-        return new NullMedia();
-    }
-
-    /**
-     * Get all media files by type name
-     *
-     * @param string $type Media type
-     *
-     * @return Media
-     *
-     * @since 1.0.0
-     */
-    public function getFileByTypeName(string $type) : Media
-    {
-        foreach ($this->files as $file) {
-            if ($file->hasMediaTypeName($type)) {
-                return $file;
-            }
-        }
-
-        return new NullMedia();
     }
 
     /**

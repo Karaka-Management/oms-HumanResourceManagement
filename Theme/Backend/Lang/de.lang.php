@@ -48,4 +48,7 @@ return ['HumanResourceManagement' => [
     'Work'              => 'Arbeiten',
     'Total'              => 'Gesamt',
     'FTE'              => 'MAK',
+    ':status-1'              => 'Aktiv',
+    ':status-2'              => 'Inaktiv',
+    ':status-3'              => 'Nicht Verfügbar',
 ]];

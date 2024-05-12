@@ -12,6 +12,7 @@
  */
 declare(strict_types=1);
 
+use Modules\HumanResourceManagement\Models\EmployeeStatus;
 use Modules\HumanResourceTimeRecording\Models\ClockingStatus;
 use Modules\HumanResourceTimeRecording\Models\ClockingType;
 use phpOMS\Stdlib\Base\SmartDateTime;
@@ -22,6 +23,8 @@ $history       = $employee->getHistory();
 $education     = $employee->getEducationHistory();
 $work          = $employee->getWorkHistory();
 $recentHistory = $employee->getNewestHistory();
+
+$staffStatus = EmployeeStatus::getConstants();
 
 echo $this->data['nav']->render(); ?>
 <div class="tabview tab-2">
@@ -59,6 +62,14 @@ echo $this->data['nav']->render(); ?>
                                                 : UriFactory::build($employee->image->getPath()); ?>"
                                     >
                                 </span>
+                                <div class="form-group">
+                                    <label for="iStatus"><?= $this->getHtml('Status'); ?></label>
+                                    <select id="iStatus" name="status">
+                                        <?php foreach ($staffStatus as $status) : ?>
+                                            <option value="<?= $status; ?>"<?= $employee->status === $status ? ' selected': ''; ?>><?= $this->getHtml(':status-' . $status); ?>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                                     <table class="list">
                                         <tr>
                                             <th><?= $this->getHtml('Position'); ?>

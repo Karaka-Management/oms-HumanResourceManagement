@@ -40,6 +40,7 @@ final class EmployeeMapper extends DataMapperFactory
      */
     public const COLUMNS = [
         'hr_staff_id'       => ['name' => 'hr_staff_id',       'type' => 'int',    'internal' => 'id'],
+        'hr_staff_status'  => ['name' => 'hr_staff_status',  'type' => 'int',    'internal' => 'status'],
         'hr_staff_profile'  => ['name' => 'hr_staff_profile',  'type' => 'int',    'internal' => 'profile'],
         'hr_staff_smiPHash' => ['name' => 'hr_staff_smiPHash', 'type' => 'string', 'internal' => 'semiPrivateHash', 'private' => true],
         'hr_staff_image'    => ['name' => 'hr_staff_image',    'type' => 'int',    'internal' => 'image', 'annotations' => ['gdpr' => true]],
