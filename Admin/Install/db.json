@@ -330,13 +330,13 @@
                 "unique": true
             },
             "hr_salary_type_salary": {
-                "description": "Not all salary types are considered salary by the employee",
+                "comment": "Not all salary types are considered salary by the employee",
                 "name": "hr_salary_type_salary",
                 "type": "TINYINT(1)",
                 "null": false
             },
             "hr_salary_type_regular": {
-                "description": "Not all salary types are regular payments. Can be overwritten by salary",
+                "comment": "Not all salary types are regular payments. Can be overwritten by salary",
                 "name": "hr_salary_type_regular",
                 "type": "TINYINT(1)",
                 "null": false

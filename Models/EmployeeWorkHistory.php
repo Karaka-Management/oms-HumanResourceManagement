@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\HumanResourceManagement\Models;
 
-use Modules\Media\Models\Media;
-use Modules\Media\Models\NullMedia;
 use phpOMS\Stdlib\Base\Address;
 
 /**

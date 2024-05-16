@@ -429,8 +429,10 @@ final class ApiController extends Controller
         $history->educationTitle = $request->getDataString('title') ?? '';
         $history->passed         = $request->getDataBool('passed') ?? true;
 
-        $history->score = !empty($request->getDataString('score') ?? '') && !empty($_SERVER['OMS_PRIVATE_KEY_I'] ?? '')
-            ? (EncryptionHelper::encryptShared($request->getDataString('score') ?? '', $_SERVER['OMS_PRIVATE_KEY_I']))
+        $history->score = !empty($request->getDataString('score') ?? '')
+            && isset($_SERVER['OMS_PRIVATE_KEY_I'])
+            && !empty($_SERVER['OMS_PRIVATE_KEY_I'])
+            ? (EncryptionHelper::encryptShared($request->getDataString('score'), $_SERVER['OMS_PRIVATE_KEY_I']))
             : ($request->getDataString('score') ?? '');
 
         $history->address       = $this->app->moduleManager->get('Admin', 'Api')->createAddressFromRequest($request);
