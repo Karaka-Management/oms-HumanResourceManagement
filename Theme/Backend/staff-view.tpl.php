@@ -376,10 +376,10 @@ echo $this->data['nav']->render(); ?>
                                         ) : ?>
                                         <span class="tag">Today</span>
                                     <?php else : ?>
-                                        <?= $session->start->format('Y-m-d'); ?> - <?= $this->getHtml('D' . $session->start->format('w'), 'HumanResourceTimeRecording', 'Backend'); ?>
+                                        <?= $session->start->format('Y-m-d'); ?> - <?= $this->getHtml(':D' . $session->start->format('w'), 'HumanResourceTimeRecording', 'Backend'); ?>
                                     <?php endif; ?></a>
-                                <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml('CT' . $session->type, 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
-                                <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml('CS' . $session->getStatus(), 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
+                                <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml(':CT' . $session->type, 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
+                                <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml(':CS' . $session->getStatus(), 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
                                 <td><a href="<?= $url; ?>"><?= $session->start->format('H:i'); ?></a>
                                 <td><a href="<?= $url; ?>"><?= (int) ($session->getBreak() / 3600); ?>h <?= ((int) ($session->getBreak() / 60) % 60); ?>m</a>
                                 <td><a href="<?= $url; ?>"><?= $session->end?->format('H:i'); ?></a>
@@ -400,7 +400,7 @@ echo $this->data['nav']->render(); ?>
                             ?>
                             <?php else : ?>
                             <tr>
-                                <td class="disabled"><?= $current->format('Y-m-d'); ?> - <?= $this->getHtml('D' . $current->format('w'), 'HumanResourceTimeRecording', 'Backend'); ?>
+                                <td class="disabled"><?= $current->format('Y-m-d'); ?> - <?= $this->getHtml(':D' . $current->format('w'), 'HumanResourceTimeRecording', 'Backend'); ?>
                                 <td colspan="6" class="empty">
                             <?php endif; ?>
                             <?php if ($current->getTimestamp() <= $startWeek->getTimestamp()) : ?>
