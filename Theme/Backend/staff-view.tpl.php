@@ -250,7 +250,7 @@ echo $this->data['nav']->render(); ?>
                     'week'  => 0,
                 ];
 
-                $type   = $this->data['lastSession'] !== null ? $this->data['lastSession']->type : ClockingType::OFFICE;
+                //$type   = $this->data['lastSession'] !== null ? $this->data['lastSession']->type : ClockingType::OFFICE;
                 $status = $this->data['lastSession'] !== null ? $this->data['lastSession']->getStatus() : ClockingStatus::END;
 
                 $startMonth = new SmartDateTime('now');
@@ -433,12 +433,12 @@ echo $this->data['nav']->render(); ?>
 
         <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab col-simple">
-            <?= $this->data['media-upload']->render('employee-file', 'files', '', $employee->files); ?>
+            <?= $this->data['media-upload']->render('employee-file', 'files', '', $employee->files, '{/api}humanresource/staff/file?csrf={$CSRF}', (string) $vehicle->id); ?>
         </div>
 
         <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab col-simple">
-            <?= $this->data['employee-notes']->render('employee-notes', '', $employee->notes); ?>
+            <?= $this->data['employee-notes']->render('employee-notes', '', $employee->notes, '{/api}humanresource/staff/note?csrf={$CSRF}', (string) $vehicle->id); ?>
         </div>
 
         <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-7' ? ' checked' : ''; ?>>

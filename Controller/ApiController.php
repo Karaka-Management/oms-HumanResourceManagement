@@ -464,7 +464,7 @@ final class ApiController extends Controller
         }
 
         /** @var \Modules\HumanResourceManagement\Models\Employee $employee */
-        $employee = EmployeeMapper::get()->where('id', (int) $request->getData('employee'))->execute();
+        $employee = EmployeeMapper::get()->where('id', (int) $request->getData('ref'))->execute();
         $path     = $this->createEmployeeDir($employee);
 
         $uploaded = new NullCollection();
@@ -533,7 +533,7 @@ final class ApiController extends Controller
     {
         $val = [];
         if (($val['media'] = (!$request->hasData('media') && empty($request->files)))
-            || ($val['employee'] = !$request->hasData('employee'))
+            || ($val['ref'] = !$request->hasData('ref'))
         ) {
             return $val;
         }
@@ -565,7 +565,7 @@ final class ApiController extends Controller
 
         $request->setData('isencrypted', true, true);
         $request->setData('isvisible', false, true);
-        $request->setData('virtualpath', '/Modules/HumanResourceManagement/Employee/' . $request->getData('id'), true);
+        $request->setData('virtualpath', '/Modules/HumanResourceManagement/Employee/' . $request->getData('ref'), true);
 
         $this->app->moduleManager->get('Editor', 'Api')->apiEditorCreate($request, $response, $data);
 
@@ -579,7 +579,7 @@ final class ApiController extends Controller
         }
 
         $model = $responseData['response'];
-        $this->createModelRelation($request->header->account, (int) $request->getData('id'), $model->id, EmployeeMapper::class, 'notes', '', $request->getOrigin());
+        $this->createModelRelation($request->header->account, (int) $request->getData('ref'), $model->id, EmployeeMapper::class, 'notes', '', $request->getOrigin());
     }
 
     /**
@@ -594,7 +594,7 @@ final class ApiController extends Controller
     private function validateNoteCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['id'] = !$request->hasData('id'))
+        if (($val['ref'] = !$request->hasData('ref'))
         ) {
             return $val;
         }

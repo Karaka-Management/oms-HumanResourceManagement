@@ -31,6 +31,46 @@ return [
             ],
         ],
     ],
+
+    '^.*/humanresource/staff/file(\?.*|$)$' => [
+        [
+            'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiMediaAddToVehicle',
+            'verb'       => RouteVerb::PUT,
+            'csrf'       => true,
+            'active'     => true,
+            'permission' => [
+                'module' => ApiController::NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionCategory::HR,
+            ],
+        ],
+    ],
+
+    '^.*/humanresource/staff/note(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiNoteCreate',
+            'verb'       => RouteVerb::PUT,
+            'csrf'       => true,
+            'active'     => true,
+            'permission' => [
+                'module' => ApiController::NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionCategory::EMPLOYEE_NOTE,
+            ],
+        ],
+        [
+            'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiNoteUpdate',
+            'verb'       => RouteVerb::SET,
+            'csrf'       => true,
+            'active'     => true,
+            'permission' => [
+                'module' => ApiController::NAME,
+                'type'   => PermissionType::MODIFY,
+                'state'  => PermissionCategory::EMPLOYEE_NOTE,
+            ],
+        ],
+    ],
+
     '^.*/humanresource/staff/history(\?.*$|$)' => [
         [
             'dest'       => '\Modules\HumanResourceManagement\Controller\ApiController:apiEmployeeHistoryCreate',
