@@ -200,8 +200,11 @@ final class BackendController extends Controller
 
             $list = SessionMapper::getAll()
                 ->with('sessionElements')
+                ->with('type')
+                ->with('type/l11n')
                 ->where('employee',  $view->data['employee']->id)
                 ->where('start', $start, '<=')
+                ->where('type/l11n/language', $response->header->l11n->language)
                 ->sort('start', OrderType::DESC)
                 ->executeGetArray();
 

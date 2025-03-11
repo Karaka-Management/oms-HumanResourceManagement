@@ -378,7 +378,11 @@ echo $this->data['nav']->render(); ?>
                                     <?php else : ?>
                                         <?= $session->start->format('Y-m-d'); ?> - <?= $this->getHtml(':D' . $session->start->format('w'), 'HumanResourceTimeRecording', 'Backend'); ?>
                                     <?php endif; ?></a>
-                                <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml(':CT' . $session->type, 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
+                                <td><a href="<?= $url; ?>">
+                                        <span class="tag">
+                                            <?= $this->printHtml($session?->type?->getL11n() ?? ''); ?>
+                                        </span>
+                                    </a>
                                 <td><a href="<?= $url; ?>"><span class="tag"><?= $this->getHtml(':CS' . $session->getStatus(), 'HumanResourceTimeRecording', 'Backend'); ?></span></a>
                                 <td><a href="<?= $url; ?>"><?= $session->start->format('H:i'); ?></a>
                                 <td><a href="<?= $url; ?>"><?= (int) ($session->getBreak() / 3600); ?>h <?= ((int) ($session->getBreak() / 60) % 60); ?>m</a>
@@ -433,12 +437,12 @@ echo $this->data['nav']->render(); ?>
 
         <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab col-simple">
-            <?= $this->data['media-upload']->render('employee-file', 'files', '', $employee->files, '{/api}humanresource/staff/file?csrf={$CSRF}', (string) $vehicle->id); ?>
+            <?= $this->data['media-upload']->render('employee-file', 'files', '', $employee->files, '{/api}humanresource/staff/file?csrf={$CSRF}', (string) $employee->id); ?>
         </div>
 
         <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab col-simple">
-            <?= $this->data['employee-notes']->render('employee-notes', '', $employee->notes, '{/api}humanresource/staff/note?csrf={$CSRF}', (string) $vehicle->id); ?>
+            <?= $this->data['employee-notes']->render('employee-notes', '', $employee->notes, '{/api}humanresource/staff/note?csrf={$CSRF}', (string) $employee->id); ?>
         </div>
 
         <input type="radio" id="c-tab-7" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-7' ? ' checked' : ''; ?>>
