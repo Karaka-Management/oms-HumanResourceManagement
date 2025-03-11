@@ -20,7 +20,6 @@ use \Modules\HumanResourceManagement\Models\EmployeeActivityStatus;
 
 echo $this->data['nav']->render();
 ?>
-
 <div class="row">
     <div class="col-xs-12 col-md-6">
         <section class="portlet">
