@@ -63,7 +63,7 @@ echo $this->data['nav']->render();
                 <div class="portlet-body">
                     <div class="form-group">
                         <label for="iAccount"><?= $this->getHtml('Account', 'Admin'); ?></label>
-                        <?= $this->getData('accSelector')->render('iAccount', 'accounts', true); ?>
+                        <?= $this->data['accSelector']->render('iAccount', 'accounts', true); ?>
                     </div>
                 </div>
                 <div class="portlet-foot">

@@ -141,7 +141,7 @@ final class BackendController extends Controller
             ->with('companyHistory/position')
             ->with('educationHistory')
             ->with('workHistory')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->sort('companyHistory/end', OrderType::DESC)
             ->sort('educationHistory/start', OrderType::DESC)
             ->sort('workHistory/start', OrderType::DESC)
@@ -282,7 +282,7 @@ final class BackendController extends Controller
 
         $histories = EmployeeHistoryMapper::getAll()
             ->where('unit', $this->app->unitId)
-            ->where('department', (int) $request->getData('id'))
+            ->where('department', $request->getDataInt('id') ?? 0)
             ->where('end', null)
             ->executeGetArray();
 
@@ -329,7 +329,7 @@ final class BackendController extends Controller
 
         $histories = EmployeeHistoryMapper::getAll()
             ->where('unit', $this->app->unitId)
-            ->where('position', (int) $request->getData('id'))
+            ->where('position', $request->getDataInt('id') ?? 0)
             ->where('end', null)
             ->executeGetArray();
 
